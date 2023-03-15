@@ -1,0 +1,18 @@
+load("@rules_cc//cc:defs.bzl", "cc_library")
+
+cc_library(
+    name = "vibrante_Xlibs",
+    srcs = glob(["lib/**/*"]),
+    tags = ["manual"],
+    visibility = ["//visibility:public"],
+)
+
+filegroup(
+    name = "vibrante_Xlibs_files",
+    srcs = glob(
+        ["**"],
+        exclude = ["**/BUILD"],
+    ),
+    tags = ["manual"],
+    visibility = ["//visibility:public"],
+)

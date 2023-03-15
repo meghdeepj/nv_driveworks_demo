@@ -1,0 +1,48 @@
+{
+    "env": {
+        "myDefaultIncludePath": [
+            "${workspaceFolder}",
+            "${workspaceFolder}/include",
+            "${workspaceRoot}",
+            "/usr/include",
+            "/usr/local/include"
+        ],
+        "myLinuxCompilerPath": "/usr/bin/gcc",
+        "myDriveworksPath": "~/zs_ws/nv_driveworks/driveworks-5.8/",
+        "myDriveosPath": "~/zs_ws/nv_driveos/driveos-6.0.5.0/drive-linux/",
+        "myCudaPath": "/usr/local/cuda/"
+    },
+    "configurations": [
+        {
+            "name": "Linux",
+            "intelliSenseMode": "clang-x64",
+            "compilerPath": "${myLinuxCompilerPath}",
+            "includePath": [
+                "${myDefaultIncludePath}",
+                "${myDriveworksPath}/include",
+                "${myDriveosPath}/include",
+                "${myCudaPath}/include"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "__GNUC__=9",
+                "__cdecl=__attribute__((__cdecl__))"
+            ],
+            "browse": {
+                "path": [
+                    "${myDefaultIncludePath}",
+                    "${myDriveworksPath}/include",
+                    "${myDriveosPath}/include",
+                    "${myCudaPath}/include"
+                ],
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": ""
+            },
+            "cStandard": "c99",
+            "cppStandard": "c++14",
+            // "configurationProvider": "ms-vscode.cmake-tools"
+        }
+    ],
+    "version": 4
+}

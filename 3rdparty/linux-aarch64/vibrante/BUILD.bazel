@@ -1,0 +1,38 @@
+load("@rules_cc//cc:defs.bzl", "cc_library")
+
+cc_library(
+    name = "vibrante",
+    srcs = glob(["lib/**/*"]),
+    hdrs = glob(["include/**/*"]),
+    strip_include_prefix = "include",
+    tags = ["manual"],
+    visibility = ["//visibility:public"],
+    deps = [
+        ":usb_1.0_drive_linux",
+        "@av//3rdparty:udev",
+        "@av//bazel/system_libraries:dl",
+        "@av//bazel/system_libraries:rt",
+    ] + select({
+        "@av//bazel/conditions:nveeprom": ["@av//3rdparty:nv_eeprom"],
+        "//conditions:default": [],
+    }),
+)
+
+cc_library(
+    name = "usb_1.0_drive_linux",
+    srcs = ["lib/libusb-1.0.so"],
+    hdrs = ["include/libusb-1.0/libusb.h"],
+    strip_include_prefix = "include",
+    tags = ["manual"],
+    visibility = ["//visibility:public"],
+)
+
+filegroup(
+    name = "vibrante_files",
+    srcs = glob(
+        ["**"],
+        exclude = ["**/BUILD"],
+    ),
+    tags = ["manual"],
+    visibility = ["//visibility:public"],
+)

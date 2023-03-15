@@ -1,0 +1,16 @@
+{
+    "recommendations": [
+        "hookyqr.beautify",
+        "chiehyu.vscode-astyle",
+        "ms-python.python",
+        "ms-vscode.cpptools",
+        "twxs.cmake",
+        "uavcan.dsdl",
+        "ms-vscode.cmake-tools",
+        "ryu1kn.partial-diff",
+        "ryu1kn.text-marker",
+        "redhat.vscode-xml",
+        "redhat.vscode-yaml",
+        "jock.svg"
+    ]
+}
