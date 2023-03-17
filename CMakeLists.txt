@@ -8,6 +8,8 @@ include(GwSetBuildType) # Set the build type before project is created
 
 set(SDK_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR})
 set(SDK_BINARY_DIR ${CMAKE_CURRENT_BINARY_DIR})
+message(STATUS "SDK_SOURCE_DIR is: "  ${SDK_SOURCE_DIR})
+message(STATUS "SDK_BINARY_DIR is: "  ${SDK_BINARY_DIR})
 
 #-------------------------------------------------------------------------------
 # Root project
@@ -123,3 +125,8 @@ if(NOT EXISTS "${DW_ROOT}/data/DATA_ROOT")
                     "likely because DW sample code was moved from install location or installation is incomplete. "
                     "Samples will likely not run correctly")
 endif()
+
+# install
+# https://blog.csdn.net/qq_38410730/article/details/102837401
+set(DWCGF_RUNNER ${CMAKE_CURRENT_SOURCE_DIR}/scripts/run_cgf.sh)
+install(PROGRAMS ${DWCGF_RUNNER} DESTINATION "${SDK_SAMPLE_DESTINATION}")

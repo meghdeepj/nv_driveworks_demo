@@ -30,17 +30,17 @@
 #
 ################################################################################
 
-project(cgf_custom_nodes C CXX)
+project(dwcgf_helloworld C CXX)
 
 set(SOURCES
-    HelloWorldNode.hpp
-    HelloWorldNodeImpl.cpp
-    HelloWorldNodeImpl.hpp
-    HelloWorldNode.cpp
-    # SumNode.hpp
-    # SumNodeImpl.cpp
-    # SumNodeImpl.hpp
-    # SumNode.cpp
+    src/nodes/helloworld/HelloWorldNode.hpp
+    src/nodes/helloworld/HelloWorldNodeImpl.cpp
+    src/nodes/helloworld/HelloWorldNodeImpl.hpp
+    src/nodes/helloworld/HelloWorldNode.cpp
+    # src/nodes/sum/SumNode.hpp
+    # src/nodes/sum/SumNodeImpl.cpp
+    # src/nodes/sum/SumNodeImpl.hpp
+    # src/nodes/sum/SumNode.cpp
 )
 
 set(DRIVEWORKS_PATH "/usr/local/driveworks")
@@ -73,5 +73,36 @@ target_include_directories(${PROJECT_NAME}
                            ${DW_ROOT}/include/dwshared/dwfoundation
                            ${DW_ROOT}/include/dwshared/dwtrace)
 
+set(DWCGF_YAML ${CMAKE_CURRENT_SOURCE_DIR}/schedule/DWCGFHelloworld__standardSchedule.yaml)
+set(DWCGF_STM ${CMAKE_CURRENT_SOURCE_DIR}/schedule/DWCGFHelloworld__standardSchedule.stm)
+
+# system2yaml
+add_custom_command(
+    OUTPUT ${DWCGF_YAML}
+    COMMAND ${DRIVEWORKS_PATH}/tools/descriptionScheduleYamlGenerator/descriptionScheduleYamlGenerator.py --app ../graphs/app/DWCGFHelloworld.app.json --output DWCGFHelloworld.app.yaml
+    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/schedule
+    MAIN_DEPENDENCY ${CMAKE_CURRENT_SOURCE_DIR}/graphs/app/DWCGFHelloworld.app.json
+    DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/graphs
+)
+add_custom_target(${PROJECT_NAME}_yaml ALL DEPENDS ${DWCGF_YAML})
+# yaml2stm
+add_custom_command(
+    OUTPUT ${DWCGF_STM}
+    COMMAND ${DRIVEWORKS_PATH}/tools/stmcompiler -i ${DWCGF_YAML}
+    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/schedule
+    MAIN_DEPENDENCY ${DWCGF_YAML}
+    DEPENDS
+)
+add_custom_target(${PROJECT_NAME}_stm ALL DEPENDS ${DWCGF_STM})
+# stmvizgraph
+# stmvizschedule
+
 # install
 sdk_add_sample(${PROJECT_NAME})
+set(DWCGF_GRAPH_DIR ${CMAKE_CURRENT_SOURCE_DIR}/graphs)
+set(DWCGF_SCHE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/schedule)
+set(SDK_GRAPHS_DESTINATION ${CMAKE_INSTALL_PREFIX})
+set(SDK_SCHE_DESTINATION ${CMAKE_INSTALL_PREFIX})
+install(FILES ${DWCGF_YAML} DESTINATION "${SDK_SAMPLE_DESTINATION}")
+install(FILES ${DWCGF_STM} DESTINATION "${SDK_SAMPLE_DESTINATION}")
+install(DIRECTORY ${DWCGF_GRAPH_DIR} DESTINATION ${SDK_GRAPHS_DESTINATION})

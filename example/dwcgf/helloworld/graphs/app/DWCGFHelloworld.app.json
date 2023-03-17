@@ -1,0 +1,81 @@
+{
+    "$schema": "../../../../../doc/schema/app.schema.json",
+    "name": "DWCGFHelloworldApp",
+    "logSpec": "file/rfc5424:{{logpath}}/{{appname}}.log",
+    "parameters": {},
+    "sensorLayouts": "./DWCGFHelloworldSensorLayout.sensors.json",
+    "subcomponents": {
+        "dwcgfHelloworld": {
+            "componentType": "../graphlets/DWCGFHelloworld.graphlet.json",
+            "parameters": {}
+        }
+    },
+    "connections": [],
+    "states": {
+        "STANDARD": {
+            "stmScheduleKey": "standardSchedule",
+            "default": true
+        }
+    },
+    "stmSchedules": {
+        "standardSchedule": {
+            "wcet" : "./DWCGFHelloworld_wcet.yaml",
+            "hyperepochs": {
+                "helloworldHyperepoch": {
+                    "period": 33000000,
+                    "epochs": {
+                        "helloworldEpoch": {
+                            "period": 33000000,
+                            "frames": 1,
+                            "passes": [
+                                [
+                                    "dwcgfHelloworld.helloWorldNode"
+                                ]
+                            ]
+                        }
+                    },
+                    "resources": {
+                        "machine0.CPU0": []
+                    }
+                }
+            }
+        }
+    },
+    "processes": {
+        "ssm": {
+            "runOn": "machine0",
+            "executable": "vanillassm",
+            "logSpec": "file:{{logpath}}/{{appname}}.log"
+        },
+        "schedule_manager": {
+            "runOn": "machine0",
+            "executable": "ScheduleManager",
+            "argv": {
+                "--enableScheduleSwitching": "false",
+                "--scheduleManagerHostIP": "127.0.0.1",
+                "--scheduleManagerHostPort": "40100",
+                "--scheduleManagerNumClients": "1"
+            }
+        },
+        "stm_master": {
+            "runOn": "machine0",
+            "executable": "stm_master",
+            "logSpec": "file:{{logpath}}/{{appname}}.log",
+            "argv": {
+                "--allow-unregistered-runnables": true,
+                "--timeout-us": "60000000",
+                "--soc": "TegraA",
+                "-v": true,
+                "-m": true
+            }
+        },
+        "helloworld_process0": {
+            "runOn": "machine0",
+            "executable": "LoaderLite",
+            "subcomponents": [
+                "dwcgfHelloworld.helloWorldNode"
+            ]
+        }
+    },
+    "extraInfo": "./DWCGFHelloworldExtraInfo.json"
+}

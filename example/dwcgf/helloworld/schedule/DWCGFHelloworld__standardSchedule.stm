@@ -1,0 +1,203 @@
+VERSION 15.4.0
+
+SCHEDULE 0
+
+HYPEREPOCH{
+9: [9];
+}
+
+SYNC{
+s0(1,{helloworld_process0:CPU()},{framesync_TegraA_helloworldHyperepoch_helloworldEpoch:CPU()});
+s1(1,{framesync_TegraA_helloworldHyperepoch_helloworldEpoch:CPU()},{helloworld_process0:CPU()});
+}
+
+FENCE{
+f0(s0,1);
+f1(s1,1);
+}
+
+CLIENT(TegraA:helloworld_process0(7)) { 
+RESOURCES{
+}
+CORE(0, 9) {
+WOF f1;
+CALL [9: 0 % 1] helloworld_process0_ssm_pass_0(6);
+CALL [9: 0 % 1] dwcgfHelloworld_helloWorldNode_pass_0(3);
+CALL [9: 0 % 1] dwcgfHelloworld_helloWorldNode_pass_1(4);
+CALL [9: 0 % 1] dwcgfHelloworld_helloWorldNode_pass_2(5);
+SIG  f0;
+}
+}
+CLIENT(TegraA:framesync_TegraA_helloworldHyperepoch_helloworldEpoch(9)) { 
+RESOURCES{
+}
+CORE(0, 9) {
+LOG 0(8);
+SIG  f1;
+WOF [9: 0 % 1] f0;
+LOG 1(8);
+WUP 33000000(8);
+}
+}
+
+METADATA
+!CompiledSchedule
+clients:
+- !CompiledClient
+  framesync_epoch: null
+  framesync_hyperepoch: null
+  id_: helloworld_process0
+  is_deadlock_resolver: false
+  log_id: 7
+  resources: []
+  runnables:
+  - !CompiledRunnable
+    alias_group: null
+    b_level: 61001
+    children_log_ids: [3]
+    client: null
+    critical_path: true
+    dependencies: null
+    end: 7000
+    epoch: null
+    epoch_id: helloworldHyperepoch.helloworldEpoch
+    frame_id: 0
+    id_: helloworld_process0.helloworld_process0_ssm_pass_0
+    log_id: 6
+    modulo: 0
+    parents_log_ids: []
+    post_fence: ''
+    pre_fence_list: [f1]
+    priority: 10
+    resources: [TegraA.CPU0]
+    runnable_type: CPU
+    start: 0
+    step: []
+    submittee: null
+    submittee_id: null
+    t_level: 0
+  - !CompiledRunnable
+    alias_group: null
+    b_level: 61001
+    children_log_ids: [4]
+    client: null
+    critical_path: true
+    dependencies: null
+    end: 23000
+    epoch: null
+    epoch_id: helloworldHyperepoch.helloworldEpoch
+    frame_id: 0
+    id_: helloworld_process0.dwcgfHelloworld_helloWorldNode_pass_0
+    log_id: 3
+    modulo: 0
+    parents_log_ids: [6]
+    post_fence: ''
+    pre_fence_list: []
+    priority: 10
+    resources: [TegraA.CPU0]
+    runnable_type: CPU
+    start: 7000
+    step: []
+    submittee: null
+    submittee_id: null
+    t_level: 0
+  - !CompiledRunnable
+    alias_group: null
+    b_level: 61001
+    children_log_ids: [5]
+    client: null
+    critical_path: true
+    dependencies: null
+    end: 34000
+    epoch: null
+    epoch_id: helloworldHyperepoch.helloworldEpoch
+    frame_id: 0
+    id_: helloworld_process0.dwcgfHelloworld_helloWorldNode_pass_1
+    log_id: 4
+    modulo: 0
+    parents_log_ids: [3]
+    post_fence: ''
+    pre_fence_list: []
+    priority: 10
+    resources: [TegraA.CPU0]
+    runnable_type: CPU
+    start: 23000
+    step: []
+    submittee: null
+    submittee_id: null
+    t_level: 0
+  - !CompiledRunnable
+    alias_group: null
+    b_level: 61001
+    children_log_ids: [8]
+    client: null
+    critical_path: true
+    dependencies: null
+    end: 61000
+    epoch: null
+    epoch_id: helloworldHyperepoch.helloworldEpoch
+    frame_id: 0
+    id_: helloworld_process0.dwcgfHelloworld_helloWorldNode_pass_2
+    log_id: 5
+    modulo: 0
+    parents_log_ids: [4]
+    post_fence: f0
+    pre_fence_list: []
+    priority: 10
+    resources: [TegraA.CPU0]
+    runnable_type: CPU
+    start: 34000
+    step: []
+    submittee: null
+    submittee_id: null
+    t_level: 0
+  schedule: null
+  soc: TegraA
+- !CompiledClient
+  framesync_epoch: helloworldEpoch
+  framesync_hyperepoch: helloworldHyperepoch
+  id_: framesync_TegraA_helloworldHyperepoch_helloworldEpoch
+  is_deadlock_resolver: false
+  log_id: 9
+  resources: []
+  runnables:
+  - !CompiledRunnable
+    alias_group: null
+    b_level: 1
+    children_log_ids: []
+    client: null
+    critical_path: true
+    dependencies: null
+    end: 61001
+    epoch: null
+    epoch_id: helloworldHyperepoch.helloworldEpoch
+    frame_id: 0
+    id_: framesync_TegraA_helloworldHyperepoch_helloworldEpoch.framesync_runnable
+    log_id: 8
+    modulo: 0
+    parents_log_ids: [5]
+    post_fence: f1
+    pre_fence_list: [f0]
+    priority: 0
+    resources: [TegraA.CPU0]
+    runnable_type: CPU
+    start: 61000
+    step: []
+    submittee: null
+    submittee_id: null
+    t_level: 61000
+  schedule: null
+  soc: TegraA
+hyperepochs:
+- !CompiledHyperepoch
+  epochs:
+  - !CompiledEpoch {frames: 1, hyperepoch: null, id_: helloworldHyperepoch.helloworldEpoch,
+    log_id: 1, period: 33000000}
+  id_: helloworldHyperepoch
+  log_id: 2
+  resources: [TegraA.CPU0]
+  schedule: null
+  schedule_length: 61001
+id_: standardSchedule
+resource_type_mapping: {TegraA.CPU0: TegraA.CPU, TegraB.CPU0: TegraB.CPU}
+schedule_identifier: 0

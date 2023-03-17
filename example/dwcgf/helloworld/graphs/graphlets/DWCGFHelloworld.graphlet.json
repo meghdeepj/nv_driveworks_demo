@@ -1,0 +1,30 @@
+{
+    "$schema": "../../../../../doc/schema/graphlet.schema.json",
+    "name": "DWCGFHelloworld",
+    "inputPorts": {},
+    "outputPorts": {
+        "VALUE_0": {
+            "type": "int",
+            "bindingRequired": false
+        },
+        "VALUE_1": {
+            "type": "int",
+            "bindingRequired": false
+        }
+    },
+    "parameters": {
+        "paraName": { "type": "std::string", "default": "helloworld_name" }
+    },
+    "subcomponents": {
+        "helloWorldNode": {
+            "componentType": "../nodes/helloworld/HelloWorldNode.node.json",
+            "parameters": {
+                "name": "$paraName"
+            }
+        }
+    },
+    "connections": [
+        { "src": "helloWorldNode.VALUE_0", "dests": {"VALUE_0": {}}},
+        { "src": "helloWorldNode.VALUE_1", "dests": {"VALUE_1": {}}}
+    ]
+}
