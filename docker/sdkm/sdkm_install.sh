@@ -43,7 +43,7 @@ running_containers=$(docker ps --format "{{.Names}}")
 
 for i in ${running_containers[*]}
 do
-  if [[ "$i" =~ gw_sdk_* ]];then
+  if [[ "$i" =~ gw_sdkm_* ]];then
     printf %-*s 70 "stopping container: $i ..."
     docker stop $i > /dev/null
     if [ $? -eq 0 ];then
@@ -102,9 +102,9 @@ else
 fi
 
 # zs:
-# 如果没有制定docker_repo，则默认是nvcr.io/drive/driveos-sdk/drive-agx-orin-linux-aarch64-sdk-build-x86
+# 如果没有制定docker_repo，则默认是sdkmanager
 if [ -z "${DOCKER_REPO}" ]; then
-    DOCKER_REPO=nvcr.io/drive/driveos-sdk/drive-agx-orin-linux-aarch64-sdk-build-x86
+    DOCKER_REPO=sdkmanager
 fi
 
 # 如果没有制定,默认是22.04
@@ -127,6 +127,8 @@ function local_volumes() {
     set +x
     # Apollo root and bazel cache dirs are required.
     volumes="-v $GW_ROS_ROOT_DIR:/gw_demo \
+            -v /dev/bus/usb:/dev/bus/usb/ \
+            -v /media/$USER:/media/nvidia:slave \
              -v $HOME/.cache:${DOCKER_HOME}/.cache"
     case "$(uname -s)" in
         Linux)
@@ -169,7 +171,7 @@ function main(){
     fi
 
     # zs:
-    GW_CONTAINER_NAME="gw_sdk_${GW_DIST}_${USER}"
+    GW_CONTAINER_NAME="gw_sdkm_${GW_DIST}_${USER}"
     docker ps -a --format "{{.Names}}" | grep "$GW_CONTAINER_NAME" 1>/dev/null
     # 如果成功
     if [ $? == 0 ]; then
@@ -231,19 +233,10 @@ function main(){
 
     set -x
 
-    ${DOCKER_RUN} -it \
-        -d \
+    docker run -it \
         --privileged \
         --name $GW_CONTAINER_NAME \
-        -e DOCKER_USER=$USER \
-        -e USER=$USER \
-        -e DOCKER_USER_ID=$USER_ID \
-        -e DOCKER_GRP="$GRP" \
-        -e DOCKER_GRP_ID=$GRP_ID \
         -e DOCKER_IMG=$IMG \
-        -e USE_GPU=$USE_GPU \
-        -e NVIDIA_VISIBLE_DEVICES=all \
-        -e NVIDIA_DRIVER_CAPABILITIES=compute,video,utility \
         $(local_volumes) \
         --net host \
         -w /gw_demo \
@@ -254,6 +247,15 @@ function main(){
         --pid=host \
         -v /dev/null:/dev/raw1394 \
         $IMG \
+        --cli install  \
+        --logintype devzone \
+        --product DRIVE \
+        --host \
+        --targetos Linux \
+        --version 6.0.6 \
+        --license accept \
+        --staylogin true \
+        --datacollection disable \
         # /bin/bash drive-sdk-docker
     if [ $? -ne 0 ];then
         error "Failed to start docker container \"${GW_CONTAINER_NAME}\" based on image: $IMG"
@@ -261,9 +263,9 @@ function main(){
     fi
     set +x
 
-    if [ "${USER}" != "root" ]; then
-        docker exec $GW_CONTAINER_NAME bash -c '/gw_demo/scripts/docker_adduser.sh'
-    fi
+    # if [ "${USER}" != "root" ]; then
+    #     docker exec $GW_CONTAINER_NAME bash -c '/gw_demo/scripts/docker_adduser.sh'
+    # fi
 
     ok "Finished setting up ga_team/gw origin environment. Now you can enter with: \nbash docker/build/docker_into.sh "
     ok "Enjoy!"

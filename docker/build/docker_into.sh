@@ -52,13 +52,13 @@ xhost +local:root 1>/dev/null 2>&1
 docker exec \
     -u $USER \
     -e HISTFILE=/gw_demo/.dev_bash_hist \
-    -it zs_${GW_DIST}_$USER \
+    -it gw_sdk_${GW_DIST}_$USER \
     /bin/bash
 
 # docker exec \
 #     -u root \
 #     -e HISTFILE=/gw_demo/.dev_bash_hist \
-#     -it zs_${GW_DIST}_$USER \
+#     -it gw_sdk_${GW_DIST}_$USER \
 #     /bin/bash
 
 xhost -local:root 1>/dev/null 2>&1
