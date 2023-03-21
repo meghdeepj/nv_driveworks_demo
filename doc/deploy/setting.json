@@ -1,0 +1,727 @@
+// 将设置放入此文件中以覆盖默认设置
+{
+    // general-setting
+    "files.autoSave": "onFocusChange",
+    "extensions.autoUpdate": false,
+    "git.confirmSync": false,
+    "window.zoomLevel": 0,
+    "workbench.startupEditor": "newUntitledFile",
+    "telemetry.enableTelemetry": false,
+    "telemetry.enableCrashReporter": false,
+    "editor.minimap.enabled": false,
+    "editor.detectIndentation": true,
+    "editor.insertSpaces": true,
+    "editor.rulers": [
+        80,
+        120
+    ],
+    "git.openDiffOnClick": false,
+    "debug.console.fontFamily": "'Consolas ligaturized v3', 'Courier New', monospace",
+    "editor.tabCompletion": "on",
+    "editor.tabSize": 4,
+    "problems.decorations.enabled": false,
+    "files.autoGuessEncoding": false,
+    "problems.autoReveal": false,
+    "git.enableSmartCommit": true,
+    "gitlens.keymap": "chorded",
+    "editor.renderWhitespace": "boundary",
+    "workbench.settings.editor": "json",
+    "editor.fontFamily": "'Consolas ligaturized v3', 'Courier New', monospace",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 14.6,
+    "terminal.integrated.fontSize": 15,
+    "terminal.integrated.fontWeight": "normal",
+    "files.trimTrailingWhitespace": true,
+    "editor.formatOnPaste": false,
+    "git.rebaseWhenSync": true,
+    "git.alwaysShowStagedChangesResourceGroup": true,
+    "editor.dragAndDrop": false,
+    "workbench.editor.tabSizing": "shrink",
+    "extensions.ignoreRecommendations": true,
+    "breadcrumbs.enabled": true,
+    "breadcrumbs.filePath": "off",
+    "breadcrumbs.symbolSortOrder": "name",
+    "markdown.preview.breaks": true,
+    "terminal.integrated.scrollback": 115200,
+    "explorer.autoReveal": false,
+    "workbench.iconTheme": "vscode-icons",
+    // favorites
+    "favorites.storageFilePath": "./.vscode/.favorites.json",
+    // trailing-spaces
+    "trailing-spaces.deleteModifiedLinesOnly": true,
+    "trailing-spaces.trimOnSave": true,
+    "trailing-spaces.saveAfterTrim": true,
+    "trailing-spaces.highlightCurrentLine": false,
+    "editor.accessibilitySupport": "off",
+    "workbench.tree.indent": 4,
+    "sync.gist": "55b317f87e140d02ac025be7efd0c626",
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": false,
+        "strings": false
+    },
+    "editor.suggest.localityBonus": true,
+    "files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        "**/node_modules/*/**": true,
+        "**/__pycache__/*/**": true
+    },
+    "window.title": "${dirty}${rootName}${separator}${activeEditorShort}${separator}",
+    "search.maintainFileSearchCache": true,
+    "search.smartCase": true,
+    "debug.inlineValues": true,
+    "scm.alwaysShowProviders": true,
+    "terminal.integrated.env.linux": {},
+    "terminal.integrated.env.windows": {},
+    "partialDiff.enableTelemetry": false,
+    "cSpell.allowCompoundWords": true,
+    "git.autofetch": true,
+    "git.autoStash": true,
+    "git.fetchOnPull": true,
+    "git.ignoreLegacyWarning": true,
+    "git.ignoreLimitWarning": true,
+    "textmarker.autoSelectDistinctiveTextColor": true,
+    "python.globalModuleInstallation": true,
+    // integrated terminal
+    "terminal.integrated.shell.windows": "D:\\Program Files\\Git\\bin\\bash.exe",
+    "terminal.integrated.shellArgs.windows": [
+        "--login",
+        "-i"
+    ],
+    // files-exclude and include
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        // for unity
+        // "**/*.meta": true,
+        "**/*.asmdef": true,
+        "**/*.*.meta": true,
+        "**/*.unity": true,
+        "**/*.unityproj": true,
+        "**/*.mat": true,
+        "**/*.tga": true,
+        "**/*.cubemap": true,
+        "**/*.prefab": true,
+        "**/Library": true,
+        "**/ProjectSettings": true,
+        "**/Temp": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/_gsdata_": true,
+        "*.*~": true,
+        "**/*.pyc": true,
+        "**/~$*": true,
+        "**/*.beam": true,
+        "**/ipch/*": true,
+        "**/DebugVs/*": true,
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true,
+        // for linux kernel
+        "**/.*.*.cmd": true,
+        "**/.*.d": true,
+        "**/.*.S": true,
+        "**/__pycache__": true,
+    },
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/.DS_Store": true,
+        "**/_gsdata_": true,
+        "**/ipch": true,
+        "**/DebugVs/*": true,
+        "**/*.pyc": true,
+        "**/*.ipch": true,
+        "**/*.obj": true,
+        "**/*.a": true,
+        "**/*.dll": true,
+        "**/__pycache__": true,
+        "**/build": false,
+        "**/colcon": true
+    },
+    "search.useIgnoreFiles": false,
+    "search.useGlobalIgnoreFiles": false,
+    // file specific setting
+    "[cpp]": {
+        "editor.quickSuggestions": {
+            "comments": "on",
+            "strings": "on",
+            "other": "on"
+        },
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+    "[c]": {
+        "editor.quickSuggestions": {
+            "comments": "on",
+            "strings": "on",
+            "other": "on"
+        },
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+    "[python]": {
+        "editor.detectIndentation": true,
+        "files.autoGuessEncoding": true
+    },
+    "[PlantUML]": {},
+    "[xml]": {
+        // xml文件使用tab
+        "editor.detectIndentation": true,
+        "files.encoding": "utf8",
+        "editor.defaultFormatter": "redhat.vscode-xml"
+    },
+    "[sdl]": {
+        // xml文件使用tab
+        "editor.detectIndentation": true,
+        "files.encoding": "utf8"
+    },
+    "[html]": {
+        "editor.tabSize": 2,
+        "files.encoding": "utf8"
+    },
+    "[yang]": {
+        "editor.tabSize": 2,
+        "files.encoding": "utf8"
+    },
+    "[shellscript]": {
+        "files.encoding": "utf8",
+        "files.eol": "\n",
+        "files.autoGuessEncoding": true
+    },
+    "[groovy]": {
+        "files.encoding": "utf8"
+    },
+    "[tcl]": {
+        "files.encoding": "gb2312"
+    },
+    "clang.cflags": [
+        "-std=c99"
+    ],
+    "clang.cxxflags": [
+        "-std=c++11"
+    ],
+    // code-spell checker
+    "cSpell.userWords": [
+        "Fira",
+        "LLVM",
+        "Makefiles",
+        "Multiline",
+        "Odometry",
+        "PCRE",
+        "POSIX",
+        "Struct",
+        "acado",
+        "amcl",
+        "autopep",
+        "bazel",
+        "bspmake",
+        "cmake",
+        "colormcu",
+        "conda",
+        "cplus",
+        "cppcheck",
+        "cuda",
+        "cudnn",
+        "cxxflags",
+        "devel",
+        "doxdocgen",
+        "eabi",
+        "executables",
+        "fastrtps",
+        "flexelint",
+        "flylint",
+        "gitlens",
+        "gmapping",
+        "gnueabi",
+        "gpuac",
+        "gsdata",
+        "gtest",
+        "gzclient",
+        "gzserver",
+        "hokuyo",
+        "imshow",
+        "intelli",
+        "ipch",
+        "jupyter",
+        "kinect",
+        "lgsvl",
+        "lizhensheng",
+        "mingw",
+        "mkdir",
+        "monospace",
+        "mrobot",
+        "msgs",
+        "nanosec",
+        "numpy",
+        "plantuml",
+        "pylint",
+        "pyplot",
+        "pytest",
+        "rclpy",
+        "repos",
+        "roscore",
+        "rosdep",
+        "rosdistro",
+        "roslaunch",
+        "rospy",
+        "rosrun",
+        "rostopic",
+        "rplidar",
+        "rtps",
+        "rviz",
+        "scrollback",
+        "shellcheck",
+        "shellformat",
+        "shfmt",
+        "sqlite",
+        "srcs",
+        "tenv",
+        "tparam",
+        "uboot",
+        "urdf",
+        "venv",
+        "vnavfusion",
+        "vsintellicode",
+        "webots",
+        "xacro",
+        "xquery",
+        "zhensheng"
+    ],
+    "cSpell.language": "en",
+    // c-cpp-flylint
+    "c-cpp-flylint.clang.enable": false,
+    "c-cpp-flylint.cppcheck.enable": false,
+    "c-cpp-flylint.flexelint.enable": false,
+    "c-cpp-flylint.run": "onSave",
+    "c-cpp-flylint.includePaths": [
+        "${workspaceFolder}",
+        "${workspaceFolder}/include",
+        "${workspaceRoot}",
+        "/usr/include",
+        "/usr/local/include",
+    ],
+    "c-cpp-flylint.debug": false,
+    // cpplint
+    // "cpplint.cpplintPath": "C:\\Users\\zhens\\Anaconda2\\Scripts\\cpplint.exe",
+    // "cpplint.lintMode": "single",
+    // cmake-tools-helper
+    // todo:
+    "todohighlight.isCaseSensitive": false,
+    // auto comment tools
+    "better-comments.tags": [
+        {
+            "tag": "!",
+            "color": "#FF2D00",
+            "strikethrough": false,
+            "backgroundColor": "transparent"
+        },
+        {
+            "tag": "?",
+            "color": "#3498DB",
+            "strikethrough": false,
+            "backgroundColor": "transparent"
+        },
+        {
+            "tag": "//",
+            "color": "#474747",
+            "strikethrough": true,
+            "backgroundColor": "transparent"
+        },
+        {
+            "tag": "todo",
+            "color": "#FF8C00",
+            "strikethrough": false,
+            "backgroundColor": "transparent"
+        },
+        {
+            "tag": "*",
+            "color": "#98C379",
+            "strikethrough": false,
+            "backgroundColor": "transparent"
+        },
+        {
+            "tag": "~",
+            "color": "#98C379",
+            "strikethrough": false,
+            "backgroundColor": "transparent"
+        },
+    ],
+    // function header
+    "doxdocgen.generic.order": [
+        "brief",
+        "tparam",
+        "param",
+        "return"
+    ],
+    "doxdocgen.file.fileOrder": [
+        "file",
+        "author",
+        "brief",
+        "version",
+        "date",
+        "empty",
+        "copyright",
+        "empty",
+        "custom"
+    ],
+    "doxdocgen.c.triggerSequence": "///",
+    "doxdocgen.generic.splitCasingSmartText": true,
+    "doxdocgen.file.copyrightTag": [
+        "@copyright Copyright (c) {year}"
+    ],
+    "doxdocgen.generic.paramTemplate": "\\param{indent:10}{param}{indent:2} My Param doc",
+    "doxdocgen.generic.returnTemplate": "\\return{indent:10}{type}{indent:2} My Param doc",
+    "doxdocgen.generic.briefTemplate": "\\brief{indent:10}{text}{indent:2} My Param doc",
+    "doxdocgen.cpp.tparamTemplate": "\\tparam{indent:10}{param}{indent:2} My Param doc",
+    "doxdocgen.file.fileTemplate": "\\file{indent:10}{name}",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "python.jediEnabled": false,
+    "doxdocgen.generic.authorEmail": "lizhensheng03@countrygarden.com.cn",
+    "doxdocgen.generic.authorName": "lizhensheng",
+    // simple tag string
+    // section divider
+    // auto-close-tag
+    "auto-close-tag.SublimeText3Mode": true,
+    // auto comment tools
+    // file Header
+    "psi-header.config": {
+        "forceToTop": true,
+        "blankLinesAfter": 6,
+        "license": "Custom"
+    },
+    "psi-header.changes-tracking": {
+        "isActive": true,
+        "modAuthor": "修 改 人: ",
+        "modDate": "修改日期: ",
+        "modDateFormat": "YYYY-MM-DD, h:mm:ss a",
+        "include": [],
+        "exclude": [
+            "markdown",
+            "json"
+        ],
+        "autoHeader": "off"
+    },
+    "psi-header.license-text": [
+        "Copyright (C) 2019-2020, <<company>>"
+    ],
+    "psi-header.variables": [
+        [
+            "company",
+            "lizhensheng"
+        ],
+        [
+            "author",
+            "lizhensheng"
+        ],
+        [
+            "authoremail",
+            "zhensheng@outlook.com"
+        ]
+    ],
+    "psi-header.lang-config": [
+        {
+            "language": "cpp",
+            "begin": "/*******************************************************************************",
+            "prefix": "* ",
+            "end": "*******************************************************************************/",
+            "blankLinesAfter": 1
+        },
+        {
+            "language": "c",
+            "mapTo": "cpp"
+        },
+        {
+            "language": "shellscript",
+            "begin": "",
+            "prefix": "# ",
+            "end": "",
+            "blankLinesAfter": 1,
+            "beforeHeader": [
+                "#!/bin/sh\n"
+            ]
+        },
+        {
+            "language": "bat",
+            "begin": "",
+            "prefix": "@ REM ",
+            "end": "",
+            "blankLinesAfter": 1
+        },
+        {
+            "language": "python",
+            "begin": "'''",
+            "prefix": "* ",
+            "end": "'''",
+            "blankLinesAfter": 1,
+            "beforeHeader": [
+                "# -*- coding:utf-8 -*-\n"
+            ]
+        },
+        {
+            "language": "PlantUML",
+            "begin": "",
+            "prefix": "' ",
+            "end": "",
+            "blankLinesAfter": 1
+        }
+    ],
+    "psi-header.templates": [
+        {
+            "language": "cpp",
+            "template": [
+                "Copyright (c) <<year>> <<company>>",
+                "文件名称:  <<filename>>",
+                "内容摘要:  简要描述本文件的内容，包括主要模块、函数及其功能的说明",
+                "其他说明:  其它内容的说明",
+                "作    者:  <<author>> (<<authoremail>>)",
+                "完成日期:  <<dateformat('YYYY-MM-DD, h:mm:ss a')>>",
+                "",
+                "修改记录:",
+                "修改日期\t修改者\t修改内容",
+            ],
+            "changeLogCaption": "修改记录:",
+            "changeLogHeaderLineCount": 1,
+            "changeLogEntryTemplate": [
+                "<<dateformat(DD-MM-YYYY)>>\t<<initials>>\t"
+            ]
+        },
+        {
+            "language": "python",
+            "template": [
+                "Copyright (c) <<year>> <<company>>",
+                "文件名称:  <<filename>>",
+                "内容摘要:  简要描述本文件的内容，包括主要模块、函数及其功能的说明",
+                "其他说明:  其它内容的说明",
+                "作    者:  <<author>>",
+                "完成日期:  <<dateformat('YYYY-MM-DD, h:mm:ss a')>>",
+                "",
+                "用法说明:",
+                "",
+                "修改记录:",
+                "修改日期\t修改者\t修改内容",
+            ],
+            "changeLogCaption": "修改记录:",
+            "changeLogHeaderLineCount": 1,
+            "changeLogEntryTemplate": [
+                "<<dateformat(DD-MM-YYYY)>>\t<<initials>>\t"
+            ]
+        },
+        {
+            "language": "c",
+            "mapTo": "cpp"
+        },
+        {
+            "language": "shellscript",
+            "mapTo": "python"
+        },
+        {
+            "language": "bat",
+            "mapTo": "python"
+        },
+        {
+            "language": "PlantUML",
+            "mapTo": "python"
+        }
+    ],
+    // section divider
+    "divider.text.level1": "*",
+    "divider.text.level2": "*",
+    "divider.endColumn": 80,
+    "divider.lines": 3, // simple tag string
+    "tagged.tagString": "// #year-#month-#day - 黎振胜: #enteredText",
+    // markdown paste
+    // "pasteImage.path": "${projectRoot}/docs/image/",
+    "pasteImage.path": "./doc/image/",
+    // xml-tools
+    "xmlTools.xqueryExecutionEngine": "D:\\Program Files (x86)\\Altova\\XMLSpy2012\\XMLSpy.exe",
+    // jupyter
+    "gitlens.advanced.messages": {
+        "suppressCommitHasNoPreviousCommitWarning": false,
+        "suppressCommitNotFoundWarning": false,
+        "suppressFileNotUnderSourceControlWarning": false,
+        "suppressGitVersionWarning": false,
+        "suppressLineUncommittedWarning": false,
+        "suppressNoRepositoryWarning": false,
+        "suppressResultsExplorerNotice": false,
+        "suppressShowKeyBindingsNotice": true,
+        "suppressUpdateNotice": true,
+        "suppressWelcomeNotice": true
+    },
+    // cmake
+    "cmake.generator": "Unix Makefiles",
+    "cmake.configureOnOpen": false,
+    // python and pytest
+    "python.autoComplete.addBrackets": true,
+    "python.testing.pytestEnabled": false,
+    "python.testing.pytestArgs": [],
+    "python.pythonPath": "python",
+    "python.formatting.provider": "autopep8",
+    "python.linting.pylintArgs": [
+        // "--include-naming-hint=n",
+        "--disable=W0311",
+        "--disable=W0611",
+        // "--disable=C0103",
+        // "--disable=E1101",
+        "--disable=C0301",
+        "--disable=C0111",
+    ],
+    "python.formatting.autopep8Args": [
+        "--max-line-length=120",
+        "--indent-size=4"
+    ],
+    // gitlab
+    "gitlab.instanceUrl": "https://gitlab.bzlrobot.com/",
+    // shellformater
+    // "shellformat.path": "/home/zs/bin/shfmt_v2.6.4_linux_amd64",
+    // "bashIde.path": "/usr/local/bin/bash-language-server",
+    "shellcheck.executablePath": "shellcheck",
+    "shellcheck.run": "onSave",
+    "shellcheck.disableVersionCheck": true,
+    "gitlens.views.fileHistory.enabled": true,
+    "gitlens.views.lineHistory.enabled": true,
+    "cSpell.enabledLanguageIds": [
+        "asciidoc",
+        "c",
+        "csharp",
+        "css",
+        "go",
+        "handlebars",
+        "html",
+        "jade",
+        "java",
+        "javascript",
+        "javascriptreact",
+        "json",
+        "jsonc",
+        "latex",
+        "less",
+        "markdown",
+        "php",
+        "plaintext",
+        "pug",
+        "restructuredtext",
+        "rust",
+        "scala",
+        "scss",
+        "text",
+        "typescript",
+        "typescriptreact",
+        "yaml",
+        "yml"
+    ],
+    "C_Cpp.intelliSenseEngine": "Tag Parser",
+    "files.associations": {
+        "*.mak": "makefile",
+        "*makefile*": "makefile",
+        "boardcfg": "makefile",
+        "*rc.in": "cpp",
+        "*.lds": "c",
+        "Kconfig": "automake",
+        ".config": "automake",
+        "*config": "automake",
+        "*.make": "makefile",
+        "*.cfg": "python",
+        "*.sdf": "xml",
+        "*.world": "xml",
+        "*.config": "xml",
+        "*.cu": "c",
+        "install-sh": "shellscript",
+        "*.pb.txt": "yaml",
+        "*.cmake.in": "cmake",
+        "*.controller": "yaml",
+        "*.asmdef": "json",
+        "*.asset": "yaml",
+        "*.prefab": "yaml",
+        "*.mat": "yaml",
+        "*.tpp": "cpp",
+        "*log": "log",
+        "*.meta": "yaml",
+        "*.em": "cpp",
+        "*.cpp": "cpp",
+        "*.h": "cpp",
+        "*.repos": "yaml",
+        "*.urdf": "xml",
+        "*.xacro": "xml"
+    },
+    "editor.renderControlCharacters": true,
+    "vsicons.dontShowNewVersionMessage": true,
+    "clangd.path": "/usr/bin/clangd-8",
+    "git.detectSubmodules": false,
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "window.titleBarStyle": "custom",
+    "task.autoDetect": "off",
+    "oneDarkPro.bold": true,
+    "workbench.colorTheme": "One Dark Pro",
+    "plantuml.diagramsRoot": "zs_launch/doc/uml/src",
+    "plantuml.exportFormat": "png",
+    "plantuml.exportOutDir": "zs_launch/doc/uml/out",
+    "cortex-debug.enableTelemetry": false,
+    "gitlens.advanced.telemetry.enabled": false,
+    "workbench.enableExperiments": false,
+    "doxdocgen.generic.authorTag": "@author {author}",
+    "terminal.integrated.rendererType": "dom",
+    "bazel.buildifierExecutable": "/home/zs/opt/bazel/buildifier",
+    "bazel.buildifierFixOnFormat": true,
+    "docker.networks.groupBy": "CreatedTime",
+    "docker.defaultRegistryPath": "https://docker.mirrors.ustc.edu.cn/",
+    "testMate.cpp.log.logSentry": "disable_3",
+    "testMate.cpp.log.userId": "cabf200df5a7dcbb3db49333548fe678f3b5d5ac",
+    "testMate.cpp.test.executables": "./build/bin/*Test",
+    "python.languageServer": "Microsoft",
+    "cSpell.enableFiletypes": [
+        "c"
+    ],
+    "python.showStartPage": false,
+    "cmake.configureOnEdit": false,
+    "testMate.cpp.test.parallelExecutionLimit": 10,
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "git.ignoreMissingGitWarning": true,
+    "omnisharp.useGlobalMono": "always",
+    "redhat.telemetry.enabled": false,
+    "githubPullRequests.remotes": [
+        "origin",
+        "upstream",
+        "github",
+        "remote"
+    ],
+    "githubIssues.queries": [
+        {
+            "label": "My Issues",
+            "query": "default"
+        },
+        {
+            "label": "Created Issues",
+            "query": "author:${user} state:open repo:${owner}/${repository} sort:created-desc"
+        }
+    ],
+    "terminal.integrated.tabs.enabled": true,
+    "rust-analyzer.debug.engine": "vadimcn.vscode-lldb",
+    "settingsSync.ignoredSettings": [
+        "-C_Cpp.clang_format_path"
+    ],
+    "C_Cpp.clang_format_path": "/usr/bin/clang-format",
+    "todohighlight.keywords": [
+        "todo:",
+        "/// @todo"
+    ],
+    "rust-analyzer.diagnostics.enableExperimental": false,
+    "rust-analyzer.updates.askBeforeDownload": true,
+    "security.workspace.trust.untrustedFiles": "open",
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "projectManager.git.baseFolders": [
+        "~/zs_ws/"
+    ],
+    "update.mode": "none",
+    "extensions.autoCheckUpdates": false,
+    "update.showReleaseNotes": false,
+    // "rust-analyzer.server.path": "~/.cargo/bin/rust-analyzer"
+}

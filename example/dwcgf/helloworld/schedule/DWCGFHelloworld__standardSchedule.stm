@@ -1,4 +1,4 @@
-VERSION 15.4.0
+VERSION 16.1.0
 
 SCHEDULE 0
 
@@ -36,7 +36,7 @@ LOG 0(8);
 SIG  f1;
 WOF [9: 0 % 1] f0;
 LOG 1(8);
-WUP 33000000(8);
+WUP 330000000(8);
 }
 }
 
@@ -65,6 +65,7 @@ clients:
     id_: helloworld_process0.helloworld_process0_ssm_pass_0
     log_id: 6
     modulo: 0
+    monitoring: false
     parents_log_ids: []
     post_fence: ''
     pre_fence_list: [f1]
@@ -90,6 +91,7 @@ clients:
     id_: helloworld_process0.dwcgfHelloworld_helloWorldNode_pass_0
     log_id: 3
     modulo: 0
+    monitoring: false
     parents_log_ids: [6]
     post_fence: ''
     pre_fence_list: []
@@ -115,6 +117,7 @@ clients:
     id_: helloworld_process0.dwcgfHelloworld_helloWorldNode_pass_1
     log_id: 4
     modulo: 0
+    monitoring: false
     parents_log_ids: [3]
     post_fence: ''
     pre_fence_list: []
@@ -140,6 +143,7 @@ clients:
     id_: helloworld_process0.dwcgfHelloworld_helloWorldNode_pass_2
     log_id: 5
     modulo: 0
+    monitoring: false
     parents_log_ids: [4]
     post_fence: f0
     pre_fence_list: []
@@ -175,6 +179,7 @@ clients:
     id_: framesync_TegraA_helloworldHyperepoch_helloworldEpoch.framesync_runnable
     log_id: 8
     modulo: 0
+    monitoring: false
     parents_log_ids: [5]
     post_fence: f1
     pre_fence_list: [f0]
@@ -192,7 +197,7 @@ hyperepochs:
 - !CompiledHyperepoch
   epochs:
   - !CompiledEpoch {frames: 1, hyperepoch: null, id_: helloworldHyperepoch.helloworldEpoch,
-    log_id: 1, period: 33000000}
+    log_id: 1, period: 330000000}
   id_: helloworldHyperepoch
   log_id: 2
   resources: [TegraA.CPU0]

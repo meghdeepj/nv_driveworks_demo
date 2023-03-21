@@ -16,7 +16,7 @@
 // components in life support devices or systems without express written approval of
 // NVIDIA CORPORATION & AFFILIATES.
 //
-// SPDX-FileCopyrightText: Copyright (c) 2021 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+// SPDX-FileCopyrightText: Copyright (c) 2021-2022 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
 // SPDX-License-Identifier: LicenseRef-NvidiaProprietary
 //
 // NVIDIA CORPORATION, its affiliates and licensors retain all intellectual
@@ -48,7 +48,7 @@ namespace framework
 
 struct HelloWorldNodeParams
 {
-    std::string name;
+    dw::core::FixedString<64> name;
 };
 
 class HelloWorldNode : public ExceptionSafeProcessNode
@@ -82,7 +82,7 @@ public:
         return describeConstructorArguments<HelloWorldNodeParams, dwContextHandle_t>(
             describeConstructorArgument(
                 DW_DESCRIBE_PARAMETER(
-                    std::string,
+                    dw::core::FixedString<64>,
                     "name"_sv,
                     &HelloWorldNodeParams::name)),
             describeConstructorArgument(

@@ -114,7 +114,7 @@ endif()
 unset(_NVMEDIA_FIND_LIBRARY_PATHS)
 
 set(NvMedia_VERSION)
-if(NvMedia_INCLUDE_DIR)
+if(NvMedia_INCLUDE_DIR AND NvMedia_LIBRARY)
     file(STRINGS "${NvMedia_INCLUDE_DIR}/nvmedia_core.h" _NVMEDIA_VERSION_STRINGS
         REGEX "^#define NVMEDIA_RELEASE_VERSION_(MAJOR|MINOR)[ ]+[0-9]+$"
     )

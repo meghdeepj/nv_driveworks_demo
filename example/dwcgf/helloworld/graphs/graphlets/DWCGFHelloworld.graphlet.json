@@ -1,5 +1,4 @@
 {
-    "$schema": "../../../../../doc/schema/graphlet.schema.json",
     "name": "DWCGFHelloworld",
     "inputPorts": {},
     "outputPorts": {

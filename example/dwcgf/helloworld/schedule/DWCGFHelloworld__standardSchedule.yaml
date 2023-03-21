@@ -37,8 +37,8 @@ standardSchedule:
       Epochs:
       - helloworldEpoch:
           Frames: 1
-          Period: 33.00 ms
-      Period: 33.00 ms
+          Period: 330.00 ms
+      Period: 330.00 ms
       Resources:
       - TegraA.CPU0
   Identifier: 0

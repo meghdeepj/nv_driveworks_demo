@@ -41,13 +41,7 @@ namespace framework
 std::unique_ptr<HelloWorldNode>
 HelloWorldNode::create(ParameterProvider& provider)
 {
-    auto constructorArguments    = dw::framework::createConstructorArguments<HelloWorldNode>();
-    HelloWorldNodeParams& params = std::get<0>(constructorArguments);
-    provider.getRequired("name", &(params.name));
-
-    dw::framework::populateParameters<HelloWorldNode>(constructorArguments, provider);
-
-    return dw::framework::makeUniqueFromTuple<HelloWorldNode>(std::move(constructorArguments));
+    return dw::framework::create<HelloWorldNode>(provider);
 }
 
 HelloWorldNode::HelloWorldNode(const HelloWorldNodeParams& params, const dwContextHandle_t ctx)

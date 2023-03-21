@@ -213,13 +213,18 @@ if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/cmake/Toolchain-V5_private.cmake)
   include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/Toolchain-V5_private.cmake)
 endif()
 
-set(LD_PATH ${VIBRANTE_PDK}/lib-target:${VIBRANTE_PDK}/nvidia-bsp/aarch64le/usr/lib)
+set(LD_PATH ${VIBRANTE_PDK}/lib-target)
 set(QNX_LIBRARY_DIRS /usr/lib/${CMAKE_LIBRARY_ARCHITECTURE})
+set(BSP_LIBRARY_DIRS ${VIBRANTE_PDK}/nvidia-bsp/aarch64le/usr/lib)
 set(CUDA_LIBRARY_DIRS ${CUDA_DIR}/targets/aarch64-qnx/lib)
 # Please, be careful looks like "-Wl,-unresolved-symbols=ignore-in-shared-libs" can lead to silent "ld" problems
 set(CMAKE_SHARED_LINKER_FLAGS   "${QNX_LINKER_FLAGS} -L${LD_PATH} -Wl,-rpath-link,${LD_PATH} ${CMAKE_SHARED_LINKER_FLAGS}")
 set(CMAKE_MODULE_LINKER_FLAGS   "${QNX_LINKER_FLAGS} -L${LD_PATH} -Wl,-rpath-link,${LD_PATH} ${CMAKE_MODULE_LINKER_FLAGS}")
-set(CMAKE_EXE_LINKER_FLAGS      "${QNX_LINKER_FLAGS} -L${CUDA_LIBRARY_DIRS} -Wl,-rpath-link,${CUDA_LIBRARY_DIRS} -L${LD_PATH} -Wl,-rpath-link,${LD_PATH}  -L${QNX_LIBRARY_DIRS} -Wl,-rpath-link,${QNX_LIBRARY_DIRS} ${CMAKE_EXE_LINKER_FLAGS}")
+set(CMAKE_EXE_LINKER_FLAGS      "${QNX_LINKER_FLAGS} -L${CUDA_LIBRARY_DIRS} -Wl,-rpath-link,${CUDA_LIBRARY_DIRS} \
+                                -L${LD_PATH} -Wl,-rpath-link,${LD_PATH} \
+                                -L${QNX_LIBRARY_DIRS} -Wl,-rpath-link,${QNX_LIBRARY_DIRS} \
+                                -L${BSP_LIBRARY_DIRS} -Wl,-rpath-link,${BSP_LIBRARY_DIRS} \
+                                ${CMAKE_EXE_LINKER_FLAGS}")
 if(VIBRANTE_PDK_VERSION STREQUAL 5.1.12.4)
     set(BSP_PATH ${VIBRANTE_PDK}/nvidia-bsp/aarch64le/usr/lib/)
     set(CMAKE_SHARED_LINKER_FLAGS   "${CMAKE_SHARED_LINKER_FLAGS} -L${BSP_PATH}")

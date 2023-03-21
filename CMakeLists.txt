@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.14 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.16 FATAL_ERROR)
 
 #-------------------------------------------------------------------------------
 # Set basic configurations
@@ -82,14 +82,18 @@ set(Driveworks_LIBRARIES
     )
 
 if(VIBRANTE)
-    find_package(cuPVA MODULE REQUIRED)
-    list(APPEND Driveworks_LIBRARIES ${vibrante_LIBRARIES} ${vibrante_Xlibs_LIBRARIES} cuPVA::cuPVA)
+    list(APPEND Driveworks_LIBRARIES ${vibrante_LIBRARIES} ${vibrante_Xlibs_LIBRARIES})
     find_package(cuDLA MODULE)
     if(cuDLA_FOUND)
         list(APPEND Driveworks_LIBRARIES cuDLA::cuDLA)
     endif()
+    find_package(cuPVA MODULE)
+    if(cuPVA_FOUND)
+        list(APPEND Driveworks_LIBRARIES cuPVA::cuPVA)
+    endif()
     find_package(NvMedia MODULE)
     if(NvMedia_FOUND)
+        include_directories(${NvMedia_INCLUDE_DIR})
         list(APPEND Driveworks_LIBRARIES NvMedia::NvMedia)
     else()
         message(STATUS "Skipping nvmedia settings.")
@@ -104,18 +108,14 @@ endif()
 # gw_demos
 #-------------------------------------------------------------------------------
 set(SAMPLES dwcgf;)
-file(GLOB ADDITIONAL_SAMPLES "CMakeListsSamples*.txt")
-foreach(ADDITIONAL_SAMPLE ${ADDITIONAL_SAMPLES})
-  include(${ADDITIONAL_SAMPLE})
-endforeach()
+    file(GLOB ADDITIONAL_SAMPLES "CMakeListsSamples*.txt")
+    foreach(ADDITIONAL_SAMPLE ${ADDITIONAL_SAMPLES})
+        include(${ADDITIONAL_SAMPLE})
+    endforeach()
 
-foreach(SAMPLE ${SAMPLES})
-    # if(NOT VIBRANTE AND ${SAMPLE} STREQUAL "camera_interprocess")
-    #     message(STATUS "Skipping camera_interprocess sample on X86")
-    # else()
+    foreach(SAMPLE ${SAMPLES})
         add_subdirectory(example/${SAMPLE})
-    # endif()
-endforeach()
+    endforeach()
 
 # Create a symlink '_data' to '<DW-install>/data' in the build folder's root, so that `DataPath`
 # can lookup the required path independent of the build folder's location relative to the
@@ -125,6 +125,9 @@ if(NOT EXISTS "${DW_ROOT}/data/DATA_ROOT")
                     "likely because DW sample code was moved from install location or installation is incomplete. "
                     "Samples will likely not run correctly")
 endif()
+
+message(STATUS "zs: LINUX is: ${LINUX}")
+message(STATUS "zs: VIBRANTE is: ${VIBRANTE}")
 
 # install
 # https://blog.csdn.net/qq_38410730/article/details/102837401

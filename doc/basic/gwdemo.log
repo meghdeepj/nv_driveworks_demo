@@ -1,0 +1,101 @@
+-- SDK_SOURCE_DIR is: /gw_demo
+-- SDK_BINARY_DIR is: /gw_demo/target/gw_demo-linux-aarch64
+-- VIBRANTE_PDK = /drive/drive-linux
+-- Found PDK version 6.0.6.0 (6000600)
+-- VIBRANTE_PDK = /drive/drive-linux
+-- Found PDK version 6.0.6.0 (6000600)
+-- The C compiler identification is GNU 9.3.0
+-- The CXX compiler identification is GNU 9.3.0
+-- Check for working C compiler: /drive/drive-linux/../toolchains/aarch64--glibc--stable-2022.03-1/bin/aarch64-linux-gcc
+-- Check for working C compiler: /drive/drive-linux/../toolchains/aarch64--glibc--stable-2022.03-1/bin/aarch64-linux-gcc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /drive/drive-linux/../toolchains/aarch64--glibc--stable-2022.03-1/bin/aarch64-linux-g++
+-- Check for working CXX compiler: /drive/drive-linux/../toolchains/aarch64--glibc--stable-2022.03-1/bin/aarch64-linux-g++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- The CUDA compiler identification is NVIDIA 11.4.327
+-- Check for working CUDA compiler: /usr/local/cuda/bin/nvcc
+-- Check for working CUDA compiler: /usr/local/cuda/bin/nvcc -- works
+-- Detecting CUDA compiler ABI info
+-- Detecting CUDA compiler ABI info - done
+-- Found PkgConfig: /usr/bin/pkg-config (found version "0.29.1")
+-- Found EGL: /drive/drive-linux/lib-target/libEGL.so
+-- Found /drive/drive-linux/lib-target/libEGL.so:
+--  - Includes: [/drive/drive-linux/include]
+--  - Libraries: [/drive/drive-linux/lib-target/libEGL.so]
+-- Found: /drive/drive-linux/lib-target/libdrm.so
+-- Header at: /drive/drive-linux/include
+-- DW_EXPERIMENTAL_FORCE_EGL set and EGL Support Enabled
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - found
+-- Found Threads: TRUE
+-- Cross Compiling for Vibrante
+-- The TensorRT version is TRT 8.5.10.4
+-- Building GLFW for X11 (shared)
+-- Found X11: /drive/drive-linux/include
+-- Looking for XOpenDisplay in /drive/drive-linux/lib-target/libX11.so;/drive/drive-linux/lib-target/libXext.so
+-- Looking for XOpenDisplay in /drive/drive-linux/lib-target/libX11.so;/drive/drive-linux/lib-target/libXext.so - found
+-- Looking for gethostbyname
+-- Looking for gethostbyname - found
+-- Looking for connect
+-- Looking for connect - found
+-- Looking for remove
+-- Looking for remove - found
+-- Looking for shmat
+-- Looking for shmat - found
+-- Looking for IceConnectionNumber in ICE
+-- Looking for IceConnectionNumber in ICE - not found
+-- VIBRANTE_PDK_BRANCH = 6.0.6.0
+-- Found vibrante lib: /gw_demo/3rdparty/linux-aarch64/vibrante/lib/libudev.so
+-- Found vibrante lib: /gw_demo/3rdparty/linux-aarch64/vibrante/lib/libusb-1.0.so
+-- Found vibrante_Xlib: /gw_demo/3rdparty/linux-aarch64/vibrante_Xlibs/lib/libXcursor.so
+-- **** Please copy the contents of `/gw_demo/target/gw_demo-linux-aarch64/install/gw_demo/bin' on the host filesystem to `/gw_demo/bin' on the target filesystem. ****
+-- Found CUDART: /drive/drive-linux/filesystem/targetfs/usr/local/cuda/targets/aarch64-linux/include
+-- Found cuBLAS: /drive/drive-linux/filesystem/targetfs/usr/local/cuda/targets/aarch64-linux/include
+-- Found 'dw/core/base/Version.h' in /usr/local/driveworks-5.10/targets/aarch64-Linux/include
+-- Found dw_base library in /drive/drive-linux/filesystem/targetfs/usr/local/driveworks-5.10/targets/aarch64-Linux/lib/libdw_base.so
+-- Found 'dw/core/base/Version.h' in /usr/local/driveworks-5.10/targets/aarch64-Linux/include
+-- Found dw_calibration library in /drive/drive-linux/filesystem/targetfs/usr/local/driveworks-5.10/targets/aarch64-Linux/lib/libdw_calibration.so
+-- Found 'dw/core/base/Version.h' in /usr/local/driveworks-5.10/targets/aarch64-Linux/include
+-- Found dw_egomotion library in /drive/drive-linux/filesystem/targetfs/usr/local/driveworks-5.10/targets/aarch64-Linux/lib/libdw_egomotion.so
+-- Found 'dw/core/base/Version.h' in /usr/local/driveworks-5.10/targets/aarch64-Linux/include
+-- Found dw_imageprocessing library in /drive/drive-linux/filesystem/targetfs/usr/local/driveworks-5.10/targets/aarch64-Linux/lib/libdw_imageprocessing.so
+-- Found 'dw/core/base/Version.h' in /usr/local/driveworks-5.10/targets/aarch64-Linux/include
+-- Found dw_pointcloudprocessing library in /drive/drive-linux/filesystem/targetfs/usr/local/driveworks-5.10/targets/aarch64-Linux/lib/libdw_pointcloudprocessing.so
+-- Found 'dw/core/base/Version.h' in /usr/local/driveworks-5.10/targets/aarch64-Linux/include
+-- Found dw_sensors library in /drive/drive-linux/filesystem/targetfs/usr/local/driveworks-5.10/targets/aarch64-Linux/lib/libdw_sensors.so
+-- Found 'dw/core/base/Version.h' in /usr/local/driveworks-5.10/targets/aarch64-Linux/include
+-- Found dw_vehicleio library in /drive/drive-linux/filesystem/targetfs/usr/local/driveworks-5.10/targets/aarch64-Linux/lib/libdw_vehicleio.so
+-- Found 'dw/core/base/Version.h' in /usr/local/driveworks-5.10/targets/aarch64-Linux/include
+-- Found dw_dnn_base library in /drive/drive-linux/filesystem/targetfs/usr/local/driveworks-5.10/targets/aarch64-Linux/lib/libdw_dnn_base.so
+-- Found 'dwvisualization/core/Visualization.h' in /usr/local/driveworks-5.10/targets/aarch64-Linux/include
+-- Found driveworks_visualization library in /drive/drive-linux/filesystem/targetfs/usr/local/driveworks-5.10/targets/aarch64-Linux/lib/libdriveworks_visualization.so
+-- Found 'dwvisualization/core/Visualization.h' in /usr/local/driveworks-5.10/targets/aarch64-Linux/include
+-- Found 'dw/core/base/Version.h' in /usr/local/driveworks-5.10/targets/aarch64-Linux/include
+-- Found dwshared library in /drive/drive-linux/filesystem/targetfs/usr/local/driveworks-5.10/targets/aarch64-Linux/lib/libdwshared.so
+-- Found 'dw/core/DynamicMemory.h' in /usr/local/driveworks-5.10/targets/aarch64-Linux/include
+-- Found dwdynamicmemory library in /drive/drive-linux/filesystem/targetfs/usr/local/driveworks-5.10/targets/aarch64-Linux/lib/libdwdynamicmemory.so
+-- Found cuDLA: /drive/drive-linux/filesystem/targetfs/usr/local/cuda/targets/aarch64-linux/include
+-- Found cuPVA: /drive/drive-linux/filesystem/targetfs/usr/local/driveworks/targets/aarch64-Linux/include/cupva
+-- Could NOT find NvMedia (missing: NvMedia_LIBRARY)
+-- Skipping nvmedia settings.
+-- Found 'dwframework/dwnodes/common/factories/DWChannelFactory.hpp' in /usr/local/driveworks-5.10/targets/aarch64-Linux/include
+-- Found 'dwcgf/channel/ChannelFactory.hpp' in /usr/local/driveworks-5.10/targets/aarch64-Linux/include
+-- Found 'modern-json/json.hpp' in /usr/local/driveworks-5.10/targets/aarch64-Linux/include/3rdparty
+-- Found dwcgf library in /drive/drive-linux/filesystem/targetfs/usr/local/driveworks-5.10/targets/aarch64-Linux/lib/libdwcgf.so
+-- Found 'dwframework/dwnodes/common/factories/DWChannelFactory.hpp' in /usr/local/driveworks-5.10/targets/aarch64-Linux/include
+-- Found 'dwcgf/channel/ChannelFactory.hpp' in /usr/local/driveworks-5.10/targets/aarch64-Linux/include
+-- Found 'modern-json/json.hpp' in /usr/local/driveworks-5.10/targets/aarch64-Linux/include/3rdparty
+-- Found dwframework_dwnodes library in /drive/drive-linux/filesystem/targetfs/usr/local/driveworks-5.10/targets/aarch64-Linux/lib/libdwframework_dwnodes.so
+-- Configuring done

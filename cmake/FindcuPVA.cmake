@@ -84,6 +84,14 @@ endif()
 list(APPEND _cuPVA_FIND_LIBRARY_PATHS /usr/local/driveworks/lib)
 list(APPEND _cuPVA_FIND_PATH_PATHS /usr/local/driveworks/include)
 
+if(CMAKE_LIBRARY_ARCHITECTURE STREQUAL aarch64-linux-gnu)
+  list(APPEND _cuPVA_FIND_LIBRARY_PATHS /usr/lib/aarch64-linux-gnu)
+elseif(CMAKE_LIBRARY_ARCHITECTURE STREQUAL aarch64-unknown-nto-qnx)
+  list(APPEND _cuPVA_FIND_LIBRARY_PATHS /usr/lib/aarch64-qnx710)
+else()
+  list(APPEND _cuPVA_FIND_LIBRARY_PATHS /usr/lib/x86_64-linux-gnu)
+endif()
+
 find_path(cuPVA_INCLUDE_DIR
   NAMES cupva_types_wrapper.h
   PATHS ${_cuPVA_FIND_PATH_PATHS}
@@ -107,11 +115,29 @@ find_library(cuPVA_HOST_LIBRARY
   PATHS ${_cuPVA_FIND_LIBRARY_PATHS}
 )
 
+if(NOT cuPVA_HOST_LIBRARY)
+  if(CMAKE_LIBRARY_ARCHITECTURE MATCHES "^aarch64-(linux-gnu|unknown-nto-qnx)$")
+    set(_cuPVA_HOST_SONAME
+      "${CMAKE_SHARED_LIBRARY_PREFIX}cupva_host_gen2${CMAKE_SHARED_LIBRARY_SUFFIX}"
+  )
+  else()
+    set(_cuPVA_HOST_SONAME
+      "${CMAKE_SHARED_LIBRARY_PREFIX}cupva_host_native_gen2${CMAKE_SHARED_LIBRARY_SUFFIX}"
+    )
+  endif()
+
+  find_library(cuPVA_HOST_LIBRARY
+    NAMES "${_cuPVA_HOST_SONAME}"
+    PATHS ${_cuPVA_FIND_LIBRARY_PATHS}
+  )
+endif()
+
 find_library(cuPVA_WRAPPER_LIBRARY
   NAMES "${CMAKE_STATIC_LIBRARY_PREFIX}cupva_wrapper${CMAKE_STATIC_LIBRARY_SUFFIX}"
   PATHS ${_cuPVA_FIND_LIBRARY_PATHS}
 )
 
+unset(_cuPVA_CUPVA_ALGO_LIBRARY_DIR)
 unset(_cuPVA_FIND_LIBRARY_PATHS)
 
 include(FindPackageHandleStandardArgs)
@@ -125,6 +151,7 @@ find_package_handle_standard_args(cuPVA
 )
 
 if(cuPVA_FOUND)
+  set(cuPVA_DEFINITIONS -DDW_SDK_BUILD_PVA)
   set(cuPVA_INCLUDE_DIRS "${cuPVA_INCLUDE_DIR}")
   set(cuPVA_LIBRARIES "${cuPVA_HOST_LIBRARY}" "${cuPVA_WRAPPER_LIBRARY}")
   set(cuPVA_DEFINITIONS DW_SDK_BUILD_PVA)

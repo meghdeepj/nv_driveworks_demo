@@ -31,10 +31,25 @@ ldd ./libcgf_custom_nodes.so | grep found
 
 ### 交叉编译
 
+crack解决一个编译错误，删除LINUX的编译符号
+
+```sh
+sudo nano /usr/local/driveworks/include/dw/core/system/NvMedia.h
+# line46
+// #if VIBRANTE_PDK_DECIMAL < 6000400 || defined(LINUX)
+#if VIBRANTE_PDK_DECIMAL < 6000400
+```
+
 - 构建目录设置到`target`目录，`target` 目录拷贝到目标机器
 
 ```sh
 cd gw_demo
+
+cmake -B /gw_demo/target/build-linux-aarch64 \
+    -DCMAKE_TOOLCHAIN_FILE=/usr/local/driveworks/samples/cmake/Toolchain-V5L.cmake \
+    -DVIBRANTE_PDK=/drive/drive-linux -S /usr/local/driveworks/samples
+make -C /gw_demo/target/build-linux-aarch64 -j3
+
 cmake -B /gw_demo/target/gw_demo-linux-aarch64 \
     -DCMAKE_TOOLCHAIN_FILE=/usr/local/driveworks/samples/cmake/Toolchain-V5L.cmake \
     -DVIBRANTE_PDK=/drive/drive-linux

@@ -83,7 +83,7 @@ __parseArgs() {
 
 PRODUCT=DWCGFHelloworld
 SCHEDULE=""
-CAR=onofframp
+CAR=trafficlightturning-hyperion8
 GDB_DEBUG=0
 APP_PARAMETER=""
 
@@ -100,9 +100,8 @@ echo "CGF_SYS_PATH=${CGF_SYS_PATH}"
 CMD=$(pwd)
 RR_GRAPHS_PATH=${DW_TOP_PATH}/graphs
 
-DATA_PATH=${DW_TOP_PATH}/data/apps
+DATA_PATH=${DW_TOP_PATH}/data
 RR_LOG_PATH=${CMD}/LogFolder
-DATA_PATH=${DATA_PATH}/cgf/${CAR}
 
 echo "RR_LOG_PATH=${RR_LOG_PATH}"
 echo "DATA_PATH=${DATA_PATH}"
@@ -168,14 +167,39 @@ __tuneNetworkStack() {
 __tuneMqueue() {
     if [[ "$OS" == "Linux" ]]; then
         echo "|--> Tuning message queue"
+
+        if [[ "$ARCH" == "aarch64" ]]; then
+            local mqueue_max_bytes=`ulimit -q`
+            # required_size = queues_max * msg_max
+            # 2097152 = 512 * 4096
+            if [[ mqueue_max_bytes -lt 2097152 ]]; then
+                echo "!!! Require more message queue bytes !!!"
+                echo "STM requires at least 2097152 mqueue bytes"
+                echo "Please run following command to enlarge it"
+                echo "-------------------------------------------------------------"
+                echo "sudo sed -i '$ a * hard nofile 32768' /etc/security/limits.conf"
+                echo "sudo sed -i '$ a * soft nofile 32768' /etc/security/limits.conf"
+                echo "sudo sed -i '$ a * hard msgqueue 2097152' /etc/security/limits.conf"
+                echo "sudo sed -i '$ a * soft msgqueue 2097152' /etc/security/limits.conf"
+                echo "sudo sed -i '$ a root hard msgqueue 2097152' /etc/security/limits.conf"
+                echo "sudo sed -i '$ a root soft msgqueue 2097152' /etc/security/limits.conf"
+                echo "-------------------------------------------------------------"
+                echo "!!! Please use a new terminal to launch the application !!!"
+                exit 252
+            fi
+        fi
+
         local msg_max=`cat /proc/sys/fs/mqueue/msg_max`
-        if [[ msg_max -lt 4096 ]]; then
+        local queues_max=`cat /proc/sys/fs/mqueue/queues_max`
+        if [[ msg_max -lt 4096 ]] || [[ queues_max -lt 512 ]]; then
             echo "!!! Require larger message queue !!!"
-            echo "STM requires at least 4096 msgs"
+            echo "STM requires at least 4096 msgs and at least 512 queues"
             echo "-------------------------------------------------------------"
             echo "sudo sed -i '$ a fs.mqueue.msg_max = 4096' /etc/sysctl.conf"
+            echo "sudo sed -i '$ a fs.mqueue.queues_max = 512' /etc/sysctl.conf"
             echo "sudo sysctl -p"
             echo "-------------------------------------------------------------"
+            echo "!!! Don't launch new terminal. The command only works for the current terminal !!!"
             exit 252
         fi
     fi
@@ -321,11 +345,13 @@ ARGS="$ARGS --dwdatapath=${DW_TOP_PATH}/data"
 ARGS="$ARGS --vdcpath=${RR_TOP_PATH}"
 ARGS="$ARGS --schedule=${SCHED}"
 ARGS="$ARGS --start_timestamp=0"
+ARGS="$ARGS --mapPath=maps/sample/sanjose_loop"
 ARGS="$ARGS --loglevel=DW_LOG_VERBOSE"
 ARGS="$ARGS --fullscreen=0"
 ARGS="$ARGS --winSizeW=1920"
 ARGS="$ARGS --winSizeH=1200"
 ARGS="$ARGS --virtual=1"
+ARGS="$ARGS --disableStmControlLogger=1"
 ARGS="$ARGS --gdb_debug=${GDB_DEBUG}"
 ARGS="$ARGS --app_parameter=${APP_PARAMETER}"
 

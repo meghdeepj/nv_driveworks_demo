@@ -1,0 +1,511 @@
+nvidia@tegra-ubuntu:~/zhensheng/orin_ws/nv_driveworks_demo/target/gw_demo-linux-aarch64/install/gw_demo$ sudo ./bin/run_cgf.sh
+[sudo] password for nvidia:
+20230130_051627
+20230130_051627
+DW_TOP_PATH=/home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/gw_demo-linux-aarch64/install/gw_demo
+RR_TOP_PATH=/usr/local/driveworks/bin
+CGF_SYS_PATH=
+RR_LOG_PATH=/home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/gw_demo-linux-aarch64/install/gw_demo/LogFolder
+DATA_PATH=/home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/gw_demo-linux-aarch64/install/gw_demo/data
+Current DISPLAY is :0.0
+|--> Tuning message queue
+|--> Tuning network stack
+LD_LIBRARY_PATH: /usr/local/driveworks/bin/lib::/home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/gw_demo-linux-aarch64/install/gw_demo/lib
+/home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/gw_demo-linux-aarch64/install/gw_demo/LogFolder dir exists
+total 22768
+drwxr-xr-x. 4 root root    4096 Jan 29 09:04 .
+drwxr-xr-x. 7 root root    4096 Jan 29 07:49 ..
+-r-xr-xr-x. 1 root root 1928600 Jan  1  2000 LoaderLite
+drwxr-xr-x. 2 root root    4096 Jan 29 07:49 SSM
+-r-xr-xr-x. 1 root root  392008 Jan  1  2000 ScheduleManager
+drwxr-xr-x. 3 root root    4096 Jan 29 09:11 config
+-r-xr-xr-x. 1 root root    5890 Jan  1  2000 cpu_gpu1.stm
+-r-xr-xr-x. 1 root root    5890 Jan  1  2000 cpu_gpu2.stm
+-r-xr-xr-x. 1 root root    3010 Jan  1  2000 cpu_simple.stm
+-r-xr-xr-x. 1 root root   15304 Jan  1  2000 get_ssm_state
+-r-xr-xr-x. 1 root root    5909 Jan  1  2000 gpu_multistream_multiprocess.stm
+-r-xr-xr-x. 1 root root   34920 Jan  1  2000 launcher
+-r-xr-xr-x. 1 root root   48000 Jan  1  2000 libFaultHandler.so
+-r-xr-xr-x. 1 root root    8400 Jan  1  2000 libconnection_helper.so
+-r-xr-xr-x. 1 root root   40904 Jan  1  2000 libdnn_pool_plugin.so
+-r-xr-xr-x. 1 root root   47352 Jan  1  2000 libsample_can_plugin.so
+-r-xr-xr-x. 1 root root   47824 Jan  1  2000 libsample_gps_plugin.so
+-r-xr-xr-x. 1 root root   47800 Jan  1  2000 libsample_imu_plugin.so
+-r-xr-xr-x. 1 root root   57120 Jan  1  2000 libsample_nv_lidar_plugin.so
+-r-xr-xr-x. 1 root root   57576 Jan  1  2000 libsample_nv_radar_plugin.so
+-r-xr-xr-x. 1 root root   19984 Jan  1  2000 libsample_sfm_vehicleio_plugin.so
+-r-xr-xr-x. 1 root root   51944 Jan  1  2000 libsample_vehicleio_plugin.so
+-r-xr-xr-x. 1 root root  409944 Jan  1  2000 sample_calibration_camera
+-r-xr-xr-x. 1 root root  375280 Jan  1  2000 sample_calibration_imu
+-r-xr-xr-x. 1 root root  391920 Jan  1  2000 sample_calibration_lidar
+-r-xr-xr-x. 1 root root  388064 Jan  1  2000 sample_calibration_radar
+-r-xr-xr-x. 1 root root  353488 Jan  1  2000 sample_calibration_steering
+-r-xr-xr-x. 1 root root  411696 Jan  1  2000 sample_calibration_stereo
+-r-xr-xr-x. 1 root root  435520 Jan  1  2000 sample_camera
+-r-xr-xr-x. 1 root root  396816 Jan  1  2000 sample_camera_replay
+-r-xr-xr-x. 1 root root  336840 Jan  1  2000 sample_camera_seek
+-r-xr-xr-x. 1 root root  384944 Jan  1  2000 sample_camera_usb
+-r-xr-xr-x. 1 root root  112344 Jan  1  2000 sample_canbus_interpreter
+-r-xr-xr-x. 1 root root  110776 Jan  1  2000 sample_canbus_logger
+-r-xr-xr-x. 1 root root  378288 Jan  1  2000 sample_cgf_camera_interprocess
+-r-xr-xr-x. 1 root root  471520 Jan  1  2000 sample_cgf_dwchannel
+-r-xr-xr-x. 1 root root  340120 Jan  1  2000 sample_color_correction
+-r-xr-xr-x. 1 root root  331792 Jan  1  2000 sample_connected_components
+-r-xr-xr-x. 1 root root  105536 Jan  1  2000 sample_datasensor
+-r-xr-xr-x. 1 root root  162216 Jan  1  2000 sample_dataspeedBridge
+-r-xr-xr-x. 1 root root  326792 Jan  1  2000 sample_dnn_plugin
+-r-xr-xr-x. 1 root root  371056 Jan  1  2000 sample_dnn_tensor
+-r-xr-xr-x. 1 root root  353752 Jan  1  2000 sample_egomotion
+-r-xr-xr-x. 1 root root  427288 Jan  1  2000 sample_fast9_feature_detector
+-r-xr-xr-x. 1 root root  481168 Jan  1  2000 sample_feature_descriptor
+-r-xr-xr-x. 1 root root  476624 Jan  1  2000 sample_feature_tracker
+-r-xr-xr-x. 1 root root  105392 Jan  1  2000 sample_gps_logger
+-r-xr-xr-x. 1 root root   46328 Jan  1  2000 sample_hello_world
+-r-xr-xr-x. 1 root root  320048 Jan  1  2000 sample_icp
+-r-xr-xr-x. 1 root root  295816 Jan  1  2000 sample_image_capture
+-r-xr-xr-x. 1 root root  346920 Jan  1  2000 sample_image_pyramid_pva
+-r-xr-xr-x. 1 root root  284416 Jan  1  2000 sample_image_streamer_multi
+-r-xr-xr-x. 1 root root  287024 Jan  1  2000 sample_image_streamer_simple
+-r-xr-xr-x. 1 root root  414032 Jan  1  2000 sample_imagetransformation
+-r-xr-xr-x. 1 root root  105624 Jan  1  2000 sample_imu_logger
+-r-xr-xr-x. 1 root root  302112 Jan  1  2000 sample_lidar_replay
+-r-xr-xr-x. 1 root root  397968 Jan  1  2000 sample_object_detector_tracker
+-r-xr-xr-x. 1 root root  415880 Jan  1  2000 sample_pointcloudprocessing
+-r-xr-xr-x. 1 root root  306928 Jan  1  2000 sample_radar_replay
+-r-xr-xr-x. 1 root root  277424 Jan  1  2000 sample_record
+-r-xr-xr-x. 1 root root  303800 Jan  1  2000 sample_render_engine
+-r-xr-xr-x. 1 root root  262616 Jan  1  2000 sample_renderer
+-r-xr-xr-x. 1 root root   88960 Jan  1  2000 sample_rig
+-r-xr-xr-x. 1 root root   47664 Jan  1  2000 sample_sensors_info
+-r-xr-xr-x. 1 root root  377616 Jan  1  2000 sample_sfm
+-r-xr-xr-x. 1 root root  107000 Jan  1  2000 sample_socket_ipc_clientserver
+-r-xr-xr-x. 1 root root  484680 Jan  1  2000 sample_stereo_disparity
+-r-xr-xr-x. 1 root root  371968 Jan  1  2000 sample_template_tracker
+-r-xr-xr-x. 1 root root  109592 Jan  1  2000 sample_timesensor
+-r-xr-xr-x. 1 root root  294544 Jan  1  2000 sample_vehicleio
+-r-xr-xr-x. 1 root root  372600 Jan  1  2000 sample_video_rectifier
+-r-xr-xr-x. 1 root root  336536 Jan  1  2000 sample_video_rectifierLDC
+-r-xr-xr-x. 1 root root  118168 Jan  1  2000 sensor_sync_server
+-r-xr-xr-x. 1 root root  115920 Jan  1  2000 ssm_demo1
+-r-xr-xr-x. 1 root root  176768 Jan  1  2000 ssm_demo2
+-r-xr-xr-x. 1 root root  182552 Jan  1  2000 ssm_demo3
+-r-xr-xr-x. 1 root root  210656 Jan  1  2000 ssm_demo4
+-r-xr-xr-x. 1 root root  179000 Jan  1  2000 ssm_demo5
+-r-xr-xr-x. 1 root root  120296 Jan  1  2000 ssm_demo6
+-r-xr-xr-x. 1 root root   14336 Jan  1  2000 stm_managed_client
+-r-xr-xr-x. 1 root root  209088 Jan  1  2000 stm_master
+-r-xr-xr-x. 1 root root  809184 Jan  1  2000 stm_sample_gpuX
+-r-xr-xr-x. 1 root root  809184 Jan  1  2000 stm_sample_gpuY
+-r-xr-xr-x. 1 root root   83480 Jan  1  2000 stm_sample_manager
+-r-xr-xr-x. 1 root root   14560 Jan  1  2000 stm_test_cpu_simple
+-r-xr-xr-x. 1 root root  809240 Jan  1  2000 stm_test_gpuX
+-r-xr-xr-x. 1 root root  809296 Jan  1  2000 stm_test_gpuY
+-r-xr-xr-x. 1 root root  126392 Jan  1  2000 stm_test_vpu
+-r-xr-xr-x. 1 root root  111336 Jan  1  2000 vanillassm
+-r-xr-xr-x. 1 root root    5928 Jan  1  2000 vpu_simple.stm
+Running command: /usr/local/driveworks/bin/launcher --binPath=/usr/local/driveworks/bin --spec=/home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/gw_demo-linux-aarch64/install/gw_demo/graphs/app/DWCGFHelloworld.app.json --logPath=/home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/gw_demo-linux-aarch64/install/gw_demo/LogFolder --path=/usr/local/driveworks/bin --datapath=/home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/gw_demo-linux-aarch64/install/gw_demo/data --dwdatapath=/home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/gw_demo-linux-aarch64/install/gw_demo/data --vdcpath=/usr/local/driveworks/bin --schedule=/home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/gw_demo-linux-aarch64/install/gw_demo/bin/DWCGFHelloworld__standardSchedule.stm --start_timestamp=0 --mapPath=maps/sample/sanjose_loop --loglevel=DW_LOG_VERBOSE --fullscreen=0 --winSizeW=1920 --winSizeH=1200 --virtual=1 --disableStmControlLogger=1 --gdb_debug=0 --app_parameter=
+[2023-01-30T05:16:27.879619Z][ERROR][tid:0][Launcher.cpp:1568][Launcher] RoadRunner Main initiated at:1833711379904
+[2023-01-30T05:16:27.879777Z][VERBOSE][tid:0][Launcher.cpp:116][Launcher] Predefined device type not used outside of dual mode
+[2023-01-30T05:16:27.879864Z][DEBUG][tid:0][Launcher.cpp:1575][Launcher] Launcher Arguments:
+[2023-01-30T05:16:27.879878Z][DEBUG][tid:0][Launcher.cpp:1576][Launcher] --amend=
+--app_parameter=
+--autolanechange=0
+--base_port=
+--binPath=/usr/local/driveworks/bin
+--calibrationOverlayFile=
+--checkMemLeak=0
+--configOverlayFile=
+--configOverlayName=
+--datapath=/home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/gw_demo-linux-aarch64/install/gw_demo/data
+--disableParamServiceThread=
+--disableStmControlLogger=1
+--disablefaulthandler=0
+--ds2_control=
+--dumpamend=0
+--dwdatapath=/home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/gw_demo-linux-aarch64/install/gw_demo/data
+--enable-SEH-SSM=0
+--enable-ssm-degradation=0
+--enable_max_time_diff_check=0
+--end_timestamp=0
+--frame=
+--fullscreen=0
+--gdb_debug=0
+--initSerialize=0
+--instantiate_rig_sensors=
+--lockstep_deterministic_replay=
+--logPath=/home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/gw_demo-linux-aarch64/install/gw_demo/LogFolder
+--logSpec=console
+--loglevel=DW_LOG_VERBOSE
+--loop=0
+--mapPath=maps/sample/sanjose_loop
+--memTraceEnabled=0
+--memwatch_frames=
+--navRoute=
+--ncuProfileFrames=
+--offscreen=0
+--path=/usr/local/driveworks/bin
+--postInitSerialize=0
+--preInitSerialize=0
+--rc2f=
+--region=
+--resetSerialize=0
+--rig=
+--schedule=/home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/gw_demo-linux-aarch64/install/gw_demo/bin/DWCGFHelloworld__standardSchedule.stm
+--sehFailureMask=
+--service-framework=0
+--shadow=
+--sm_init_timeout=0
+--spec=/home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/gw_demo-linux-aarch64/install/gw_demo/graphs/app/DWCGFHelloworld.app.json
+--start_timestamp=0
+--stmControlTracing=1
+--stm_discriminator=
+--time_multiplier=
+--traceChannelMask=0x0001
+--traceFilePath=
+--traceLevel=10
+--useDynamicMap=0
+--useNominalTransform=0
+--vdcpath=/usr/local/driveworks/bin
+--vinOverlayFile=
+--virtual=1
+--virtual_time=
+--winSizeH=1200
+--winSizeW=1920
+
+[2023-01-30T05:16:27.880019Z][DEBUG][tid:0][Launcher.cpp:1586][Launcher] SWC Arguments:
+[2023-01-30T05:16:27.880029Z][DEBUG][tid:0][Launcher.cpp:1587][Launcher] --amend=
+--app_parameter=
+--autolanechange=0
+--calibrationOverlayFile=
+--configOverlayFile=
+--configOverlayName=
+--datapath=/home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/gw_demo-linux-aarch64/install/gw_demo/data
+--disableParamServiceThread=
+--disableStmControlLogger=1
+--disablefaulthandler=0
+--ds2_control=
+--dumpamend=0
+--dwdatapath=/home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/gw_demo-linux-aarch64/install/gw_demo/data
+--enable_max_time_diff_check=0
+--end_timestamp=0
+--frame=
+--fullscreen=0
+--initSerialize=0
+--instantiate_rig_sensors=
+--lockstep_deterministic_replay=
+--logPath=/home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/gw_demo-linux-aarch64/install/gw_demo/LogFolder
+--loglevel=DW_LOG_VERBOSE
+--loop=0
+--mapPath=maps/sample/sanjose_loop
+--memwatch_frames=
+--ncuProfileFrames=
+--offscreen=0
+--path=/usr/local/driveworks/bin
+--postInitSerialize=0
+--preInitSerialize=0
+--rc2f=
+--region=
+--resetSerialize=0
+--rig=
+--shadow=
+--spec=/home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/gw_demo-linux-aarch64/install/gw_demo/graphs/app/DWCGFHelloworld.app.json
+--start_timestamp=0
+--stm_discriminator=
+--time_multiplier=
+--useDynamicMap=0
+--useNominalTransform=0
+--vdcpath=/usr/local/driveworks/bin
+--vinOverlayFile=
+--virtual=1
+--virtual_time=
+--winSizeH=1200
+--winSizeW=1920
+
+[2023-01-30T05:16:27.881418Z][DEBUG][tid:0][LaunchSpecReader.cpp:1699][JsonSystemReader] [JsonSystemReader] LaunchSpec version: 2
+[2023-01-30T05:16:27.891069Z][ERROR][tid:0][LaunchSpecReader.cpp:2383][JsonSystemReader] mapManager not found
+[2023-01-30T05:16:27.891655Z][DEBUG][tid:0][LaunchSpecReader.cpp:1884][JsonSystemReader] [JsonSystemReader] ScheduleKey: standardSchedule id: 0
+[2023-01-30T05:16:27.892006Z][ERROR][tid:0][Launcher.cpp:1746][Launcher] Unlink ret: -1, -1
+[2023-01-30T05:16:27.892049Z][DEBUG][tid:0][Launcher.cpp:657][Launcher] Launching app ssm
+[2023-01-30T05:16:27.893099Z][DEBUG][tid:0][Launcher.cpp:737][Launcher] Launching app helloworld_process0
+[2023-01-30T05:16:27.893116Z][DEBUG][tid:0][Launcher.cpp:661][Launcher] ssm exe: /usr/local/driveworks/bin/vanillassm
+[2023-01-30T05:16:27.893356Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] ssm arg[0]: /usr/local/driveworks/bin/vanillassm
+[2023-01-30T05:16:27.893788Z][DEBUG][tid:0][Launcher.cpp:737][Launcher] Launching app schedule_manager
+[2023-01-30T05:16:27.893935Z][DEBUG][tid:0][Launcher.cpp:742][Launcher] helloworld_process0 exe: /usr/local/driveworks/bin/LoaderLite
+[2023-01-30T05:16:27.894200Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] helloworld_process0 arg[0]: /usr/local/driveworks/bin/LoaderLite
+[2023-01-30T05:16:27.894219Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] helloworld_process0 arg[1]: --swcid=helloworld_process0
+[2023-01-30T05:16:27.894230Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] helloworld_process0 arg[2]: --libname=RuntimeGraphlet
+[2023-01-30T05:16:27.894236Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] helloworld_process0 arg[3]: --modulename=helloworld_process0
+[2023-01-30T05:16:27.894246Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] helloworld_process0 arg[4]: --launchspec=/home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/gw_demo-linux-aarch64/install/gw_demo/LogFolder/dumpLaunchSpec.json
+[2023-01-30T05:16:27.894258Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] helloworld_process0 arg[5]: --amend=
+[2023-01-30T05:16:27.894267Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] helloworld_process0 arg[6]: --app_parameter=
+[2023-01-30T05:16:27.894270Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] helloworld_process0 arg[7]: --autolanechange=0
+[2023-01-30T05:16:27.894283Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] helloworld_process0 arg[8]: --calibrationOverlayFile=
+[2023-01-30T05:16:27.894290Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] helloworld_process0 arg[9]: --configOverlayFile=
+[2023-01-30T05:16:27.894297Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] helloworld_process0 arg[10]: --configOverlayName=
+[2023-01-30T05:16:27.894304Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] helloworld_process0 arg[11]: --datapath=/home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/gw_demo-linux-aarch64/install/gw_demo/data
+[2023-01-30T05:16:27.894311Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] helloworld_process0 arg[12]: --disableParamServiceThread=
+[2023-01-30T05:16:27.894318Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] helloworld_process0 arg[13]: --disableStmControlLogger=1
+[2023-01-30T05:16:27.894325Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] helloworld_process0 arg[14]: --disablefaulthandler=0
+[2023-01-30T05:16:27.894335Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] helloworld_process0 arg[15]: --ds2_control=
+[2023-01-30T05:16:27.894350Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] helloworld_process0 arg[16]: --dumpamend=0
+[2023-01-30T05:16:27.894358Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] helloworld_process0 arg[17]: --dwdatapath=/home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/gw_demo-linux-aarch64/install/gw_demo/data
+[2023-01-30T05:16:27.894365Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] helloworld_process0 arg[18]: --enable_max_time_diff_check=0
+[2023-01-30T05:16:27.894371Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] helloworld_process0 arg[19]: --end_timestamp=0
+[2023-01-30T05:16:27.894378Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] helloworld_process0 arg[20]: --frame=
+[2023-01-30T05:16:27.894385Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] helloworld_process0 arg[21]: --fullscreen=0
+[2023-01-30T05:16:27.894390Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] helloworld_process0 arg[22]: --initSerialize=0
+[2023-01-30T05:16:27.894396Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] helloworld_process0 arg[23]: --instantiate_rig_sensors=
+[2023-01-30T05:16:27.894403Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] helloworld_process0 arg[24]: --lockstep_deterministic_replay=
+[2023-01-30T05:16:27.894410Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] helloworld_process0 arg[25]: --logPath=/home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/gw_demo-linux-aarch64/install/gw_demo/LogFolder
+[2023-01-30T05:16:27.894421Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] helloworld_process0 arg[26]: --loglevel=DW_LOG_VERBOSE
+[2023-01-30T05:16:27.894429Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] helloworld_process0 arg[27]: --loop=0
+[2023-01-30T05:16:27.894436Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] helloworld_process0 arg[28]: --mapPath=maps/sample/sanjose_loop
+[2023-01-30T05:16:27.894440Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] helloworld_process0 arg[29]: --memwatch_frames=
+[2023-01-30T05:16:27.894447Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] helloworld_process0 arg[30]: --ncuProfileFrames=
+[2023-01-30T05:16:27.894451Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] helloworld_process0 arg[31]: --offscreen=0
+[2023-01-30T05:16:27.894457Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] helloworld_process0 arg[32]: --path=/usr/local/driveworks/bin
+[2023-01-30T05:16:27.894455Z][DEBUG][tid:0][Launcher.cpp:487][Launcher] Skipped app: ssm. Skip type: ssm
+[2023-01-30T05:16:27.894480Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] helloworld_process0 arg[33]: --postInitSerialize=0
+[2023-01-30T05:16:27.894503Z][DEBUG][tid:0][Launcher.cpp:737][Launcher] Launching app stm_master
+[2023-01-30T05:16:27.894517Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] helloworld_process0 arg[34]: --preInitSerialize=0
+[2023-01-30T05:16:27.894542Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] helloworld_process0 arg[35]: --rc2f=
+[2023-01-30T05:16:27.894550Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] helloworld_process0 arg[36]: --region=
+[2023-01-30T05:16:27.894558Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] helloworld_process0 arg[37]: --resetSerialize=0
+[2023-01-30T05:16:27.894565Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] helloworld_process0 arg[38]: --rig=
+[2023-01-30T05:16:27.894571Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] helloworld_process0 arg[39]: --shadow=
+[2023-01-30T05:16:27.894575Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] helloworld_process0 arg[40]: --spec=/home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/gw_demo-linux-aarch64/install/gw_demo/graphs/app/DWCGFHelloworld.app.json
+[2023-01-30T05:16:27.894582Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] helloworld_process0 arg[41]: --start_timestamp=0
+[2023-01-30T05:16:27.894585Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] helloworld_process0 arg[42]: --stm_discriminator=
+[2023-01-30T05:16:27.894592Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] helloworld_process0 arg[43]: --time_multiplier=
+[2023-01-30T05:16:27.894599Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] helloworld_process0 arg[44]: --useDynamicMap=0
+[2023-01-30T05:16:27.894612Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] helloworld_process0 arg[45]: --useNominalTransform=0
+[2023-01-30T05:16:27.894620Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] helloworld_process0 arg[46]: --vdcpath=/usr/local/driveworks/bin
+[2023-01-30T05:16:27.894627Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] helloworld_process0 arg[47]: --vinOverlayFile=
+[2023-01-30T05:16:27.894579Z][DEBUG][tid:0][Launcher.cpp:742][Launcher] schedule_manager exe: /usr/local/driveworks/bin/ScheduleManager
+[2023-01-30T05:16:27.894634Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] helloworld_process0 arg[48]: --virtual=1
+[2023-01-30T05:16:27.894664Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] helloworld_process0 arg[49]: --virtual_time=
+[2023-01-30T05:16:27.894671Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] helloworld_process0 arg[50]: --winSizeH=1200
+[2023-01-30T05:16:27.894678Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] helloworld_process0 arg[51]: --winSizeW=1920
+[2023-01-30T05:16:27.894685Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] helloworld_process0 arg[52]: --logspec=file/rfc5424.user.helloworld_process0:/home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/gw_demo-linux-aarch64/install/gw_demo/LogFolder/helloworld_process0.log
+[2023-01-30T05:16:27.894862Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] schedule_manager arg[0]: /usr/local/driveworks/bin/ScheduleManager
+[2023-01-30T05:16:27.894879Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] schedule_manager arg[1]: --launchspec=/home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/gw_demo-linux-aarch64/install/gw_demo/LogFolder/dumpLaunchSpec.json
+[2023-01-30T05:16:27.894893Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] schedule_manager arg[2]: --loglevel=DW_LOG_VERBOSE
+[2023-01-30T05:16:27.894900Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] schedule_manager arg[3]: --enableScheduleSwitching=false
+[2023-01-30T05:16:27.894910Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] schedule_manager arg[4]: --scheduleManagerHostIP=127.0.0.1
+[2023-01-30T05:16:27.894918Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] schedule_manager arg[5]: --scheduleManagerHostPort=40100
+[2023-01-30T05:16:27.894928Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] schedule_manager arg[6]: --scheduleManagerNumClients=1
+[2023-01-30T05:16:27.894936Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] schedule_manager arg[7]: --logspec=file/rfc5424.user.schedule_manager:/home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/gw_demo-linux-aarch64/install/gw_demo/LogFolder/schedule_manager.log
+[2023-01-30T05:16:27.894944Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] schedule_manager arg[8]: --schedule-manager-name=CGF-ScheduleManager
+[2023-01-30T05:16:27.895253Z][DEBUG][tid:0][Launcher.cpp:820][Launcher] All apps are launched.
+[2023-01-30T05:16:27.895374Z][DEBUG][tid:0][Launcher.cpp:742][Launcher] stm_master exe: /usr/local/driveworks/bin/stm_master
+[2023-01-30T05:16:27.895640Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] stm_master arg[0]: /usr/local/driveworks/bin/stm_master
+[2023-01-30T05:16:27.895657Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] stm_master arg[1]: --schedule=/home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/gw_demo-linux-aarch64/install/gw_demo/bin/DWCGFHelloworld__standardSchedule.stm
+[2023-01-30T05:16:27.895671Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] stm_master arg[2]: --allow-unregistered-runnables
+[2023-01-30T05:16:27.895678Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] stm_master arg[3]: --soc=TegraA
+[2023-01-30T05:16:27.895692Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] stm_master arg[4]: --timeout-us=60000000
+[2023-01-30T05:16:27.895699Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] stm_master arg[5]: -m
+[2023-01-30T05:16:27.895708Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] stm_master arg[6]: -v
+[2023-01-30T05:16:27.895716Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] stm_master arg[7]: --schedule-manager-name=CGF-ScheduleManager
+[2023-01-30T05:16:27.895724Z][DEBUG][tid:0][Launcher.cpp:608][Launcher] stm_master arg[8]: --num-input-schedule=1
+[STM] Waiting for STM master to start...
+[STM] Connected to STM master
+
+
+--------------------------------------------------------------
+WARNING: Using default Logger, most probably DriveWorks
+         library was linked more than once.
+--------------------------------------------------------------
+
+DefaultLogger: [30-01-2023 05:16:28] DefaultLogger: [30-01-2023 05:16:28] DefaultLogger: Failed to open cpuset /sys/fs/cgroup/cpuset/rr2init/tasks, errno: No such file or directory (2)
+DefaultLogger: [30-01-2023 05:16:28] DefaultLogger: Failed to set TopExecutor to RR2 init cpuset: /sys/fs/cgroup/cpuset/rr2init/tasks
+SSM_LATENCY::1 helloworld_process0
+SSM_LATENCY::0 9ms
+
+SSM_LATENCY::2 helloworld_process0_runStateMachine
+SSM_LATENCY::0 9ms
+
+[STM] Waiting for STM master to start...
+[STM] Connected to STM master
+[STM] Waiting for receiving helloworld_process0's Schedule Instances from master
+[STM] Performing Client Shm Init ...
+[STM WARNING]:[av/stm/runtime/src/core/stdout.c][logSetVerbose] [25]: Verbose mode has been enabled for STM. ***Note that this mode affects STM latency guarantees, and is meant for use only in debugging. Do not use '-v' for performance testing.
+[STM] Waiting for all clients to start...
+[STM WARNING]:[av/stm/runtime/src/core/stdout.c][logSetVerbose] [25]: Verbose mode has been enabled for STM. ***Note that this mode affects STM latency guarantees, and is meant for use only in debugging. Do not use '-v' for performance testing.
+[STM] Client helloworld_process0 is waiting on init semaphore expected to be released by stm_master
+[STM] Client helloworld_process0 initialized
+[STM] Starting thread pool0
+[STM WARNING]:[av/stm/runtime/src/client/thread.c][stmStart] [398]: Could not set cpuset, setCpuset returned an error. errno=2 (No such file or directory)
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Thread waiting on Enter Schedule fence pool0, time : 1675055789170947776
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Thread released from Enter Schedule pool0, time : 1675055789171595808
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Thread waiting on Ready fence pool0, time : 1675055789171614560
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Thread released from Ready pool0, time : 1675055789172671904
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675055789172687968] WOF Enter: f1
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675055789172703520] WOF Exit: f1
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055789172711360] CALL Enter: helloworld_process0_ssm_pass_0
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055789172733984] CALL Exit: helloworld_process0_ssm_pass_0
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055789172740672] CALL Enter: dwcgfHelloworld_helloWorldNode_pass_0
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055789172820672] CALL Exit: dwcgfHelloworld_helloWorldNode_pass_0
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055789172828736] CALL Enter: dwcgfHelloworld_helloWorldNode_pass_1
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055789172951360] CALL Exit: dwcgfHelloworld_helloWorldNode_pass_1
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055789172961280] CALL Enter: dwcgfHelloworld_helloWorldNode_pass_2
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055789172977088] CALL Exit: dwcgfHelloworld_helloWorldNode_pass_2
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675055789172983040] SIG Enter: f0
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675055789172994112] SIG Exit: f0
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 1, time : 1675055789173000384
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675055789173003104] WOF Enter: f1
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675055792472711904] WOF Exit: f1
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055792472732032] CALL Enter: helloworld_process0_ssm_pass_0
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055792472764768] CALL Exit: helloworld_process0_ssm_pass_0
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055792472772032] CALL Enter: dwcgfHelloworld_helloWorldNode_pass_0
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055792472800640] CALL Exit: dwcgfHelloworld_helloWorldNode_pass_0
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055792472806464] CALL Enter: dwcgfHelloworld_helloWorldNode_pass_1
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055792472926368] CALL Exit: dwcgfHelloworld_helloWorldNode_pass_1
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055792472934944] CALL Enter: dwcgfHelloworld_helloWorldNode_pass_2
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055792472942816] CALL Exit: dwcgfHelloworld_helloWorldNode_pass_2
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675055792472947456] SIG Enter: f0
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675055792472955808] SIG Exit: f0
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 2, time : 1675055792472960224
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675055792472962880] WOF Enter: f1
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675055795772721472] WOF Exit: f1
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055795772739744] CALL Enter: helloworld_process0_ssm_pass_0
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055795772767424] CALL Exit: helloworld_process0_ssm_pass_0
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055795772775168] CALL Enter: dwcgfHelloworld_helloWorldNode_pass_0
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055795772792032] CALL Exit: dwcgfHelloworld_helloWorldNode_pass_0
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055795772797440] CALL Enter: dwcgfHelloworld_helloWorldNode_pass_1
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055795772925632] CALL Exit: dwcgfHelloworld_helloWorldNode_pass_1
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055795772935680] CALL Enter: dwcgfHelloworld_helloWorldNode_pass_2
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055795772941920] CALL Exit: dwcgfHelloworld_helloWorldNode_pass_2
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675055795772948416] SIG Enter: f0
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675055795772960128] SIG Exit: f0
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 3, time : 1675055795772965856
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675055795772968928] WOF Enter: f1
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675055799072707296] WOF Exit: f1
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055799072730496] CALL Enter: helloworld_process0_ssm_pass_0
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055799072759712] CALL Exit: helloworld_process0_ssm_pass_0
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055799072767712] CALL Enter: dwcgfHelloworld_helloWorldNode_pass_0
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055799072789824] CALL Exit: dwcgfHelloworld_helloWorldNode_pass_0
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055799072795328] CALL Enter: dwcgfHelloworld_helloWorldNode_pass_1
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055799072906784] CALL Exit: dwcgfHelloworld_helloWorldNode_pass_1
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055799072916704] CALL Enter: dwcgfHelloworld_helloWorldNode_pass_2
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055799072924704] CALL Exit: dwcgfHelloworld_helloWorldNode_pass_2
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675055799072928800] SIG Enter: f0
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675055799072937504] SIG Exit: f0
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 4, time : 1675055799072941728
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675055799072944448] WOF Enter: f1
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675055802372705376] WOF Exit: f1
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055802372725600] CALL Enter: helloworld_process0_ssm_pass_0
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055802372757920] CALL Exit: helloworld_process0_ssm_pass_0
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055802372765344] CALL Enter: dwcgfHelloworld_helloWorldNode_pass_0
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055802372784256] CALL Exit: dwcgfHelloworld_helloWorldNode_pass_0
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055802372789440] CALL Enter: dwcgfHelloworld_helloWorldNode_pass_1
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055802372903040] CALL Exit: dwcgfHelloworld_helloWorldNode_pass_1
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055802372912480] CALL Enter: dwcgfHelloworld_helloWorldNode_pass_2
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055802372920128] CALL Exit: dwcgfHelloworld_helloWorldNode_pass_2
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675055802372924352] SIG Enter: f0
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675055802372933440] SIG Exit: f0
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 5, time : 1675055802372937952
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675055802372940640] WOF Enter: f1
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675055805672717856] WOF Exit: f1
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055805672736160] CALL Enter: helloworld_process0_ssm_pass_0
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055805672767616] CALL Exit: helloworld_process0_ssm_pass_0
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055805672775264] CALL Enter: dwcgfHelloworld_helloWorldNode_pass_0
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055805672793184] CALL Exit: dwcgfHelloworld_helloWorldNode_pass_0
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055805672798624] CALL Enter: dwcgfHelloworld_helloWorldNode_pass_1
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055805672902528] CALL Exit: dwcgfHelloworld_helloWorldNode_pass_1
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055805672913984] CALL Enter: dwcgfHelloworld_helloWorldNode_pass_2
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055805672924992] CALL Exit: dwcgfHelloworld_helloWorldNode_pass_2
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675055805672932608] SIG Enter: f0
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675055805672944832] SIG Exit: f0
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 6, time : 1675055805672950176
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675055805672952992] WOF Enter: f1
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675055808972694848] WOF Exit: f1
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055808972713408] CALL Enter: helloworld_process0_ssm_pass_0
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055808972740224] CALL Exit: helloworld_process0_ssm_pass_0
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055808972747712] CALL Enter: dwcgfHelloworld_helloWorldNode_pass_0
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055808972762560] CALL Exit: dwcgfHelloworld_helloWorldNode_pass_0
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055808972767680] CALL Enter: dwcgfHelloworld_helloWorldNode_pass_1
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055808972890400] CALL Exit: dwcgfHelloworld_helloWorldNode_pass_1
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055808972900064] CALL Enter: dwcgfHelloworld_helloWorldNode_pass_2
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055808972908832] CALL Exit: dwcgfHelloworld_helloWorldNode_pass_2
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675055808972917344] SIG Enter: f0
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675055808972925856] SIG Exit: f0
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 7, time : 1675055808972931328
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675055808972939872] WOF Enter: f1
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675055812272693280] WOF Exit: f1
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055812272708672] CALL Enter: helloworld_process0_ssm_pass_0
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055812272728544] CALL Exit: helloworld_process0_ssm_pass_0
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055812272736224] CALL Enter: dwcgfHelloworld_helloWorldNode_pass_0
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055812272750112] CALL Exit: dwcgfHelloworld_helloWorldNode_pass_0
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055812272755968] CALL Enter: dwcgfHelloworld_helloWorldNode_pass_1
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055812272840832] CALL Exit: dwcgfHelloworld_helloWorldNode_pass_1
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055812272850464] CALL Enter: dwcgfHelloworld_helloWorldNode_pass_2
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055812272856576] CALL Exit: dwcgfHelloworld_helloWorldNode_pass_2
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675055812272863360] SIG Enter: f0
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675055812272872000] SIG Exit: f0
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 8, time : 1675055812272879104
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675055812272882048] WOF Enter: f1
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675055815572706784] WOF Exit: f1
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055815572725728] CALL Enter: helloworld_process0_ssm_pass_0
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055815572747296] CALL Exit: helloworld_process0_ssm_pass_0
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055815572755712] CALL Enter: dwcgfHelloworld_helloWorldNode_pass_0
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055815572767456] CALL Exit: dwcgfHelloworld_helloWorldNode_pass_0
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055815572773568] CALL Enter: dwcgfHelloworld_helloWorldNode_pass_1
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055815572884000] CALL Exit: dwcgfHelloworld_helloWorldNode_pass_1
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055815572894080] CALL Enter: dwcgfHelloworld_helloWorldNode_pass_2
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055815572900096] CALL Exit: dwcgfHelloworld_helloWorldNode_pass_2
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675055815572909440] SIG Enter: f0
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675055815572921536] SIG Exit: f0
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 9, time : 1675055815572927712
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675055815572930304] WOF Enter: f1
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675055818872691136] WOF Exit: f1
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055818872710464] CALL Enter: helloworld_process0_ssm_pass_0
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055818872741536] CALL Exit: helloworld_process0_ssm_pass_0
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055818872749248] CALL Enter: dwcgfHelloworld_helloWorldNode_pass_0
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055818872767808] CALL Exit: dwcgfHelloworld_helloWorldNode_pass_0
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055818872779904] CALL Enter: dwcgfHelloworld_helloWorldNode_pass_1
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055818872880896] CALL Exit: dwcgfHelloworld_helloWorldNode_pass_1
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055818872890400] CALL Enter: dwcgfHelloworld_helloWorldNode_pass_2
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055818872898144] CALL Exit: dwcgfHelloworld_helloWorldNode_pass_2
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675055818872902592] SIG Enter: f0
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675055818872911200] SIG Exit: f0
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 10, time : 1675055818872916768
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675055818872921600] WOF Enter: f1
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675055822172693920] WOF Exit: f1
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055822172711392] CALL Enter: helloworld_process0_ssm_pass_0
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055822172740000] CALL Exit: helloworld_process0_ssm_pass_0
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055822172747264] CALL Enter: dwcgfHelloworld_helloWorldNode_pass_0
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055822172759168] CALL Exit: dwcgfHelloworld_helloWorldNode_pass_0
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055822172764160] CALL Enter: dwcgfHelloworld_helloWorldNode_pass_1
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055822172861088] CALL Exit: dwcgfHelloworld_helloWorldNode_pass_1
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055822172871328] CALL Enter: dwcgfHelloworld_helloWorldNode_pass_2
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055822172884288] CALL Exit: dwcgfHelloworld_helloWorldNode_pass_2
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675055822172890016] SIG Enter: f0
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675055822172901408] SIG Exit: f0
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 11, time : 1675055822172908704
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675055822172911808] WOF Enter: f1
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675055825472718336] WOF Exit: f1
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055825472733856] CALL Enter: helloworld_process0_ssm_pass_0
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055825472754624] CALL Exit: helloworld_process0_ssm_pass_0
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055825472761760] CALL Enter: dwcgfHelloworld_helloWorldNode_pass_0
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055825472772832] CALL Exit: dwcgfHelloworld_helloWorldNode_pass_0
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055825472778080] CALL Enter: dwcgfHelloworld_helloWorldNode_pass_1
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055825472866176] CALL Exit: dwcgfHelloworld_helloWorldNode_pass_1
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055825472874720] CALL Enter: dwcgfHelloworld_helloWorldNode_pass_2
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055825472881280] CALL Exit: dwcgfHelloworld_helloWorldNode_pass_2
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675055825472885216] SIG Enter: f0
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675055825472897088] SIG Exit: f0
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 12, time : 1675055825472901856
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675055825472904608] WOF Enter: f1
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675055828772689536] WOF Exit: f1
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055828772708864] CALL Enter: helloworld_process0_ssm_pass_0
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055828772733024] CALL Exit: helloworld_process0_ssm_pass_0
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055828772740672] CALL Enter: dwcgfHelloworld_helloWorldNode_pass_0
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055828772756160] CALL Exit: dwcgfHelloworld_helloWorldNode_pass_0
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055828772761056] CALL Enter: dwcgfHelloworld_helloWorldNode_pass_1
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055828772851328] CALL Exit: dwcgfHelloworld_helloWorldNode_pass_1
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055828772860352] CALL Enter: dwcgfHelloworld_helloWorldNode_pass_2
+[STM INFO]:[av/stm/runtime/src/client/commands/call.c][opPrintCall] [CORE 0] [Time 1675055828772868352] CALL Exit: dwcgfHelloworld_helloWorldNode_pass_2
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675055828772873184] SIG Enter: f0
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675055828772881696] SIG Exit: f0
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 13, time : 1675055828772887136
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675055828772889792] WOF Enter: f1

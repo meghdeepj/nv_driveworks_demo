@@ -1,9 +1,11 @@
 {
-    "$schema": "../../../../../doc/schema/app.schema.json",
     "name": "DWCGFHelloworldApp",
     "logSpec": "file/rfc5424:{{logpath}}/{{appname}}.log",
     "parameters": {},
-    "sensorLayouts": "./DWCGFHelloworldSensorLayout.sensors.json",
+    "requiredSensors": "./DWCGFHelloworld.required-sensors.json",
+    "sensorMappingLookups": [
+        "../sensor_mappings"
+    ],
     "subcomponents": {
         "dwcgfHelloworld": {
             "componentType": "../graphlets/DWCGFHelloworld.graphlet.json",
@@ -22,10 +24,10 @@
             "wcet" : "./DWCGFHelloworld_wcet.yaml",
             "hyperepochs": {
                 "helloworldHyperepoch": {
-                    "period": 33000000,
+                    "period": 330000000,
                     "epochs": {
                         "helloworldEpoch": {
-                            "period": 33000000,
+                            "period": 330000000,
                             "frames": 1,
                             "passes": [
                                 [

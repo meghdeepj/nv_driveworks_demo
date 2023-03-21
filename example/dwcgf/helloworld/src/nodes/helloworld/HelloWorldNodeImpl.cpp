@@ -29,7 +29,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////
 
 #include "HelloWorldNodeImpl.hpp"
-#include <dwcgf/logger/Logger.hpp>
+#include <dw/core/logger/Logger.hpp>
 
 namespace dw
 {
@@ -51,13 +51,13 @@ HelloWorldNodeImpl::HelloWorldNodeImpl(const HelloWorldNodeParams& params, const
         return process();
     });
 
-    FRWK_LOGD << "HelloWorldNodeImpl: created" << Logger::State::endl;
+    DW_LOGD << "HelloWorldNodeImpl: created" << Logger::State::endl;
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////
 HelloWorldNodeImpl::~HelloWorldNodeImpl()
 {
-    FRWK_LOGD << "HelloWorldNodeImpl: destructed" << Logger::State::endl;
+    DW_LOGD << "HelloWorldNodeImpl: destructed" << Logger::State::endl;
 }
 
 dwStatus HelloWorldNodeImpl::reset()
@@ -75,14 +75,14 @@ dwStatus HelloWorldNodeImpl::process()
     if (outPort0.isBufferAvailable() && outPort1.isBufferAvailable())
     {
         *outPort0.getBuffer() = m_port0Value++;
-        FRWK_LOGD << "[Epoch " << m_epochCount << "] Sent value0 = " << *outPort0.getBuffer() << Logger::State::endl;
+        DW_LOGD << "[Epoch " << m_epochCount << "] Sent value0 = " << *outPort0.getBuffer() << Logger::State::endl;
         outPort0.send();
 
         *outPort1.getBuffer() = m_port1Value--;
-        FRWK_LOGD << "[Epoch " << m_epochCount << "] Sent value1 = " << *outPort1.getBuffer() << Logger::State::endl;
+        DW_LOGD << "[Epoch " << m_epochCount << "] Sent value1 = " << *outPort1.getBuffer() << Logger::State::endl;
         outPort1.send();
     }
-    FRWK_LOGD << "[Epoch " << m_epochCount++ << "] Greetings from HelloWorldNodeImpl: Hello " << m_params.name.c_str() << "!" << Logger::State::endl;
+    DW_LOGD << "[Epoch " << m_epochCount++ << "] Greetings from HelloWorldNodeImpl: Hello " << m_params.name.c_str() << "!" << Logger::State::endl;
     return DW_SUCCESS;
 }
 
