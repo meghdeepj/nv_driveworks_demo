@@ -1,0 +1,189 @@
+@startuml cgf-graphs
+hide empty description
+skinparam monochrome false
+title cgf-graphs-instance
+header %date("yyyy.MM.dd") \n lizhensheng
+
+skinparam componentStyle rectangle
+' remove @unlinked
+
+' top
+
+' () IMAGE
+' () TIMESTAMP
+
+package gw_demo_top {
+    ' pilot pipeline
+    package cameraEpochSync {
+        component sensorSyncNode
+    }
+    ' note top of cameraEpochSync: this is a graphlet
+    ' note top of sensorSyncNode: this is a node
+    package cameraSensor_0 {
+        component cameraNode_0
+        component ispNode_0
+        cameraNode_0 -right-> ispNode_0
+    }
+    package cameraSensor_1 {
+        component cameraNode_1
+        component ispNode_1
+        cameraNode_1 -right-> ispNode_1
+    }
+    package cameraSensor_2 {
+        component cameraNode_2
+        component ispNode_2
+        cameraNode_2 -right-> ispNode_2
+    }
+    package cameraSensor_3 {
+        component cameraNode_3
+        component ispNode_3
+        cameraNode_3 -right-> ispNode_3
+    }
+    package cameraSensor_4 {
+        component cameraNode_4
+        component ispNode_4
+        cameraNode_4 -right-> ispNode_4
+    }
+    package cameraSensor_5  {
+        component cameraNode_5
+        component ispNode_5
+        cameraNode_5 -right-> ispNode_5
+    }
+    package cameraSensor_6 {
+        component cameraNode_6
+        component ispNode_6
+        cameraNode_6 -right-> ispNode_6
+    }
+    package cameraSensor_7  {
+        component cameraNode_7
+        component ispNode_7
+        cameraNode_7 -right-> ispNode_7
+    }
+
+    cameraEpochSync --> cameraSensor_0
+    cameraEpochSync --> cameraSensor_1
+    cameraEpochSync --> cameraSensor_2
+    cameraEpochSync --> cameraSensor_3
+    cameraEpochSync --> cameraSensor_4
+    cameraEpochSync --> cameraSensor_5
+    cameraEpochSync --> cameraSensor_6
+    cameraEpochSync --> cameraSensor_7
+
+    rectangle pilotPipeline {
+        package pilotFusion {
+            component fusionNode_0
+        }
+        package pilotPreprocessing {
+            component transformNode_0
+            component pilotEnhancementNode
+            transformNode_0 -right-> pilotEnhancementNode
+        }
+        package pilotInfer {
+            component pilotDetectNode
+        }
+    }
+    note left of pilotPipeline : 是3个Node还是3个PASS\n 取决于能否在一个engine中运行\n最好一个node中只有一个Pass
+    ' todo: preprocessing 和 infer是否要在一个node中作为多个pass存在
+    ' 取决于能否在一个engine中运行
+    ' 最好一个node中只有一个Pass
+    cameraSensor_0 --> pilotFusion
+    cameraSensor_1 --> pilotFusion
+    cameraSensor_2 --> pilotFusion
+    cameraSensor_3 --> pilotFusion
+    cameraSensor_4 --> pilotFusion
+    cameraSensor_5 --> pilotFusion
+    cameraSensor_6 --> pilotFusion
+    cameraSensor_7 --> pilotFusion
+
+    pilotFusion --> pilotPreprocessing
+    pilotPreprocessing --> pilotInfer
+
+    ' apa pipeline
+    package cameraSensor_8 {
+        component cameraNode_8
+        component ispNode_8
+        cameraNode_8 -right-> ispNode_8
+    }
+    package cameraSensor_9 {
+        component cameraNode_9
+        component ispNode_9
+        cameraNode_9 -right-> ispNode_9
+    }
+    package cameraSensor_10 {
+        component cameraNode_10
+        component ispNode_10
+        cameraNode_10 -right-> ispNode_10
+    }
+    package cameraSensor_11 {
+        component cameraNode_11
+        component ispNode_11
+        cameraNode_11 -right-> ispNode_11
+    }
+
+    cameraEpochSync --> cameraSensor_8
+    cameraEpochSync --> cameraSensor_9
+    cameraEpochSync --> cameraSensor_10
+    cameraEpochSync --> cameraSensor_11
+
+    package apaFusion {
+        component fusionNode_1
+    }
+
+    cameraSensor_8 --> apaFusion
+    cameraSensor_9 --> apaFusion
+    cameraSensor_10 --> apaFusion
+    cameraSensor_11 --> apaFusion
+
+    rectangle apaPipeline {
+        package apaPreprocessing {
+            component transformNode_1
+            component apaEnhancementNode
+            transformNode_1 -right-> apaEnhancementNode
+        }
+        package apaInfer {
+            component apaDetectNode
+        }
+    }
+
+    apaFusion --> apaPreprocessing
+    apaPreprocessing --> apaInfer
+
+    ' freespace pipeline
+    rectangle freespacePipeline {
+        package freespacePreprocessing {
+            component transformNode_2
+            component freespaceEnhancementNode
+            transformNode_2 -right-> freespaceEnhancementNode
+        }
+        package freespaceInfer {
+            component freespaceDetectNode
+        }
+    }
+
+    apaFusion --> freespacePreprocessing
+    freespacePreprocessing --> freespaceInfer
+
+    ' render
+    package pilotArender {
+        component renderingNode_0
+    }
+    package apaArender {
+        component renderingNode_1
+    }
+
+    pilotInfer --> pilotArender
+    apaInfer --> apaArender
+    freespaceInfer --> apaArender
+
+    ' () IMAGE_
+    ' () TIMESTAMP_
+
+    ' IMAGE_ --> IMAGE : out
+    ' TIMESTAMP_ --> TIMESTAMP : out
+}
+
+
+' gw_demo_top --> IMAGE
+' gw_demo_top --> TIMESTAMP
+
+@enduml

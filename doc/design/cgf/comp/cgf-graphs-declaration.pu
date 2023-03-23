@@ -1,0 +1,39 @@
+@startuml cgf-graphs
+hide empty description
+skinparam monochrome false
+title cgf-graphs-declaration
+header %date("yyyy.MM.dd") \n lizhensheng
+
+skinparam componentStyle rectangle
+' remove @unlinked
+
+' top
+
+() IMAGE
+() TIMESTAMP
+
+package gw_demo_top {
+    package CameraPipeline {
+        ' in
+        () VIRTUAL_SYNC_TIME
+        () SENSOR_EXTRINSICS
+        ' out
+        () SENSOR_PROPERTIES
+        () CAMERA_INTRINSICS
+        () CUDA_ISP_YUV_UINT_8_HALF_RES
+        () IMAGE_TIMESTAMP
+        () NEXT_IMAGE_TIMESTAMP
+
+    }
+    () IMAGE_
+    () TIMESTAMP_
+
+    IMAGE_ --> IMAGE : out
+    TIMESTAMP_ --> TIMESTAMP : out
+}
+
+
+' gw_demo_top --> IMAGE
+' gw_demo_top --> TIMESTAMP
+
+@enduml

@@ -1,4 +1,4 @@
 target/
 .dev_bash_hist
 example/dwcgf/helloworld/graphs/*.stm
-*.drawio.bkp
+*.drawio.*
