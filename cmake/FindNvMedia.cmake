@@ -66,17 +66,37 @@
 #   The directory containing ``nvmedia_core.h``.
 # ``NvMedia_LIBRARY``
 #   The path to ``libnvmedia.so`` or ``libnvmedia_core.so``.
+# in driveworks
+# libnvmedia.so
+# libnvmedia_2d.so
+# libnvmedia_core.so
+# libnvmedia_isp.so
+# libnvmediabbfldr_isp.so
+
+# in drive-linux
+# NvMedia_2D_LIBRARY
 #  libnvmedia2d.so
+# NvMedia_Dla_LIBRARY
 #  libnvmedia_dla.so
+# NvMedia_EglStream_LIBRARY
 #  libnvmedia_eglstream.so
+# NvMedia_IdeParser_LIBRARY
 #  libnvmedia_ide_parser.so
+# NvMedia_IdeSci_LIBRARY
 #  libnvmedia_ide_sci.so
+# NvMedia_IepSci_LIBRARY
 #  libnvmedia_iep_sci.so
+# NvMedia_IjpdSci_LIBRARY
 #  libnvmedia_ijpd_sci.so
+# NvMedia_IjpeSci_LIBRARY
 #  libnvmedia_ijpe_sci.so
+# NvMedia_IofaSci_LIBRARY
 #  libnvmedia_iofa_sci.so
+# NvMedia_SciOverlay_LIBRARY
 #  libnvmedia_sci_overlay.so
+# NvMedia_Tensor_LIBRARY
 #  libnvmedia_tensor.so
+# NvMedia_Ldc_LIBRARY
 #  libnvmedialdc.so
 
 set(_NVMEDIA_FIND_LIBRARY_PATHS)
@@ -88,6 +108,9 @@ if(CMAKE_LIBRARY_ARCHITECTURE MATCHES "^(aarch64-linux-gnu|aarch64-unknown-nto-q
     list(APPEND _NVMEDIA_FIND_PATH_PATHS "${VIBRANTE_PDK}/include/nvmedia_6x")
   endif()
 endif()
+
+# list(APPEND _NVMEDIA_FIND_LIBRARY_PATHS "/usr/local/driveworks/lib")
+# list(APPEND _NVMEDIA_FIND_PATH_PATHS "/usr/local/driveworks/include")
 
 find_path(NvMedia_INCLUDE_DIR
   NAMES nvmedia_core.h
@@ -113,26 +136,26 @@ if(NOT NvMedia_LIBRARY)
 endif()
 unset(_NVMEDIA_FIND_LIBRARY_PATHS)
 
-set(NvMedia_VERSION)
-if(NvMedia_INCLUDE_DIR AND NvMedia_LIBRARY)
-    file(STRINGS "${NvMedia_INCLUDE_DIR}/nvmedia_core.h" _NVMEDIA_VERSION_STRINGS
-        REGEX "^#define NVMEDIA_RELEASE_VERSION_(MAJOR|MINOR)[ ]+[0-9]+$"
-    )
-    string(REGEX REPLACE ".*;#define NVMEDIA_RELEASE_VERSION_MAJOR[ ]+([0-9]+);.*"
-        "\\1" NvMedia_VERSION_MAJOR ";${_NVMEDIA_VERSION_STRINGS};"
-    )
-    string(REGEX REPLACE ".*;#define NVMEDIA_RELEASE_VERSION_MINOR[ ]+([0-9]+);.*"
-        "\\1" NvMedia_VERSION_MINOR ";${_NVMEDIA_VERSION_STRINGS};"
-    )
-    unset(_NVMEDIA_VERSION_STRINGS)
-    set(NvMedia_VERSION "${NvMedia_VERSION_MAJOR}.${NvMedia_VERSION_MINOR}")
-endif()
+# set(NvMedia_VERSION)
+# if(NvMedia_INCLUDE_DIR AND NvMedia_LIBRARY)
+#     file(STRINGS "${NvMedia_INCLUDE_DIR}/nvmedia_core.h" _NVMEDIA_VERSION_STRINGS
+#         REGEX "^#define NVMEDIA_RELEASE_VERSION_(MAJOR|MINOR)[ ]+[0-9]+$"
+#     )
+#     string(REGEX REPLACE ".*;#define NVMEDIA_RELEASE_VERSION_MAJOR[ ]+([0-9]+);.*"
+#         "\\1" NvMedia_VERSION_MAJOR ";${_NVMEDIA_VERSION_STRINGS};"
+#     )
+#     string(REGEX REPLACE ".*;#define NVMEDIA_RELEASE_VERSION_MINOR[ ]+([0-9]+);.*"
+#         "\\1" NvMedia_VERSION_MINOR ";${_NVMEDIA_VERSION_STRINGS};"
+#     )
+#     unset(_NVMEDIA_VERSION_STRINGS)
+#     set(NvMedia_VERSION "${NvMedia_VERSION_MAJOR}.${NvMedia_VERSION_MINOR}")
+# endif()
 
 include(FindPackageHandleStandardArgs)
 find_package_handle_standard_args(NvMedia
   FOUND_VAR NvMedia_FOUND
   REQUIRED_VARS NvMedia_INCLUDE_DIR NvMedia_LIBRARY
-  VERSION_VAR NvMedia_VERSION
+  # VERSION_VAR NvMedia_VERSION
 )
 
 if(NvMedia_FOUND)

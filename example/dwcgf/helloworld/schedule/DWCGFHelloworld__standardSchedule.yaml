@@ -11,25 +11,46 @@ standardSchedule:
               - helloworld_process0.helloworld_process0_ssm_pass_0
               Resources:
               - CPU
-              WCET: 16.00 us
+              WCET: 160.00 us
           - dwcgfHelloworld_helloWorldNode_pass_1:
               Dependencies:
               - helloworld_process0.dwcgfHelloworld_helloWorldNode_pass_0
               - helloworld_process0.helloworld_process0_ssm_pass_0
               Resources:
               - CPU
-              WCET: 11.00 us
+              WCET: 110.00 us
           - dwcgfHelloworld_helloWorldNode_pass_2:
               Dependencies:
               - helloworld_process0.dwcgfHelloworld_helloWorldNode_pass_1
               - helloworld_process0.helloworld_process0_ssm_pass_0
               Resources:
               - CPU
-              WCET: 27.00 us
+              WCET: 270.00 us
+          - dwcgfHelloworld_sumNode_pass_0:
+              Dependencies:
+              - helloworld_process0.dwcgfHelloworld_helloWorldNode_pass_2
+              - helloworld_process0.helloworld_process0_ssm_pass_0
+              Resources:
+              - CPU
+              WCET: 160.00 us
+          - dwcgfHelloworld_sumNode_pass_1:
+              Dependencies:
+              - helloworld_process0.dwcgfHelloworld_sumNode_pass_0
+              - helloworld_process0.helloworld_process0_ssm_pass_0
+              Resources:
+              - CPU
+              WCET: 110.00 us
+          - dwcgfHelloworld_sumNode_pass_2:
+              Dependencies:
+              - helloworld_process0.dwcgfHelloworld_sumNode_pass_1
+              - helloworld_process0.helloworld_process0_ssm_pass_0
+              Resources:
+              - CPU
+              WCET: 270.00 us
           - helloworld_process0_ssm_pass_0:
               Resources:
               - CPU
-              WCET: 7.00 us
+              WCET: 100.00 ns
       Resources: {}
       SOC: TegraA
   Hyperepochs:

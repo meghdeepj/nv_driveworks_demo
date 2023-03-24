@@ -31,7 +31,8 @@
                             "frames": 1,
                             "passes": [
                                 [
-                                    "dwcgfHelloworld.helloWorldNode"
+                                    "dwcgfHelloworld.helloWorldNode",
+                                    "dwcgfHelloworld.sumNode"
                                 ]
                             ]
                         }
@@ -75,7 +76,8 @@
             "runOn": "machine0",
             "executable": "LoaderLite",
             "subcomponents": [
-                "dwcgfHelloworld.helloWorldNode"
+                "dwcgfHelloworld.helloWorldNode",
+                "dwcgfHelloworld.sumNode"
             ]
         }
     },

@@ -1,16 +1,7 @@
 {
     "name": "DWCGFHelloworld",
     "inputPorts": {},
-    "outputPorts": {
-        "VALUE_0": {
-            "type": "int",
-            "bindingRequired": false
-        },
-        "VALUE_1": {
-            "type": "int",
-            "bindingRequired": false
-        }
-    },
+    "outputPorts": {},
     "parameters": {
         "paraName": { "type": "std::string", "default": "helloworld_name" }
     },
@@ -20,10 +11,13 @@
             "parameters": {
                 "name": "$paraName"
             }
+        },
+        "sumNode": {
+            "componentType": "../nodes/sum/SumNode.node.json"
         }
     },
     "connections": [
-        { "src": "helloWorldNode.VALUE_0", "dests": {"VALUE_0": {}}},
-        { "src": "helloWorldNode.VALUE_1", "dests": {"VALUE_1": {}}}
+        { "src": "helloWorldNode.VALUE_0", "dests": {"sumNode.VALUE_0": {}}},
+        { "src": "helloWorldNode.VALUE_1", "dests": {"sumNode.VALUE_1": {}}}
     ]
 }

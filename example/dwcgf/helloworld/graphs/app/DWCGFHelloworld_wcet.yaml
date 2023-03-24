@@ -32,7 +32,10 @@
 # peocess.process_ssm_pass_0: 7000
 # process.graphlet_graphlet_node_pass_num : ns
 
-helloworld_process0.helloworld_process0_ssm_pass_0: 7000
-helloworld_process0.dwcgfHelloworld_helloWorldNode_pass_0: 16000
-helloworld_process0.dwcgfHelloworld_helloWorldNode_pass_1: 11000
-helloworld_process0.dwcgfHelloworld_helloWorldNode_pass_2: 27000
+# helloworld_process0.helloworld_process0_ssm_pass_0: 7000
+helloworld_process0.dwcgfHelloworld_helloWorldNode_pass_0: 160000
+helloworld_process0.dwcgfHelloworld_helloWorldNode_pass_1: 110000
+helloworld_process0.dwcgfHelloworld_helloWorldNode_pass_2: 270000
+helloworld_process0.dwcgfHelloworld_sumNode_pass_0: 160000
+helloworld_process0.dwcgfHelloworld_sumNode_pass_1: 110000
+helloworld_process0.dwcgfHelloworld_sumNode_pass_2: 270000

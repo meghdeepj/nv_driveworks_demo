@@ -7,9 +7,10 @@
             "/usr/include",
             "/usr/local/include"
         ],
+        "myDriveSdkRoot": "~/orin_ws/",
         "myLinuxCompilerPath": "/usr/bin/gcc",
-        "myDriveworksPath": "~/zs_ws/nv_driveworks/driveworks-5.8/",
-        "myDriveosPath": "~/zs_ws/nv_driveos/driveos-6.0.5.0/drive-linux/",
+        "myDriveworksPath": "${myDriveSdkRoot}/nv_driveworks/driveworks-5.10/",
+        "myDriveosPath": "${myDriveSdkRoot}/nv_driveos/driveos-6.0.5.0/drive-linux/",
         "myCudaPath": "/usr/local/cuda/"
     },
     "configurations": [
@@ -40,7 +41,7 @@
                 "databaseFilename": ""
             },
             "cStandard": "c99",
-            "cppStandard": "c++14",
+            "cppStandard": "c++14"
             // "configurationProvider": "ms-vscode.cmake-tools"
         }
     ],

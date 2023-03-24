@@ -7,11 +7,11 @@
     "outputPorts": {
         "VALUE_0": {
             "type": "int",
-            "bindingRequired": false
+            "bindingRequired": true
         },
         "VALUE_1": {
             "type": "int",
-            "bindingRequired": false
+            "bindingRequired": true
         }
     },
     "parameters": {

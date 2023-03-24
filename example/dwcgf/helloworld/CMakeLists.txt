@@ -32,18 +32,17 @@
 
 project(dwcgf_helloworld C CXX)
 
-set(SOURCES
-    src/nodes/helloworld/HelloWorldNode.hpp
-    src/nodes/helloworld/HelloWorldNodeImpl.cpp
-    src/nodes/helloworld/HelloWorldNodeImpl.hpp
-    src/nodes/helloworld/HelloWorldNode.cpp
-    # src/nodes/sum/SumNode.hpp
-    # src/nodes/sum/SumNodeImpl.cpp
-    # src/nodes/sum/SumNodeImpl.hpp
-    # src/nodes/sum/SumNode.cpp
-)
-
 set(DRIVEWORKS_PATH "/usr/local/driveworks")
+set(DWCGF_GRAPHS_DIR ${CMAKE_CURRENT_SOURCE_DIR}/graphs)
+set(DWCGF_NODES_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src/nodes)
+set(DWCGF_SCHE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/schedule)
+set(DWCGF_DATA_DIR ${CMAKE_CURRENT_SOURCE_DIR}/data)
+
+file(GLOB_RECURSE DWCGF_NODES_FILES
+    ${DWCGF_NODES_DIR}
+    "*.hpp"
+    "*.cpp"
+)
 
 if (NOT TARGET driveworks-shared)
     find_package(driveworks-shared REQUIRED CONFIG HINTS ${DRIVEWORKS_PATH}/cmake)
@@ -63,7 +62,7 @@ set(LIBRARIES
 #-------------------------------------------------------------------------------
 # Custom nodes shared library
 #-------------------------------------------------------------------------------
-add_library(${PROJECT_NAME} SHARED ${SOURCES})
+add_library(${PROJECT_NAME} SHARED ${DWCGF_NODES_FILES})
 target_link_libraries(${PROJECT_NAME} ${LIBRARIES})
 target_include_directories(${PROJECT_NAME}
                            PUBLIC
@@ -76,23 +75,48 @@ target_include_directories(${PROJECT_NAME}
 set(DWCGF_YAML ${CMAKE_CURRENT_SOURCE_DIR}/schedule/DWCGFHelloworld__standardSchedule.yaml)
 set(DWCGF_STM ${CMAKE_CURRENT_SOURCE_DIR}/schedule/DWCGFHelloworld__standardSchedule.stm)
 
-# todo: depends all the files in the graphs/
-# system2yaml
+file(GLOB_RECURSE DWCGF_GRAPHS_FILES
+    ${DWCGF_GRAPHS_DIR}
+    "*.yaml"
+    "*.json"
+)
+# json-validater execute during configuring time.
+execute_process(
+    COMMAND ${DRIVEWORKS_PATH}/tools/schema/validate_cgfdescriptors.py --ignore-order --ignore-indentation ${DWCGF_GRAPHS_DIR}
+    WORKING_DIRECTORY ${DWCGF_GRAPHS_DIR}
+    TIMEOUT 3
+    RESULT_VARIABLE _EXIT_CODE
+    OUTPUT_VARIABLE _OUTPUT_CODE
+    COMMAND_ECHO STDOUT
+    # OUTPUT_QUIET
+    # ERROR_QUIET
+    # ECHO_OUTPUT_VARIABLE
+    # https://cmake.org/cmake/help/v3.16/command/execute_process.html
+)
+message(STATUS "${_OUTPUT_CODE}")
+# if(NOT _EXIT_CODE EQUAL 0)
+#     message(FATAL_ERROR "validate_cgfdescriptors.py failed: please check the json files.")
+# endif()
+# app2yaml
 add_custom_command(
     OUTPUT ${DWCGF_YAML}
-    COMMAND ${DRIVEWORKS_PATH}/tools/descriptionScheduleYamlGenerator/descriptionScheduleYamlGenerator.py --app ../graphs/app/DWCGFHelloworld.app.json --output DWCGFHelloworld.app.yaml
-    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/schedule
-    MAIN_DEPENDENCY ${CMAKE_CURRENT_SOURCE_DIR}/graphs/app/DWCGFHelloworld.app.json
-    DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/graphs
+    COMMAND ${DRIVEWORKS_PATH}/tools/descriptionScheduleYamlGenerator/descriptionScheduleYamlGenerator.py --app ${DWCGF_GRAPHS_DIR}/app/DWCGFHelloworld.app.json --output DWCGFHelloworld.app.yaml
+    WORKING_DIRECTORY ${DWCGF_SCHE_DIR}
+    MAIN_DEPENDENCY ${DWCGF_GRAPHS_DIR}/app/DWCGFHelloworld.app.json
+    DEPENDS ${DWCGF_GRAPHS_FILES}
+    COMMENT "app2yaml...!"
+    VERBATIM
 )
 add_custom_target(${PROJECT_NAME}_yaml ALL DEPENDS ${DWCGF_YAML})
 # yaml2stm
 add_custom_command(
     OUTPUT ${DWCGF_STM}
     COMMAND ${DRIVEWORKS_PATH}/tools/stmcompiler -i ${DWCGF_YAML}
-    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/schedule
+    WORKING_DIRECTORY ${DWCGF_SCHE_DIR}
     MAIN_DEPENDENCY ${DWCGF_YAML}
-    DEPENDS
+    DEPENDS ${PROJECT_NAME}_yaml
+    COMMENT "yaml2stm...!"
+    VERBATIM
 )
 add_custom_target(${PROJECT_NAME}_stm ALL DEPENDS ${DWCGF_STM})
 # stmvizgraph
@@ -100,9 +124,6 @@ add_custom_target(${PROJECT_NAME}_stm ALL DEPENDS ${DWCGF_STM})
 
 # install
 sdk_add_sample(${PROJECT_NAME})
-set(DWCGF_GRAPHS_DIR ${CMAKE_CURRENT_SOURCE_DIR}/graphs)
-set(DWCGF_SCHE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/schedule)
-set(DWCGF_DATA_DIR ${CMAKE_CURRENT_SOURCE_DIR}/data)
 set(SDK_GRAPHS_DESTINATION ${CMAKE_INSTALL_PREFIX})
 set(SDK_SCHE_DESTINATION ${CMAKE_INSTALL_PREFIX})
 set(SDK_DATA_DESTINATION ${CMAKE_INSTALL_PREFIX})

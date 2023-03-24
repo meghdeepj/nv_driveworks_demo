@@ -16,7 +16,7 @@
 // components in life support devices or systems without express written approval of
 // NVIDIA CORPORATION & AFFILIATES.
 //
-// SPDX-FileCopyrightText: Copyright (c) 2021 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+// SPDX-FileCopyrightText: Copyright (c) 2021-2022 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
 // SPDX-License-Identifier: LicenseRef-NvidiaProprietary
 //
 // NVIDIA CORPORATION, its affiliates and licensors retain all intellectual
@@ -29,7 +29,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////
 
 #include "SumNodeImpl.hpp"
-#include <dwcgf/logger/Logger.hpp>
+#include <dw/core/logger/Logger.hpp>
 
 namespace dw
 {
@@ -51,13 +51,13 @@ SumNodeImpl::SumNodeImpl(const SumNodeParams& params, const dwContextHandle_t ct
         return process();
     });
 
-    FRWK_LOGD << "SumNodeImpl: created" << Logger::State::endl;
+    DW_LOGD << "SumNodeImpl: created" << Logger::State::endl;
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////
 SumNodeImpl::~SumNodeImpl()
 {
-    FRWK_LOGD << "SumNodeImpl: destructed" << Logger::State::endl;
+    DW_LOGD << "SumNodeImpl: destructed" << Logger::State::endl;
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////
@@ -69,10 +69,10 @@ dwStatus SumNodeImpl::process()
     {
         auto inputValue0 = *inPort0.getBuffer();
         auto inputValue1 = *inPort1.getBuffer();
-        FRWK_LOGD << "[Epoch " << m_epochCount << "]"
-                  << " Received " << inputValue0 << " from input VALUE_0"
-                  << ", received " << inputValue1 << " from input VALUE_1."
-                  << " Add together: " << (inputValue0 + inputValue1) << "!" << Logger::State::endl;
+        DW_LOGD << "[Epoch " << m_epochCount << "]"
+                << " Received " << inputValue0 << " from input VALUE_0"
+                << ", received " << inputValue1 << " from input VALUE_1."
+                << " Add together: " << (inputValue0 + inputValue1) << "!" << Logger::State::endl;
     }
 
     ++m_epochCount;
