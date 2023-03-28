@@ -58,6 +58,7 @@ include(GwConfiguration)
 include(ResourcesConfiguration)
 include(Gw3rdparty)
 include(GwInstallConfiguration)
+include(GwPackageConfiguration)
 include(UploadVibrante)
 set(SDK_BINARY_DIR ${CMAKE_BINARY_DIR})
 
@@ -129,7 +130,3 @@ endif()
 message(STATUS "zs: LINUX is: ${LINUX}")
 message(STATUS "zs: VIBRANTE is: ${VIBRANTE}")
 
-# install
-# https://blog.csdn.net/qq_38410730/article/details/102837401
-set(DWCGF_RUNNER ${CMAKE_CURRENT_SOURCE_DIR}/scripts/run_cgf.sh)
-install(PROGRAMS ${DWCGF_RUNNER} DESTINATION "${SDK_SAMPLE_DESTINATION}")

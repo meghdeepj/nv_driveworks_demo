@@ -60,7 +60,7 @@ done
 GW_ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/../.." && pwd -P )"
 GW_ROS_ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/../../../.." && pwd -P )"
 
-source ${GW_ROOT_DIR}/scripts/gw_base.sh
+source ${GW_ROOT_DIR}/scripts/docker/gw_base.sh
 check_agreement
 
 
@@ -271,7 +271,7 @@ function main(){
     set +x
 
     if [ "${USER}" != "root" ]; then
-        docker exec $GW_CONTAINER_NAME bash -c '/gw_demo/scripts/docker_adduser.sh'
+        docker exec $GW_CONTAINER_NAME bash -c '/gw_demo/docker/scripts/docker_adduser.sh'
     fi
 
     ok "Finished setting up ga_team/ga_demo environment. Now you can enter with: \nbash docker/scripts/gw_into.sh "

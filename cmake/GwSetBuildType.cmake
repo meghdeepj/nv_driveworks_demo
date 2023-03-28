@@ -50,3 +50,9 @@ else()
     endif()
     set_property(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS Debug Release)
 endif()
+
+# In Release build -O3 will be added automatically by CMake
+# We still enable -O3 at debug build to optimize performance
+if (uppercase_CMAKE_BUILD_TYPE STREQUAL "DEBUG")
+    add_definitions(-O3)
+endif()

@@ -14,8 +14,8 @@ LOCAL_IMAGE="yes"
 VERSION=""
 ARCH=$(uname -m)
 # zs:
-VERSION_X86_64_2004="latest"
-VERSION_X86_64_2204="latest"
+VERSION_X86_64_2004="6.0.6.0-0004"
+VERSION_X86_64_2204="6.0.6.0-0004"
 
 # Check whether user has agreed license agreement
 function check_agreement() {
@@ -60,7 +60,7 @@ done
 GW_ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/../.." && pwd -P )"
 GW_ROS_ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/../../" && pwd -P )"
 
-source ${GW_ROOT_DIR}/scripts/gw_base.sh
+source ${GW_ROOT_DIR}/docker/scripts/gw_base.sh
 check_agreement
 
 
@@ -262,7 +262,7 @@ function main(){
     set +x
 
     if [ "${USER}" != "root" ]; then
-        docker exec $GW_CONTAINER_NAME bash -c '/gw_demo/scripts/docker_adduser.sh'
+        docker exec $GW_CONTAINER_NAME bash -c '/gw_demo/docker/scripts/docker_adduser.sh'
     fi
 
     ok "Finished setting up ga_team/gw origin environment. Now you can enter with: \nbash docker/build/docker_into.sh "

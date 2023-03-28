@@ -125,5 +125,5 @@ export CCACHE_DIR=/gw_demo/ccache
 export PROJ_TOP_DIR=/gw_demo
 echo "selecting project in:" $PROJ_TOP_DIR
 # sourcing proj
-# source $PROJ_TOP_DIR/tools/zs.bashrc
+# source $PROJ_TOP_DIR/docker/scripts/zs.bashrc
 # cd $PROJ_TOP_DIR

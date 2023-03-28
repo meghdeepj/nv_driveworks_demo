@@ -30,49 +30,17 @@
 #
 ################################################################################
 
-#-------------------------------------------------------------------------------
-# Samples Installation configuration
-#-------------------------------------------------------------------------------
-set(SDK_SAMPLE_DESTINATION  "bin")
-set(SDK_LIBRARY_DESTINATION "lib")
-set(SDK_ARCHIVE_DESTINATION "lib")
-
-function(sdk_add_sample SAMPLE)
-    install(TARGETS ${SAMPLE}
-        COMPONENT samples
-        RUNTIME DESTINATION ${SDK_SAMPLE_DESTINATION}
-        LIBRARY DESTINATION ${SDK_LIBRARY_DESTINATION}
-        ARCHIVE DESTINATION ${SDK_ARCHIVE_DESTINATION}
-    )
-endfunction()
-
-function(sdk_add_sample_data SAMPLE DATAPATH)
-    #no-op
-endfunction()
-
-function(sdk_install_shared SUBFOLDER SHARES COMPONENT)
-    install(FILES ${SHARES}
-        COMPONENT ${COMPONENT}
-        DESTINATION "${SDK_SAMPLE_DESTINATION}"
-    )
-endfunction(sdk_install_shared)
-
-function(sdk_install_sample_library SAMPLE_LIB)
-    install(TARGETS ${SAMPLE_LIB}
-        COMPONENT samples
-        DESTINATION ${SDK_SAMPLE_DESTINATION}
-    )
-endfunction()
-
+# todo: install后加上包名或项目名，类似于ROS
 if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
     set(CMAKE_INSTALL_PREFIX
-        "${SDK_BINARY_DIR}/install/gw_demo" CACHE PATH
+        "${SDK_BINARY_DIR}/../install" CACHE PATH
         "Install path prefix, prepended onto install directories." FORCE
     )
 endif()
 
+# /opt/gw_demo/bin is the path in the target system
 if(CMAKE_LIBRARY_ARCHITECTURE MATCHES "^aarch64-(linux-gnu|unknown-nto-qnx)$")
-    set(CMAKE_INSTALL_RPATH /gw_demo/bin /usr/local/driveworks/lib)
+    set(CMAKE_INSTALL_RPATH /opt/gw_demo/bin /usr/local/driveworks/lib)
 else()
     set(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/${SDK_SAMPLE_DESTINATION}")
 endif()
@@ -82,13 +50,13 @@ set(CMAKE_INSTALL_RPATH_USE_LINK_PATH ON)
 if(CMAKE_LIBRARY_ARCHITECTURE STREQUAL aarch64-linux-gnu)
     message(STATUS
         "**** Please copy the contents of `${CMAKE_INSTALL_PREFIX}/${SDK_SAMPLE_DESTINATION}' "
-        "on the host filesystem to `/gw_demo/bin' on the "
+        "on the host filesystem to `/opt/gw_demo/bin' on the "
         "target filesystem. ****"
     )
 elseif(CMAKE_LIBRARY_ARCHITECTURE STREQUAL aarch64-unknown-nto-qnx)
     message(STATUS
         "**** Please mount `${CMAKE_INSTALL_PREFIX}/${SDK_SAMPLE_DESTINATION}' "
-        "on the host filesystem onto `/gw_demo/bin' on "
+        "on the host filesystem onto `/opt/gw_demo/bin' on "
         "the target filesystem using NFS. ****"
     )
 else()
@@ -97,3 +65,4 @@ else()
         "on the host filesystem. ****"
         )
 endif()
+
