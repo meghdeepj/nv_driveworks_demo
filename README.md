@@ -27,14 +27,13 @@ docker load -i ./drive-sdk-docker-6.0.6.tar
 # 进入container
 ./docker/build/docker_into.sh
 # 额外安装软件
+sudo apt update
+sudo apt install python3-numpy -y
+sudo apt install python3-pip -y
 pip3 config set global.trusted-host https://pypi.tuna.tsinghua.edu.cn
 pip3 config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 sudo pip3 config set global.trusted-host https://pypi.tuna.tsinghua.edu.cn
 sudo pip3 config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
-
-sudo apt update
-sudo apt install python3-numpy -y
-sudo apt install python3-pip -y
 sudo -H python3 -m pip install jsonschema
 ```
 
@@ -103,6 +102,11 @@ make -C /gw_demo/target/aarch64/build -j3 package
 ## 开发
 
 todo: 优化开发体验：install vscode server in the docker container
+
+```sh
+# to use dwcgf-tools out of docker
+sudo ln -s ~/orin_ws/nv_driveworks/driverorks-5.10/ /usr/local/driveworks
+```
 
 ### vscode跳转
 

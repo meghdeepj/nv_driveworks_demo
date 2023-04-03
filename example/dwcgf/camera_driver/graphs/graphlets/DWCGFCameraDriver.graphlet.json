@@ -1,0 +1,71 @@
+{
+    "name": "DWCGFCameradriver",
+    "inputPorts": {},
+    "outputPorts": {
+        "IMAGE": {
+            "type": "dwImageHandle_t"
+        },
+        "IMAGE_TIMESTAMP": {
+            "type": "dwTime_t"
+        }
+    },
+    "parameters": {
+        "masterCameraIndex": {
+            "type": "size_t",
+            "default": 0
+        }
+    },
+    "subcomponents": {
+        "cameraEpochSync": {
+            "componentType": "./sensorsync/SensorSync.graphlet.json",
+            "parameters": {
+                "epochId": 0
+            }
+        },
+        "cameraSensor": {
+            "componentType": "./camera/CameraSensor.graphlet.json",
+            "parameters": {
+                "cameraIndex": 0
+            }
+        },
+        "arender": {
+            "componentType": "./render/Render.graphlet.json",
+            "parameters": {
+                "masterCameraIndex": "$masterCameraIndex"
+            }
+        }
+    },
+    "connections": [
+        {
+            "src": "cameraSensor.NEXT_IMAGE_TIMESTAMP",
+            "dests": {
+                "cameraEpochSync.SENSOR_TIMESTAMP[0]": {}
+            },
+            "params": {
+                "indirect": true
+            }
+        },
+        {
+            "src": "cameraEpochSync.SYNC_TIMESTAMP[0]",
+            "dests": {
+                "cameraSensor.VIRTUAL_SYNC_TIME": {}
+            }
+        },
+        {
+            "src": "cameraSensor.IMAGE_TIMESTAMP",
+            "dests": {
+                "IMAGE_TIMESTAMP": {}
+            }
+        },
+        {
+            "src": "cameraSensor.CUDA_ISP_YUV_UINT_8_HALF_RES",
+            "dests": {
+                "IMAGE": {},
+                "arender.IMAGE[0]": {
+                    "mailbox": true,
+                    "reuse": true
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,63 @@
+################################################################################
+#
+# Notice
+# ALL NVIDIA DESIGN SPECIFICATIONS AND CODE ("MATERIALS") ARE PROVIDED "AS IS"
+# NVIDIA MAKES NO REPRESENTATIONS, WARRANTIES, EXPRESSED, IMPLIED, STATUTORY, OR
+# OTHERWISE WITH RESPECT TO THE MATERIALS, AND EXPRESSLY DISCLAIMS ANY IMPLIED
+# WARRANTIES OF NONINFRINGEMENT, MERCHANTABILITY, OR FITNESS FOR A PARTICULAR
+# PURPOSE.
+#
+# NVIDIA CORPORATION & AFFILIATES assumes no responsibility for the consequences
+# of use of such information or for any infringement of patents or other rights
+# of third parties that may result from its use. No license is granted by
+# implication or otherwise under any patent or patent rights of NVIDIA
+# CORPORATION & AFFILIATES. No third party distribution is allowed unless
+# expressly authorized by NVIDIA. Details are subject to change without notice.
+# This code supersedes and replaces all information previously supplied. NVIDIA
+# CORPORATION & AFFILIATES products are not authorized for use as critical
+# components in life support devices or systems without express written approval
+# of NVIDIA CORPORATION & AFFILIATES.
+#
+# SPDX-FileCopyrightText: Copyright (c) 2021-2022 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-License-Identifier: LicenseRef-NvidiaProprietary
+#
+# NVIDIA CORPORATION, its affiliates and licensors retain all intellectual
+# property and proprietary rights in and to this material, related documentation
+# and any modifications thereto. Any use, reproduction, disclosure or
+# distribution of this material and related documentation without an express
+# license agreement from NVIDIA CORPORATION or its affiliates is strictly
+# prohibited.
+#
+################################################################################
+# peocess.process_ssm_pass_0: 7000
+# process.graphlet_graphlet_node_pass_num : ns
+
+camera_master.camera_master_ssm_pass_0: 7000
+arender.render_ssm_pass_0: 7000
+cameraDriver_process.dwcgfCameraDriver_cameraSensor_ssm_pass_0: 7000
+
+camera_master.dwcgfCameraDriver_cameraEpochSync_sensorSyncNode_pass_0: 16000
+camera_master.dwcgfCameraDriver_cameraEpochSync_sensorSyncNode_pass_1: 11000
+camera_master.dwcgfCameraDriver_cameraEpochSync_sensorSyncNode_pass_2: 27000
+
+camera_pipeline2.dwcgfCameraDriver_cameraSensor_cameraNode_pass_0: 374000
+camera_pipeline2.dwcgfCameraDriver_cameraSensor_cameraNode_pass_1: 2000
+camera_pipeline2.dwcgfCameraDriver_cameraSensor_cameraNode_pass_2: 478000
+camera_pipeline2.dwcgfCameraDriver_cameraSensor_cameraNode_pass_4: 102000
+camera_pipeline2.dwcgfCameraDriver_cameraSensor_ispNode_pass_0: 24000
+camera_pipeline2.dwcgfCameraDriver_cameraSensor_ispNode_pass_1: 124000
+camera_pipeline2.dwcgfCameraDriver_cameraSensor_ispNode_pass_1_submittee: 182000
+camera_pipeline2.dwcgfCameraDriver_cameraSensor_ispNode_pass_2: 37000
+
+render.dwcgfCameraDriver_arender_renderingNode_pass_0: 259000
+render.dwcgfCameraDriver_arender_renderingNode_pass_1: 647000
+render.dwcgfCameraDriver_arender_renderingNode_pass_10: 409000
+render.dwcgfCameraDriver_arender_renderingNode_pass_11: 132000
+render.dwcgfCameraDriver_arender_renderingNode_pass_2: 617000
+render.dwcgfCameraDriver_arender_renderingNode_pass_3: 1199000
+render.dwcgfCameraDriver_arender_renderingNode_pass_4: 774000
+render.dwcgfCameraDriver_arender_renderingNode_pass_5: 1182000
+render.dwcgfCameraDriver_arender_renderingNode_pass_6: 291000
+render.dwcgfCameraDriver_arender_renderingNode_pass_7: 915000
+render.dwcgfCameraDriver_arender_renderingNode_pass_8: 778000
+render.dwcgfCameraDriver_arender_renderingNode_pass_9: 4101000

@@ -1,7 +1,13 @@
 # cgf helloworld
 
-## 构建
+## 运行
 
 ```sh
-/usr/local/driveworks/tools/descriptionScheduleYamlGenerator/descriptionScheduleYamlGenerator.py --app ./descriptions/app/DWCGFHelloworld.app.json --output DWCGFHelloworld.app.yaml
+./docker/build/docker_into.sh
+
+cd ./target/aarch64/install/example/dwcgf_helloworld/
+sudo ./run_cgf.sh
+
+sudo rm -rf ./LogFolder
+sudo rm ./framesync_*
 ```

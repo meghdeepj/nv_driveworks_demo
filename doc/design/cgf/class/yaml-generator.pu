@@ -1,0 +1,12 @@
+@startuml yaml-generator-class
+hide empty description
+skinparam monochrome false
+title yaml-generator-class-diagram
+header %date("yyyy.MM.dd") \n lizhensheng
+
+class SystemDescription
+class ScheduleDescription
+
+
+
+@enduml

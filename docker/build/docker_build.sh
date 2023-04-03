@@ -128,28 +128,12 @@ function local_volumes() {
     # Apollo root and bazel cache dirs are required.
     volumes="-v $GW_ROS_ROOT_DIR:/gw_demo \
              -v $HOME/.cache:${DOCKER_HOME}/.cache"
-    case "$(uname -s)" in
-        Linux)
-
-            case "$(lsb_release -r | cut -f2)" in
-                14.04)
-                    volumes="${volumes} "
-                    ;;
-                *)
-                    volumes="${volumes} -v /dev:/dev "
-                    ;;
-            esac
-            volumes="${volumes} -v /media:/media \
-                                -v /tmp/.X11-unix:/tmp/.X11-unix:rw \
-                                -v /etc/localtime:/etc/localtime:ro \
-                                -v /usr/src:/usr/src \
-                                -v /lib/mgaules:/lib/mgaules"
-            ;;
-        Darwin)
-            # MacOS has strict limitations on mapping volumes.
-            chmod -R a+wr ~/.cache/bazel
-            ;;
-    esac
+    volumes="${volumes} -v /dev/bus/usb:/dev/bus/usb "
+    volumes="${volumes} -v /media:/media \
+            -v /tmp/.X11-unix:/tmp/.X11-unix:rw \
+            -v /etc/localtime:/etc/localtime:ro \
+            -v /usr/src:/usr/src \
+            -v /lib/mgaules:/lib/mgaules"
     echo "${volumes}"
 }
 
@@ -244,6 +228,7 @@ function main(){
         -e USE_GPU=$USE_GPU \
         -e NVIDIA_VISIBLE_DEVICES=all \
         -e NVIDIA_DRIVER_CAPABILITIES=compute,video,utility \
+        -e DISPLAY \
         $(local_volumes) \
         --net host \
         -w /gw_demo \
@@ -251,7 +236,6 @@ function main(){
         --add-host ${LOCAL_HOST}:127.0.0.1 \
         --hostname in_dev_docker \
         --shm-size 2G \
-        --pid=host \
         -v /dev/null:/dev/raw1394 \
         $IMG \
         # /bin/bash drive-sdk-docker
