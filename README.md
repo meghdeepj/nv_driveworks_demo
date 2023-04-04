@@ -35,6 +35,12 @@ pip3 config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 sudo pip3 config set global.trusted-host https://pypi.tuna.tsinghua.edu.cn
 sudo pip3 config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 sudo -H python3 -m pip install jsonschema
+# gtest 暂不实施
+# sudo apt install libgtest-dev
+# cd /usr/src/gtest
+# sudo cmake CMakeLists.txt
+# sudo make
+# sudo cp lib/*.a /usr/lib
 ```
 
 ## 构建
@@ -116,7 +122,32 @@ sudo ln -s ~/orin_ws/nv_driveworks/driverorks-5.10/ /usr/local/driveworks
 
 ## 调试
 
+由于设置了`set(CMAKE_DEBUG_POSTFIX _d)`, 所有debug lib都添加后缀`_d`
+
+以下以x86平台为例
+
+```sh
+cmake -B /gw_demo/target/x86/build -DCMAKE_BUILD_TYPE=Debug
+rm -rf /gw_demo/target/x86/build
+
+make -C /gw_demo/target/x86/build -j3
+make -C /gw_demo/target/x86/build -j3 clean
+
+make -C /gw_demo/target/x86/build -j3 install
+
+cd target/x86/install/bin/module_demo
+ldd ./module_demo_main | grep _d
+
+cd target/x86/install/lib/module_demo
+ldd ./libmodule_demo_d.so
+ldd ./libmodule_demo_d.so | grep found
+```
+
 基于vscode工具链的调试
+
+```sh
+
+```
 
 ## 架构
 
@@ -125,9 +156,11 @@ sudo ln -s ~/orin_ws/nv_driveworks/driverorks-5.10/ /usr/local/driveworks
 内部代号：gaworks, 开发代号gw, GW
 
 ```sh
+date && tree -d -L 3
+Tue Apr  4 01:38:36 PM CST 2023
 .
 ├── 3rdparty
-│   ├── linux-aarch64  # linux-aarch64交叉编译的内容
+│   ├── linux-aarch64
 │   │   ├── vibrante
 │   │   ├── vibrante_Xlibs
 │   │   └── zlib
@@ -135,8 +168,8 @@ sudo ln -s ~/orin_ws/nv_driveworks/driverorks-5.10/ /usr/local/driveworks
 │       ├── glew
 │       ├── glfw
 │       └── lodepng
-├── cmake  # cmake配置文件
-├── doc # 文档
+├── cmake
+├── doc
 │   ├── basic
 │   ├── deploy
 │   ├── design
@@ -146,18 +179,20 @@ sudo ln -s ~/orin_ws/nv_driveworks/driverorks-5.10/ /usr/local/driveworks
 │   │   └── 5.8
 │   └── tutorial
 │       └── dwcgf
-├── docker # docker配置文件
-│   ├── build # 当前进入默认docker的脚本
-│   ├── run # 进入项目docker的脚本(暂未实现)
-│   ├── scripts # 一些附加脚本
-│   └── sdkm # sdk manager的docker运行脚本
-├── example # 示例项目，按照项目单独安装其目标文件
+├── docker
+│   ├── build
+│   ├── run
+│   ├── scripts
+│   └── sdkm
+├── example
 │   └── dwcgf
+│       ├── camera_driver
 │       └── helloworld
-├── extern # 引用的外部库目录，从git-repo clone下来，包括项目名/inclue 和项目名/lib 以及对应的cmake
-├── modules # 项目模块，根据功能分项目，分文件夹，其目标文件安装在deb顶层
-│   ├── dwcgf # 图模型项目
-│   └── perception_demo # 一个算法模块示例项目
+├── extern # 引用的外部库目录，从git-repo clone下来，包括项目名/inclue 和项目名/lib 以及对
+├── modules # 项目模块，根据团队分文件夹，一个团队一个git仓，根据功能分项目，其目标文件安装在deb顶层
+│   ├── perception # 感知团队
+│   └── xplatform # 平台团队
+│       └── xcgf
 ├── scripts # 脚本
 ├── target # 目标目录，该目录不上库
 │   └── x86 # cmake构建架构

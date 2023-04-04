@@ -56,3 +56,5 @@ endif()
 if (uppercase_CMAKE_BUILD_TYPE STREQUAL "DEBUG")
     add_definitions(-O3)
 endif()
+
+set(CMAKE_DEBUG_POSTFIX _d)

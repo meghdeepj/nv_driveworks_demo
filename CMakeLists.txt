@@ -8,8 +8,13 @@ include(GwSetBuildType) # Set the build type before project is created
 
 set(SDK_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR})
 set(SDK_BINARY_DIR ${CMAKE_CURRENT_BINARY_DIR})
+set(SDK_BINARY_DIR ${CMAKE_BINARY_DIR})
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${SDK_BINARY_DIR}/bin)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${SDK_BINARY_DIR}/bin)
 message(STATUS "SDK_SOURCE_DIR is: "  ${SDK_SOURCE_DIR})
 message(STATUS "SDK_BINARY_DIR is: "  ${SDK_BINARY_DIR})
+message(STATUS "CMAKE_RUNTIME_OUTPUT_DIRECTORY is: "  ${CMAKE_RUNTIME_OUTPUT_DIRECTORY})
+message(STATUS "CMAKE_LIBRARY_OUTPUT_DIRECTORY is: "  ${CMAKE_LIBRARY_OUTPUT_DIRECTORY})
 
 #-------------------------------------------------------------------------------
 # Root project
@@ -49,6 +54,8 @@ set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 #-------------------------------------------------------------------------------
 find_package(EGL)
 find_package(Threads REQUIRED)
+# 暂不启用单元测试
+# find_package(GTest)
 
 #-------------------------------------------------------------------------------
 # Basic configuration
@@ -60,7 +67,13 @@ include(Gw3rdparty)
 include(GwInstallConfiguration)
 include(GwPackageConfiguration)
 include(UploadVibrante)
-set(SDK_BINARY_DIR ${CMAKE_BINARY_DIR})
+if(GTest_FOUND)
+    # Don't enable testing until after building dependencies
+    enable_testing()
+    # in vscode using CTest as a test client
+    include(CTest)
+    include(GWTest)
+endif()
 
 #-------------------------------------------------------------------------------
 # DriveWorks SDK
@@ -79,8 +92,7 @@ set(Driveworks_LIBRARIES
     driveworks
     driveworks-shared
     driveworks-visualization
-    # samples_allocator
-    )
+)
 
 if(VIBRANTE)
     list(APPEND Driveworks_LIBRARIES ${vibrante_LIBRARIES} ${vibrante_Xlibs_LIBRARIES})
@@ -109,15 +121,14 @@ endif()
 # gw_demos
 #-------------------------------------------------------------------------------
 set(SAMPLES dwcgf;)
-    file(GLOB ADDITIONAL_SAMPLES "CMakeListsSamples*.txt")
-    foreach(ADDITIONAL_SAMPLE ${ADDITIONAL_SAMPLES})
-        include(${ADDITIONAL_SAMPLE})
-    endforeach()
+foreach(SAMPLE ${SAMPLES})
+    add_subdirectory(example/${SAMPLE})
+endforeach()
 
-    foreach(SAMPLE ${SAMPLES})
-        add_subdirectory(example/${SAMPLE})
-    endforeach()
-
+set(MODULES module_demo;xplatform;)
+foreach(MODULE ${MODULES})
+    add_subdirectory(modules/${MODULE})
+endforeach()
 # Create a symlink '_data' to '<DW-install>/data' in the build folder's root, so that `DataPath`
 # can lookup the required path independent of the build folder's location relative to the
 # repository's root

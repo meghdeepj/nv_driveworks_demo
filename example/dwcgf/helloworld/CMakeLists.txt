@@ -79,9 +79,8 @@ set(DWCGF_YAML ${CMAKE_CURRENT_SOURCE_DIR}/schedule/DWCGFHelloworld__standardSch
 set(DWCGF_STM ${CMAKE_CURRENT_SOURCE_DIR}/schedule/DWCGFHelloworld__standardSchedule.stm)
 
 file(GLOB_RECURSE DWCGF_GRAPHS_FILES
-    ${DWCGF_GRAPHS_DIR}
-    "*.yaml"
-    "*.json"
+    ${DWCGF_GRAPHS_DIR}/*.yaml
+    ${DWCGF_GRAPHS_DIR}/*.json
 )
 # json-validater execute during configuring time.
 execute_process(

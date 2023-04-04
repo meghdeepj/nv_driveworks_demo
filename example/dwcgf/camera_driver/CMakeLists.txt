@@ -80,9 +80,8 @@ set(DWCGF_YAML ${CMAKE_CURRENT_SOURCE_DIR}/schedule/${DWCGF_FILE_PREFIX}__standa
 set(DWCGF_STM ${CMAKE_CURRENT_SOURCE_DIR}/schedule/${DWCGF_FILE_PREFIX}__standardSchedule.stm)
 
 file(GLOB_RECURSE DWCGF_GRAPHS_FILES
-    ${DWCGF_GRAPHS_DIR}
-    "*.yaml"
-    "*.json"
+    ${DWCGF_GRAPHS_DIR}/*.yaml
+    ${DWCGF_GRAPHS_DIR}/*.json
 )
 # json-validater execute during configuring time.
 execute_process(

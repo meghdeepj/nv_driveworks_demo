@@ -13,6 +13,10 @@ function(gw_add_sample SAMPLE)
         LIBRARY DESTINATION ${GW_SAMPLE_LIBRARY_DESTINATION}
         ARCHIVE DESTINATION ${GW_SAMPLE_ARCHIVE_DESTINATION}
     )
+    set_target_properties(${SAMPLE} PROPERTIES
+        INSTALL_RPATH ${GW_SAMPLE_LIBRARY_DESTINATION}:\$ORIGIN:\$ORIGIN/../lib
+        BUILD_WITH_INSTALL_RPATH ON
+    )
 endfunction()
 
 function(gw_add_sample_data SAMPLE DATAPATH)
@@ -30,5 +34,9 @@ function(gw_install_sample_library SAMPLE_LIB)
     install(TARGETS ${SAMPLE_LIB}
         COMPONENT samples
         DESTINATION ${GW_SAMPLE_BINARY_DESTINATION}
+    )
+    set_target_properties(${SAMPLE_LIB} PROPERTIES
+        INSTALL_RPATH ${GW_SAMPLE_BINARY_DESTINATION}:\$ORIGIN:\$ORIGIN/../lib
+        BUILD_WITH_INSTALL_RPATH ON
     )
 endfunction()
