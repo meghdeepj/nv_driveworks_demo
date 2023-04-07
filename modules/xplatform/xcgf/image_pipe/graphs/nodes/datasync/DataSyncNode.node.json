@@ -1,0 +1,47 @@
+{
+    "comment": "datasync node",
+    "generated": false,
+    "library": "libdwcgf_image_pipe.so",
+    "name": "dw::framework::DataSyncNode",
+    "inputPorts": {
+        "SENSOR_TIMESTAMP": {
+            "type": "int32_t",
+            "array": 1,
+            "bindingRequired": true
+        },
+        "VALUE_1": {
+            "type": "int32_t",
+            "bindingRequired": true
+        }
+    },
+    "outputPorts": {
+        "SYNCED_IMAGE_ARRAY":{
+            "type":"int32_t",
+            "array":1
+        },
+        "SYNCED_TIMESTAMP":{
+            "type":"int32_t"
+        }
+    },
+    "parameters": {},
+    "passes": [
+        {
+            "name": "SETUP",
+            "processorTypes": [
+                "CPU"
+            ]
+        },
+        {
+            "name": "PROCESS",
+            "processorTypes": [
+                "CPU"
+            ]
+        },
+        {
+            "name": "TEARDOWN",
+            "processorTypes": [
+                "CPU"
+            ]
+        }
+    ]
+}

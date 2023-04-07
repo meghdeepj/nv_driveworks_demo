@@ -1,0 +1,28 @@
+{
+    "name": "PilotPipe",
+    "inputPorts": {},
+    "outputPorts": {
+        "IMAGE": {
+            "type": "int32_t"
+        },
+        "IMAGE_TIMESTAMP": {
+            "type": "int32_t"
+        }
+    },
+    "parameters": {
+        "cameraIntrinsics": {
+            "type": "std::string",
+            "default": "camera_intrinsics"
+        }
+    },
+    "subcomponents": {
+        "cameraCapture": {
+            "componentType": "../camera/CameraCapture.graphlet.json",
+            "parameters": {
+                "*": "$*"
+            }
+        }
+    },
+    "connections": [
+    ]
+}

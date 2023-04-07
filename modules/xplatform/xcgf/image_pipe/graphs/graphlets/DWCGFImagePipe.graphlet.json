@@ -1,0 +1,33 @@
+{
+    "name": "DWCGFImagePipe",
+    "inputPorts": {},
+    "outputPorts": {
+        "PILOT_IMAGE_ARRAY": {
+            "type": "int32_t",
+            "array": 1
+        },
+        "PILOT_IMAGE_TIMESTAMP": {
+            "type": "int32_t"
+        },
+        "APA_IMAGE_ARRAY": {
+            "type": "int32_t",
+            "array": 1
+        },
+        "APA_IMAGE_TIMESTAMP": {
+            "type": "int32_t"
+        }
+    },
+    "parameters": {
+        "cameraIntrinsics": {
+            "type": "std::string",
+            "default": "camera_intrinsics"
+        }
+    },
+    "subcomponents": {
+        "pilotPipe0": {
+            "componentType": "./pipe/PilotPipe.graphlet.json"
+        }
+    },
+    "connections": [
+    ]
+}

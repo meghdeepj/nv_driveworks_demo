@@ -1,0 +1,45 @@
+{
+    "name": "PilotDataSync",
+    "inputPorts": {
+        "IMAGE_ARRAY": {
+            "type": "int32_t",
+            "array": 1
+        },
+        "IMAGE_TIMESTAMP_ARRAY": {
+            "type": "int32_t",
+            "array": 1
+        }
+    },
+    "outputPorts": {
+        "SYNCED_IMAGE_ARRAY": {
+            "type": "int32_t",
+            "array": 1
+        },
+        "SYNCED_TIMESTAMP": {
+            "type": "int32_t"
+        }
+    },
+    "parameters": {},
+    "subcomponents": {
+        "dataSyncNode": {
+            "componentType": "../../nodes/datasync/DataSyncNode.node.json",
+            "parameters": {
+                "*": "$*"
+            }
+        }
+    },
+    "connections": [
+        {
+            "src": "dataSyncNode.SYNCED_IMAGE_ARRAY[0]",
+            "dests": {
+                "SYNCED_IMAGE_ARRAY[0]": {}
+            }
+        },
+        {
+            "src": "dataSyncNode.SYNCED_TIMESTAMP",
+            "dests": {
+                "SYNCED_TIMESTAMP": {}
+            }
+        }
+    ]
+}

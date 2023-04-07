@@ -1,0 +1,58 @@
+{
+    "comment": "camera capture node",
+    "generated": false,
+    "library": "libdwcgf_image_pipe.so",
+    "name": "dw::framework::CameraNode",
+    "inputPorts": {},
+    "outputPorts": {
+        "IMAGE_NATIVE_RAW": {
+            "type": "dwImageHandle_t"
+        },
+        "IMAGE_NATIVE_PROCESSED": {
+            "type": "dwImageHandle_t"
+        },
+        "IMAGE_PROCESSED_RGBA": {
+            "type": "dwImageHandle_t"
+        },
+        "IMAGE_TIMESTAMP": {
+            "type": "dwTime_t"
+        }
+    },
+    "parameters": {
+        "name": {
+            "type": "std::string"
+        }
+    },
+    "passes": [
+        {
+            "name": "SETUP",
+            "processorTypes": [
+                "CPU"
+            ]
+        },
+        {
+            "name": "RAW_OUTPUT",
+            "processorTypes": [
+                "GPU"
+            ]
+        },
+        {
+            "name": "PROCESSED_OUTPUT",
+            "processorTypes": [
+                "GPU"
+            ]
+        },
+        {
+            "name": "PROCESSED_RGBA_OUTPUT",
+            "processorTypes": [
+                "GPU"
+            ]
+        },
+        {
+            "name": "TEARDOWN",
+            "processorTypes": [
+                "CPU"
+            ]
+        }
+    ]
+}

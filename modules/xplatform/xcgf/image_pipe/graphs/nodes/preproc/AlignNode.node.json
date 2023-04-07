@@ -1,0 +1,38 @@
+{
+    "comment": "align node",
+    "generated": false,
+    "library": "libdwcgf_image_pipe.so",
+    "name": "dw::framework::AlignNode",
+    "inputPorts": {
+        "VALUE_0": {
+            "type": "int32_t",
+            "bindingRequired": true
+        },
+        "VALUE_1": {
+            "type": "int32_t",
+            "bindingRequired": true
+        }
+    },
+    "outputPorts": {},
+    "parameters": {},
+    "passes": [
+        {
+            "name": "SETUP",
+            "processorTypes": [
+                "CPU"
+            ]
+        },
+        {
+            "name": "PROCESS",
+            "processorTypes": [
+                "CPU"
+            ]
+        },
+        {
+            "name": "TEARDOWN",
+            "processorTypes": [
+                "CPU"
+            ]
+        }
+    ]
+}
