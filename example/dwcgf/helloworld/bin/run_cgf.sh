@@ -358,10 +358,10 @@ ARGS="$ARGS --app_parameter=${APP_PARAMETER}"
 ls -al ${RR_TOP_PATH}
 
 set +e
-# echo "Running command: ${RR_TOP_PATH}/launcher ${ARGS} > ${RR_LOG_PATH}/launcher.log 2>&1"
-# ${RR_TOP_PATH}/launcher ${ARGS} > ${RR_LOG_PATH}/launcher.log 2>&1 &
-echo "Running command: ${RR_TOP_PATH}/launcher ${ARGS}"
-${RR_TOP_PATH}/launcher ${ARGS}
+echo "Running command: ${RR_TOP_PATH}/launcher ${ARGS} > ${RR_LOG_PATH}/launcher.log 2>&1"
+${RR_TOP_PATH}/launcher ${ARGS} > ${RR_LOG_PATH}/launcher.log 2>&1 &
+# echo "Running command: ${RR_TOP_PATH}/launcher ${ARGS}"
+# ${RR_TOP_PATH}/launcher ${ARGS}
 LAUNCHER_PID=$!
 wait ${LAUNCHER_PID}
 RR_STATUS=$?
