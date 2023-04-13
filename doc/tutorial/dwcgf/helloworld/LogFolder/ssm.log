@@ -1,0 +1,66 @@
+appExecutable: ssm
+argv[0] : /usr/local/driveworks/bin/vanillassm
+argv[1] : --sehFailureMask=
+argv[2] : --enable-SEH-SSM=0
+argv[3] : --enable-ssm-degradation=0
+[2023-01-30T09:37:53.848886Z][DEBUG][tid:0][vanilla_main.cpp:95][SSM] Reading SWC list from: /tmp/swc_list.txt
+[2023-01-30T09:37:53.849014Z][DEBUG][tid:0][vanilla_main.cpp:95][SSM] Setup Hierarchy for VANILLASSM
+[2023-01-30T09:37:53.849056Z][DEBUG][tid:0][vanilla_main.cpp:95][SSM] Creating Server: SSM 6072
+[2023-01-30T09:37:53.849343Z][DEBUG][tid:0][vanilla_main.cpp:95][SSM] Initializing VANILLASSM
+[2023-01-30T09:37:53.849357Z][DEBUG][tid:0][vanilla_main.cpp:227][SSM] [SSM] initialized
+[2023-01-30T09:37:53.849651Z][ERROR][tid:0][vanilla_main.cpp:83][SSM] Error: Connect failed helloworld_process0 127.0.0.1 6122
+[2023-01-30T09:37:53.849958Z][ERROR][tid:0][vanilla_main.cpp:83][SSM] Error: Connect failed helloworld_process0 127.0.0.1 6122
+[2023-01-30T09:37:53.850217Z][ERROR][tid:0][vanilla_main.cpp:83][SSM] Error: Connect failed helloworld_process0 127.0.0.1 6122
+[2023-01-30T09:37:53.850430Z][ERROR][tid:0][vanilla_main.cpp:83][SSM] Unable to connect to server: 127.0.0.1 6122, queue: helloworld_process0, from: SSM
+[2023-01-30T09:37:54.850769Z][DEBUG][tid:0][vanilla_main.cpp:238][SSM] [SSM] clients ready
+[2023-01-30T09:37:54.850837Z][DEBUG][tid:0][vanilla_main.cpp:87][SSM]  [PERF] SSMStart: [1675071474850]
+[2023-01-30T09:37:54.850877Z][DEBUG][tid:0][vanilla_main.cpp:155][SSM] [SSM] run pre init
+[2023-01-30T09:37:54.850918Z][DEBUG][tid:0][vanilla_main.cpp:95][SSM] Current State of SSM: PRE_INIT
+[2023-01-30T09:37:54.850949Z][DEBUG][tid:0][vanilla_main.cpp:87][SSM]  [PERF] InitPhaseComplete: SSM => PRE_INIT [1675071474850]
+FROM: SSM
+[2023-01-30T09:37:54.851086Z][DEBUG][tid:1][vanilla_main.cpp:95][SSM] SSM Server Init Signalling: 1  1
+[2023-01-30T09:37:54.854378Z][DEBUG][tid:2][vanilla_main.cpp:87][SSM]  [PERF] InitPhaseComplete: helloworld_process0 => PRE_INIT [1675071474854306]
+[2023-01-30T09:37:54.861212Z][DEBUG][tid:0][vanilla_main.cpp:157][SSM] [SSM] pre init completed
+[2023-01-30T09:37:54.861237Z][DEBUG][tid:0][vanilla_main.cpp:159][SSM] [SSM] run init
+[2023-01-30T09:37:54.861277Z][DEBUG][tid:0][vanilla_main.cpp:87][SSM]  [PERF] InitBroadcast: SSM => INIT [1675071474861]
+[2023-01-30T09:37:54.861300Z][DEBUG][tid:0][vanilla_main.cpp:95][SSM] InitBroadcast: SSM => INIT [1675071474861]    [helloworld_process0,]
+FROM: helloworld_process0
+[2023-01-30T09:37:54.875947Z][DEBUG][tid:1][vanilla_main.cpp:95][SSM] SSM Server Init Signalling: 1  1
+[2023-01-30T09:37:54.875964Z][DEBUG][tid:2][vanilla_main.cpp:87][SSM]  [PERF] InitPhaseComplete: helloworld_process0 => INIT [1675071474875884]
+[2023-01-30T09:37:54.876011Z][DEBUG][tid:0][vanilla_main.cpp:95][SSM] Current State of SSM: INIT
+[2023-01-30T09:37:54.876073Z][DEBUG][tid:0][vanilla_main.cpp:87][SSM]  [PERF] InitPhaseComplete: SSM => INIT [1675071474876]
+[2023-01-30T09:37:54.876087Z][DEBUG][tid:0][vanilla_main.cpp:161][SSM] [SSM] init completed
+[2023-01-30T09:37:54.876093Z][DEBUG][tid:0][vanilla_main.cpp:163][SSM] [SSM] run post init
+[2023-01-30T09:37:54.876108Z][DEBUG][tid:0][vanilla_main.cpp:87][SSM]  [PERF] InitBroadcast: SSM => POST_INIT [1675071474876]
+[2023-01-30T09:37:54.876122Z][DEBUG][tid:0][vanilla_main.cpp:95][SSM] InitBroadcast: SSM => POST_INIT [1675071474876]    [helloworld_process0,]
+FROM: helloworld_process0
+[2023-01-30T09:37:54.897548Z][DEBUG][tid:1][vanilla_main.cpp:95][SSM] SSM Server Init Signalling: 1  1
+[2023-01-30T09:37:54.897566Z][DEBUG][tid:2][vanilla_main.cpp:87][SSM]  [PERF] InitPhaseComplete: helloworld_process0 => POST_INIT [1675071474897500]
+[2023-01-30T09:37:54.897615Z][DEBUG][tid:0][vanilla_main.cpp:95][SSM] Current State of SSM: POST_INIT
+[2023-01-30T09:37:54.897673Z][DEBUG][tid:0][vanilla_main.cpp:87][SSM]  [PERF] InitPhaseComplete: SSM => POST_INIT [1675071474897]
+[2023-01-30T09:37:54.897689Z][DEBUG][tid:0][vanilla_main.cpp:165][SSM] [SSM] post init completed
+[2023-01-30T09:37:54.897697Z][DEBUG][tid:0][vanilla_main.cpp:167][SSM] [SSM] run pre ready
+[2023-01-30T09:37:54.897712Z][DEBUG][tid:0][vanilla_main.cpp:87][SSM]  [PERF] InitBroadcast: SSM => PRE_READY [1675071474897]
+[2023-01-30T09:37:54.897742Z][DEBUG][tid:0][vanilla_main.cpp:95][SSM] InitBroadcast: SSM => PRE_READY [1675071474897]    [helloworld_process0,]
+FROM: helloworld_process0
+[2023-01-30T09:37:54.918497Z][DEBUG][tid:1][vanilla_main.cpp:95][SSM] SSM Server Init Signalling: 1  1
+[2023-01-30T09:37:54.918516Z][DEBUG][tid:2][vanilla_main.cpp:87][SSM]  [PERF] InitPhaseComplete: helloworld_process0 => PRE_READY [1675071474918448]
+[2023-01-30T09:37:54.918576Z][DEBUG][tid:0][vanilla_main.cpp:95][SSM] Current State of SSM: PRE_READY
+[2023-01-30T09:37:54.918647Z][DEBUG][tid:0][vanilla_main.cpp:87][SSM]  [PERF] InitPhaseComplete: SSM => PRE_READY [1675071474918]
+[2023-01-30T09:37:54.918668Z][DEBUG][tid:0][vanilla_main.cpp:169][SSM] [SSM] pre ready completed
+[2023-01-30T09:37:54.918677Z][DEBUG][tid:0][vanilla_main.cpp:171][SSM] [SSM] run ready
+[2023-01-30T09:37:54.918696Z][DEBUG][tid:0][vanilla_main.cpp:87][SSM]  [PERF] InitBroadcast: SSM => READY [1675071474918]
+[2023-01-30T09:37:54.918710Z][DEBUG][tid:0][vanilla_main.cpp:95][SSM] InitBroadcast: SSM => READY [1675071474918]    [helloworld_process0,]
+FROM: helloworld_process0
+[2023-01-30T09:37:54.939499Z][DEBUG][tid:1][vanilla_main.cpp:95][SSM] SSM Server Init Signalling: 1  1
+[2023-01-30T09:37:54.939516Z][DEBUG][tid:2][vanilla_main.cpp:87][SSM]  [PERF] InitPhaseComplete: helloworld_process0 => READY [1675071474939456]
+[2023-01-30T09:37:54.939574Z][DEBUG][tid:0][vanilla_main.cpp:95][SSM] Current State of SSM: READY
+[2023-01-30T09:37:54.939641Z][DEBUG][tid:0][vanilla_main.cpp:87][SSM]  [PERF] InitPhaseComplete: SSM => READY [1675071474939]
+[2023-01-30T09:37:54.939658Z][DEBUG][tid:0][vanilla_main.cpp:173][SSM] [SSM] ready completed
+[2023-01-30T09:37:54.939682Z][DEBUG][tid:0][vanilla_main.cpp:87][SSM]  [PERF] InitBroadcast: SSM => ENTER_STATE_MACHINE [1675071474939]
+[2023-01-30T09:37:54.939697Z][DEBUG][tid:0][vanilla_main.cpp:95][SSM] InitBroadcast: SSM => ENTER_STATE_MACHINE [1675071474939]    [helloworld_process0,]
+[2023-01-30T09:37:54.939748Z][DEBUG][tid:0][vanilla_main.cpp:247][SSM] [SSM] Starting SSM...
+[2023-01-30T09:37:54.939816Z][DEBUG][tid:0][vanilla_main.cpp:87][SSM]  [PERF] StateChange: SSM => Manual [1675071474939]
+[2023-01-30T09:37:54.939868Z][DEBUG][tid:0][vanilla_main.cpp:95][SSM] Broadcasting activate: SSM ==> helloworld_process0
+[2023-01-30T09:37:54.949655Z][DEBUG][tid:2][vanilla_main.cpp:87][SSM]  [PERF] StateChange: helloworld_process0 => INIT_CLONE [1675071474949600]
+[2023-01-30T09:37:54.949712Z][DEBUG][tid:2][vanilla_main.cpp:87][SSM]  [PERF] StateChange: helloworld_process0 => Manual [1675071474949676]

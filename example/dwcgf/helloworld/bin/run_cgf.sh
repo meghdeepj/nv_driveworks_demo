@@ -345,6 +345,7 @@ ARGS="$ARGS --dwdatapath=${DW_TOP_PATH}/data"
 ARGS="$ARGS --vdcpath=${RR_TOP_PATH}"
 ARGS="$ARGS --schedule=${SCHED}"
 ARGS="$ARGS --start_timestamp=0"
+# todo: deal with the map path
 ARGS="$ARGS --mapPath=maps/sample/sanjose_loop"
 ARGS="$ARGS --loglevel=DW_LOG_VERBOSE"
 ARGS="$ARGS --fullscreen=0"

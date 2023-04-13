@@ -1,0 +1,18 @@
+<13>1 2023-01-30T09:37:53.806817Z - schedule_manager 26396 - - [0us][DEBUG][tid:0][ScheduleManager.cpp:175][ScheduleManager] ScheduleManager: arg[0]: /usr/local/driveworks/bin/ScheduleManager
+<13>1 2023-01-30T09:37:53.806947Z - schedule_manager 26396 - - [0us][DEBUG][tid:0][ScheduleManager.cpp:175][ScheduleManager] ScheduleManager: arg[1]: --launchspec=/home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/example/dwcgf_helloworld/LogFolder/dumpLaunchSpec.json
+<13>1 2023-01-30T09:37:53.806965Z - schedule_manager 26396 - - [0us][DEBUG][tid:0][ScheduleManager.cpp:175][ScheduleManager] ScheduleManager: arg[2]: --loglevel=DW_LOG_VERBOSE
+<13>1 2023-01-30T09:37:53.806976Z - schedule_manager 26396 - - [0us][DEBUG][tid:0][ScheduleManager.cpp:175][ScheduleManager] ScheduleManager: arg[3]: --enableScheduleSwitching=false
+<13>1 2023-01-30T09:37:53.806985Z - schedule_manager 26396 - - [0us][DEBUG][tid:0][ScheduleManager.cpp:175][ScheduleManager] ScheduleManager: arg[4]: --scheduleManagerHostIP=127.0.0.1
+<13>1 2023-01-30T09:37:53.806994Z - schedule_manager 26396 - - [0us][DEBUG][tid:0][ScheduleManager.cpp:175][ScheduleManager] ScheduleManager: arg[5]: --scheduleManagerHostPort=40100
+<13>1 2023-01-30T09:37:53.807003Z - schedule_manager 26396 - - [0us][DEBUG][tid:0][ScheduleManager.cpp:175][ScheduleManager] ScheduleManager: arg[6]: --scheduleManagerNumClients=1
+<13>1 2023-01-30T09:37:53.807012Z - schedule_manager 26396 - - [0us][DEBUG][tid:0][ScheduleManager.cpp:175][ScheduleManager] ScheduleManager: arg[7]: --logspec=file/rfc5424.user.schedule_manager:/home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/example/dwcgf_helloworld/LogFolder/schedule_manager.log
+<13>1 2023-01-30T09:37:53.807020Z - schedule_manager 26396 - - [0us][DEBUG][tid:0][ScheduleManager.cpp:175][ScheduleManager] ScheduleManager: arg[8]: --schedule-manager-name=CGF-ScheduleManager
+<13>1 2023-01-30T09:37:53.807375Z - schedule_manager 26396 - - [0us][DEBUG][tid:0][ScheduleManager.cpp:209][ScheduleManager] [ScheduleManager] ScheduleKey: standardSchedule id: 0
+<13>1 2023-01-30T09:37:53.807398Z - schedule_manager 26396 - - [0us][DEBUG][tid:0][ScheduleManager.cpp:248][ScheduleManager] [ScheduleManager] Do not init ssm, schedule switching disabled 0
+<13>1 2023-01-30T09:37:53.807419Z - schedule_manager 26396 - - [0us][DEBUG][tid:0][ScheduleManager.cpp:113][ScheduleManager] [ScheduleManager] Do not start thread, schedule switching not enabled 0
+<13>1 2023-01-30T09:37:53.807432Z - schedule_manager 26396 - - [0us][DEBUG][tid:0][ScheduleManager.cpp:393][ScheduleManager] startStmScheduleManager::starting
+<13>1 2023-01-30T09:37:53.807631Z - schedule_manager 26396 - - [0us][DEBUG][tid:0][ScheduleManager.cpp:412][ScheduleManager] Successfully started the stm schedule manager
+<13>1 2023-01-30T09:37:53.807654Z - schedule_manager 26396 - - [0us][DEBUG][tid:0][ScheduleManager.cpp:423][ScheduleManager] Default state is STANDARD & default schedule is standardSchedule id: 0
+<13>1 2023-01-30T09:37:53.807667Z - schedule_manager 26396 - - [0us][DEBUG][tid:0][ScheduleManager.cpp:444][ScheduleManager] startSchedule schedule id: 0
+<13>1 2023-01-30T09:37:55.26166Z - schedule_manager 26396 - - [0us][DEBUG][tid:0][ScheduleManager.cpp:438][ScheduleManager] Successfully started the schedule with id: 0
+<13>1 2023-01-30T09:37:55.26200Z - schedule_manager 26396 - - [0us][DEBUG][tid:0][ScheduleManager.cpp:78][ScheduleManager] Successfully started the scheduleManager

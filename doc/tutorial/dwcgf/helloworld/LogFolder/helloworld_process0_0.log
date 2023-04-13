@@ -1,0 +1,497 @@
+<11>1 2023-01-30T09:37:53.901118Z - helloworld_process0 26395 - - [0us][ERROR][tid:rr2_main][TopExecutor.hpp:2022][TopExecutor] SWC initiated at:89710678261696
+<13>1 2023-01-30T09:37:53.901294Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][TopExecutor.hpp:2026][TopExecutor] Program Arguments:
+--amend=
+--app_parameter=
+--augreplay=
+--autolanechange=0
+--calibrationOverlayFile=
+--channelBindingThreadPoolSize=auto
+--configOverlayFile=
+--configOverlayName=
+--datapath=/home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/example/dwcgf_helloworld/data
+--disableParamServiceThread=
+--disableStmControlLogger=1
+--disablefaulthandler=0
+--ds2_control=
+--dumpamend=0
+--dwdatapath=/home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/example/dwcgf_helloworld/data
+--enable_max_time_diff_check=0
+--end_timestamp=0
+--fiufile=
+--frame=
+--fullscreen=0
+--initSerialize=0
+--instantiate_rig_sensors=
+--launchspec=/home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/example/dwcgf_helloworld/LogFolder/dumpLaunchSpec.json
+--libname=RuntimeGraphlet
+--lockstep_deterministic_replay=
+--logPath=/home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/example/dwcgf_helloworld/LogFolder
+--loglevel=DW_LOG_VERBOSE
+--logspec=file/rfc5424.user.helloworld_process0:/home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/example/dwcgf_helloworld/LogFolder/helloworld_process0.log
+--loop=0
+--mapPath=maps/sample/sanjose_loop
+--memwatch_frames=
+--modulename=helloworld_process0
+--ncuProfileFrames=
+--nodeInitThreadPoolSize=auto
+--offscreen=0
+--path=/usr/local/driveworks/bin
+--postInitSerialize=0
+--preInitSerialize=0
+--rc2f=
+--region=
+--resetSerialize=0
+--rig=
+--shadow=
+--spec=/home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/example/dwcgf_helloworld/graphs/app/DWCGFHelloworld.app.json
+--start_timestamp=0
+--stm_discriminator=
+--swcid=helloworld_process0
+--time_multiplier=
+--useDynamicMap=0
+--useNominalTransform=0
+--vdcpath=/usr/local/driveworks/bin
+--vinOverlayFile=
+--virtual=1
+--virtual_time=
+--winSizeH=1200
+--winSizeW=1920
+
+<13>1 2023-01-30T09:37:53.901322Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][TopExecutor.hpp:2032][TopExecutor] argv[0]: /usr/local/driveworks/bin/LoaderLite
+<13>1 2023-01-30T09:37:53.901334Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][TopExecutor.hpp:2032][TopExecutor] argv[1]: --swcid=helloworld_process0
+<13>1 2023-01-30T09:37:53.901344Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][TopExecutor.hpp:2032][TopExecutor] argv[2]: --libname=RuntimeGraphlet
+<13>1 2023-01-30T09:37:53.901354Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][TopExecutor.hpp:2032][TopExecutor] argv[3]: --modulename=helloworld_process0
+<13>1 2023-01-30T09:37:53.901363Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][TopExecutor.hpp:2032][TopExecutor] argv[4]: --launchspec=/home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/example/dwcgf_helloworld/LogFolder/dumpLaunchSpec.json
+<13>1 2023-01-30T09:37:53.901372Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][TopExecutor.hpp:2032][TopExecutor] argv[5]: --amend=
+<13>1 2023-01-30T09:37:53.901381Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][TopExecutor.hpp:2032][TopExecutor] argv[6]: --app_parameter=
+<13>1 2023-01-30T09:37:53.901390Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][TopExecutor.hpp:2032][TopExecutor] argv[7]: --autolanechange=0
+<13>1 2023-01-30T09:37:53.901398Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][TopExecutor.hpp:2032][TopExecutor] argv[8]: --calibrationOverlayFile=
+<13>1 2023-01-30T09:37:53.901407Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][TopExecutor.hpp:2032][TopExecutor] argv[9]: --configOverlayFile=
+<13>1 2023-01-30T09:37:53.901416Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][TopExecutor.hpp:2032][TopExecutor] argv[10]: --configOverlayName=
+<13>1 2023-01-30T09:37:53.901425Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][TopExecutor.hpp:2032][TopExecutor] argv[11]: --datapath=/home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/example/dwcgf_helloworld/data
+<13>1 2023-01-30T09:37:53.901444Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][TopExecutor.hpp:2032][TopExecutor] argv[12]: --disableParamServiceThread=
+<13>1 2023-01-30T09:37:53.901455Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][TopExecutor.hpp:2032][TopExecutor] argv[13]: --disableStmControlLogger=1
+<13>1 2023-01-30T09:37:53.901464Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][TopExecutor.hpp:2032][TopExecutor] argv[14]: --disablefaulthandler=0
+<13>1 2023-01-30T09:37:53.901472Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][TopExecutor.hpp:2032][TopExecutor] argv[15]: --ds2_control=
+<13>1 2023-01-30T09:37:53.901481Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][TopExecutor.hpp:2032][TopExecutor] argv[16]: --dumpamend=0
+<13>1 2023-01-30T09:37:53.901490Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][TopExecutor.hpp:2032][TopExecutor] argv[17]: --dwdatapath=/home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/example/dwcgf_helloworld/data
+<13>1 2023-01-30T09:37:53.901499Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][TopExecutor.hpp:2032][TopExecutor] argv[18]: --enable_max_time_diff_check=0
+<13>1 2023-01-30T09:37:53.901508Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][TopExecutor.hpp:2032][TopExecutor] argv[19]: --end_timestamp=0
+<13>1 2023-01-30T09:37:53.901517Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][TopExecutor.hpp:2032][TopExecutor] argv[20]: --frame=
+<13>1 2023-01-30T09:37:53.901526Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][TopExecutor.hpp:2032][TopExecutor] argv[21]: --fullscreen=0
+<13>1 2023-01-30T09:37:53.901534Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][TopExecutor.hpp:2032][TopExecutor] argv[22]: --initSerialize=0
+<13>1 2023-01-30T09:37:53.901543Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][TopExecutor.hpp:2032][TopExecutor] argv[23]: --instantiate_rig_sensors=
+<13>1 2023-01-30T09:37:53.901552Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][TopExecutor.hpp:2032][TopExecutor] argv[24]: --lockstep_deterministic_replay=
+<13>1 2023-01-30T09:37:53.901561Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][TopExecutor.hpp:2032][TopExecutor] argv[25]: --logPath=/home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/example/dwcgf_helloworld/LogFolder
+<13>1 2023-01-30T09:37:53.901570Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][TopExecutor.hpp:2032][TopExecutor] argv[26]: --loglevel=DW_LOG_VERBOSE
+<13>1 2023-01-30T09:37:53.901579Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][TopExecutor.hpp:2032][TopExecutor] argv[27]: --loop=0
+<13>1 2023-01-30T09:37:53.901588Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][TopExecutor.hpp:2032][TopExecutor] argv[28]: --mapPath=maps/sample/sanjose_loop
+<13>1 2023-01-30T09:37:53.901596Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][TopExecutor.hpp:2032][TopExecutor] argv[29]: --memwatch_frames=
+<13>1 2023-01-30T09:37:53.901605Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][TopExecutor.hpp:2032][TopExecutor] argv[30]: --ncuProfileFrames=
+<13>1 2023-01-30T09:37:53.901614Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][TopExecutor.hpp:2032][TopExecutor] argv[31]: --offscreen=0
+<13>1 2023-01-30T09:37:53.901623Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][TopExecutor.hpp:2032][TopExecutor] argv[32]: --path=/usr/local/driveworks/bin
+<13>1 2023-01-30T09:37:53.901631Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][TopExecutor.hpp:2032][TopExecutor] argv[33]: --postInitSerialize=0
+<13>1 2023-01-30T09:37:53.901640Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][TopExecutor.hpp:2032][TopExecutor] argv[34]: --preInitSerialize=0
+<13>1 2023-01-30T09:37:53.901649Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][TopExecutor.hpp:2032][TopExecutor] argv[35]: --rc2f=
+<13>1 2023-01-30T09:37:53.901664Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][TopExecutor.hpp:2032][TopExecutor] argv[36]: --region=
+<13>1 2023-01-30T09:37:53.901674Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][TopExecutor.hpp:2032][TopExecutor] argv[37]: --resetSerialize=0
+<13>1 2023-01-30T09:37:53.901683Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][TopExecutor.hpp:2032][TopExecutor] argv[38]: --rig=
+<13>1 2023-01-30T09:37:53.901692Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][TopExecutor.hpp:2032][TopExecutor] argv[39]: --shadow=
+<13>1 2023-01-30T09:37:53.901701Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][TopExecutor.hpp:2032][TopExecutor] argv[40]: --spec=/home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/example/dwcgf_helloworld/graphs/app/DWCGFHelloworld.app.json
+<13>1 2023-01-30T09:37:53.901710Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][TopExecutor.hpp:2032][TopExecutor] argv[41]: --start_timestamp=0
+<13>1 2023-01-30T09:37:53.901718Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][TopExecutor.hpp:2032][TopExecutor] argv[42]: --stm_discriminator=
+<13>1 2023-01-30T09:37:53.901727Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][TopExecutor.hpp:2032][TopExecutor] argv[43]: --time_multiplier=
+<13>1 2023-01-30T09:37:53.901736Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][TopExecutor.hpp:2032][TopExecutor] argv[44]: --useDynamicMap=0
+<13>1 2023-01-30T09:37:53.901745Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][TopExecutor.hpp:2032][TopExecutor] argv[45]: --useNominalTransform=0
+<13>1 2023-01-30T09:37:53.901754Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][TopExecutor.hpp:2032][TopExecutor] argv[46]: --vdcpath=/usr/local/driveworks/bin
+<13>1 2023-01-30T09:37:53.901762Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][TopExecutor.hpp:2032][TopExecutor] argv[47]: --vinOverlayFile=
+<13>1 2023-01-30T09:37:53.901771Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][TopExecutor.hpp:2032][TopExecutor] argv[48]: --virtual=1
+<13>1 2023-01-30T09:37:53.901780Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][TopExecutor.hpp:2032][TopExecutor] argv[49]: --virtual_time=
+<13>1 2023-01-30T09:37:53.901789Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][TopExecutor.hpp:2032][TopExecutor] argv[50]: --winSizeH=1200
+<13>1 2023-01-30T09:37:53.901797Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][TopExecutor.hpp:2032][TopExecutor] argv[51]: --winSizeW=1920
+<13>1 2023-01-30T09:37:53.901806Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][TopExecutor.hpp:2032][TopExecutor] argv[52]: --logspec=file/rfc5424.user.helloworld_process0:/home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/example/dwcgf_helloworld/LogFolder/helloworld_process0.log
+<13>1 2023-01-30T09:37:53.902181Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][TopExecutor.hpp:1034][TopExecutor] Pipelining: parsePipelineOptionsCGF
+<13>1 2023-01-30T09:37:53.910187Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][SwcConfigLoader.cpp:196][SwcExtraConfiguration] extraConfiguration input: 
+ configPath : /usr/local/driveworks/bin
+ dataPath : /home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/example/dwcgf_helloworld/data
+ dwDataPath : /home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/example/dwcgf_helloworld/data
+ vdcPath : /usr/local/driveworks/bin
+ rigFile : 
+ configOverlayFile : 
+ configOverlayName : 
+ vinOverlayFile : 
+ calibrationOverlayFile: 
+ swcId: helloworld_process0
+<13>1 2023-01-30T09:37:53.910439Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][SwcConfigLoader.cpp:297][SwcExtraConfiguration] extraConfiguration::Rig: 
+ rigOutputFileName         : /usr/local/driveworks/bin/rig.json
+ calibrationOutputFileName : /usr/local/driveworks/bin/out_calibration.json
+<13>1 2023-01-30T09:37:53.910481Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][SwcConfigLoader.cpp:218][SwcExtraConfiguration] extraConfiguration path convert result: 
+ m_rigFileName       : /home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/example/dwcgf_helloworld/data/rig.json
+ m_dwDataPath        : /home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/example/dwcgf_helloworld/data/
+ m_dwResourcePath    : /home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/example/dwcgf_helloworld/data/
+<14>1 2023-01-30T09:37:53.910661Z - helloworld_process0 26395 - - [0us][INFO][tid:rr2_main][Platform.cpp:125][NO_TAG] Platform: Detected Drive Orin P3710
+<13>1 2023-01-30T09:37:53.910722Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][TimePOSIX.cpp:63][NO_TAG] TimeSource: monotonic epoch time offset is 1674981763222787
+<14>1 2023-01-30T09:37:53.910765Z - helloworld_process0 26395 - - [0us][INFO][tid:rr2_main][TimeVibranteLinux.cpp:145][NO_TAG] TimeSourceVibranteLinux: detect valid PTP interface mgbe2_0
+<11>1 2023-01-30T09:37:53.910843Z - helloworld_process0 26395 - - [0us][ERROR][tid:rr2_main][TimeVibranteLinux.cpp:237][NO_TAG] TimeSource Nvpss : PTP ioctl returned error. Synchronized time will not be available from this timesource.
+<12>1 2023-01-30T09:37:53.910865Z - helloworld_process0 26395 - - [0us][WARN][tid:rr2_main][TimeVibranteLinux.cpp:159][NO_TAG] TimeSource: Could not detect valid PTP time source at nvpps. Fallback to mgbe2_0
+<13>1 2023-01-30T09:37:53.910921Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][TimeVibranteLinux.cpp:188][NO_TAG] PTP Time is available from Eth Driver
+<15>1 2023-01-30T09:37:53.914398Z - helloworld_process0 26395 - - [0us][VERBOSE][tid:rr2_main][CVarManager.hpp:618][NO_TAG] Adding variable DW_Base:DW_Version
+<15>1 2023-01-30T09:37:53.914468Z - helloworld_process0 26395 - - [0us][VERBOSE][tid:rr2_main][CVarManager.hpp:700][NO_TAG] Added variable DW_Base:DW_Version
+<15>1 2023-01-30T09:37:53.914540Z - helloworld_process0 26395 - - [0us][VERBOSE][tid:rr2_main][Platform.cpp:516][NO_TAG] Platform: number of GPU devices detected 1
+<15>1 2023-01-30T09:37:53.914650Z - helloworld_process0 26395 - - [0us][VERBOSE][tid:rr2_main][Platform.cpp:359][NO_TAG] Platform: currently selected GPU device 0, Resource Data Dir: trt_08_05_10_03, Arch: ga10b
+<14>1 2023-01-30T09:37:53.914666Z - helloworld_process0 26395 - - [0us][INFO][tid:rr2_main][Platform.cpp:310][NO_TAG] Platform: currently selected GPU device integrated ID 0
+<15>1 2023-01-30T09:37:53.915946Z - helloworld_process0 26395 - - [0us][VERBOSE][tid:rr2_main][CUDLAEngine.cpp:78][NO_TAG] CUDLAEngine:getDLACount: CUDLA version is = 1003000
+<15>1 2023-01-30T09:37:53.916033Z - helloworld_process0 26395 - - [0us][VERBOSE][tid:rr2_main][CUDLAEngine.cpp:89][NO_TAG] CUDLAEngine:getDLACount: Number of DLA devices = 2
+<13>1 2023-01-30T09:37:53.916503Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][Context.cpp:443][NO_TAG] Context::mountResourceCandidateDataPath resource FAILED to mount from '/home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/example/dwcgf_helloworld/data/': VirtualFileSystem: Failed to mount '/home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/example/dwcgf_helloworld/data/resources.pak'
+<13>1 2023-01-30T09:37:53.916608Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][Context.cpp:443][NO_TAG] Context::mountResourceCandidateDataPath resource FAILED to mount from '/home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/example/dwcgf_helloworld/resources': VirtualFileSystem: Failed to mount '/home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/example/dwcgf_helloworld/resources/resources.pak'
+<13>1 2023-01-30T09:37:53.916687Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][Context.cpp:443][NO_TAG] Context::mountResourceCandidateDataPath resource FAILED to mount from '/home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/example/dwcgf_helloworld/data/data': VirtualFileSystem: Failed to mount '/home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/example/dwcgf_helloworld/data/data/resources.pak'
+<15>1 2023-01-30T09:37:53.916738Z - helloworld_process0 26395 - - [0us][VERBOSE][tid:rr2_main][Context.cpp:375][NO_TAG] Context::findDataRootInPathWalk data/DATA_ROOT found at: /usr/local/driveworks-5.10/bin/../data
+<13>1 2023-01-30T09:37:53.916792Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][Context.cpp:443][NO_TAG] Context::mountResourceCandidateDataPath resource FAILED to mount from '/usr/local/driveworks-5.10/bin/../data': VirtualFileSystem: Failed to mount '/usr/local/driveworks-5.10/bin/../data/resources.pak'
+<15>1 2023-01-30T09:37:53.916819Z - helloworld_process0 26395 - - [0us][VERBOSE][tid:rr2_main][Context.cpp:375][NO_TAG] Context::findDataRootInPathWalk data/DATA_ROOT found at: /usr/local/driveworks-5.10/data
+<13>1 2023-01-30T09:37:53.916868Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][Context.cpp:443][NO_TAG] Context::mountResourceCandidateDataPath resource FAILED to mount from '/usr/local/driveworks-5.10/data': VirtualFileSystem: Failed to mount '/usr/local/driveworks-5.10/data/resources.pak'
+<12>1 2023-01-30T09:37:53.916909Z - helloworld_process0 26395 - - [0us][WARN][tid:rr2_main][Context.cpp:412][NO_TAG] Context::findResourcesPackageInPathWalk: Could not find ./resources/resources.pak in upto 7 parent directories from /usr/local/driveworks-5.10/bin/../lib/libdw_base.so.5.10
+<12>1 2023-01-30T09:37:53.916938Z - helloworld_process0 26395 - - [0us][WARN][tid:rr2_main][Context.cpp:412][NO_TAG] Context::findResourcesPackageInPathWalk: Could not find ./resources/resources.pak in upto 7 parent directories from /usr/local/driveworks-5.10/targets/aarch64-Linux/lib/libdw_base.so.5.10
+<11>1 2023-01-30T09:37:53.916950Z - helloworld_process0 26395 - - [0us][ERROR][tid:rr2_main][Context.cpp:506][NO_TAG] SDK: No resources(.pak) mounted from '/home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/example/dwcgf_helloworld/data/'. Please adjust path or some modules won't function properly.
+<13>1 2023-01-30T09:37:53.921950Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][Display.cpp:106][EGLDisplay] egl::Display: found 1 EGL devices
+<13>1 2023-01-30T09:37:53.922052Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][Display.cpp:120][EGLDisplay] egl::Display: use drm device: drm-nvdc
+<13>1 2023-01-30T09:37:53.957277Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][TimePOSIX.cpp:63][NO_TAG] TimeSource: monotonic epoch time offset is 1674981763222787
+<14>1 2023-01-30T09:37:53.957354Z - helloworld_process0 26395 - - [0us][INFO][tid:rr2_main][TimeVibranteLinux.cpp:145][NO_TAG] TimeSourceVibranteLinux: detect valid PTP interface mgbe2_0
+<11>1 2023-01-30T09:37:53.957388Z - helloworld_process0 26395 - - [0us][ERROR][tid:rr2_main][TimeVibranteLinux.cpp:237][NO_TAG] TimeSource Nvpss : PTP ioctl returned error. Synchronized time will not be available from this timesource.
+<12>1 2023-01-30T09:37:53.957402Z - helloworld_process0 26395 - - [0us][WARN][tid:rr2_main][TimeVibranteLinux.cpp:159][NO_TAG] TimeSource: Could not detect valid PTP time source at nvpps. Fallback to mgbe2_0
+<13>1 2023-01-30T09:37:53.957444Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][TimeVibranteLinux.cpp:188][NO_TAG] PTP Time is available from Eth Driver
+<14>1 2023-01-30T09:37:53.958078Z - helloworld_process0 26395 - - [0us][INFO][tid:rr2_main][Context.cpp:216][NO_TAG] Initialize DriveWorks SDK v5.10.87
+<14>1 2023-01-30T09:37:53.958102Z - helloworld_process0 26395 - - [0us][INFO][tid:rr2_main][Context.cpp:222][NO_TAG] Release build with GNU 9.3.0 from buildbrain-branch-0-g9a5b4670e12 against Drive PDK v6.0.6.0
+<14>1 2023-01-30T09:37:53.958123Z - helloworld_process0 26395 - - [0us][INFO][tid:rr2_main][ImplContext.cpp:95][ImplContext] Rig overlay directory does not exist: /storage/driveworks/data/vehicle_cfg
+<13>1 2023-01-30T09:37:53.958294Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][SensorFactory.cpp:182][NO_TAG] SensorFactory::createSensor() -> time.nvpps, nvpps-device=/dev/nvpps0
+<12>1 2023-01-30T09:37:53.958561Z - helloworld_process0 26395 - - [0us][WARN][tid:rr2_main][EndpointNVPPS.cpp:346][NO_TAG] TimeSensor: failed to set NVPPS parameters.  Error: Invalid argument
+<12>1 2023-01-30T09:37:53.958579Z - helloworld_process0 26395 - - [0us][WARN][tid:rr2_main][EndpointNVPPS.cpp:121][NO_TAG] This platform does not support NVPPS GPIO mode. Fallback to timer mode
+<12>1 2023-01-30T09:37:53.958620Z - helloworld_process0 26395 - - [0us][WARN][tid:rr2_main][TimeSensorNVPPS.cpp:154][NO_TAG] TimeSensor: initialized with no UTC time reference.
+<13>1 2023-01-30T09:37:53.958813Z - helloworld_process0 26395 - - [0us][DEBUG][tid:0][EndpointNVPPS.cpp:242][NO_TAG] EndpointNVPPS: started on /dev/nvpps0
+<13>1 2023-01-30T09:37:53.958992Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][LoaderResourceManager.cpp:258][LoaderResourceManager] initRig: 
+ useNominalTransform : 0
+ m_rigFileName       : /home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/example/dwcgf_helloworld/data/rig.json
+<15>1 2023-01-30T09:37:53.959030Z - helloworld_process0 26395 - - [0us][VERBOSE][tid:rr2_main][Rig.cpp:213][Rig] fromFile: Loading rig file: /home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/example/dwcgf_helloworld/data/rig.json
+<14>1 2023-01-30T09:37:53.959120Z - helloworld_process0 26395 - - [0us][INFO][tid:rr2_main][DatabaseOverlayer.cpp:321][NO_TAG] rig::DatabaseOverlayer: Failed to open a file '/tmp/car_vin' - file likely does not exist - skipping overlay
+<12>1 2023-01-30T09:37:53.961588Z - helloworld_process0 26395 - - [0us][WARN][tid:rr2_main][Rig.hpp:1181][NO_TAG] RigConfiguration: loading dwGenericVehicle from a rig that does not contain the drive-by-wire second order dynamics. Ignoring the second-order dynamic values.
+<12>1 2023-01-30T09:37:53.970533Z - helloworld_process0 26395 - - [0us][WARN][tid:rr2_main][SensorConfig.cpp:565][NO_TAG] No valid data file found for camera:rear:left:70fov in parameter string: video=camera_rear_left_70fov.mp4,timestamp=camera_rear_left_70fov.mp4.timestamps,fifo-size=5,frames-pool=4 (using configuration folder /home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/example/dwcgf_helloworld/data/)
+<12>1 2023-01-30T09:37:53.970600Z - helloworld_process0 26395 - - [0us][WARN][tid:rr2_main][SensorConfig.cpp:565][NO_TAG] No valid data file found for can:0 in parameter string: file=can_0.bin,output-timestamp=smoothed (using configuration folder /home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/example/dwcgf_helloworld/data/)
+<12>1 2023-01-30T09:37:53.970631Z - helloworld_process0 26395 - - [0us][WARN][tid:rr2_main][SensorConfig.cpp:565][NO_TAG] No valid data file found for can:1 in parameter string: file=can_1.bin,output-timestamp=smoothed (using configuration folder /home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/example/dwcgf_helloworld/data/)
+<12>1 2023-01-30T09:37:53.970658Z - helloworld_process0 26395 - - [0us][WARN][tid:rr2_main][SensorConfig.cpp:565][NO_TAG] No valid data file found for gps:novatel in parameter string: file=gps_novatel.bin,output-timestamp=smoothed (using configuration folder /home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/example/dwcgf_helloworld/data/)
+<12>1 2023-01-30T09:37:53.970683Z - helloworld_process0 26395 - - [0us][WARN][tid:rr2_main][SensorConfig.cpp:565][NO_TAG] No valid data file found for gps:ublox:f9k in parameter string: file=gps_ublox_f9k.bin,output-timestamp=smoothed (using configuration folder /home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/example/dwcgf_helloworld/data/)
+<12>1 2023-01-30T09:37:53.970708Z - helloworld_process0 26395 - - [0us][WARN][tid:rr2_main][SensorConfig.cpp:565][NO_TAG] No valid data file found for imu:continental in parameter string: file=imu_continental.bin,output-timestamp=smoothed (using configuration folder /home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/example/dwcgf_helloworld/data/)
+<12>1 2023-01-30T09:37:53.970746Z - helloworld_process0 26395 - - [0us][WARN][tid:rr2_main][SensorConfig.cpp:565][NO_TAG] No valid data file found for imu:novatel in parameter string: file=imu_novatel.bin,output-timestamp=smoothed (using configuration folder /home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/example/dwcgf_helloworld/data/)
+<12>1 2023-01-30T09:37:53.970770Z - helloworld_process0 26395 - - [0us][WARN][tid:rr2_main][SensorConfig.cpp:565][NO_TAG] No valid data file found for lidar:parking:gt:front:p128 in parameter string: file=lidar_parking_gt_front_p128.bin,output-timestamp=raw (using configuration folder /home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/example/dwcgf_helloworld/data/)
+<12>1 2023-01-30T09:37:53.970805Z - helloworld_process0 26395 - - [0us][WARN][tid:rr2_main][SensorConfig.cpp:565][NO_TAG] No valid data file found for radar:corner:front:left in parameter string: file=radar_corner_front_left.bin,output-timestamp=raw (using configuration folder /home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/example/dwcgf_helloworld/data/)
+<12>1 2023-01-30T09:37:53.970832Z - helloworld_process0 26395 - - [0us][WARN][tid:rr2_main][SensorConfig.cpp:565][NO_TAG] No valid data file found for radar:corner:front:right in parameter string: file=radar_corner_front_right.bin,output-timestamp=raw (using configuration folder /home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/example/dwcgf_helloworld/data/)
+<12>1 2023-01-30T09:37:53.970855Z - helloworld_process0 26395 - - [0us][WARN][tid:rr2_main][SensorConfig.cpp:565][NO_TAG] No valid data file found for radar:corner:rear:left in parameter string: file=radar_corner_rear_left.bin,output-timestamp=raw (using configuration folder /home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/example/dwcgf_helloworld/data/)
+<12>1 2023-01-30T09:37:53.970878Z - helloworld_process0 26395 - - [0us][WARN][tid:rr2_main][SensorConfig.cpp:565][NO_TAG] No valid data file found for radar:corner:rear:right in parameter string: file=radar_corner_rear_right.bin,output-timestamp=raw (using configuration folder /home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/example/dwcgf_helloworld/data/)
+<12>1 2023-01-30T09:37:53.970900Z - helloworld_process0 26395 - - [0us][WARN][tid:rr2_main][SensorConfig.cpp:565][NO_TAG] No valid data file found for radar:front:center in parameter string: file=radar_front_center.bin,output-timestamp=raw (using configuration folder /home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/example/dwcgf_helloworld/data/)
+<12>1 2023-01-30T09:37:53.970936Z - helloworld_process0 26395 - - [0us][WARN][tid:rr2_main][SensorConfig.cpp:565][NO_TAG] No valid data file found for camera:rear:right:70fov in parameter string: video=camera_rear_right_70fov.mp4,timestamp=camera_rear_right_70fov.mp4.timestamps,fifo-size=5,frames-pool=4 (using configuration folder /home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/example/dwcgf_helloworld/data/)
+<12>1 2023-01-30T09:37:53.970973Z - helloworld_process0 26395 - - [0us][WARN][tid:rr2_main][SensorConfig.cpp:565][NO_TAG] No valid data file found for camera:front:fisheye:200fov in parameter string: video=camera_front_fisheye_200fov.mp4,timestamp=camera_front_fisheye_200fov.mp4.timestamps,fifo-size=5,frames-pool=4 (using configuration folder /home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/example/dwcgf_helloworld/data/)
+<12>1 2023-01-30T09:37:53.971011Z - helloworld_process0 26395 - - [0us][WARN][tid:rr2_main][SensorConfig.cpp:565][NO_TAG] No valid data file found for camera:left:fisheye:200fov in parameter string: video=camera_left_fisheye_200fov.mp4,timestamp=camera_left_fisheye_200fov.mp4.timestamps,fifo-size=5,frames-pool=4 (using configuration folder /home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/example/dwcgf_helloworld/data/)
+<12>1 2023-01-30T09:37:53.971047Z - helloworld_process0 26395 - - [0us][WARN][tid:rr2_main][SensorConfig.cpp:565][NO_TAG] No valid data file found for camera:rear:fisheye:200fov in parameter string: video=camera_rear_fisheye_200fov.mp4,timestamp=camera_rear_fisheye_200fov.mp4.timestamps,fifo-size=5,frames-pool=4 (using configuration folder /home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/example/dwcgf_helloworld/data/)
+<12>1 2023-01-30T09:37:53.971091Z - helloworld_process0 26395 - - [0us][WARN][tid:rr2_main][SensorConfig.cpp:565][NO_TAG] No valid data file found for camera:right:fisheye:200fov in parameter string: video=camera_right_fisheye_200fov.mp4,timestamp=camera_right_fisheye_200fov.mp4.timestamps,fifo-size=5,frames-pool=4 (using configuration folder /home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/example/dwcgf_helloworld/data/)
+<12>1 2023-01-30T09:37:53.971121Z - helloworld_process0 26395 - - [0us][WARN][tid:rr2_main][SensorConfig.cpp:565][NO_TAG] No valid data file found for camera:front:wide:120fov in parameter string: video=camera_front_wide_120fov.mp4,fifo-size=5,frames-pool=4 (using configuration folder /home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/example/dwcgf_helloworld/data/)
+<12>1 2023-01-30T09:37:53.971145Z - helloworld_process0 26395 - - [0us][WARN][tid:rr2_main][SensorConfig.cpp:565][NO_TAG] No valid data file found for lidar:gt:top:p128:v4p5 in parameter string: file=lidar_gt_top_p128_v4p5.bin,output-timestamp=raw (using configuration folder /home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/example/dwcgf_helloworld/data/)
+<12>1 2023-01-30T09:37:53.971180Z - helloworld_process0 26395 - - [0us][WARN][tid:rr2_main][SensorConfig.cpp:565][NO_TAG] No valid data file found for camera:front:tele:30fov in parameter string: video=camera_front_tele_30fov.mp4,timestamp=camera_front_tele_30fov.mp4.timestamps,fifo-size=5,frames-pool=4 (using configuration folder /home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/example/dwcgf_helloworld/data/)
+<12>1 2023-01-30T09:37:53.971203Z - helloworld_process0 26395 - - [0us][WARN][tid:rr2_main][SensorConfig.cpp:565][NO_TAG] No valid data file found for uss:valeo in parameter string: file=uss_valeo.bin,output-timestamp=smoothed (using configuration folder /home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/example/dwcgf_helloworld/data/)
+<12>1 2023-01-30T09:37:53.971237Z - helloworld_process0 26395 - - [0us][WARN][tid:rr2_main][SensorConfig.cpp:565][NO_TAG] No valid data file found for camera:cross:left:120fov in parameter string: video=camera_cross_left_120fov.mp4,timestamp=camera_cross_left_120fov.mp4.timestamps (using configuration folder /home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/example/dwcgf_helloworld/data/)
+<12>1 2023-01-30T09:37:53.971260Z - helloworld_process0 26395 - - [0us][WARN][tid:rr2_main][SensorConfig.cpp:565][NO_TAG] No valid data file found for imu:continental:safety in parameter string: file=imu_continental_safety.bin,output-timestamp=smoothed (using configuration folder /home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/example/dwcgf_helloworld/data/)
+<12>1 2023-01-30T09:37:53.971282Z - helloworld_process0 26395 - - [0us][WARN][tid:rr2_main][SensorConfig.cpp:565][NO_TAG] No valid data file found for lidar:parking:gt:rear:p128 in parameter string: file=lidar_parking_gt_rear_p128.bin,output-timestamp=raw (using configuration folder /home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/example/dwcgf_helloworld/data/)
+<12>1 2023-01-30T09:37:53.971304Z - helloworld_process0 26395 - - [0us][WARN][tid:rr2_main][SensorConfig.cpp:565][NO_TAG] No valid data file found for radar:cross:left in parameter string: file=radar_cross_left.bin,output-timestamp=raw (using configuration folder /home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/example/dwcgf_helloworld/data/)
+<12>1 2023-01-30T09:37:53.971326Z - helloworld_process0 26395 - - [0us][WARN][tid:rr2_main][SensorConfig.cpp:565][NO_TAG] No valid data file found for radar:cross:right in parameter string: file=radar_cross_right.bin,output-timestamp=raw (using configuration folder /home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/example/dwcgf_helloworld/data/)
+<12>1 2023-01-30T09:37:53.971355Z - helloworld_process0 26395 - - [0us][WARN][tid:rr2_main][SensorConfig.cpp:565][NO_TAG] No valid data file found for radar:rear:left in parameter string: file=radar_rear_left.bin,output-timestamp=raw (using configuration folder /home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/example/dwcgf_helloworld/data/)
+<12>1 2023-01-30T09:37:53.971377Z - helloworld_process0 26395 - - [0us][WARN][tid:rr2_main][SensorConfig.cpp:565][NO_TAG] No valid data file found for radar:rear:right in parameter string: file=radar_rear_right.bin,output-timestamp=raw (using configuration folder /home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/example/dwcgf_helloworld/data/)
+<12>1 2023-01-30T09:37:53.971399Z - helloworld_process0 26395 - - [0us][WARN][tid:rr2_main][SensorConfig.cpp:565][NO_TAG] No valid data file found for radar:side:left in parameter string: file=radar_side_left.bin,output-timestamp=raw (using configuration folder /home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/example/dwcgf_helloworld/data/)
+<12>1 2023-01-30T09:37:53.971419Z - helloworld_process0 26395 - - [0us][WARN][tid:rr2_main][SensorConfig.cpp:565][NO_TAG] No valid data file found for radar:side:right in parameter string: file=radar_side_right.bin,output-timestamp=raw (using configuration folder /home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/example/dwcgf_helloworld/data/)
+<12>1 2023-01-30T09:37:53.971454Z - helloworld_process0 26395 - - [0us][WARN][tid:rr2_main][SensorConfig.cpp:565][NO_TAG] No valid data file found for camera:cross:right:120fov in parameter string: video=camera_cross_right_120fov.mp4,timestamp=camera_cross_right_120fov.mp4.timestamps (using configuration folder /home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/example/dwcgf_helloworld/data/)
+<12>1 2023-01-30T09:37:53.971476Z - helloworld_process0 26395 - - [0us][WARN][tid:rr2_main][SensorConfig.cpp:565][NO_TAG] No valid data file found for lidar:parking:gt:left:p128 in parameter string: file=lidar_parking_gt_left_p128.bin,output-timestamp=raw (using configuration folder /home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/example/dwcgf_helloworld/data/)
+<12>1 2023-01-30T09:37:53.971499Z - helloworld_process0 26395 - - [0us][WARN][tid:rr2_main][SensorConfig.cpp:565][NO_TAG] No valid data file found for lidar:parking:gt:right:p128 in parameter string: file=lidar_parking_gt_right_p128.bin,output-timestamp=raw (using configuration folder /home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/example/dwcgf_helloworld/data/)
+<12>1 2023-01-30T09:37:53.971534Z - helloworld_process0 26395 - - [0us][WARN][tid:rr2_main][SensorConfig.cpp:565][NO_TAG] No valid data file found for camera:front:tele:sat:30fov in parameter string: video=camera_front_tele_sat_30fov.mp4,timestamp=camera_front_tele_sat_30fov.mp4.timestamps (using configuration folder /home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/example/dwcgf_helloworld/data/)
+<12>1 2023-01-30T09:37:53.971570Z - helloworld_process0 26395 - - [0us][WARN][tid:rr2_main][SensorConfig.cpp:565][NO_TAG] No valid data file found for camera:rear:tele:30fov in parameter string: video=camera_rear_tele_30fov.mp4,timestamp=camera_rear_tele_30fov.mp4.timestamps (using configuration folder /home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/example/dwcgf_helloworld/data/)
+<14>1 2023-01-30T09:37:53.972328Z - helloworld_process0 26395 - - [0us][INFO][tid:rr2_main][DatabaseOverlayer.cpp:321][NO_TAG] rig::DatabaseOverlayer: Failed to open a file '/tmp/car_vin' - file likely does not exist - skipping overlay
+<12>1 2023-01-30T09:37:53.974542Z - helloworld_process0 26395 - - [0us][WARN][tid:rr2_main][Rig.hpp:1181][NO_TAG] RigConfiguration: loading dwGenericVehicle from a rig that does not contain the drive-by-wire second order dynamics. Ignoring the second-order dynamic values.
+<13>1 2023-01-30T09:37:53.983885Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][SwcConfigLoader.cpp:493][RigSensorInfo] Loaded requiredSensors: null
+<13>1 2023-01-30T09:37:53.983955Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][SwcConfigLoader.cpp:641][RigSensorInfo] ## Required sensors in hyperion_8
+<13>1 2023-01-30T09:37:53.983970Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][SwcConfigLoader.cpp:641][RigSensorInfo] RQ Name
+<13>1 2023-01-30T09:37:53.983986Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][SwcConfigLoader.cpp:641][RigSensorInfo] 0 out of 0 sensors are required, 0 missing
+<13>1 2023-01-30T09:37:53.983996Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][SwcConfigLoader.cpp:641][RigSensorInfo] ## Available sensors in rig (36)
+<13>1 2023-01-30T09:37:53.984005Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][SwcConfigLoader.cpp:641][RigSensorInfo] ID TY EN Name
+<13>1 2023-01-30T09:37:53.984026Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][SwcConfigLoader.cpp:641][RigSensorInfo]  0 0     camera:rear:left:70fov
+<13>1 2023-01-30T09:37:53.984038Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][SwcConfigLoader.cpp:641][RigSensorInfo]  1 4     can:0
+<13>1 2023-01-30T09:37:53.984048Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][SwcConfigLoader.cpp:641][RigSensorInfo]  2 4     can:1
+<13>1 2023-01-30T09:37:53.984057Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][SwcConfigLoader.cpp:641][RigSensorInfo]  3 2     gps:novatel
+<13>1 2023-01-30T09:37:53.984066Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][SwcConfigLoader.cpp:641][RigSensorInfo]  4 2     gps:ublox:f9k
+<13>1 2023-01-30T09:37:53.984075Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][SwcConfigLoader.cpp:641][RigSensorInfo]  5 3     imu:continental
+<13>1 2023-01-30T09:37:53.984084Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][SwcConfigLoader.cpp:641][RigSensorInfo]  6 3     imu:novatel
+<13>1 2023-01-30T09:37:53.984094Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][SwcConfigLoader.cpp:641][RigSensorInfo]  7 1     lidar:parking:gt:front:p128
+<13>1 2023-01-30T09:37:53.984103Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][SwcConfigLoader.cpp:641][RigSensorInfo]  8 5     radar:corner:front:left
+<13>1 2023-01-30T09:37:53.984112Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][SwcConfigLoader.cpp:641][RigSensorInfo]  9 5     radar:corner:front:right
+<13>1 2023-01-30T09:37:53.984122Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][SwcConfigLoader.cpp:641][RigSensorInfo] 10 5     radar:corner:rear:left
+<13>1 2023-01-30T09:37:53.984131Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][SwcConfigLoader.cpp:641][RigSensorInfo] 11 5     radar:corner:rear:right
+<13>1 2023-01-30T09:37:53.984140Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][SwcConfigLoader.cpp:641][RigSensorInfo] 12 5     radar:front:center
+<13>1 2023-01-30T09:37:53.984150Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][SwcConfigLoader.cpp:641][RigSensorInfo] 13 0     camera:rear:right:70fov
+<13>1 2023-01-30T09:37:53.984160Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][SwcConfigLoader.cpp:641][RigSensorInfo] 14 0     camera:front:fisheye:200fov
+<13>1 2023-01-30T09:37:53.984169Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][SwcConfigLoader.cpp:641][RigSensorInfo] 15 0     camera:left:fisheye:200fov
+<13>1 2023-01-30T09:37:53.984179Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][SwcConfigLoader.cpp:641][RigSensorInfo] 16 0     camera:rear:fisheye:200fov
+<13>1 2023-01-30T09:37:53.984188Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][SwcConfigLoader.cpp:641][RigSensorInfo] 17 0     camera:right:fisheye:200fov
+<13>1 2023-01-30T09:37:53.984198Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][SwcConfigLoader.cpp:641][RigSensorInfo] 18 0     camera:front:wide:120fov
+<13>1 2023-01-30T09:37:53.984221Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][SwcConfigLoader.cpp:641][RigSensorInfo] 19 1     lidar:gt:top:p128:v4p5
+<13>1 2023-01-30T09:37:53.984233Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][SwcConfigLoader.cpp:641][RigSensorInfo] 20 0     camera:front:tele:30fov
+<13>1 2023-01-30T09:37:53.984243Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][SwcConfigLoader.cpp:641][RigSensorInfo] 21 8     uss:valeo
+<13>1 2023-01-30T09:37:53.984252Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][SwcConfigLoader.cpp:641][RigSensorInfo] 22 0     camera:cross:left:120fov
+<13>1 2023-01-30T09:37:53.984262Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][SwcConfigLoader.cpp:641][RigSensorInfo] 23 3     imu:continental:safety
+<13>1 2023-01-30T09:37:53.984271Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][SwcConfigLoader.cpp:641][RigSensorInfo] 24 1     lidar:parking:gt:rear:p128
+<13>1 2023-01-30T09:37:53.984281Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][SwcConfigLoader.cpp:641][RigSensorInfo] 25 5     radar:cross:left
+<13>1 2023-01-30T09:37:53.984290Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][SwcConfigLoader.cpp:641][RigSensorInfo] 26 5     radar:cross:right
+<13>1 2023-01-30T09:37:53.984300Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][SwcConfigLoader.cpp:641][RigSensorInfo] 27 5     radar:rear:left
+<13>1 2023-01-30T09:37:53.984309Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][SwcConfigLoader.cpp:641][RigSensorInfo] 28 5     radar:rear:right
+<13>1 2023-01-30T09:37:53.984318Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][SwcConfigLoader.cpp:641][RigSensorInfo] 29 5     radar:side:left
+<13>1 2023-01-30T09:37:53.984327Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][SwcConfigLoader.cpp:641][RigSensorInfo] 30 5     radar:side:right
+<13>1 2023-01-30T09:37:53.984337Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][SwcConfigLoader.cpp:641][RigSensorInfo] 31 0     camera:cross:right:120fov
+<13>1 2023-01-30T09:37:53.984346Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][SwcConfigLoader.cpp:641][RigSensorInfo] 32 1     lidar:parking:gt:left:p128
+<13>1 2023-01-30T09:37:53.984355Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][SwcConfigLoader.cpp:641][RigSensorInfo] 33 1     lidar:parking:gt:right:p128
+<13>1 2023-01-30T09:37:53.984365Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][SwcConfigLoader.cpp:641][RigSensorInfo] 34 0     camera:front:tele:sat:30fov
+<13>1 2023-01-30T09:37:53.984374Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][SwcConfigLoader.cpp:641][RigSensorInfo] 35 0     camera:rear:tele:30fov
+<12>1 2023-01-30T09:37:53.984416Z - helloworld_process0 26395 - - [0us][WARN][tid:rr2_main][SwcConfigLoader.cpp:1026][RigSensorInfo] initVehicleIO: no vehicle sensor enabled
+<13>1 2023-01-30T09:37:53.984452Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][SwcConfigLoader.cpp:903][RigSensorInfo] Master camera index 1 ID: 4294967295
+<12>1 2023-01-30T09:37:53.984546Z - helloworld_process0 26395 - - [0us][WARN][tid:rr2_main][VehicleIO.cpp:73][VehicleIO] VehicleIO: no configuration specified in rig file. Assuming default for all vehicle sensors.
+<13>1 2023-01-30T09:37:53.984669Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][DataSpeed.cpp:212][NO_TAG] DataSpeed: constructed
+<13>1 2023-01-30T09:37:53.984703Z - helloworld_process0 26395 - - [0us][DEBUG][tid:rr2_main][DataSpeed.cpp:217][NO_TAG] DataSpeed: destructed
+<13>1 2023-01-30T09:37:54.844Z - helloworld_process0 26395 - - [1675071474000828us][DEBUG][tid:rr2_main][GraphletBase.cpp:275][GraphletBase] GraphletBase init:  : initSubcomponentConnections
+<13>1 2023-01-30T09:37:54.909Z - helloworld_process0 26395 - - [1675071474000900us][DEBUG][tid:rr2_main][GraphletBase.cpp:278][GraphletBase] GraphletBase init:  : handleChannelParamStaticOverrides
+<13>1 2023-01-30T09:37:54.949Z - helloworld_process0 26395 - - [1675071474000941us][DEBUG][tid:rr2_main][GraphletBase.cpp:281][GraphletBase] GraphletBase init:  : setSubcomponentChannelParamOverrides
+<13>1 2023-01-30T09:37:54.971Z - helloworld_process0 26395 - - [1675071474000963us][DEBUG][tid:rr2_main][GraphletBase.cpp:275][GraphletBase] GraphletBase init: dwcgfHelloworld : initSubcomponentConnections
+<13>1 2023-01-30T09:37:54.1053Z - helloworld_process0 26395 - - [1675071474001045us][DEBUG][tid:rr2_main][GraphletBase.cpp:278][GraphletBase] GraphletBase init: dwcgfHelloworld : handleChannelParamStaticOverrides
+<13>1 2023-01-30T09:37:54.1072Z - helloworld_process0 26395 - - [1675071474001064us][DEBUG][tid:rr2_main][GraphletBase.cpp:281][GraphletBase] GraphletBase init: dwcgfHelloworld : setSubcomponentChannelParamOverrides
+<13>1 2023-01-30T09:37:54.1551Z - helloworld_process0 26395 - - [1675071474001541us][DEBUG][tid:rr2_main][TopExecutor.hpp:3422][TopExecutor] initSSM: Preinit using ThreadPool of size 11
+<13>1 2023-01-30T09:37:54.1615Z - helloworld_process0 26395 - - [1675071474001606us][DEBUG][tid:rr2_main][Runtime.cpp:357][Runtime] PRE INIT BEGIN, SWC NAME : 
+<13>1 2023-01-30T09:37:54.1644Z - helloworld_process0 26395 - - [1675071474001636us][DEBUG][tid:rr2_main][Runtime.cpp:282][Runtime] PRE INIT, SWC NAME :  : calling subcomponent dwcgfHelloworld->preInitCallbackCollectTasks()
+<13>1 2023-01-30T09:37:54.1877Z - helloworld_process0 26395 - - [1675071474001858us][DEBUG][tid:1][Runtime.cpp:235][Runtime] PRE INIT, GRAPHLET NAME : dwcgfHelloworld : subcomponent helloWorldNode is being created with parameter {
+    "name": {
+        "default": "helloworld_name",
+        "type": "std::string"
+    }
+}
+<13>1 2023-01-30T09:37:54.757424Z - helloworld_process0 26395 - - [1675071474757404us][DEBUG][tid:1][HelloWorldNodeImpl.cpp:54][HelloWorldNode] HelloWorldNodeImpl: created
+<13>1 2023-01-30T09:37:54.770940Z - helloworld_process0 26395 - - [1675071474770925us][DEBUG][tid:1][Runtime.cpp:235][Runtime] PRE INIT, GRAPHLET NAME : dwcgfHelloworld : subcomponent sumNode is being created with parameter {}
+<13>1 2023-01-30T09:37:54.771153Z - helloworld_process0 26395 - - [1675071474771143us][DEBUG][tid:1][SumNodeImpl.cpp:54][SumNode] SumNodeImpl: created
+<13>1 2023-01-30T09:37:54.771203Z - helloworld_process0 26395 - - [1675071474771195us][DEBUG][tid:1][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: nodeInit
+<13>1 2023-01-30T09:37:54.771382Z - helloworld_process0 26395 - - [1675071474771370us][DEBUG][tid:rr2_main][Runtime.cpp:362][Runtime] PRE INIT END, SWC NAME : 
+<13>1 2023-01-30T09:37:54.771528Z - helloworld_process0 26395 - - [1675071474771515us][DEBUG][tid:2][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: 
+<13>1 2023-01-30T09:37:54.771644Z - helloworld_process0 26395 - - [1675071474771609us][DEBUG][tid:3][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: 
+<13>1 2023-01-30T09:37:54.771745Z - helloworld_process0 26395 - - [1675071474771727us][DEBUG][tid:4][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: 
+<13>1 2023-01-30T09:37:54.771842Z - helloworld_process0 26395 - - [1675071474771828us][DEBUG][tid:5][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: 
+<13>1 2023-01-30T09:37:54.771894Z - helloworld_process0 26395 - - [1675071474771881us][DEBUG][tid:6][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: 
+<13>1 2023-01-30T09:37:54.771937Z - helloworld_process0 26395 - - [1675071474771924us][DEBUG][tid:7][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: 
+<13>1 2023-01-30T09:37:54.771986Z - helloworld_process0 26395 - - [1675071474771971us][DEBUG][tid:8][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: 
+<13>1 2023-01-30T09:37:54.772043Z - helloworld_process0 26395 - - [1675071474772031us][DEBUG][tid:9][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: 
+<13>1 2023-01-30T09:37:54.772100Z - helloworld_process0 26395 - - [1675071474772082us][DEBUG][tid:10][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: 
+<13>1 2023-01-30T09:37:54.772174Z - helloworld_process0 26395 - - [1675071474772162us][DEBUG][tid:11][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: 
+<13>1 2023-01-30T09:37:54.772219Z - helloworld_process0 26395 - - [1675071474772206us][DEBUG][tid:12][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: 
+<13>1 2023-01-30T09:37:54.772277Z - helloworld_process0 26395 - - [1675071474772267us][DEBUG][tid:rr2_main][TopExecutor.hpp:3333][TopExecutor] SM initHierarchy BEGIN, SWC NAME : helloworld_process0
+<13>1 2023-01-30T09:37:54.773115Z - helloworld_process0 26395 - - [1675071474773106us][DEBUG][tid:rr2_main][TopExecutor.hpp:3339][TopExecutor] SM initHierarchy END, SWC NAME : helloworld_process0
+<13>1 2023-01-30T09:37:54.773148Z - helloworld_process0 26395 - - [1675071474773140us][DEBUG][tid:rr2_main][TopExecutor.hpp:3342][TopExecutor] Clone Manager: Start state machine msg is not received, SWC NAME : helloworld_process0
+<13>1 2023-01-30T09:37:54.783244Z - helloworld_process0 26395 - - [1675071474783234us][DEBUG][tid:rr2_main][TopExecutor.hpp:3342][TopExecutor] Clone Manager: Start state machine msg is not received, SWC NAME : helloworld_process0
+<13>1 2023-01-30T09:37:54.793346Z - helloworld_process0 26395 - - [1675071474793337us][DEBUG][tid:rr2_main][TopExecutor.hpp:3342][TopExecutor] Clone Manager: Start state machine msg is not received, SWC NAME : helloworld_process0
+<13>1 2023-01-30T09:37:54.803443Z - helloworld_process0 26395 - - [1675071474803434us][DEBUG][tid:rr2_main][TopExecutor.hpp:3342][TopExecutor] Clone Manager: Start state machine msg is not received, SWC NAME : helloworld_process0
+<13>1 2023-01-30T09:37:54.813538Z - helloworld_process0 26395 - - [1675071474813529us][DEBUG][tid:rr2_main][TopExecutor.hpp:3342][TopExecutor] Clone Manager: Start state machine msg is not received, SWC NAME : helloworld_process0
+<13>1 2023-01-30T09:37:54.823630Z - helloworld_process0 26395 - - [1675071474823621us][DEBUG][tid:rr2_main][TopExecutor.hpp:3342][TopExecutor] Clone Manager: Start state machine msg is not received, SWC NAME : helloworld_process0
+<13>1 2023-01-30T09:37:54.833722Z - helloworld_process0 26395 - - [1675071474833713us][DEBUG][tid:rr2_main][TopExecutor.hpp:3342][TopExecutor] Clone Manager: Start state machine msg is not received, SWC NAME : helloworld_process0
+<13>1 2023-01-30T09:37:54.843813Z - helloworld_process0 26395 - - [1675071474843804us][DEBUG][tid:rr2_main][TopExecutor.hpp:3342][TopExecutor] Clone Manager: Start state machine msg is not received, SWC NAME : helloworld_process0
+<13>1 2023-01-30T09:37:54.853929Z - helloworld_process0 26395 - - [1675071474853920us][DEBUG][tid:rr2_main][TopExecutor.hpp:3345][TopExecutor] Clone Manager: Start state machine msg received, SWC NAME : helloworld_process0
+<13>1 2023-01-30T09:37:54.854045Z - helloworld_process0 26395 - - [1675071474854037us][DEBUG][tid:rr2_main][TopExecutor.hpp:3350][TopExecutor] Clone Manager: Waiting for isSMReadyForScheduler, SWC NAME : helloworld_process0
+<13>1 2023-01-30T09:37:54.864412Z - helloworld_process0 26395 - - [1675071474864402us][DEBUG][tid:rr2_main][TopExecutor.hpp:3350][TopExecutor] Clone Manager: Waiting for isSMReadyForScheduler, SWC NAME : helloworld_process0
+<13>1 2023-01-30T09:37:54.874526Z - helloworld_process0 26395 - - [1675071474874516us][DEBUG][tid:rr2_main][TopExecutor.hpp:3350][TopExecutor] Clone Manager: Waiting for isSMReadyForScheduler, SWC NAME : helloworld_process0
+<13>1 2023-01-30T09:37:54.874630Z - helloworld_process0 26395 - - [1675071474874620us][DEBUG][tid:13][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: 
+<13>1 2023-01-30T09:37:54.874719Z - helloworld_process0 26395 - - [1675071474874700us][DEBUG][tid:14][Runtime.cpp:517][Runtime] INIT BEGIN, SWC NAME : 
+<13>1 2023-01-30T09:37:54.874774Z - helloworld_process0 26395 - - [1675071474874763us][DEBUG][tid:15][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: 
+<13>1 2023-01-30T09:37:54.874843Z - helloworld_process0 26395 - - [1675071474874833us][DEBUG][tid:16][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: 
+<13>1 2023-01-30T09:37:54.874914Z - helloworld_process0 26395 - - [1675071474874904us][DEBUG][tid:17][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: 
+<13>1 2023-01-30T09:37:54.875007Z - helloworld_process0 26395 - - [1675071474874982us][DEBUG][tid:18][Runtime.cpp:1354][Runtime] Runtime: create output channel for dwcgfHelloworld.helloWorldNode.VALUE_0 with parameter: type=SHMEM_LOCAL,id=DefaultCGF_0,role=producer
+<13>1 2023-01-30T09:37:54.875054Z - helloworld_process0 26395 - - [1675071474875044us][DEBUG][tid:19][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: 
+<13>1 2023-01-30T09:37:54.875106Z - helloworld_process0 26395 - - [1675071474875094us][DEBUG][tid:20][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: bindOutput
+<13>1 2023-01-30T09:37:54.875157Z - helloworld_process0 26395 - - [1675071474875141us][DEBUG][tid:21][Runtime.cpp:1354][Runtime] Runtime: create output channel for dwcgfHelloworld.helloWorldNode.VALUE_1 with parameter: type=SHMEM_LOCAL,id=DefaultCGF_1,role=producer
+<13>1 2023-01-30T09:37:54.875207Z - helloworld_process0 26395 - - [1675071474875197us][DEBUG][tid:22][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: 
+<13>1 2023-01-30T09:37:54.875253Z - helloworld_process0 26395 - - [1675071474875240us][DEBUG][tid:23][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: bindOutput
+<13>1 2023-01-30T09:37:54.875293Z - helloworld_process0 26395 - - [1675071474875283us][DEBUG][tid:24][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: 
+<15>1 2023-01-30T09:37:54.875334Z - helloworld_process0 26395 - - [1675071474875324us][VERBOSE][tid:18][ChannelConnectorImpl.cpp:64][ChannelConnector] Add producer[0]: type=SHMEM_LOCAL,id=DefaultCGF_0,role=producer, current producer list size: 0
+<13>1 2023-01-30T09:37:54.875379Z - helloworld_process0 26395 - - [1675071474875368us][DEBUG][tid:25][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: bindOutput
+<13>1 2023-01-30T09:37:54.875417Z - helloworld_process0 26395 - - [1675071474875407us][DEBUG][tid:26][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: 
+<15>1 2023-01-30T09:37:54.875451Z - helloworld_process0 26395 - - [1675071474875442us][VERBOSE][tid:21][ChannelConnectorImpl.cpp:64][ChannelConnector] Add producer[1]: type=SHMEM_LOCAL,id=DefaultCGF_1,role=producer, current producer list size: 1
+<13>1 2023-01-30T09:37:54.875498Z - helloworld_process0 26395 - - [1675071474875487us][DEBUG][tid:27][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: bindOutput
+<13>1 2023-01-30T09:37:54.875535Z - helloworld_process0 26395 - - [1675071474875526us][DEBUG][tid:28][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: 
+<13>1 2023-01-30T09:37:54.875571Z - helloworld_process0 26395 - - [1675071474875559us][DEBUG][tid:29][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: bindOutput
+<13>1 2023-01-30T09:37:54.875605Z - helloworld_process0 26395 - - [1675071474875596us][DEBUG][tid:30][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: 
+<13>1 2023-01-30T09:37:54.875637Z - helloworld_process0 26395 - - [1675071474875629us][DEBUG][tid:18][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: bindOutput
+<13>1 2023-01-30T09:37:54.875677Z - helloworld_process0 26395 - - [1675071474875669us][DEBUG][tid:21][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: bindOutput
+<13>1 2023-01-30T09:37:54.875727Z - helloworld_process0 26395 - - [1675071474875717us][DEBUG][tid:14][Runtime.cpp:523][Runtime] INIT END, SWC NAME : 
+<13>1 2023-01-30T09:37:54.875756Z - helloworld_process0 26395 - - [1675071474875748us][DEBUG][tid:14][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: 
+<13>1 2023-01-30T09:37:54.885989Z - helloworld_process0 26395 - - [1675071474885979us][DEBUG][tid:rr2_main][TopExecutor.hpp:3350][TopExecutor] Clone Manager: Waiting for isSMReadyForScheduler, SWC NAME : helloworld_process0
+<13>1 2023-01-30T09:37:54.896096Z - helloworld_process0 26395 - - [1675071474896087us][DEBUG][tid:rr2_main][TopExecutor.hpp:3350][TopExecutor] Clone Manager: Waiting for isSMReadyForScheduler, SWC NAME : helloworld_process0
+<13>1 2023-01-30T09:37:54.896206Z - helloworld_process0 26395 - - [1675071474896196us][DEBUG][tid:31][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: 
+<13>1 2023-01-30T09:37:54.896252Z - helloworld_process0 26395 - - [1675071474896242us][DEBUG][tid:32][Runtime.cpp:625][Runtime] POST INIT BEGIN, SWC NAME : 
+<13>1 2023-01-30T09:37:54.896292Z - helloworld_process0 26395 - - [1675071474896283us][DEBUG][tid:33][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: 
+<13>1 2023-01-30T09:37:54.896337Z - helloworld_process0 26395 - - [1675071474896327us][DEBUG][tid:34][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: 
+<13>1 2023-01-30T09:37:54.896383Z - helloworld_process0 26395 - - [1675071474896374us][DEBUG][tid:35][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: 
+<13>1 2023-01-30T09:37:54.896415Z - helloworld_process0 26395 - - [1675071474896405us][DEBUG][tid:37][Runtime.cpp:1273][Runtime] Runtime: create input channel for dwcgfHelloworld.sumNode.VALUE_0 with parameter: type=SHMEM_LOCAL,fifo-size=1,id=DefaultCGF_0,role=consumer
+<13>1 2023-01-30T09:37:54.896457Z - helloworld_process0 26395 - - [1675071474896448us][DEBUG][tid:36][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: bindInput
+<13>1 2023-01-30T09:37:54.896503Z - helloworld_process0 26395 - - [1675071474896487us][DEBUG][tid:38][Runtime.cpp:1273][Runtime] Runtime: create input channel for dwcgfHelloworld.sumNode.VALUE_1 with parameter: type=SHMEM_LOCAL,fifo-size=1,id=DefaultCGF_1,role=consumer
+<13>1 2023-01-30T09:37:54.896547Z - helloworld_process0 26395 - - [1675071474896537us][DEBUG][tid:39][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: 
+<13>1 2023-01-30T09:37:54.896587Z - helloworld_process0 26395 - - [1675071474896578us][DEBUG][tid:40][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: bindInput
+<15>1 2023-01-30T09:37:54.896629Z - helloworld_process0 26395 - - [1675071474896620us][VERBOSE][tid:37][ChannelConnectorImpl.cpp:71][ChannelConnector] Add consumer[0]: type=SHMEM_LOCAL,fifo-size=1,id=DefaultCGF_0,role=consumer, current consumer list size: 0
+<13>1 2023-01-30T09:37:54.896663Z - helloworld_process0 26395 - - [1675071474896653us][DEBUG][tid:41][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: 
+<13>1 2023-01-30T09:37:54.896701Z - helloworld_process0 26395 - - [1675071474896692us][DEBUG][tid:42][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: bindInput
+<15>1 2023-01-30T09:37:54.896738Z - helloworld_process0 26395 - - [1675071474896729us][VERBOSE][tid:38][ChannelConnectorImpl.cpp:71][ChannelConnector] Add consumer[1]: type=SHMEM_LOCAL,fifo-size=1,id=DefaultCGF_1,role=consumer, current consumer list size: 1
+<13>1 2023-01-30T09:37:54.896776Z - helloworld_process0 26395 - - [1675071474896767us][DEBUG][tid:43][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: 
+<13>1 2023-01-30T09:37:54.896808Z - helloworld_process0 26395 - - [1675071474896799us][DEBUG][tid:44][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: bindInput
+<13>1 2023-01-30T09:37:54.896841Z - helloworld_process0 26395 - - [1675071474896832us][DEBUG][tid:45][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: 
+<13>1 2023-01-30T09:37:54.896875Z - helloworld_process0 26395 - - [1675071474896866us][DEBUG][tid:46][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: bindInput
+<13>1 2023-01-30T09:37:54.896906Z - helloworld_process0 26395 - - [1675071474896896us][DEBUG][tid:47][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: 
+<13>1 2023-01-30T09:37:54.896939Z - helloworld_process0 26395 - - [1675071474896931us][DEBUG][tid:37][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: bindInput
+<13>1 2023-01-30T09:37:54.896977Z - helloworld_process0 26395 - - [1675071474896966us][DEBUG][tid:48][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: 
+<13>1 2023-01-30T09:37:54.897022Z - helloworld_process0 26395 - - [1675071474897013us][DEBUG][tid:38][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: bindInput
+<13>1 2023-01-30T09:37:54.897093Z - helloworld_process0 26395 - - [1675071474897084us][DEBUG][tid:32][Runtime.cpp:631][Runtime] POST INIT END, SWC NAME : 
+<13>1 2023-01-30T09:37:54.897144Z - helloworld_process0 26395 - - [1675071474897135us][DEBUG][tid:32][ChannelConnectorImpl.cpp:192][ChannelConnector] ChannelConnector: thread 281472814786816 starting producer and consumer connect threads 
+<15>1 2023-01-30T09:37:54.897310Z - helloworld_process0 26395 - - [1675071474897301us][VERBOSE][tid:32][ChannelConnectorImpl.cpp:198][ChannelConnector] ChannelConnector: started producer and consumer threads. producer tid=281462911617280, consumer tid=281462920009984
+<13>1 2023-01-30T09:37:54.897341Z - helloworld_process0 26395 - - [1675071474897333us][DEBUG][tid:32][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: 
+<13>1 2023-01-30T09:37:54.897414Z - helloworld_process0 26395 - - [1675071474897404us][DEBUG][tid:rr2_main][TopExecutor.hpp:3204][TopExecutor] All consumer channel connected
+<13>1 2023-01-30T09:37:54.907603Z - helloworld_process0 26395 - - [1675071474907593us][DEBUG][tid:rr2_main][TopExecutor.hpp:3350][TopExecutor] Clone Manager: Waiting for isSMReadyForScheduler, SWC NAME : helloworld_process0
+<13>1 2023-01-30T09:37:54.917708Z - helloworld_process0 26395 - - [1675071474917699us][DEBUG][tid:rr2_main][TopExecutor.hpp:3350][TopExecutor] Clone Manager: Waiting for isSMReadyForScheduler, SWC NAME : helloworld_process0
+<13>1 2023-01-30T09:37:54.917796Z - helloworld_process0 26395 - - [1675071474917787us][DEBUG][tid:49][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: 
+<13>1 2023-01-30T09:37:54.917849Z - helloworld_process0 26395 - - [1675071474917833us][DEBUG][tid:50][Runtime.cpp:685][Runtime] PRE READY BEGIN, SWC NAME : 
+<13>1 2023-01-30T09:37:54.917893Z - helloworld_process0 26395 - - [1675071474917883us][DEBUG][tid:51][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: 
+<13>1 2023-01-30T09:37:54.917933Z - helloworld_process0 26395 - - [1675071474917921us][DEBUG][tid:50][Runtime.cpp:685][Runtime] PRE READY BEGIN, SWC NAME : dwcgfHelloworld
+<13>1 2023-01-30T09:37:54.917967Z - helloworld_process0 26395 - - [1675071474917958us][DEBUG][tid:52][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: 
+<13>1 2023-01-30T09:37:54.918002Z - helloworld_process0 26395 - - [1675071474917993us][DEBUG][tid:50][Runtime.cpp:733][Runtime] PRE READY END, SWC NAME : dwcgfHelloworld
+<13>1 2023-01-30T09:37:54.918028Z - helloworld_process0 26395 - - [1675071474918020us][DEBUG][tid:50][Runtime.cpp:733][Runtime] PRE READY END, SWC NAME : 
+<13>1 2023-01-30T09:37:54.918055Z - helloworld_process0 26395 - - [1675071474918045us][DEBUG][tid:53][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: 
+<13>1 2023-01-30T09:37:54.918103Z - helloworld_process0 26395 - - [1675071474918093us][DEBUG][tid:54][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: 
+<13>1 2023-01-30T09:37:54.918147Z - helloworld_process0 26395 - - [1675071474918138us][DEBUG][tid:55][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: 
+<13>1 2023-01-30T09:37:54.918188Z - helloworld_process0 26395 - - [1675071474918178us][DEBUG][tid:56][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: 
+<13>1 2023-01-30T09:37:54.918231Z - helloworld_process0 26395 - - [1675071474918222us][DEBUG][tid:57][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: 
+<13>1 2023-01-30T09:37:54.918271Z - helloworld_process0 26395 - - [1675071474918262us][DEBUG][tid:58][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: 
+<13>1 2023-01-30T09:37:54.918306Z - helloworld_process0 26395 - - [1675071474918297us][DEBUG][tid:59][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: 
+<13>1 2023-01-30T09:37:54.918340Z - helloworld_process0 26395 - - [1675071474918332us][DEBUG][tid:50][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: 
+<13>1 2023-01-30T09:37:54.928549Z - helloworld_process0 26395 - - [1675071474928539us][DEBUG][tid:rr2_main][TopExecutor.hpp:3350][TopExecutor] Clone Manager: Waiting for isSMReadyForScheduler, SWC NAME : helloworld_process0
+<13>1 2023-01-30T09:37:54.938670Z - helloworld_process0 26395 - - [1675071474938660us][DEBUG][tid:rr2_main][TopExecutor.hpp:3350][TopExecutor] Clone Manager: Waiting for isSMReadyForScheduler, SWC NAME : helloworld_process0
+<13>1 2023-01-30T09:37:54.938763Z - helloworld_process0 26395 - - [1675071474938753us][DEBUG][tid:60][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: 
+<13>1 2023-01-30T09:37:54.938823Z - helloworld_process0 26395 - - [1675071474938814us][DEBUG][tid:61][Runtime.cpp:790][Runtime] READY BEGIN, SWC NAME : 
+<13>1 2023-01-30T09:37:54.938868Z - helloworld_process0 26395 - - [1675071474938859us][DEBUG][tid:62][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: 
+<13>1 2023-01-30T09:37:54.938911Z - helloworld_process0 26395 - - [1675071474938901us][DEBUG][tid:63][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: 
+<13>1 2023-01-30T09:37:54.938950Z - helloworld_process0 26395 - - [1675071474938941us][DEBUG][tid:61][Runtime.cpp:790][Runtime] READY BEGIN, SWC NAME : dwcgfHelloworld
+<13>1 2023-01-30T09:37:54.938989Z - helloworld_process0 26395 - - [1675071474938979us][DEBUG][tid:64][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: 
+<13>1 2023-01-30T09:37:54.939034Z - helloworld_process0 26395 - - [1675071474939025us][DEBUG][tid:61][Runtime.cpp:837][Runtime] READY END, SWC NAME : dwcgfHelloworld
+<13>1 2023-01-30T09:37:54.939065Z - helloworld_process0 26395 - - [1675071474939056us][DEBUG][tid:61][Runtime.cpp:837][Runtime] READY END, SWC NAME : 
+<13>1 2023-01-30T09:37:54.939095Z - helloworld_process0 26395 - - [1675071474939085us][DEBUG][tid:65][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: 
+<13>1 2023-01-30T09:37:54.939142Z - helloworld_process0 26395 - - [1675071474939132us][DEBUG][tid:66][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: 
+<13>1 2023-01-30T09:37:54.939186Z - helloworld_process0 26395 - - [1675071474939176us][DEBUG][tid:67][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: 
+<13>1 2023-01-30T09:37:54.939230Z - helloworld_process0 26395 - - [1675071474939220us][DEBUG][tid:68][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: 
+<13>1 2023-01-30T09:37:54.939268Z - helloworld_process0 26395 - - [1675071474939259us][DEBUG][tid:69][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: 
+<13>1 2023-01-30T09:37:54.939308Z - helloworld_process0 26395 - - [1675071474939298us][DEBUG][tid:70][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: 
+<13>1 2023-01-30T09:37:54.939348Z - helloworld_process0 26395 - - [1675071474939339us][DEBUG][tid:61][ThreadPool.hpp:99][ThreadPool] Thread exit from ThreadPool: 
+<13>1 2023-01-30T09:37:54.949554Z - helloworld_process0 26395 - - [1675071474949544us][DEBUG][tid:rr2_main][TopExecutor.hpp:3350][TopExecutor] Clone Manager: Waiting for isSMReadyForScheduler, SWC NAME : helloworld_process0
+<11>1 2023-01-30T09:37:54.959789Z - helloworld_process0 26395 - - [1675071474959779us][ERROR][tid:rr2_main][TopExecutor.hpp:2273][TopExecutor] SSM clients synchronized:89711736990592
+<13>1 2023-01-30T09:37:54.959951Z - helloworld_process0 26395 - - [1675071474959942us][DEBUG][tid:rr2_main][ChannelConnectorImpl.cpp:103][ChannelConnector] ChannelConnector: thread 281472814786816 stopping producer and consumer connect threads 
+<13>1 2023-01-30T09:37:55.17714Z - helloworld_process0 26395 - - [1675071475017705us][DEBUG][tid:rr2_main][TopExecutor.hpp:2325][TopExecutor] All channel connectors connected
+<13>1 2023-01-30T09:37:55.17743Z - helloworld_process0 26395 - - [1675071475017735us][DEBUG][tid:rr2_main][TopExecutor.hpp:3608][TopExecutor] TopExecutor: move cpuset tasks from /sys/fs/cgroup/cpuset/rr2init/tasks to /sys/fs/cgroup/cpuset/rr2system/tasks
+<11>1 2023-01-30T09:37:55.17788Z - helloworld_process0 26395 - - [1675071475017780us][ERROR][tid:rr2_main][TopExecutor.hpp:3614][TopExecutor] Failed to open dest cpuset /sys/fs/cgroup/cpuset/rr2system/tasks, errno: No such file or directory (2)
+<11>1 2023-01-30T09:37:55.17803Z - helloworld_process0 26395 - - [1675071475017796us][ERROR][tid:rr2_main][TopExecutor.hpp:2334][TopExecutor] Failed to move TopExecutor back to RR2 system cpuset: /sys/fs/cgroup/cpuset/rr2system/tasks
+<13>1 2023-01-30T09:37:55.17833Z - helloworld_process0 26395 - - [1675071475017825us][DEBUG][tid:rr2_main][TopExecutor.hpp:1852][TopExecutor] setPasses
+<13>1 2023-01-30T09:37:55.17950Z - helloworld_process0 26395 - - [1675071475017941us][DEBUG][tid:rr2_main][ScheduleManagerReceiver.cpp:54][Receiver] [Receiver] Programs Args :
+<13>1 2023-01-30T09:37:55.17972Z - helloworld_process0 26395 - - [1675071475017964us][DEBUG][tid:rr2_main][ScheduleManagerReceiver.cpp:55][Receiver] [Receiver] enableScheduleSwitching : false
+<13>1 2023-01-30T09:37:55.17987Z - helloworld_process0 26395 - - [1675071475017979us][DEBUG][tid:rr2_main][ScheduleManagerReceiver.cpp:56][Receiver] [Receiver] scheduleManagerHostIP : 127.0.0.1
+<13>1 2023-01-30T09:37:55.18000Z - helloworld_process0 26395 - - [1675071475017992us][DEBUG][tid:rr2_main][ScheduleManagerReceiver.cpp:57][Receiver] [Receiver] scheduleManagerHostPort : 40100
+<13>1 2023-01-30T09:37:55.18012Z - helloworld_process0 26395 - - [1675071475018004us][DEBUG][tid:rr2_main][ScheduleManagerReceiver.cpp:58][Receiver] [Receiver] scheduleManagerNumClients : 1
+<13>1 2023-01-30T09:37:55.18031Z - helloworld_process0 26395 - - [1675071475018023us][DEBUG][tid:rr2_main][ScheduleManagerReceiver.cpp:239][Receiver] [Receiver] schedule switching not enabled 0
+<14>1 2023-01-30T09:37:55.22535Z - helloworld_process0 26395 - - [1675071475022516us][INFO][tid:parameterServiceLifeCycle][ChannelDefinitions.cpp:110][ValChannelParam] type=SOCKET,ip=127.0.0.1,id=1618,producer-fifo=1,role=producer,fifo-size=1
+<13>1 2023-01-30T09:37:55.23014Z - helloworld_process0 26395 - - [1675071475022995us][DEBUG][tid:rr2_startSTM][TopExecutor.hpp:2652][TopExecutor] helloworld_process0: SchedulerClient
+<13>1 2023-01-30T09:37:55.23133Z - helloworld_process0 26395 - - [1675071475023116us][DEBUG][tid:rr2_startSTM][TopExecutor.hpp:2941][TopExecutor] Register runnable helloworld_process0_ssm_pass_0
+<13>1 2023-01-30T09:37:55.23172Z - helloworld_process0 26395 - - [1675071475023163us][DEBUG][tid:rr2_startSTM][TopExecutor.hpp:3147][TopExecutor] Register runnable dwcgfHelloworld_helloWorldNode_pass_0
+<13>1 2023-01-30T09:37:55.23189Z - helloworld_process0 26395 - - [1675071475023181us][DEBUG][tid:rr2_startSTM][TopExecutor.hpp:3147][TopExecutor] Register runnable dwcgfHelloworld_helloWorldNode_pass_1
+<13>1 2023-01-30T09:37:55.23204Z - helloworld_process0 26395 - - [1675071475023196us][DEBUG][tid:rr2_startSTM][TopExecutor.hpp:3147][TopExecutor] Register runnable dwcgfHelloworld_helloWorldNode_pass_2
+<13>1 2023-01-30T09:37:55.23223Z - helloworld_process0 26395 - - [1675071475023215us][DEBUG][tid:rr2_startSTM][TopExecutor.hpp:3147][TopExecutor] Register runnable dwcgfHelloworld_sumNode_pass_0
+<13>1 2023-01-30T09:37:55.23237Z - helloworld_process0 26395 - - [1675071475023230us][DEBUG][tid:rr2_startSTM][TopExecutor.hpp:3147][TopExecutor] Register runnable dwcgfHelloworld_sumNode_pass_1
+<13>1 2023-01-30T09:37:55.23250Z - helloworld_process0 26395 - - [1675071475023243us][DEBUG][tid:rr2_startSTM][TopExecutor.hpp:3147][TopExecutor] Register runnable dwcgfHelloworld_sumNode_pass_2
+<11>1 2023-01-30T09:37:55.23267Z - helloworld_process0 26395 - - [1675071475023259us][ERROR][tid:rr2_startSTM][TopExecutor.hpp:2696][TopExecutor] TopExecutor: scheduler client enter scheduling:89711800475520
+<15>1 2023-01-30T09:37:55.24262Z - helloworld_process0 26395 - - [1675071475024250us][VERBOSE][tid:parameterServiceLifeCycle][ChannelConnectorImpl.cpp:64][ChannelConnector] Add producer[0]: type=SOCKET,ip=127.0.0.1,id=1618,producer-fifo=1,role=producer,fifo-size=1, current producer list size: 0
+<13>1 2023-01-30T09:37:55.24777Z - helloworld_process0 26395 - - [1675071475024763us][DEBUG][tid:parameterServiceLifeCycle][ChannelSocket.cpp:92][ChannelSocketProducer] ChannelSocket Producer @ port:1618, BlockingConnectionCount=1
+<15>1 2023-01-30T09:37:55.25733Z - helloworld_process0 26395 - - [1675071475025724us][VERBOSE][tid:parameterServiceLifeCycle][ChannelSocket.cpp:98][ChannelSocketProducer] Initializing server socket for port 1618
+<15>1 2023-01-30T09:37:55.25905Z - helloworld_process0 26395 - - [1675071475025893us][VERBOSE][tid:parameterServiceLifeCycle][SocketClientServer.cpp:145][NO_TAG] SocketServer: listening on 1618
+<15>1 2023-01-30T09:37:55.25928Z - helloworld_process0 26395 - - [1675071475025920us][VERBOSE][tid:parameterServiceLifeCycle][ChannelSocket.cpp:101][ChannelSocketProducer] Server socket initialized for port 1618 server = 281462561667056
+<14>1 2023-01-30T09:37:55.25953Z - helloworld_process0 26395 - - [1675071475025945us][INFO][tid:parameterServiceLifeCycle][ChannelDefinitions.cpp:110][ValChannelParam] type=SOCKET,ip=127.0.0.1,id=1619,producer-fifo=1,role=producer,fifo-size=1
+<13>1 2023-01-30T09:37:55.26398Z - helloworld_process0 26395 - - [1675071475026383us][DEBUG][tid:71][HelloWorldNodeImpl.cpp:78][HelloWorldNode] [Epoch 0] Sent value0 = 0
+<13>1 2023-01-30T09:37:55.26442Z - helloworld_process0 26395 - - [1675071475026434us][DEBUG][tid:71][HelloWorldNodeImpl.cpp:82][HelloWorldNode] [Epoch 0] Sent value1 = 10000
+<15>1 2023-01-30T09:37:55.26463Z - helloworld_process0 26395 - - [1675071475026454us][VERBOSE][tid:parameterServiceLifeCycle][ChannelConnectorImpl.cpp:64][ChannelConnector] Add producer[1]: type=SOCKET,ip=127.0.0.1,id=1619,producer-fifo=1,role=producer,fifo-size=1, current producer list size: 1
+<13>1 2023-01-30T09:37:55.26498Z - helloworld_process0 26395 - - [1675071475026489us][DEBUG][tid:71][HelloWorldNodeImpl.cpp:85][HelloWorldNode] [Epoch 0] Greetings from HelloWorldNodeImpl: Hello helloworld_name!
+<13>1 2023-01-30T09:37:55.26607Z - helloworld_process0 26395 - - [1675071475026599us][DEBUG][tid:71][SumNodeImpl.cpp:72][SumNode] [Epoch 0] Received 0 from input VALUE_0, received 10000 from input VALUE_1. Add together: 10000!
+<13>1 2023-01-30T09:37:55.26771Z - helloworld_process0 26395 - - [1675071475026762us][DEBUG][tid:parameterServiceLifeCycle][ChannelSocket.cpp:92][ChannelSocketProducer] ChannelSocket Producer @ port:1619, BlockingConnectionCount=1
+<15>1 2023-01-30T09:37:55.27408Z - helloworld_process0 26395 - - [1675071475027399us][VERBOSE][tid:parameterServiceLifeCycle][ChannelSocket.cpp:98][ChannelSocketProducer] Initializing server socket for port 1619
+<15>1 2023-01-30T09:37:55.27480Z - helloworld_process0 26395 - - [1675071475027472us][VERBOSE][tid:parameterServiceLifeCycle][SocketClientServer.cpp:145][NO_TAG] SocketServer: listening on 1619
+<15>1 2023-01-30T09:37:55.27498Z - helloworld_process0 26395 - - [1675071475027490us][VERBOSE][tid:parameterServiceLifeCycle][ChannelSocket.cpp:101][ChannelSocketProducer] Server socket initialized for port 1619 server = 281462561706864
+<14>1 2023-01-30T09:37:55.27612Z - helloworld_process0 26395 - - [1675071475027604us][INFO][tid:parameterServiceLifeCycle][ChannelDefinitions.cpp:110][ValChannelParam] type=SOCKET,ip=127.0.0.1,id=1617,role=consumer,fifo-size=1
+<15>1 2023-01-30T09:37:55.28011Z - helloworld_process0 26395 - - [1675071475028002us][VERBOSE][tid:parameterServiceLifeCycle][ChannelConnectorImpl.cpp:71][ChannelConnector] Add consumer[0]: type=SOCKET,ip=127.0.0.1,id=1617,role=consumer,fifo-size=1, current consumer list size: 0
+<13>1 2023-01-30T09:37:55.28058Z - helloworld_process0 26395 - - [1675071475028049us][DEBUG][tid:parameterServiceLifeCycle][ChannelSocket.cpp:66][ChannelSocketConsumer] ChannelSocket Consumer created to connect with Server127.0.0.1:1617
+<13>1 2023-01-30T09:37:55.28091Z - helloworld_process0 26395 - - [1675071475028083us][DEBUG][tid:parameterServiceLifeCycle][ChannelConnectorImpl.cpp:192][ChannelConnector] ChannelConnector: thread 281462911617280 starting producer and consumer connect threads 
+<15>1 2023-01-30T09:37:55.28234Z - helloworld_process0 26395 - - [1675071475028225us][VERBOSE][tid:parameterServiceLifeCycle][ChannelConnectorImpl.cpp:198][ChannelConnector] ChannelConnector: started producer and consumer threads. producer tid=281462687361280, consumer tid=281462695753984
+<13>1 2023-01-30T09:37:55.356368Z - helloworld_process0 26395 - - [1675071475356357us][DEBUG][tid:71][HelloWorldNodeImpl.cpp:78][HelloWorldNode] [Epoch 1] Sent value0 = 1
+<13>1 2023-01-30T09:37:55.356409Z - helloworld_process0 26395 - - [1675071475356401us][DEBUG][tid:71][HelloWorldNodeImpl.cpp:82][HelloWorldNode] [Epoch 1] Sent value1 = 9999
+<13>1 2023-01-30T09:37:55.356426Z - helloworld_process0 26395 - - [1675071475356418us][DEBUG][tid:71][HelloWorldNodeImpl.cpp:85][HelloWorldNode] [Epoch 1] Greetings from HelloWorldNodeImpl: Hello helloworld_name!
+<13>1 2023-01-30T09:37:55.356472Z - helloworld_process0 26395 - - [1675071475356464us][DEBUG][tid:71][SumNodeImpl.cpp:72][SumNode] [Epoch 1] Received 1 from input VALUE_0, received 9999 from input VALUE_1. Add together: 10000!
+<13>1 2023-01-30T09:37:55.686361Z - helloworld_process0 26395 - - [1675071475686349us][DEBUG][tid:71][HelloWorldNodeImpl.cpp:78][HelloWorldNode] [Epoch 2] Sent value0 = 2
+<13>1 2023-01-30T09:37:55.686404Z - helloworld_process0 26395 - - [1675071475686395us][DEBUG][tid:71][HelloWorldNodeImpl.cpp:82][HelloWorldNode] [Epoch 2] Sent value1 = 9998
+<13>1 2023-01-30T09:37:55.686419Z - helloworld_process0 26395 - - [1675071475686411us][DEBUG][tid:71][HelloWorldNodeImpl.cpp:85][HelloWorldNode] [Epoch 2] Greetings from HelloWorldNodeImpl: Hello helloworld_name!
+<13>1 2023-01-30T09:37:55.686461Z - helloworld_process0 26395 - - [1675071475686453us][DEBUG][tid:71][SumNodeImpl.cpp:72][SumNode] [Epoch 2] Received 2 from input VALUE_0, received 9998 from input VALUE_1. Add together: 10000!
+<13>1 2023-01-30T09:37:56.16342Z - helloworld_process0 26395 - - [1675071476016329us][DEBUG][tid:71][HelloWorldNodeImpl.cpp:78][HelloWorldNode] [Epoch 3] Sent value0 = 3
+<13>1 2023-01-30T09:37:56.16386Z - helloworld_process0 26395 - - [1675071476016378us][DEBUG][tid:71][HelloWorldNodeImpl.cpp:82][HelloWorldNode] [Epoch 3] Sent value1 = 9997
+<13>1 2023-01-30T09:37:56.16402Z - helloworld_process0 26395 - - [1675071476016394us][DEBUG][tid:71][HelloWorldNodeImpl.cpp:85][HelloWorldNode] [Epoch 3] Greetings from HelloWorldNodeImpl: Hello helloworld_name!
+<13>1 2023-01-30T09:37:56.16444Z - helloworld_process0 26395 - - [1675071476016436us][DEBUG][tid:71][SumNodeImpl.cpp:72][SumNode] [Epoch 3] Received 3 from input VALUE_0, received 9997 from input VALUE_1. Add together: 10000!
+<13>1 2023-01-30T09:37:56.346346Z - helloworld_process0 26395 - - [1675071476346333us][DEBUG][tid:71][HelloWorldNodeImpl.cpp:78][HelloWorldNode] [Epoch 4] Sent value0 = 4
+<13>1 2023-01-30T09:37:56.346382Z - helloworld_process0 26395 - - [1675071476346374us][DEBUG][tid:71][HelloWorldNodeImpl.cpp:82][HelloWorldNode] [Epoch 4] Sent value1 = 9996
+<13>1 2023-01-30T09:37:56.346397Z - helloworld_process0 26395 - - [1675071476346389us][DEBUG][tid:71][HelloWorldNodeImpl.cpp:85][HelloWorldNode] [Epoch 4] Greetings from HelloWorldNodeImpl: Hello helloworld_name!
+<13>1 2023-01-30T09:37:56.346437Z - helloworld_process0 26395 - - [1675071476346429us][DEBUG][tid:71][SumNodeImpl.cpp:72][SumNode] [Epoch 4] Received 4 from input VALUE_0, received 9996 from input VALUE_1. Add together: 10000!
+<13>1 2023-01-30T09:37:56.676312Z - helloworld_process0 26395 - - [1675071476676302us][DEBUG][tid:71][HelloWorldNodeImpl.cpp:78][HelloWorldNode] [Epoch 5] Sent value0 = 5
+<13>1 2023-01-30T09:37:56.676338Z - helloworld_process0 26395 - - [1675071476676330us][DEBUG][tid:71][HelloWorldNodeImpl.cpp:82][HelloWorldNode] [Epoch 5] Sent value1 = 9995
+<13>1 2023-01-30T09:37:56.676353Z - helloworld_process0 26395 - - [1675071476676345us][DEBUG][tid:71][HelloWorldNodeImpl.cpp:85][HelloWorldNode] [Epoch 5] Greetings from HelloWorldNodeImpl: Hello helloworld_name!
+<13>1 2023-01-30T09:37:56.676389Z - helloworld_process0 26395 - - [1675071476676381us][DEBUG][tid:71][SumNodeImpl.cpp:72][SumNode] [Epoch 5] Received 5 from input VALUE_0, received 9995 from input VALUE_1. Add together: 10000!
+<13>1 2023-01-30T09:37:57.6329Z - helloworld_process0 26395 - - [1675071477006317us][DEBUG][tid:71][HelloWorldNodeImpl.cpp:78][HelloWorldNode] [Epoch 6] Sent value0 = 6
+<13>1 2023-01-30T09:37:57.6365Z - helloworld_process0 26395 - - [1675071477006356us][DEBUG][tid:71][HelloWorldNodeImpl.cpp:82][HelloWorldNode] [Epoch 6] Sent value1 = 9994
+<13>1 2023-01-30T09:37:57.6394Z - helloworld_process0 26395 - - [1675071477006386us][DEBUG][tid:71][HelloWorldNodeImpl.cpp:85][HelloWorldNode] [Epoch 6] Greetings from HelloWorldNodeImpl: Hello helloworld_name!
+<13>1 2023-01-30T09:37:57.6436Z - helloworld_process0 26395 - - [1675071477006428us][DEBUG][tid:71][SumNodeImpl.cpp:72][SumNode] [Epoch 6] Received 6 from input VALUE_0, received 9994 from input VALUE_1. Add together: 10000!
+<13>1 2023-01-30T09:37:57.336299Z - helloworld_process0 26395 - - [1675071477336289us][DEBUG][tid:71][HelloWorldNodeImpl.cpp:78][HelloWorldNode] [Epoch 7] Sent value0 = 7
+<13>1 2023-01-30T09:37:57.336326Z - helloworld_process0 26395 - - [1675071477336318us][DEBUG][tid:71][HelloWorldNodeImpl.cpp:82][HelloWorldNode] [Epoch 7] Sent value1 = 9993
+<13>1 2023-01-30T09:37:57.336342Z - helloworld_process0 26395 - - [1675071477336334us][DEBUG][tid:71][HelloWorldNodeImpl.cpp:85][HelloWorldNode] [Epoch 7] Greetings from HelloWorldNodeImpl: Hello helloworld_name!
+<13>1 2023-01-30T09:37:57.336380Z - helloworld_process0 26395 - - [1675071477336371us][DEBUG][tid:71][SumNodeImpl.cpp:72][SumNode] [Epoch 7] Received 7 from input VALUE_0, received 9993 from input VALUE_1. Add together: 10000!
+<13>1 2023-01-30T09:37:57.666294Z - helloworld_process0 26395 - - [1675071477666284us][DEBUG][tid:71][HelloWorldNodeImpl.cpp:78][HelloWorldNode] [Epoch 8] Sent value0 = 8
+<13>1 2023-01-30T09:37:57.666320Z - helloworld_process0 26395 - - [1675071477666312us][DEBUG][tid:71][HelloWorldNodeImpl.cpp:82][HelloWorldNode] [Epoch 8] Sent value1 = 9992
+<13>1 2023-01-30T09:37:57.666335Z - helloworld_process0 26395 - - [1675071477666327us][DEBUG][tid:71][HelloWorldNodeImpl.cpp:85][HelloWorldNode] [Epoch 8] Greetings from HelloWorldNodeImpl: Hello helloworld_name!
+<13>1 2023-01-30T09:37:57.666371Z - helloworld_process0 26395 - - [1675071477666363us][DEBUG][tid:71][SumNodeImpl.cpp:72][SumNode] [Epoch 8] Received 8 from input VALUE_0, received 9992 from input VALUE_1. Add together: 10000!
+<13>1 2023-01-30T09:37:57.996286Z - helloworld_process0 26395 - - [1675071477996277us][DEBUG][tid:71][HelloWorldNodeImpl.cpp:78][HelloWorldNode] [Epoch 9] Sent value0 = 9
+<13>1 2023-01-30T09:37:57.996313Z - helloworld_process0 26395 - - [1675071477996305us][DEBUG][tid:71][HelloWorldNodeImpl.cpp:82][HelloWorldNode] [Epoch 9] Sent value1 = 9991
+<13>1 2023-01-30T09:37:57.996328Z - helloworld_process0 26395 - - [1675071477996320us][DEBUG][tid:71][HelloWorldNodeImpl.cpp:85][HelloWorldNode] [Epoch 9] Greetings from HelloWorldNodeImpl: Hello helloworld_name!
+<13>1 2023-01-30T09:37:57.996364Z - helloworld_process0 26395 - - [1675071477996356us][DEBUG][tid:71][SumNodeImpl.cpp:72][SumNode] [Epoch 9] Received 9 from input VALUE_0, received 9991 from input VALUE_1. Add together: 10000!
+<13>1 2023-01-30T09:37:58.326322Z - helloworld_process0 26395 - - [1675071478326310us][DEBUG][tid:71][HelloWorldNodeImpl.cpp:78][HelloWorldNode] [Epoch 10] Sent value0 = 10
+<13>1 2023-01-30T09:37:58.326353Z - helloworld_process0 26395 - - [1675071478326345us][DEBUG][tid:71][HelloWorldNodeImpl.cpp:82][HelloWorldNode] [Epoch 10] Sent value1 = 9990
+<13>1 2023-01-30T09:37:58.326369Z - helloworld_process0 26395 - - [1675071478326361us][DEBUG][tid:71][HelloWorldNodeImpl.cpp:85][HelloWorldNode] [Epoch 10] Greetings from HelloWorldNodeImpl: Hello helloworld_name!
+<13>1 2023-01-30T09:37:58.326423Z - helloworld_process0 26395 - - [1675071478326415us][DEBUG][tid:71][SumNodeImpl.cpp:72][SumNode] [Epoch 10] Received 10 from input VALUE_0, received 9990 from input VALUE_1. Add together: 10000!
+<13>1 2023-01-30T09:37:58.656640Z - helloworld_process0 26395 - - [1675071478656628us][DEBUG][tid:71][HelloWorldNodeImpl.cpp:78][HelloWorldNode] [Epoch 11] Sent value0 = 11
+<13>1 2023-01-30T09:37:58.656677Z - helloworld_process0 26395 - - [1675071478656669us][DEBUG][tid:71][HelloWorldNodeImpl.cpp:82][HelloWorldNode] [Epoch 11] Sent value1 = 9989
+<13>1 2023-01-30T09:37:58.656694Z - helloworld_process0 26395 - - [1675071478656686us][DEBUG][tid:71][HelloWorldNodeImpl.cpp:85][HelloWorldNode] [Epoch 11] Greetings from HelloWorldNodeImpl: Hello helloworld_name!
+<13>1 2023-01-30T09:37:58.656746Z - helloworld_process0 26395 - - [1675071478656738us][DEBUG][tid:71][SumNodeImpl.cpp:72][SumNode] [Epoch 11] Received 11 from input VALUE_0, received 9989 from input VALUE_1. Add together: 10000!
+<13>1 2023-01-30T09:37:58.986300Z - helloworld_process0 26395 - - [1675071478986290us][DEBUG][tid:71][HelloWorldNodeImpl.cpp:78][HelloWorldNode] [Epoch 12] Sent value0 = 12
+<13>1 2023-01-30T09:37:58.986330Z - helloworld_process0 26395 - - [1675071478986322us][DEBUG][tid:71][HelloWorldNodeImpl.cpp:82][HelloWorldNode] [Epoch 12] Sent value1 = 9988
+<13>1 2023-01-30T09:37:58.986346Z - helloworld_process0 26395 - - [1675071478986338us][DEBUG][tid:71][HelloWorldNodeImpl.cpp:85][HelloWorldNode] [Epoch 12] Greetings from HelloWorldNodeImpl: Hello helloworld_name!
+<13>1 2023-01-30T09:37:58.986384Z - helloworld_process0 26395 - - [1675071478986376us][DEBUG][tid:71][SumNodeImpl.cpp:72][SumNode] [Epoch 12] Received 12 from input VALUE_0, received 9988 from input VALUE_1. Add together: 10000!
+<13>1 2023-01-30T09:37:59.316335Z - helloworld_process0 26395 - - [1675071479316322us][DEBUG][tid:71][HelloWorldNodeImpl.cpp:78][HelloWorldNode] [Epoch 13] Sent value0 = 13
+<13>1 2023-01-30T09:37:59.316366Z - helloworld_process0 26395 - - [1675071479316358us][DEBUG][tid:71][HelloWorldNodeImpl.cpp:82][HelloWorldNode] [Epoch 13] Sent value1 = 9987
+<13>1 2023-01-30T09:37:59.316381Z - helloworld_process0 26395 - - [1675071479316373us][DEBUG][tid:71][HelloWorldNodeImpl.cpp:85][HelloWorldNode] [Epoch 13] Greetings from HelloWorldNodeImpl: Hello helloworld_name!
+<13>1 2023-01-30T09:37:59.316439Z - helloworld_process0 26395 - - [1675071479316431us][DEBUG][tid:71][SumNodeImpl.cpp:72][SumNode] [Epoch 13] Received 13 from input VALUE_0, received 9987 from input VALUE_1. Add together: 10000!
+<13>1 2023-01-30T09:37:59.646284Z - helloworld_process0 26395 - - [1675071479646275us][DEBUG][tid:71][HelloWorldNodeImpl.cpp:78][HelloWorldNode] [Epoch 14] Sent value0 = 14
+<13>1 2023-01-30T09:37:59.646311Z - helloworld_process0 26395 - - [1675071479646302us][DEBUG][tid:71][HelloWorldNodeImpl.cpp:82][HelloWorldNode] [Epoch 14] Sent value1 = 9986
+<13>1 2023-01-30T09:37:59.646326Z - helloworld_process0 26395 - - [1675071479646319us][DEBUG][tid:71][HelloWorldNodeImpl.cpp:85][HelloWorldNode] [Epoch 14] Greetings from HelloWorldNodeImpl: Hello helloworld_name!
+<13>1 2023-01-30T09:37:59.646363Z - helloworld_process0 26395 - - [1675071479646355us][DEBUG][tid:71][SumNodeImpl.cpp:72][SumNode] [Epoch 14] Received 14 from input VALUE_0, received 9986 from input VALUE_1. Add together: 10000!
+<11>1 2023-01-30T09:37:59.857181Z - helloworld_process0 26395 - - [1675071479857168us][ERROR][tid:rr2_main][TopExecutor.hpp:539][TopExecutor] Caught signal 15 sent by pid 26393
+<13>1 2023-01-30T09:37:59.857229Z - helloworld_process0 26395 - - [1675071479857220us][DEBUG][tid:rr2_main][TopExecutor.hpp:563][TopExecutor] Caught user interruption signal
+<13>1 2023-01-30T09:37:59.857254Z - helloworld_process0 26395 - - [1675071479857246us][DEBUG][tid:rr2_main][TopExecutor.hpp:2407][TopExecutor] TopExecutor: main thread informs stm server to exit schedule
+<13>1 2023-01-30T09:37:59.977204Z - helloworld_process0 26395 - - [1675071479977190us][DEBUG][tid:rr2_startSTM][TopExecutor.hpp:2705][TopExecutor] TopExecutor: stmEnterScheduler return
+<13>1 2023-01-30T09:37:59.977452Z - helloworld_process0 26395 - - [1675071479977443us][DEBUG][tid:rr2_startSTM][TopExecutor.hpp:2714][TopExecutor] TopExecutor: scheduler client out scheduling

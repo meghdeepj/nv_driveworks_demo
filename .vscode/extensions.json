@@ -8,9 +8,13 @@
         "uavcan.dsdl",
         "ms-vscode.cmake-tools",
         "ryu1kn.partial-diff",
-        "ryu1kn.text-marker",
         "redhat.vscode-xml",
         "redhat.vscode-yaml",
-        "jock.svg"
+        "jock.svg",
+        "ms-vscode-remote.remote-ssh",
+        "ms-vscode-remote.remote-ssh-edit",
+        "wayou.vscode-todo-highlight",
+        "qcz.text-power-tools",
+        "shd101wyy.markdown-preview-enhanced"
     ]
 }
