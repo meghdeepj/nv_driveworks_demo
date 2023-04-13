@@ -34,8 +34,8 @@
 # Build flags
 #-------------------------------------------------------------------------------
 if(CMAKE_COMPILER_IS_GNUCC OR CMAKE_COMPILER_IS_GNUCXX)
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror -Wall -Wunused -Wunused-value -Wunused-parameter")
-    set(CMAKE_C_FLAGS   "${CMAKE_C_FLAGS}   -Werror -Wall -Wunused -Wunused-value -Wunused-parameter")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wunused -Wunused-value -Wunused-parameter")
+    set(CMAKE_C_FLAGS   "${CMAKE_C_FLAGS}   -Wall -Wunused -Wunused-value -Wunused-parameter")
     set(CMAKE_SHARED_LINKER_FLAGS  "-Wl,-rpath-link,/usr/lib/${SYS_ARCH_DIR} ${CMAKE_SHARED_LINKER_FLAGS}")
     set(CMAKE_EXE_LINKER_FLAGS     "-Wl,-rpath-link,/usr/lib/${SYS_ARCH_DIR} ${CMAKE_EXE_LINKER_FLAGS}")
 endif()

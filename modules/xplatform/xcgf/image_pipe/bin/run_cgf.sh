@@ -82,6 +82,7 @@ __parseArgs() {
 }
 
 # zs:
+PROJECT=dwcgf_image_pipe
 PRODUCT=DWCGFImagePipe
 SCHEDULE=""
 CAR=trafficlightturning-hyperion8
@@ -91,7 +92,7 @@ APP_PARAMETER=""
 ALL_ARGS=$* # make a copy of the shell parameters
 __parseArgs ${ALL_ARGS}
 
-DW_TOP_PATH=$(cd $(dirname ${0})/../; pwd)
+DW_TOP_PATH=$(cd $(dirname ${0})/../../; pwd)
 RR_TOP_PATH=$(cd /usr/local/driveworks/bin; pwd)
 
 echo "DW_TOP_PATH=${DW_TOP_PATH}"
@@ -99,10 +100,10 @@ echo "RR_TOP_PATH=${RR_TOP_PATH}"
 echo "CGF_SYS_PATH=${CGF_SYS_PATH}"
 
 CMD=$(pwd)
-RR_GRAPHS_PATH=${DW_TOP_PATH}/graphs
+RR_GRAPHS_PATH=${DW_TOP_PATH}/graphs/${PROJECT}
 
-DATA_PATH=${DW_TOP_PATH}/data
-RR_LOG_PATH=${CMD}/LogFolder
+DATA_PATH=${DW_TOP_PATH}/data/${PROJECT}
+RR_LOG_PATH=${CMD}/LogFolder/${PROJECT}
 
 echo "RR_LOG_PATH=${RR_LOG_PATH}"
 echo "DATA_PATH=${DATA_PATH}"
@@ -241,7 +242,7 @@ __setEnv() {
     fi
     __tuneNetworkStack
 
-    export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${DW_TOP_PATH}/lib
+    export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${DW_TOP_PATH}/lib/${PROJECT}
     echo "LD_LIBRARY_PATH: ${LD_LIBRARY_PATH}"
 }
 
@@ -290,7 +291,7 @@ __prepDisplay
 __setEnv
 
 if [[ ! -d ${RR_LOG_PATH} ]];then
-  mkdir ${RR_LOG_PATH}
+  mkdir -p ${RR_LOG_PATH}
 else
   echo "${RR_LOG_PATH} dir exists"
 fi
@@ -303,15 +304,15 @@ if [[ -f $PRODUCT ]]; then
 else
     SPEC=${RR_GRAPHS_PATH}/app/${PRODUCT}.app.json
     SCHEDS_TAB=${PRODUCT}__*.stm
-    if ! ls ${DW_TOP_PATH}/bin/${SCHEDS_TAB} 1> /dev/null 2>&1; then
+    if ! ls ${DW_TOP_PATH}/bin/${PROJECT}/${SCHEDS_TAB} 1> /dev/null 2>&1; then
     echo "Schedule file ${DW_TOP_PATH}/bin/${SCHEDS_TAB} doesn't exist!"
         __cleanup
         exit 1
     fi
     if [ "$OS" == "QNX" ]; then
-        SCHED=$(find ${DW_TOP_PATH}/bin -name ${SCHEDS_TAB} | paste -s -d "," - -)
+        SCHED=$(find ${DW_TOP_PATH}/bin/${PROJECT} -name ${SCHEDS_TAB} | paste -s -d "," - -)
     else
-        SCHED=$(find ${DW_TOP_PATH}/bin -name ${SCHEDS_TAB} | paste -sd,)
+        SCHED=$(find ${DW_TOP_PATH}/bin/${PROJECT} -name ${SCHEDS_TAB} | paste -sd,)
     fi
 fi
 

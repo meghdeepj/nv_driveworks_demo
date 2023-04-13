@@ -11,69 +11,28 @@ standardSchedule:
               - pilotPipe_process.pilotPipe_process_ssm_pass_0
               Resources:
               - CPU
-              WCET: 1.00 us
+              WCET: 374.00 us
           - dwcgfImagePipe_pilotPipe0_cameraCapture_cameraNode_pass_1:
               Dependencies:
               - pilotPipe_process.dwcgfImagePipe_pilotPipe0_cameraCapture_cameraNode_pass_0
               - pilotPipe_process.pilotPipe_process_ssm_pass_0
               Resources:
               - CPU
-              - CUDA_MUTEX_LOCK
-              - CUDA_STREAM
-              Submits: pilotPipe_process.dwcgfImagePipe_pilotPipe0_cameraCapture_cameraNode_pass_1_submittee
-              WCET: 1.00 us
-          - dwcgfImagePipe_pilotPipe0_cameraCapture_cameraNode_pass_1_submittee:
-              Dependencies:
-              - pilotPipe_process.dwcgfImagePipe_pilotPipe0_cameraCapture_cameraNode_pass_1
-              Resources:
-              - GPU
-              WCET: 1.00 us
+              WCET: 17.00 us
           - dwcgfImagePipe_pilotPipe0_cameraCapture_cameraNode_pass_2:
               Dependencies:
-              - pilotPipe_process.dwcgfImagePipe_pilotPipe0_cameraCapture_cameraNode_pass_1_submittee
+              - pilotPipe_process.dwcgfImagePipe_pilotPipe0_cameraCapture_cameraNode_pass_1
               - pilotPipe_process.pilotPipe_process_ssm_pass_0
               Resources:
               - CPU
-              - CUDA_MUTEX_LOCK
-              - CUDA_STREAM
-              Submits: pilotPipe_process.dwcgfImagePipe_pilotPipe0_cameraCapture_cameraNode_pass_2_submittee
-              WCET: 1.00 us
-          - dwcgfImagePipe_pilotPipe0_cameraCapture_cameraNode_pass_2_submittee:
-              Dependencies:
-              - pilotPipe_process.dwcgfImagePipe_pilotPipe0_cameraCapture_cameraNode_pass_2
-              Resources:
-              - GPU
-              WCET: 1.00 us
-          - dwcgfImagePipe_pilotPipe0_cameraCapture_cameraNode_pass_3:
-              Dependencies:
-              - pilotPipe_process.dwcgfImagePipe_pilotPipe0_cameraCapture_cameraNode_pass_2_submittee
-              - pilotPipe_process.pilotPipe_process_ssm_pass_0
-              Resources:
-              - CPU
-              - CUDA_MUTEX_LOCK
-              - CUDA_STREAM
-              Submits: pilotPipe_process.dwcgfImagePipe_pilotPipe0_cameraCapture_cameraNode_pass_3_submittee
-              WCET: 1.00 us
-          - dwcgfImagePipe_pilotPipe0_cameraCapture_cameraNode_pass_3_submittee:
-              Dependencies:
-              - pilotPipe_process.dwcgfImagePipe_pilotPipe0_cameraCapture_cameraNode_pass_3
-              Resources:
-              - GPU
-              WCET: 1.00 us
-          - dwcgfImagePipe_pilotPipe0_cameraCapture_cameraNode_pass_4:
-              Dependencies:
-              - pilotPipe_process.dwcgfImagePipe_pilotPipe0_cameraCapture_cameraNode_pass_3_submittee
-              - pilotPipe_process.pilotPipe_process_ssm_pass_0
-              Resources:
-              - CPU
-              WCET: 1.00 us
+              WCET: 17.00 us
           - pilotPipe_process_ssm_pass_0:
               Resources:
               - CPU
               WCET: 7.00 us
       Resources:
         CUDA_STREAM:
-        - CUDA_STREAM0: dGPU
+        - CUDA_STREAM0: iGPU
         MUTEX:
         - CUDA_MUTEX_LOCK
       SOC: TegraA
@@ -89,7 +48,7 @@ standardSchedule:
       - TegraA.CPU1
       - TegraA.CPU2
       - TegraA.CPU3
-      - TegraA.dGPU
+      - TegraA.iGPU
       - pilotPipe_process.TegraA.CUDA_MUTEX_LOCK
       - pilotPipe_process.TegraA.CUDA_STREAM0
   Identifier: 0
@@ -102,7 +61,7 @@ standardSchedule:
         - CPU2
         - CPU3
         GPU:
-        - dGPU
+        - iGPU
   - TegraB:
       Resources:
         CPU:

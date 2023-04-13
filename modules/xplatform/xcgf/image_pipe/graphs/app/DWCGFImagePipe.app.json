@@ -41,10 +41,9 @@
                         "machine0.CPU1": [],
                         "machine0.CPU2": [],
                         "machine0.CPU3": [],
-                        "machine0.dGPU": [],
-                        "pilotPipe_process.CUDA_STREAM0:dGPU": [],
-                        "pilotPipe_process.CUDA_MUTEX_LOCK": [
-                        ]
+                        "machine0.iGPU": [],
+                        "pilotPipe_process.CUDA_STREAM0:iGPU": [],
+                        "pilotPipe_process.CUDA_MUTEX_LOCK": []
                     }
                 }
             }

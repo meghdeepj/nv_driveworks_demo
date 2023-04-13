@@ -1,0 +1,16 @@
+{
+    "files.associations": {
+        "*.env": "makefile",
+        "*.sdf": "xml",
+        "*.repos": "yaml",
+        "*.cmake.in": "cmake",
+        "*.bash.in": "shellscript",
+        "*.py.em": "python",
+        "*.c.em": "c",
+        "*.cpp.em": "cpp",
+        "bitset": "cpp",
+        "random": "cpp",
+        "optional": "cpp",
+        "mutex": "cpp"
+    }
+}

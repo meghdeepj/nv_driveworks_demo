@@ -2,7 +2,7 @@
     "comment": "camera capture node",
     "generated": false,
     "library": "libdwcgf_image_pipe.so",
-    "name": "dw::framework::CameraNode",
+    "name": "dw::framework::gwCameraNode",
     "inputPorts": {},
     "outputPorts": {
         "IMAGE_NATIVE_RAW": {
@@ -19,8 +19,11 @@
         }
     },
     "parameters": {
-        "name": {
-            "type": "std::string"
+        "cameraIndex": {
+            "type": "size_t"
+        },
+        "streamIndex": {
+            "type": "size_t"
         }
     },
     "passes": [
@@ -33,19 +36,7 @@
         {
             "name": "RAW_OUTPUT",
             "processorTypes": [
-                "GPU"
-            ]
-        },
-        {
-            "name": "PROCESSED_OUTPUT",
-            "processorTypes": [
-                "GPU"
-            ]
-        },
-        {
-            "name": "PROCESSED_RGBA_OUTPUT",
-            "processorTypes": [
-                "GPU"
+                "CPU"
             ]
         },
         {

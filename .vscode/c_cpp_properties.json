@@ -9,7 +9,7 @@
         ],
         "myDriveSdkRoot": "~/orin_ws/",
         "myLinuxCompilerPath": "/usr/bin/gcc",
-        "myDriveworksPath": "${myDriveSdkRoot}/nv_driveworks/driveworks-5.10/",
+        "myDriveworksPath": "${myDriveSdkRoot}/nv_driveworks/driverorks-5.10/",
         "myDriveosPath": "${myDriveSdkRoot}/nv_driveos/driveos-6.0.5.0/drive-linux/",
         "myCudaPath": "/usr/local/cuda/"
     },
@@ -23,7 +23,8 @@
                 "${myDriveworksPath}/include",
                 "${myDriveosPath}/include",
                 "${myCudaPath}/include",
-                "${workspaceFolder}/modules/module_demo/include"
+                "${workspaceFolder}/modules/module_demo/include",
+                "${workspaceFolder}/modules/xplatform/xcgf/image_pipe/src"
             ],
             "defines": [
                 "_DEBUG",

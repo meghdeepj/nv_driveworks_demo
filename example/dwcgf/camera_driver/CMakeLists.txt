@@ -42,9 +42,8 @@ set(DWCGF_DATA_DIR ${CMAKE_CURRENT_SOURCE_DIR}/data)
 set(DWCGF_RUNNER ${CMAKE_CURRENT_SOURCE_DIR}/bin/run_cgf.sh)
 
 file(GLOB_RECURSE DWCGF_NODES_FILES
-    ${DWCGF_NODES_DIR}
-    "*.hpp"
-    "*.cpp"
+    ${DWCGF_NODES_DIR}/*.hpp
+    ${DWCGF_NODES_DIR}/*.cpp
 )
 
 if (NOT TARGET driveworks-shared)

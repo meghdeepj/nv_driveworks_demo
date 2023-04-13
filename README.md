@@ -120,7 +120,26 @@ sudo ln -s ~/orin_ws/nv_driveworks/driverorks-5.10/ /usr/local/driveworks
 
 安装cmake-tools插件，即可获得完整cmake开发体验。
 
+## 运行
+
+### example
+
+以`dwcgf_helloworld`为例
+
+### 项目module
+
+以`dwcgf_image_pipe`为例
+
+```sh
+cd nv_driveworks_demo/target/aarch64/install/bin
+sudo ./dwcgf_image_pipe/run_cgf.sh
+
+sudo rm -rf ./LogFolder/ ./framesync_*
+```
+
 ## 调试
+
+### debug编译
 
 由于设置了`set(CMAKE_DEBUG_POSTFIX _d)`, 所有debug lib都添加后缀`_d`
 

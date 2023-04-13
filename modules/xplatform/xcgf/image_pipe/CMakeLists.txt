@@ -5,14 +5,19 @@ include(GWModuleInstallConfig)
 set(DRIVEWORKS_PATH "/usr/local/driveworks")
 set(DWCGF_GRAPHS_DIR ${CMAKE_CURRENT_SOURCE_DIR}/graphs)
 set(DWCGF_NODES_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src/nodes)
+set(DWCGF_CHANNEL_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src/channel)
 set(DWCGF_SCHE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/schedule)
 set(DWCGF_DATA_DIR ${CMAKE_CURRENT_SOURCE_DIR}/data)
 set(DWCGF_RUNNER ${CMAKE_CURRENT_SOURCE_DIR}/bin/run_cgf.sh)
+set(DWCGF_RIG_TESTER ${CMAKE_CURRENT_SOURCE_DIR}/bin/test_rig.sh)
 
 file(GLOB_RECURSE DWCGF_NODES_FILES
-    ${DWCGF_NODES_DIR}
-    "*.hpp"
-    "*.cpp"
+    ${DWCGF_NODES_DIR}/*.hpp
+    ${DWCGF_NODES_DIR}/*.cpp
+)
+file(GLOB_RECURSE DWCGF_CHANNEL_FILES
+    ${DWCGF_CHANNEL_DIR}/*.hpp
+    ${DWCGF_CHANNEL_DIR}/*.cpp
 )
 
 if (NOT TARGET driveworks-shared)
@@ -32,10 +37,22 @@ set(LIBRARIES
 #-------------------------------------------------------------------------------
 # Custom nodes shared library
 #-------------------------------------------------------------------------------
+add_library(${PROJECT_NAME}_types STATIC ${DWCGF_CHANNEL_FILES})
+set_target_properties(${PROJECT_NAME}_types PROPERTIES LINKER_LANGUAGE CXX)
+target_link_libraries(${PROJECT_NAME}_types ${LIBRARIES})
+target_include_directories(${PROJECT_NAME}_types
+                           PUBLIC
+                           ${CUDA_DIR}/include
+                           ${DW_ROOT}/include
+                           ${DW_ROOT}/include/3rdparty
+                           ${DW_ROOT}/include/dwshared/dwfoundation
+                           ${DW_ROOT}/include/dwshared/dwtrace)
+
 add_library(${PROJECT_NAME} SHARED ${DWCGF_NODES_FILES})
-target_link_libraries(${PROJECT_NAME} ${LIBRARIES})
+target_link_libraries(${PROJECT_NAME} ${LIBRARIES} ${PROJECT_NAME}_types)
 target_include_directories(${PROJECT_NAME}
                            PUBLIC
+                           src/
                            ${CUDA_DIR}/include
                            ${DW_ROOT}/include
                            ${DW_ROOT}/include/3rdparty
@@ -96,13 +113,16 @@ add_custom_target(${PROJECT_NAME}_stm ALL DEPENDS ${DWCGF_STM})
 
 # install
 # https://blog.csdn.net/qq_38410730/article/details/102837401
-set(GW_MODULE_GRAPHS_DESTINATION ${GW_MODULE_INSTALL_PREFIX}/${PROJECT_NAME})
-set(GW_MODULE_SCHE_DESTINATION ${GW_MODULE_INSTALL_PREFIX}/${PROJECT_NAME})
-set(GW_MODULE_DATA_DESTINATION ${GW_MODULE_INSTALL_PREFIX}/${PROJECT_NAME})
+set(GW_MODULE_GRAPHS_DESTINATION ${GW_MODULE_INSTALL_PREFIX}/graphs/${PROJECT_NAME})
+set(GW_MODULE_SCHE_DESTINATION ${GW_MODULE_INSTALL_PREFIX}/sche/${PROJECT_NAME})
+set(GW_MODULE_DATA_DESTINATION ${GW_MODULE_INSTALL_PREFIX}/data/${PROJECT_NAME})
 gw_add_module(${PROJECT_NAME})
 install(FILES ${DWCGF_YAML} DESTINATION "${GW_MODULE_BINARY_DESTINATION}")
 install(FILES ${DWCGF_STM} DESTINATION "${GW_MODULE_BINARY_DESTINATION}")
-install(DIRECTORY ${DWCGF_GRAPHS_DIR} DESTINATION ${GW_MODULE_GRAPHS_DESTINATION})
+install(DIRECTORY ${DWCGF_GRAPHS_DIR}/ DESTINATION ${GW_MODULE_GRAPHS_DESTINATION})
 # todo: 自动删去scheme的那一行，再拷贝过去
-install(DIRECTORY ${DWCGF_DATA_DIR} DESTINATION ${GW_MODULE_DATA_DESTINATION})
-install(PROGRAMS ${DWCGF_RUNNER} DESTINATION "${GW_MODULE_BINARY_DESTINATION}")
+install(DIRECTORY ${DWCGF_DATA_DIR}/ DESTINATION ${GW_MODULE_DATA_DESTINATION})
+install(PROGRAMS
+    ${DWCGF_RUNNER} ${DWCGF_RIG_TESTER}
+    DESTINATION "${GW_MODULE_BINARY_DESTINATION}"
+)
