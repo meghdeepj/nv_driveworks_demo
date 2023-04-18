@@ -1,0 +1,57 @@
+appExecutable: stm_master
+argv[0] : /usr/local/driveworks/bin/stm_master
+argv[1] : --schedule=/home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/bin/dwcgf_image_pipe/DWCGFImagePipe__standardSchedule.stm
+argv[2] : --allow-unregistered-runnables
+argv[3] : --soc=TegraA
+argv[4] : --timeout-us=60000000
+argv[5] : -m
+argv[6] : -v
+argv[7] : --schedule-manager-name=CGF-ScheduleManager
+argv[8] : --num-input-schedule=1
+[STM WARNING]:[av/stm/runtime/src/core/stdout.c][logSetVerbose] [25]: Verbose mode has been enabled for STM. ***Note that this mode affects STM latency guarantees, and is meant for use only in debugging. Do not use '-v' for performance testing.
+[STM INFO]:[av/stm/runtime/src/master/master.c][stmMasterInitScheduleList] Input Schedule: /home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/bin/dwcgf_image_pipe/DWCGFImagePipe__standardSchedule.stm
+[STM INFO]:[av/stm/runtime/src/master/master.c][stmMasterInitScheduleList] Following 1 schedules provided.
+[STM INFO]:[av/stm/runtime/src/master/master.c][stmMasterInitScheduleList] 	 Schedule0 : /home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/bin/dwcgf_image_pipe/DWCGFImagePipe__standardSchedule.stm.
+[STM INFO]:[av/stm/runtime/src/master/master.c][stmMasterInitClientPerSchedule] Schedule ID : 0
+[STM INFO]:[av/stm/runtime/src/master/master.c][stmMasterInitClientPerSchedule] 	Client name: pilotPipe_process
+[STM INFO]:[av/stm/runtime/src/master/master.c][stmMasterInitClientPerSchedule] 	Client soc: TegraA
+[STM INFO]:[av/stm/runtime/src/master/master.c][stmMasterInitClientPerSchedule] 	Client name: framesync_TegraA_pilotHyperepoch_cameraEpoch
+[STM INFO]:[av/stm/runtime/src/master/master.c][stmMasterInitClientPerSchedule] 	Client soc: TegraA
+[STM INFO]:[av/stm/runtime/src/master/master.c][stmMasterInitShmMasterPerClient] Total Numbers of thread for schedule 0 : 2
+[STM INFO]:[av/stm/runtime/src/master/main.c][main] Client Name pilotPipe_process
+[STM INFO]:[av/stm/runtime/src/master/main.c][main] Client Name framesync_TegraA_pilotHyperepoch_cameraEpoch
+[STM INFO]:[av/stm/runtime/src/master/master.c][stmMasterLaunchClient] Launching client: framesync_TegraA_pilotHyperepoch_cameraEpoch
+[STM INFO]:[av/stm/runtime/src/master/master.c][stmMasterLaunchClient] Launched client framesync_TegraA_pilotHyperepoch_cameraEpoch with pid: 7745
+[STM] Opening NvSciIpc endpoints...
+[STM] Start schedule manager now.
+[STM] Waiting for schedule manager : CGF-ScheduleManager ...
+[STM] Registered CGF-ScheduleManager with pid 7743
+[STM] Schedule manager starting state logic.
+[STM] Start clients now.
+[STM] Master waiting for all clients to start...
+[STM] Waiting for client pilotPipe_process...
+[STM] Starting state machine thread for STM
+[STM INFO]:[av/stm/runtime/src/core/state.c][stmSetState] PID 7744, requesting state transition from STM_STATE_BOOT to STM_STATE_INIT, time : 1675114781617848032
+[STM] Registered client pilotPipe_process
+[STM] Waiting for client framesync_TegraA_pilotHyperepoch_cameraEpoch...
+[STM] Registered client framesync_TegraA_pilotHyperepoch_cameraEpoch
+[STM] All clients running...
+[STM] Exporting schedule to clients...
+[STM] PID 7744, new state STM_STATE_INIT, time : 1675114783829857856
+[STM INFO]:[av/stm/runtime/src/core/state.c][stmSetState] PID 7744, requesting state transition from STM_STATE_INIT to STM_STATE_READY, time : 1675114783829884288
+[STM] Initializing sync objects for schedule /home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/bin/dwcgf_image_pipe/DWCGFImagePipe__standardSchedule.stm
+[STM] STM clients starting scheduling loop.
+[STM] Waiting for specified number of epochs to complete or any STM client to terminate.
+[STM] PID 7744, new state STM_STATE_READY, time : 1675114783832933952
+[STM INFO]:[av/stm/runtime/src/core/state.c][stmSetState] PID 7743, requesting state transition from STM_STATE_READY to STM_STATE_RUNNING, time : 1675114783832959712
+[STM] PID 7743, Schedule Id 0, new state STM_STATE_RUNNING, time : 1675114783833981760
+[STM INFO]:[av/stm/runtime/src/core/state.c][stmSetState] PID 7742, requesting state transition from STM_STATE_RUNNING to STM_STATE_EXIT, time : 1675114788380623520
+[STM] PID 7742, new state STM_STATE_EXIT, time : 1675114788384726144
+[STM INFO]:[av/stm/runtime/src/core/state.c][stmSetState] PID 7745, requesting state transition from STM_STATE_EXIT to STM_STATE_EXIT, time : 1675114788384739488
+[STM] PID 7745, new state STM_STATE_EXIT, time : 1675114788384755648
+[STM] STM client framesync_TegraA_pilotHyperepoch_cameraEpoch exited normally with status: 0
+[STM INFO]:[av/stm/runtime/src/core/state.c][stmSetState] PID 7743, requesting state transition from STM_STATE_EXIT to STM_STATE_READY, time : 1675114802788064128
+[STM ERROR]:[av/stm/runtime/src/core/state.c][stmSetState] [384]: Incorrect state transition request., time : 1675114802788092864
+[STM] STM Schedule Manager CGF-ScheduleManager has exited
+[STM] STM client pilotPipe_process has exited
+[STM] State Managing Thread for STM exiting successfully.

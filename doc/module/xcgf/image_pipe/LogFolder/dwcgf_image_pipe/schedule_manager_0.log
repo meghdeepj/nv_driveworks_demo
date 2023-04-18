@@ -1,0 +1,24 @@
+<13>1 2023-01-30T21:39:41.616896Z - schedule_manager 7743 - - [0us][DEBUG][tid:0][ScheduleManager.cpp:175][ScheduleManager] ScheduleManager: arg[0]: /usr/local/driveworks/bin/ScheduleManager
+<13>1 2023-01-30T21:39:41.617025Z - schedule_manager 7743 - - [0us][DEBUG][tid:0][ScheduleManager.cpp:175][ScheduleManager] ScheduleManager: arg[1]: --launchspec=/home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/bin/LogFolder/dwcgf_image_pipe/dumpLaunchSpec.json
+<13>1 2023-01-30T21:39:41.617046Z - schedule_manager 7743 - - [0us][DEBUG][tid:0][ScheduleManager.cpp:175][ScheduleManager] ScheduleManager: arg[2]: --loglevel=DW_LOG_VERBOSE
+<13>1 2023-01-30T21:39:41.617056Z - schedule_manager 7743 - - [0us][DEBUG][tid:0][ScheduleManager.cpp:175][ScheduleManager] ScheduleManager: arg[3]: --enableScheduleSwitching=false
+<13>1 2023-01-30T21:39:41.617065Z - schedule_manager 7743 - - [0us][DEBUG][tid:0][ScheduleManager.cpp:175][ScheduleManager] ScheduleManager: arg[4]: --scheduleManagerHostIP=127.0.0.1
+<13>1 2023-01-30T21:39:41.617073Z - schedule_manager 7743 - - [0us][DEBUG][tid:0][ScheduleManager.cpp:175][ScheduleManager] ScheduleManager: arg[5]: --scheduleManagerHostPort=40100
+<13>1 2023-01-30T21:39:41.617081Z - schedule_manager 7743 - - [0us][DEBUG][tid:0][ScheduleManager.cpp:175][ScheduleManager] ScheduleManager: arg[6]: --scheduleManagerNumClients=1
+<13>1 2023-01-30T21:39:41.617090Z - schedule_manager 7743 - - [0us][DEBUG][tid:0][ScheduleManager.cpp:175][ScheduleManager] ScheduleManager: arg[7]: --logspec=file/rfc5424.user.schedule_manager:/home/nvidia/zhensheng/orin_ws/nv_driveworks_demo/target/aarch64/install/bin/LogFolder/dwcgf_image_pipe/schedule_manager.log
+<13>1 2023-01-30T21:39:41.617098Z - schedule_manager 7743 - - [0us][DEBUG][tid:0][ScheduleManager.cpp:175][ScheduleManager] ScheduleManager: arg[8]: --schedule-manager-name=CGF-ScheduleManager
+<13>1 2023-01-30T21:39:41.617397Z - schedule_manager 7743 - - [0us][DEBUG][tid:0][ScheduleManager.cpp:209][ScheduleManager] [ScheduleManager] ScheduleKey: standardSchedule id: 0
+<13>1 2023-01-30T21:39:41.617421Z - schedule_manager 7743 - - [0us][DEBUG][tid:0][ScheduleManager.cpp:248][ScheduleManager] [ScheduleManager] Do not init ssm, schedule switching disabled 0
+<13>1 2023-01-30T21:39:41.617442Z - schedule_manager 7743 - - [0us][DEBUG][tid:0][ScheduleManager.cpp:113][ScheduleManager] [ScheduleManager] Do not start thread, schedule switching not enabled 0
+<13>1 2023-01-30T21:39:41.617454Z - schedule_manager 7743 - - [0us][DEBUG][tid:0][ScheduleManager.cpp:393][ScheduleManager] startStmScheduleManager::starting
+<13>1 2023-01-30T21:39:41.617675Z - schedule_manager 7743 - - [0us][DEBUG][tid:0][ScheduleManager.cpp:412][ScheduleManager] Successfully started the stm schedule manager
+<13>1 2023-01-30T21:39:41.617697Z - schedule_manager 7743 - - [0us][DEBUG][tid:0][ScheduleManager.cpp:423][ScheduleManager] Default state is STANDARD & default schedule is standardSchedule id: 0
+<13>1 2023-01-30T21:39:41.617711Z - schedule_manager 7743 - - [0us][DEBUG][tid:0][ScheduleManager.cpp:444][ScheduleManager] startSchedule schedule id: 0
+<13>1 2023-01-30T21:39:43.834042Z - schedule_manager 7743 - - [0us][DEBUG][tid:0][ScheduleManager.cpp:438][ScheduleManager] Successfully started the schedule with id: 0
+<13>1 2023-01-30T21:39:43.834083Z - schedule_manager 7743 - - [0us][DEBUG][tid:0][ScheduleManager.cpp:78][ScheduleManager] Successfully started the scheduleManager
+<14>1 2023-01-30T21:40:02.787948Z - schedule_manager 7743 - - [0us][INFO][tid:0][ScheduleManager.cpp:87][ScheduleManager] [ScheduleManager] Schedule Manager Exit started
+<13>1 2023-01-30T21:40:02.788007Z - schedule_manager 7743 - - [0us][DEBUG][tid:0][ScheduleManager.cpp:372][ScheduleManager] Stopping the stm schedule manager
+<13>1 2023-01-30T21:40:02.788023Z - schedule_manager 7743 - - [0us][DEBUG][tid:0][ScheduleManager.cpp:463][ScheduleManager] stopSchedule schedule id: 0
+<11>1 2023-01-30T21:40:02.788205Z - schedule_manager 7743 - - [0us][ERROR][tid:0][ScheduleManager.cpp:468][ScheduleManager] stm schedule manager failed to stop the schedule id: 0 with stm error STM_ERROR_BAD_STATE_TRANSITION
+<13>1 2023-01-30T21:40:02.788333Z - schedule_manager 7743 - - [0us][DEBUG][tid:0][ScheduleManager.cpp:382][ScheduleManager] Successfully exited the stm schedule manager
+<13>1 2023-01-30T21:40:02.788353Z - schedule_manager 7743 - - [0us][DEBUG][tid:0][ScheduleManager.cpp:132][ScheduleManager] [ScheduleManager] Do not stop thread, schedule switching not enabled 0

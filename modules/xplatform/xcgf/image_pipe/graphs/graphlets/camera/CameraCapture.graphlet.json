@@ -23,14 +23,6 @@
             "type": "size_t",
             "default": 0
         },
-        "delayPostInit": {
-            "type": "int32_t",
-            "default": 0
-        },
-        "enable2MpOutput": {
-            "type": "bool",
-            "default": false
-        },
         "streamIndex": {
             "type": "size_t",
             "default": 0

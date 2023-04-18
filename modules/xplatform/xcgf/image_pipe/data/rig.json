@@ -1,7 +1,7 @@
 {
     "rig": {
         "properties": {
-            "layout": "hyperion_8"
+            "layout": "pilot"
         },
         "sensors": [
             {
@@ -15,27 +15,26 @@
                 "name": "camera:rear:left:70fov",
                 "nominalSensor2Rig_FLU": {
                     "roll-pitch-yaw": [
-                        -2.1656250953674316,
-                        2.852843999862671,
-                        150.91815185546875
+                        0.0,
+                        0.0,
+                        0.0
                     ],
                     "t": [
-                        1.9234564304351807,
-                        1.054464340209961,
-                        0.8967514634132385
+                        1.8621,
+                        -0.1939,
+                        1.3165
                     ]
                 },
-                "parameter": "video=camera_rear_left_70fov.mp4,timestamp=camera_rear_left_70fov.mp4.timestamps,fifo-size=5,frames-pool=4",
+                "parameter": "camera-name=V1SIM623S4RU5195NB3,interface=csi-ef,CPHY-mode=1,link=3,output-format=processed,async-record=1,file-buffer-size=16777216,skip-eeprom=1",
                 "properties": {
-                    "COMMENT": "Nominals estimated for car25/ VIN=313178 sourced from https://nvbugs/3250029",
                     "Model": "ftheta",
-                    "bw-poly": "0.000000000000000 3.27004934661090e-4 5.06977404501896e-10 -2.62374974177582e-12 1.17178908500074e-15 ",
-                    "cx": "1952.859619",
-                    "cy": "1134.541016",
+                    "bw-poly": "0.000000000000000 5.35356812179089e-4 4.99266072928606e-10 4.27370422037554e-12 -6.68245573791717e-16",
+                    "cx": "1927.764404",
+                    "cy": "1096.686646",
                     "height": "2168",
                     "width": "3848"
                 },
-                "protocol": "camera.virtual"
+                "protocol": "camera.gmsl"
             }
         ],
         "vehicle": {

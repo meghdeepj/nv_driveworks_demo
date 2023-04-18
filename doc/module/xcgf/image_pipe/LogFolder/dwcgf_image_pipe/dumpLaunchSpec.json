@@ -1,0 +1,263 @@
+{
+    "connections": [],
+    "description": {
+        "CameraCapture": {
+            "connections": [],
+            "inputPorts": {},
+            "name": "CameraCapture",
+            "outputPorts": {
+                "CUDA_ISP_YUV_UINT_8_HALF_RES": {
+                    "type": "int32_t"
+                },
+                "CUDA_ISP_YUV_UINT_8_TWO_MP_RES": {
+                    "type": "int32_t"
+                },
+                "CUDA_PROCESSED": {
+                    "type": "int32_t"
+                },
+                "CUDA_PROCESSED_RGBA": {
+                    "type": "int32_t"
+                },
+                "IMAGE_TIMESTAMP": {
+                    "type": "int32_t"
+                }
+            },
+            "parameters": {
+                "cameraIndex": {
+                    "default": 0,
+                    "type": "size_t"
+                },
+                "streamIndex": {
+                    "default": 0,
+                    "type": "size_t"
+                }
+            },
+            "subcomponents": {
+                "cameraNode": {
+                    "componentType": "dw::framework::gwCameraNode",
+                    "parameters": {
+                        "*": "$*"
+                    }
+                }
+            }
+        },
+        "DWCGFImagePipe": {
+            "connections": [],
+            "inputPorts": {},
+            "name": "DWCGFImagePipe",
+            "outputPorts": {
+                "APA_IMAGE_ARRAY": {
+                    "array": 1,
+                    "type": "int32_t"
+                },
+                "APA_IMAGE_TIMESTAMP": {
+                    "type": "int32_t"
+                },
+                "PILOT_IMAGE_ARRAY": {
+                    "array": 1,
+                    "type": "int32_t"
+                },
+                "PILOT_IMAGE_TIMESTAMP": {
+                    "type": "int32_t"
+                }
+            },
+            "parameters": {
+                "cameraIntrinsics": {
+                    "default": "camera_intrinsics",
+                    "type": "std::string"
+                }
+            },
+            "subcomponents": {
+                "pilotPipe0": {
+                    "componentType": "PilotPipe",
+                    "parameters": {
+                        "cameraIndex": 0
+                    }
+                }
+            }
+        },
+        "PilotPipe": {
+            "connections": [],
+            "inputPorts": {},
+            "name": "PilotPipe",
+            "outputPorts": {
+                "IMAGE": {
+                    "type": "int32_t"
+                },
+                "IMAGE_TIMESTAMP": {
+                    "type": "int32_t"
+                }
+            },
+            "parameters": {
+                "cameraIndex": {
+                    "default": 0,
+                    "type": "size_t"
+                }
+            },
+            "subcomponents": {
+                "cameraCapture": {
+                    "componentType": "CameraCapture",
+                    "parameters": {
+                        "*": "$*"
+                    }
+                }
+            }
+        },
+        "dw::framework::gwCameraNode": {
+            "comment": "camera capture node",
+            "generated": false,
+            "inputPorts": {},
+            "library": "libdwcgf_image_pipe.so",
+            "name": "dw::framework::gwCameraNode",
+            "outputPorts": {
+                "IMAGE_NATIVE_PROCESSED": {
+                    "type": "dwImageHandle_t"
+                },
+                "IMAGE_NATIVE_RAW": {
+                    "type": "dwImageHandle_t"
+                },
+                "IMAGE_PROCESSED_RGBA": {
+                    "type": "dwImageHandle_t"
+                },
+                "IMAGE_TIMESTAMP": {
+                    "type": "dwTime_t"
+                }
+            },
+            "parameters": {
+                "cameraIndex": {
+                    "type": "size_t"
+                },
+                "streamIndex": {
+                    "type": "size_t"
+                }
+            },
+            "passes": [
+                {
+                    "name": "SETUP",
+                    "processorTypes": [
+                        "CPU"
+                    ]
+                },
+                {
+                    "name": "RAW_OUTPUT",
+                    "processorTypes": [
+                        "GPU"
+                    ]
+                },
+                {
+                    "name": "TEARDOWN",
+                    "processorTypes": [
+                        "CPU"
+                    ]
+                }
+            ]
+        }
+    },
+    "extraInfo": {
+        "calibrationOutputFileName": "out_calibration.json",
+        "masterCameraIndex": "1",
+        "rigFileName": "rig.json",
+        "rigOutputFileName": "rig.json"
+    },
+    "logSpec": "file/rfc5424:{{logpath}}/{{appname}}.log",
+    "name": "DWCGFImagePipeApp",
+    "parameters": {},
+    "processes": {
+        "pilotPipe_process": {
+            "argv": {
+                "--channelBindingThreadPoolSize": "7",
+                "--nodeInitThreadPoolSize": "7"
+            },
+            "executable": "LoaderLite",
+            "libName": "RuntimeGraphlet",
+            "moduleName": "pilotPipe_process",
+            "runOn": "machine0",
+            "subcomponents": [
+                "dwcgfImagePipe.pilotPipe0"
+            ]
+        },
+        "schedule_manager": {
+            "argv": {
+                "--enableScheduleSwitching": "false",
+                "--scheduleManagerHostIP": "127.0.0.1",
+                "--scheduleManagerHostPort": "40100",
+                "--scheduleManagerNumClients": "1"
+            },
+            "executable": "ScheduleManager",
+            "runOn": "machine0"
+        },
+        "ssm": {
+            "executable": "vanillassm",
+            "logSpec": "file:{{logpath}}/{{appname}}.log",
+            "runOn": "machine0"
+        },
+        "stm_master": {
+            "argv": {
+                "--allow-unregistered-runnables": true,
+                "--soc": "TegraA",
+                "--timeout-us": "60000000",
+                "-m": true,
+                "-v": true
+            },
+            "executable": "stm_master",
+            "logSpec": "file:{{logpath}}/{{appname}}.log",
+            "runOn": "machine0"
+        }
+    },
+    "requiredSensors": {},
+    "sensorMappings": {
+        "pilot": {
+            "pilot_camera0": "camera:rear:left:70fov"
+        },
+        "pilot_sim": {
+            "gps0": "gps:simulator",
+            "imu0": "imu:simulator",
+            "synthesizedCameraFC60": "camera:rear:left:70fov",
+            "ultrasonic": "uss:valeo",
+            "vehicleSensor0": "can:vehicle"
+        }
+    },
+    "states": {
+        "STANDARD": {
+            "default": true,
+            "stmScheduleKey": "standardSchedule"
+        }
+    },
+    "stmSchedules": {
+        "standardSchedule": {
+            "hyperepochs": {
+                "pilotHyperepoch": {
+                    "epochs": {
+                        "cameraEpoch": {
+                            "frames": 1,
+                            "passes": [
+                                [
+                                    "dwcgfImagePipe.pilotPipe0"
+                                ]
+                            ],
+                            "period": 33000000
+                        }
+                    },
+                    "period": 33000000,
+                    "resources": {
+                        "machine0.CPU0": [],
+                        "machine0.CPU1": [],
+                        "machine0.CPU2": [],
+                        "machine0.CPU3": [],
+                        "machine0.iGPU": [],
+                        "pilotPipe_process.CUDA_MUTEX_LOCK": [],
+                        "pilotPipe_process.CUDA_STREAM0:iGPU": []
+                    }
+                }
+            },
+            "wcet": "./DWCGFImagePipe_wcet.yaml"
+        }
+    },
+    "subcomponents": {
+        "dwcgfImagePipe": {
+            "componentType": "DWCGFImagePipe",
+            "parameters": {}
+        }
+    },
+    "version": 2
+}

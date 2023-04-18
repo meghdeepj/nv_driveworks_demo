@@ -1,0 +1,75 @@
+appExecutable: ssm
+argv[0] : /usr/local/driveworks/bin/vanillassm
+argv[1] : --sehFailureMask=
+argv[2] : --enable-SEH-SSM=0
+argv[3] : --enable-ssm-degradation=0
+[2023-01-30T21:39:41.655524Z][DEBUG][tid:0][vanilla_main.cpp:95][SSM] Reading SWC list from: /tmp/swc_list.txt
+[2023-01-30T21:39:41.655648Z][DEBUG][tid:0][vanilla_main.cpp:95][SSM] Setup Hierarchy for VANILLASSM
+[2023-01-30T21:39:41.655688Z][DEBUG][tid:0][vanilla_main.cpp:95][SSM] Creating Server: SSM 6072
+[2023-01-30T21:39:41.656016Z][DEBUG][tid:0][vanilla_main.cpp:95][SSM] Initializing VANILLASSM
+[2023-01-30T21:39:41.656035Z][DEBUG][tid:0][vanilla_main.cpp:227][SSM] [SSM] initialized
+[2023-01-30T21:39:41.656369Z][ERROR][tid:0][vanilla_main.cpp:83][SSM] Error: Connect failed pilotPipe_process 127.0.0.1 6122
+[2023-01-30T21:39:41.656666Z][ERROR][tid:0][vanilla_main.cpp:83][SSM] Error: Connect failed pilotPipe_process 127.0.0.1 6122
+[2023-01-30T21:39:41.656921Z][ERROR][tid:0][vanilla_main.cpp:83][SSM] Error: Connect failed pilotPipe_process 127.0.0.1 6122
+[2023-01-30T21:39:41.657125Z][ERROR][tid:0][vanilla_main.cpp:83][SSM] Unable to connect to server: 127.0.0.1 6122, queue: pilotPipe_process, from: SSM
+[2023-01-30T21:39:42.657419Z][ERROR][tid:0][vanilla_main.cpp:83][SSM] Error: Connect failed pilotPipe_process 127.0.0.1 6122
+[2023-01-30T21:39:42.657713Z][ERROR][tid:0][vanilla_main.cpp:83][SSM] Error: Connect failed pilotPipe_process 127.0.0.1 6122
+[2023-01-30T21:39:42.657967Z][ERROR][tid:0][vanilla_main.cpp:83][SSM] Error: Connect failed pilotPipe_process 127.0.0.1 6122
+[2023-01-30T21:39:42.658172Z][ERROR][tid:0][vanilla_main.cpp:83][SSM] Unable to connect to server: 127.0.0.1 6122, queue: pilotPipe_process, from: SSM
+[2023-01-30T21:39:43.658478Z][DEBUG][tid:0][vanilla_main.cpp:238][SSM] [SSM] clients ready
+[2023-01-30T21:39:43.658552Z][DEBUG][tid:0][vanilla_main.cpp:87][SSM]  [PERF] SSMStart: [1675114783658]
+[2023-01-30T21:39:43.658608Z][DEBUG][tid:0][vanilla_main.cpp:155][SSM] [SSM] run pre init
+[2023-01-30T21:39:43.658654Z][DEBUG][tid:0][vanilla_main.cpp:95][SSM] Current State of SSM: PRE_INIT
+[2023-01-30T21:39:43.658696Z][DEBUG][tid:0][vanilla_main.cpp:87][SSM]  [PERF] InitPhaseComplete: SSM => PRE_INIT [1675114783658]
+FROM: SSM
+[2023-01-30T21:39:43.658765Z][DEBUG][tid:1][vanilla_main.cpp:95][SSM] SSM Server Init Signalling: 1  1
+[2023-01-30T21:39:43.661659Z][DEBUG][tid:2][vanilla_main.cpp:87][SSM]  [PERF] InitPhaseComplete: pilotPipe_process => PRE_INIT [1675114783661573]
+[2023-01-30T21:39:43.668879Z][DEBUG][tid:0][vanilla_main.cpp:157][SSM] [SSM] pre init completed
+[2023-01-30T21:39:43.668901Z][DEBUG][tid:0][vanilla_main.cpp:159][SSM] [SSM] run init
+[2023-01-30T21:39:43.668938Z][DEBUG][tid:0][vanilla_main.cpp:87][SSM]  [PERF] InitBroadcast: SSM => INIT [1675114783668]
+[2023-01-30T21:39:43.668960Z][DEBUG][tid:0][vanilla_main.cpp:95][SSM] InitBroadcast: SSM => INIT [1675114783668]    [pilotPipe_process,]
+FROM: pilotPipe_process
+[2023-01-30T21:39:43.683032Z][DEBUG][tid:1][vanilla_main.cpp:95][SSM] SSM Server Init Signalling: 1  1
+[2023-01-30T21:39:43.683037Z][DEBUG][tid:2][vanilla_main.cpp:87][SSM]  [PERF] InitPhaseComplete: pilotPipe_process => INIT [1675114783682981]
+[2023-01-30T21:39:43.683087Z][DEBUG][tid:0][vanilla_main.cpp:95][SSM] Current State of SSM: INIT
+[2023-01-30T21:39:43.683147Z][DEBUG][tid:0][vanilla_main.cpp:87][SSM]  [PERF] InitPhaseComplete: SSM => INIT [1675114783683]
+[2023-01-30T21:39:43.683163Z][DEBUG][tid:0][vanilla_main.cpp:161][SSM] [SSM] init completed
+[2023-01-30T21:39:43.683170Z][DEBUG][tid:0][vanilla_main.cpp:163][SSM] [SSM] run post init
+[2023-01-30T21:39:43.683185Z][DEBUG][tid:0][vanilla_main.cpp:87][SSM]  [PERF] InitBroadcast: SSM => POST_INIT [1675114783683]
+[2023-01-30T21:39:43.683199Z][DEBUG][tid:0][vanilla_main.cpp:95][SSM] InitBroadcast: SSM => POST_INIT [1675114783683]    [pilotPipe_process,]
+FROM: pilotPipe_process
+[2023-01-30T21:39:43.704599Z][DEBUG][tid:1][vanilla_main.cpp:95][SSM] SSM Server Init Signalling: 1  1
+[2023-01-30T21:39:43.704578Z][DEBUG][tid:2][vanilla_main.cpp:87][SSM]  [PERF] InitPhaseComplete: pilotPipe_process => POST_INIT [1675114783704508]
+[2023-01-30T21:39:43.704661Z][DEBUG][tid:0][vanilla_main.cpp:95][SSM] Current State of SSM: POST_INIT
+[2023-01-30T21:39:43.704733Z][DEBUG][tid:0][vanilla_main.cpp:87][SSM]  [PERF] InitPhaseComplete: SSM => POST_INIT [1675114783704]
+[2023-01-30T21:39:43.704749Z][DEBUG][tid:0][vanilla_main.cpp:165][SSM] [SSM] post init completed
+[2023-01-30T21:39:43.704756Z][DEBUG][tid:0][vanilla_main.cpp:167][SSM] [SSM] run pre ready
+[2023-01-30T21:39:43.704772Z][DEBUG][tid:0][vanilla_main.cpp:87][SSM]  [PERF] InitBroadcast: SSM => PRE_READY [1675114783704]
+[2023-01-30T21:39:43.704785Z][DEBUG][tid:0][vanilla_main.cpp:95][SSM] InitBroadcast: SSM => PRE_READY [1675114783704]    [pilotPipe_process,]
+FROM: pilotPipe_process
+[2023-01-30T21:39:43.725629Z][DEBUG][tid:2][vanilla_main.cpp:87][SSM]  [PERF] InitPhaseComplete: pilotPipe_process => PRE_READY [1675114783725571]
+[2023-01-30T21:39:43.725614Z][DEBUG][tid:1][vanilla_main.cpp:95][SSM] SSM Server Init Signalling: 1  1
+[2023-01-30T21:39:43.725692Z][DEBUG][tid:0][vanilla_main.cpp:95][SSM] Current State of SSM: PRE_READY
+[2023-01-30T21:39:43.725753Z][DEBUG][tid:0][vanilla_main.cpp:87][SSM]  [PERF] InitPhaseComplete: SSM => PRE_READY [1675114783725]
+[2023-01-30T21:39:43.725770Z][DEBUG][tid:0][vanilla_main.cpp:169][SSM] [SSM] pre ready completed
+[2023-01-30T21:39:43.725776Z][DEBUG][tid:0][vanilla_main.cpp:171][SSM] [SSM] run ready
+[2023-01-30T21:39:43.725792Z][DEBUG][tid:0][vanilla_main.cpp:87][SSM]  [PERF] InitBroadcast: SSM => READY [1675114783725]
+[2023-01-30T21:39:43.725805Z][DEBUG][tid:0][vanilla_main.cpp:95][SSM] InitBroadcast: SSM => READY [1675114783725]    [pilotPipe_process,]
+FROM: pilotPipe_process
+[2023-01-30T21:39:43.769160Z][DEBUG][tid:1][vanilla_main.cpp:95][SSM] SSM Server Init Signalling: 1  1
+[2023-01-30T21:39:43.769177Z][DEBUG][tid:2][vanilla_main.cpp:87][SSM]  [PERF] InitPhaseComplete: pilotPipe_process => READY [1675114783769101]
+[2023-01-30T21:39:43.769235Z][DEBUG][tid:0][vanilla_main.cpp:95][SSM] Current State of SSM: READY
+[2023-01-30T21:39:43.769304Z][DEBUG][tid:0][vanilla_main.cpp:87][SSM]  [PERF] InitPhaseComplete: SSM => READY [1675114783769]
+[2023-01-30T21:39:43.769321Z][DEBUG][tid:0][vanilla_main.cpp:173][SSM] [SSM] ready completed
+[2023-01-30T21:39:43.769342Z][DEBUG][tid:0][vanilla_main.cpp:87][SSM]  [PERF] InitBroadcast: SSM => ENTER_STATE_MACHINE [1675114783769]
+[2023-01-30T21:39:43.769357Z][DEBUG][tid:0][vanilla_main.cpp:95][SSM] InitBroadcast: SSM => ENTER_STATE_MACHINE [1675114783769]    [pilotPipe_process,]
+[2023-01-30T21:39:43.769411Z][DEBUG][tid:0][vanilla_main.cpp:247][SSM] [SSM] Starting SSM...
+[2023-01-30T21:39:43.769481Z][DEBUG][tid:0][vanilla_main.cpp:87][SSM]  [PERF] StateChange: SSM => Manual [1675114783769]
+[2023-01-30T21:39:43.769528Z][DEBUG][tid:0][vanilla_main.cpp:95][SSM] Broadcasting activate: SSM ==> pilotPipe_process
+[2023-01-30T21:39:43.779319Z][DEBUG][tid:2][vanilla_main.cpp:87][SSM]  [PERF] StateChange: pilotPipe_process => INIT_CLONE [1675114783779265]
+[2023-01-30T21:39:43.779379Z][DEBUG][tid:2][vanilla_main.cpp:87][SSM]  [PERF] StateChange: pilotPipe_process => Manual [1675114783779342]
+[2023-01-30T21:40:00.771139Z][DEBUG][tid:0][vanilla_main.cpp:62][SSM] Message Received ====> 36
+[2023-01-30T21:40:00.771189Z][DEBUG][tid:0][vanilla_main.cpp:251][SSM] [SSM] Pre-Shut down SSM
+[2023-01-30T21:40:00.771243Z][DEBUG][tid:0][vanilla_main.cpp:262][SSM] [SSM] Skipping Preshutdown for SWCs
+[2023-01-30T21:40:00.771256Z][DEBUG][tid:0][vanilla_main.cpp:265][SSM] [SSM] Broadcasting shutdown
+[2023-01-30T21:40:00.771900Z][DEBUG][tid:0][Context.cpp:242][NO_TAG] Releasing Driveworks SDK Context

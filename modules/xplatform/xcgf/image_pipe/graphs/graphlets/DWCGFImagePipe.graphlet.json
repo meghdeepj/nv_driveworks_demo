@@ -25,7 +25,10 @@
     },
     "subcomponents": {
         "pilotPipe0": {
-            "componentType": "./pipe/PilotPipe.graphlet.json"
+            "componentType": "./pipe/PilotPipe.graphlet.json",
+            "parameters": {
+                "cameraIndex": 0
+            }
         }
     },
     "connections": [

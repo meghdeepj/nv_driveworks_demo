@@ -10,9 +10,9 @@
         }
     },
     "parameters": {
-        "cameraIntrinsics": {
-            "type": "std::string",
-            "default": "camera_intrinsics"
+        "cameraIndex": {
+            "type": "size_t",
+            "default": 0
         }
     },
     "subcomponents": {

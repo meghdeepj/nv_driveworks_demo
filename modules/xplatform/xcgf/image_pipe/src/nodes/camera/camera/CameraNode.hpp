@@ -33,6 +33,7 @@ class gwCameraNodeImpl;
 struct gwCameraNodeParams
 {
     // todo: sal_handle in params
+    // todo: const* to fixedstring
     char8_t const* sensorName;
     // cudaStream_t cudaStream;
     // dwConstRigHandle_t rig;

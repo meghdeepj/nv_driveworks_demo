@@ -1,0 +1,1613 @@
+[STM WARNING]:[av/stm/runtime/src/core/stdout.c][logSetVerbose] [25]: Verbose mode has been enabled for STM. ***Note that this mode affects STM latency guarantees, and is meant for use only in debugging. Do not use '-v' for performance testing.
+[STM WARNING]:[av/stm/runtime/src/core/stdout.c][logSetVerbose] [25]: Verbose mode has been enabled for STM. ***Note that this mode affects STM latency guarantees, and is meant for use only in debugging. Do not use '-v' for performance testing.
+[STM WARNING]:[av/stm/runtime/src/client/thread.c][stmStart] [398]: Could not set cpuset, setCpuset returned an error. errno=2 (No such file or directory)
+[STM] Waiting for STM master to start...
+[STM] Connected to STM master
+[STM] Waiting for receiving framesync_TegraA_pilotHyperepoch_cameraEpoch's Schedule Instances from master
+[STM] Performing Client Shm Init ...
+[STM] Waiting for all clients to start...
+[STM] Client framesync_TegraA_pilotHyperepoch_cameraEpoch is waiting on init semaphore expected to be released by stm_master
+[STM] Client framesync_TegraA_pilotHyperepoch_cameraEpoch initialized
+[STM] Starting thread pool0
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Thread waiting on Enter Schedule fence pool0, time : 1675114783832197504
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Thread released from Enter Schedule pool0, time : 1675114783832956864
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Thread waiting on Ready fence pool0, time : 1675114783832979584
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Thread released from Ready pool0, time : 1675114783833999872
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114783834021664] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114783834032608] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114783834039360] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114783834048960] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114783834052960] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114783850687552] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114783850711328] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114783850720704] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114783850726976] WUP Enter: 33000000
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114783867037792] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 1, time : 1675114783867076800
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114783867087008] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114783867094112] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114783867099328] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114783867116032] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114783867121536] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114783883904768] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114783883928736] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114783883938720] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114783883946144] WUP Enter: 33000000
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114783900033792] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 2, time : 1675114783900073952
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114783900102944] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114783900110208] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114783900115328] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114783900129792] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114783900135552] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114783917268352] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114783917290912] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114783917301280] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114783917308960] WUP Enter: 33000000
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114783933033344] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 3, time : 1675114783933071136
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114783933079168] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114783933086816] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114783933091744] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114783933104480] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114783933108960] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114783950552896] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114783950575040] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114783950585120] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114783950592608] WUP Enter: 33000000
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114783966034848] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 4, time : 1675114783966073216
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114783966081536] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114783966087168] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114783966092480] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114783966105888] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114783966111744] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114783983893568] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114783983915232] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114783983924000] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114783983930368] WUP Enter: 33000000
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114783999034592] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 5, time : 1675114783999072288
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114783999080992] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114783999087680] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114783999110080] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114783999122816] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114783999127136] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114784017239744] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784017261760] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784017272736] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114784017280256] WUP Enter: 33000000
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114784032027680] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 6, time : 1675114784032043136
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784032048832] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784032052640] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114784032056032] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114784032063104] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114784032067040] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114784050495968] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784050515968] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784050525568] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114784050531808] WUP Enter: 33000000
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114784065027072] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 7, time : 1675114784065042048
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784065047136] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784065050912] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114784065054880] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114784065061984] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114784065066048] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114784083838304] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784083860576] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784083871232] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114784083879168] WUP Enter: 33000000
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114784098026464] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 8, time : 1675114784098040960
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784098046304] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784098050272] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114784098053760] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114784098071040] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114784098075552] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114784117205888] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784117226752] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784117237248] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114784117245088] WUP Enter: 33000000
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114784131027104] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 9, time : 1675114784131042240
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784131047936] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784131051904] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114784131055328] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114784131062464] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114784131066560] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114784150500512] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784150520640] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784150530560] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114784150538016] WUP Enter: 33000000
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114784164026592] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 10, time : 1675114784164043552
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784164050240] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784164054528] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114784164058176] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114784164065440] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114784164069408] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114784183849920] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784183869664] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784183879264] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114784183887744] WUP Enter: 33000000
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114784197026528] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 11, time : 1675114784197040992
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784197046016] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784197049664] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114784197053024] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114784197059712] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114784197063552] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114784217192896] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784217212288] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784217221856] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114784217229792] WUP Enter: 33000000
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114784230026816] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 12, time : 1675114784230042528
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784230048544] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784230052736] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114784230056576] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114784230063424] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114784230067488] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114784250509248] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784250529472] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784250539616] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114784250549632] WUP Enter: 33000000
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114784263027552] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 13, time : 1675114784263043936
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784263049792] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784263053888] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114784263057376] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114784263064448] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114784263068352] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114784283840320] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784283862080] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784283872800] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114784283880992] WUP Enter: 33000000
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114784296027296] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 14, time : 1675114784296044160
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784296052736] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784296057120] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114784296060864] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114784296068896] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114784296073440] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114784317207968] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784317228672] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784317249536] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114784317258816] WUP Enter: 33000000
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114784329027008] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 15, time : 1675114784329043584
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784329048896] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784329052928] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114784329056544] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114784329063968] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114784329068096] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114784350547104] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784350570400] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784350581568] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114784350589248] WUP Enter: 33000000
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114784362028544] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 16, time : 1675114784362049984
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784362055840] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784362060192] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114784362063552] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114784362072448] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114784362076448] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114784383875808] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784383897920] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784383908256] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114784383916256] WUP Enter: 33000000
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114784395028896] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 17, time : 1675114784395050880
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784395057280] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784395061536] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114784395065792] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114784395074112] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114784395077920] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114784417258816] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784417281888] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784417292608] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114784417300512] WUP Enter: 33000000
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114784428032032] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 18, time : 1675114784428062624
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784428070048] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784428076448] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114784428081888] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114784428092960] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114784428099584] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114784450570592] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784450593376] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784450602240] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114784450607968] WUP Enter: 33000000
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114784461031392] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 19, time : 1675114784461059296
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784461067136] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784461072992] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114784461078944] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114784461090176] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114784461096736] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114784483931072] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784483952736] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784483961152] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114784483967392] WUP Enter: 33000000
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114784494032480] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 20, time : 1675114784494060064
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784494069632] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784494078368] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114784494085504] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114784494096672] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114784494101984] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114784517222496] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784517246560] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784517257920] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114784517266720] WUP Enter: 33000000
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114784527034336] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 21, time : 1675114784527060352
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784527081056] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784527087520] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114784527092512] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114784527103136] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114784527109280] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114784550537696] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784550561248] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784550571808] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114784550579872] WUP Enter: 33000000
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114784560028992] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 22, time : 1675114784560043552
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784560049248] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784560053408] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114784560056672] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114784560064192] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114784560068000] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114784583850272] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784583869824] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784583878080] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114784583884320] WUP Enter: 33000000
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114784593027008] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 23, time : 1675114784593043168
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784593049184] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784593054176] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114784593060864] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114784593069216] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114784593073856] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114784617187712] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784617210272] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784617220736] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114784617228960] WUP Enter: 33000000
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114784626027008] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 24, time : 1675114784626043040
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784626049248] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784626053248] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114784626068736] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114784626076512] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114784626080576] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114784650504448] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784650524384] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784650534144] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114784650541984] WUP Enter: 33000000
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114784659027488] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 25, time : 1675114784659044000
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784659049792] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784659053760] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114784659057056] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114784659064384] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114784659068320] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114784683863136] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784683882784] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784683892512] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114784683898816] WUP Enter: 33000000
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114784692027136] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 26, time : 1675114784692040288
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784692045536] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784692049504] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114784692052864] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114784692059872] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114784692063872] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114784717187200] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784717207808] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784717218464] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114784717227072] WUP Enter: 33000000
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114784725026880] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 27, time : 1675114784725042816
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784725049536] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784725054144] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114784725058752] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114784725066176] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114784725080864] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114784750500192] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784750520576] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784750530528] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114784750538592] WUP Enter: 33000000
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114784758026432] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 28, time : 1675114784758041280
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784758048096] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784758053504] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114784758058848] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114784758066784] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114784758071296] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114784783857888] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784783877248] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784783887360] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114784783895456] WUP Enter: 33000000
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114784791026400] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 29, time : 1675114784791040096
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784791045504] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784791049472] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114784791052736] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114784791059712] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114784791063744] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114784817180576] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784817200448] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784817210400] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114784817218528] WUP Enter: 33000000
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114784824026176] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 30, time : 1675114784824041664
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784824047552] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784824051488] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114784824055008] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114784824062112] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114784824066240] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114784850499808] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784850530080] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784850541504] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114784850549952] WUP Enter: 33000000
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114784857026464] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 31, time : 1675114784857040992
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784857046368] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784857050208] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114784857053600] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114784857060672] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114784857064480] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114784883826336] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784883846368] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784883856672] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114784883863808] WUP Enter: 33000000
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114784890026752] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 32, time : 1675114784890039584
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784890044480] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784890048224] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114784890051488] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114784890058592] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114784890062272] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114784917149792] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784917170112] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784917180576] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114784917189312] WUP Enter: 33000000
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114784923026720] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 33, time : 1675114784923040544
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784923045952] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784923049664] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114784923052992] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114784923059872] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114784923063808] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114784950509568] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784950529920] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784950538624] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114784950557792] WUP Enter: 33000000
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114784956027328] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 34, time : 1675114784956044480
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784956050528] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784956054496] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114784956058400] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114784956065888] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114784956069792] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114784983854848] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784983874336] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784983884224] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114784983891264] WUP Enter: 33000000
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114784989028672] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 35, time : 1675114784989052896
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784989062304] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114784989069536] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114784989074272] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114784989082816] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114784989087104] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114785017188416] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785017209696] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785017220160] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114785017228640] WUP Enter: 33000000
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114785022027392] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 36, time : 1675114785022041728
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785022047168] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785022051040] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114785022054432] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114785022061312] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114785022065184] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114785050505600] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785050525440] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785050535424] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114785050542144] WUP Enter: 33000000
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114785055026720] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 37, time : 1675114785055050080
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785055055648] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785055059328] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114785055063072] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114785055070304] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114785055074560] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114785083843200] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785083862944] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785083873440] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114785083880608] WUP Enter: 33000000
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114785088027008] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 38, time : 1675114785088040992
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785088046304] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785088050176] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114785088053568] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114785088060704] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114785088064608] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114785117153024] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785117173120] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785117183456] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114785117191296] WUP Enter: 33000000
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114785121027008] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 39, time : 1675114785121040896
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785121045664] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785121049344] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114785121052640] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114785121059680] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114785121063680] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114785150490944] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785150510720] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785150520576] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114785150528448] WUP Enter: 33000000
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114785154026592] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 40, time : 1675114785154040320
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785154055200] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785154060064] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114785154063520] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114785154070784] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114785154074720] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114785183830560] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785183851008] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785183861312] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114785183868832] WUP Enter: 33000000
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114785187027424] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 41, time : 1675114785187039584
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785187044768] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785187048480] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114785187052800] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114785187060032] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114785187063776] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114785217200288] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785217219840] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785217229536] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114785217236672] WUP Enter: 33000000
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114785220026432] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 42, time : 1675114785220039040
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785220043872] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785220047520] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114785220050912] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114785220057632] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114785220061184] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114785250534976] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785250554432] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785250564480] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114785250572224] WUP Enter: 33000000
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114785253026880] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 43, time : 1675114785253040448
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785253045312] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785253048960] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114785253060704] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114785253068416] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114785253072288] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114785283864320] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785283883904] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785283893440] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114785283901408] WUP Enter: 33000000
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114785286027552] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 44, time : 1675114785286040608
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785286046496] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785286050528] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114785286053984] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114785286061120] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114785286065056] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114785317201920] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785317220576] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785317227296] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114785317232160] WUP Enter: 33000000
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114785319026976] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 45, time : 1675114785319037664
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785319042208] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785319046048] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114785319049536] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114785319056640] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114785319060704] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114785350528320] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785350548608] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785350558880] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114785350567072] WUP Enter: 33000000
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114785352028480] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 46, time : 1675114785352041824
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785352047936] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785352052032] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114785352055296] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114785352062464] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114785352073920] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114785383844608] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785383864224] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785383874848] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114785383883008] WUP Enter: 33000000
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114785385029184] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 47, time : 1675114785385041440
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785385046336] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785385050112] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114785385053472] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114785385060512] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114785385064384] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114785417204768] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785417224448] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785417234336] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114785417242368] WUP Enter: 33000000
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114785418029248] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 48, time : 1675114785418041664
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785418046656] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785418050144] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114785418053952] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114785418060960] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114785418064800] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114785450549856] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785450569504] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785450579744] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114785450587712] WUP Enter: 33000000
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114785451029024] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 49, time : 1675114785451040864
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785451046784] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785451050784] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114785451054240] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114785451061440] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114785451065536] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114785483887616] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785483918880] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785483929824] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114785483938144] WUP Enter: 33000000
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114785484029248] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 50, time : 1675114785484038176
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785484043072] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785484047840] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114785484052416] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114785484060224] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114785484064480] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114785517219712] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785517239744] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785517250208] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114785517258112] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 244288ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114785517270592] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 51, time : 1675114785517274432
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785517277984] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785517281376] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114785517284608] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114785517291520] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114785517295488] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114785550525760] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785550545536] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785550555232] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114785550560000] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 299872ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114785550568864] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 52, time : 1675114785550572288
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785550575680] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785550579008] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114785550582176] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114785550589120] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114785550593184] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114785583860256] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785583892096] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785583904288] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114785583911840] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 352768ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114785583922400] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 53, time : 1675114785583926048
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785583929536] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785583932832] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114785583936128] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114785583943232] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114785583947072] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114785617216896] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785617240160] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785617251584] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114785617259520] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 351008ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114785617275968] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 54, time : 1675114785617281280
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785617285312] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785617289056] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114785617292608] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114785617300064] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114785617303936] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114785650545376] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785650566048] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785650576448] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114785650584320] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 322624ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114785650595968] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 55, time : 1675114785650599872
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785650603456] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785650606880] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114785650610496] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114785650617632] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114785650622048] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114785683867040] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785683887584] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785683898240] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114785683905920] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 320832ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114785683916384] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 56, time : 1675114785683920160
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785683923648] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785683926976] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114785683930240] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114785683937088] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114785683941184] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114785717256896] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785717281024] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785717292320] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114785717300352] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 395968ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114785717313824] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 57, time : 1675114785717317952
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785717321696] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785717325216] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114785717328608] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114785717335968] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114785717339744] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114785750640256] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785750664768] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785750675360] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114785750681088] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 378944ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114785750691968] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 58, time : 1675114785750695552
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785750699296] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785750702880] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114785750706272] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114785750713792] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114785750728160] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114785783983488] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785784008896] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785784018720] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114785784024160] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 343456ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114785784036704] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 59, time : 1675114785784040832
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785784044704] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785784048384] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114785784051712] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114785784059232] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114785784063264] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114785817232960] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785817255264] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785817266112] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114785817274240] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 251296ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114785817287296] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 60, time : 1675114785817291360
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785817295264] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785817298592] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114785817301824] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114785817309152] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114785817313344] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114785850614464] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785850637504] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785850646848] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114785850651808] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 375232ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114785850661344] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 61, time : 1675114785850664896
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785850668448] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785850671840] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114785850675104] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114785850692352] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114785850696736] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114785883920704] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785883945344] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785883955744] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114785883961280] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 310208ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114785883971968] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 62, time : 1675114785883975680
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785883979328] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785883982720] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114785883985920] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114785883993312] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114785883997152] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114785917252192] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785917276672] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785917287776] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114785917293792] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 332448ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114785917304224] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 63, time : 1675114785917307840
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785917311552] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785917314944] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114785917318176] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114785917325344] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114785917329248] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114785950606144] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785950630496] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785950641312] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114785950648480] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 355040ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114785950660352] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 64, time : 1675114785950664192
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785950667872] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785950671296] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114785950684576] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114785950692512] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114785950696672] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114785983923296] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785983947008] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785983957504] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114785983965600] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 318080ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114785983978432] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 65, time : 1675114785983982592
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785983986368] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114785983989888] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114785983993248] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114785984000576] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114785984004640] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114786017219712] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786017242176] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786017252256] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114786017258048] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 290688ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114786017267584] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 66, time : 1675114786017271200
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786017274592] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786017277920] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114786017281152] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114786017288608] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114786017292576] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114786050536512] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786050557504] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786050567968] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114786050574944] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 317440ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114786050585120] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 67, time : 1675114786050588768
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786050592480] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786050607424] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114786050611360] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114786050618432] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114786050622496] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114786083876736] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786083897504] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786083908128] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114786083916672] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 343648ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114786083929664] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 68, time : 1675114786083933696
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786083937408] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786083940864] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114786083944064] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114786083950784] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114786083954560] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114786117175968] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786117195936] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786117206400] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114786117214560] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 297856ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114786117227680] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 69, time : 1675114786117231680
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786117235424] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786117238880] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114786117242240] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114786117249056] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114786117253312] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114786150502816] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786150523168] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786150533184] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114786150541312] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 326432ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114786150553856] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 70, time : 1675114786150558080
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786150571776] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786150576032] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114786150579424] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114786150586432] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114786150590656] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114786183860448] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786183881536] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786183891616] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114786183899168] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 357248ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114786183911200] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 71, time : 1675114786183915264
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786183918912] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786183922272] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114786183925600] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114786183932608] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114786183936800] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114786217196512] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786217216416] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786217226560] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114786217235168] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 336736ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114786217247968] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 72, time : 1675114786217252320
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786217255968] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786217259328] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114786217262656] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114786217269376] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114786217273248] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114786250492448] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786250513536] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786250523712] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114786250531904] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 296608ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114786250544160] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 73, time : 1675114786250559232
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786250563520] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786250567008] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114786250570400] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114786250577376] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114786250581824] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114786283851328] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786283871616] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786283881472] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114786283889088] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 356160ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114786283900096] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 74, time : 1675114786283903904
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786283907488] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786283911072] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114786283914368] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114786283921280] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114786283925056] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114786317174912] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786317195232] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786317205344] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114786317212736] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 323040ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114786317222624] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 75, time : 1675114786317226208
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786317229760] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786317233088] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114786317236384] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114786317243232] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114786317247424] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114786350524224] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786350550176] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786350560000] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114786350567072] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 354976ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114786350595200] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 76, time : 1675114786350600608
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786350605280] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786350609920] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114786350614144] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114786350622368] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114786350626976] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114786383878336] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786383903264] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786383915104] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114786383922944] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 355552ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114786383933568] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 77, time : 1675114786383937472
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786383941152] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786383944768] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114786383948128] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114786383955104] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114786383959040] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114786417192544] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786417213152] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786417223168] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114786417231200] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 309440ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114786417243328] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 78, time : 1675114786417247296
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786417251072] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786417254560] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114786417257760] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114786417264928] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114786417268864] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114786450539584] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786450559648] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786450569824] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114786450577152] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 354560ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114786450598176] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 79, time : 1675114786450602400
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786450606560] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786450610752] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114786450614336] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114786450621536] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114786450625600] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114786483847008] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786483868416] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786483879552] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114786483887328] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 300608ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114786483898176] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 80, time : 1675114786483901984
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786483905600] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786483909152] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114786483912576] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114786483919520] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114786483923744] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114786517197408] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786517217056] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786517227168] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114786517234848] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 347648ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114786517245888] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 81, time : 1675114786517249920
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786517253536] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786517257024] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114786517260544] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114786517267456] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114786517271776] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114786550510368] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786550530656] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786550540736] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114786550557088] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 321792ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114786550567712] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 82, time : 1675114786550572032
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786550576352] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786550580096] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114786550583520] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114786550590816] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114786550594688] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114786583831936] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786583852256] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786583862240] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114786583869664] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 312480ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114786583879616] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 83, time : 1675114786583883168
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786583886624] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786583889984] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114786583893248] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114786583900064] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114786583904192] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114786617191200] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786617210912] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786617220576] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114786617228672] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 360384ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114786617240608] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 84, time : 1675114786617244544
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786617248160] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786617251616] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114786617254848] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114786617261920] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114786617266048] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114786650487424] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786650507360] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786650530432] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114786650539456] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 311552ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114786650552736] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 85, time : 1675114786650556864
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786650560672] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786650564000] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114786650567296] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114786650574272] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114786650578112] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114786683842656] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786683863104] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786683873760] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114786683881504] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 342688ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114786683897632] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 86, time : 1675114786683903808
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786683908320] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786683912256] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114786683915744] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114786683922656] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114786683926592] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114786717178816] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786717198624] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786717206240] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114786717212192] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 328032ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114786717222496] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 87, time : 1675114786717226240
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786717229600] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786717232992] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114786717236224] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114786717242944] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114786717247008] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114786750494976] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786750531488] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786750541952] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114786750548800] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 336128ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114786750558208] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 88, time : 1675114786750561920
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786750565472] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786750568768] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114786750572032] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114786750578880] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114786750582784] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114786783953888] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786783978176] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786783990016] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114786783997888] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 452384ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114786784014592] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 89, time : 1675114786784020160
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786784024480] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786784028288] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114786784031776] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114786784039040] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114786784042880] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114786817255072] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786817280768] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786817293088] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114786817301120] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 302112ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114786817315104] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 90, time : 1675114786817319328
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786817323296] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786817326720] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114786817330336] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114786817338208] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114786817342016] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114786850539904] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786850561152] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786850571808] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114786850579936] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 279328ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114786850593728] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 91, time : 1675114786850597760
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786850601440] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786850604928] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114786850608192] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114786850615264] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114786850619264] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114786883851680] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786883872864] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786883883968] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114786883892288] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 312736ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114786883908640] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 92, time : 1675114786883914272
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786883918624] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786883922528] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114786883926112] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114786883933312] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114786883937184] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114786917172384] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786917192800] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786917203808] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114786917210976] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 316480ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114786917222208] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 93, time : 1675114786917226048
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786917229728] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786917233152] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114786917236384] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114786917243232] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114786917259872] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114786950527168] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786950548544] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786950559200] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114786950567744] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 359200ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114786950584800] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 94, time : 1675114786950591776
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786950596768] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786950600608] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114786950604064] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114786950611072] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114786950615008] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114786983837696] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786983857696] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786983866784] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114786983873376] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 303264ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114786983884704] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 95, time : 1675114786983888608
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786983892256] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114786983895616] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114786983898880] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114786983905728] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114786983909760] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114787017214816] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787017240576] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787017251744] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114787017258624] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 384416ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114787017268544] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 96, time : 1675114787017272192
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787017275712] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787017279040] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114787017282304] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114787017301408] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114787017305952] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114787050513952] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787050535136] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787050545120] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114787050553312] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 297728ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114787050568608] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 97, time : 1675114787050573440
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787050577760] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787050581984] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114787050586208] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114787050593888] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114787050598816] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114787083848320] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787083868256] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787083878176] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114787083886304] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 332736ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114787083901120] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 98, time : 1675114787083906016
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787083909984] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787083913536] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114787083916768] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114787083923520] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114787083927232] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114787117170528] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787117190560] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787117200992] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114787117209408] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 322144ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114787117221952] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 99, time : 1675114787117225888
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787117229632] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787117233056] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114787117244992] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114787117252544] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114787117256608] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114787150512576] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787150535744] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787150546176] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114787150554528] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 345632ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114787150568320] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 100, time : 1675114787150572864
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787150576736] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787150580352] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114787150583648] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114787150590464] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114787150594336] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114787183867168] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787183887776] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787183898624] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114787183906432] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 352416ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114787183922208] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 101, time : 1675114787183927488
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787183931616] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787183935392] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114787183938752] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114787183945600] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114787183949536] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114787217159328] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787217180096] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787217191072] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114787217199232] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 291680ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114787217211648] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 102, time : 1675114787217215680
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787217219328] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787217233088] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114787217236864] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114787217243968] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114787217247840] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114787250513856] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787250533728] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787250543616] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114787250551488] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 352576ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114787250564352] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 103, time : 1675114787250568256
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787250571904] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787250575392] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114787250578624] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114787250585408] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114787250589312] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114787283863936] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787283883808] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787283895552] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114787283902976] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 349888ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114787283913184] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 104, time : 1675114787283916672
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787283920160] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787283923520] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114787283926816] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114787283933888] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114787283938048] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114787317171968] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787317192128] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787317202368] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114787317209856] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 306720ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114787317220000] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 105, time : 1675114787317223616
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787317236512] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787317240512] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114787317243744] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114787317250752] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114787317254688] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114787350531968] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787350552704] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787350562592] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114787350570784] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 362432ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114787350583104] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 106, time : 1675114787350587040
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787350590912] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787350594304] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114787350597536] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114787350604320] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114787350608192] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114787383865088] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787383885408] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787383895968] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114787383904032] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 332800ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114787383915840] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 107, time : 1675114787383919744
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787383923264] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787383926496] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114787383929664] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114787383936736] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114787383940512] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114787417186496] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787417206304] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787417216160] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114787417222816] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 317504ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114787417232736] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 108, time : 1675114787417245056
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787417249056] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787417252384] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114787417255680] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114787417262752] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114787417266720] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114787450510208] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787450530752] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787450541024] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114787450548256] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 325728ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114787450558240] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 109, time : 1675114787450561824
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787450565216] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787450568544] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114787450571744] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114787450578624] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114787450582528] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114787483882624] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787483903776] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787483914304] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114787483922112] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 375872ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114787483935200] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 110, time : 1675114787483939200
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787483942944] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787483946336] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114787483949920] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114787483956736] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114787483960576] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114787517183936] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787517203520] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787517213312] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114787517221248] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 299296ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114787517246336] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 111, time : 1675114787517251424
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787517255168] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787517258592] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114787517261856] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114787517268928] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114787517272768] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114787550560000] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787550581408] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787550591488] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114787550598752] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 375296ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114787550609376] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 112, time : 1675114787550613024
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787550616512] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787550619840] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114787550623104] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114787550630080] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114787550633920] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114787583899776] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787583922336] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787583933440] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114787583941568] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 345376ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114787583957856] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 113, time : 1675114787583963680
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787583968000] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787583971776] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114787583975168] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114787583982112] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114787583985984] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114787617186656] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787617207296] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787617217376] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114787617225344] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 292608ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114787617248000] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 114, time : 1675114787617251776
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787617255264] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787617258656] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114787617261856] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114787617268992] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114787617272992] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114787650542944] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787650563360] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787650573504] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114787650580448] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 343488ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114787650590368] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 115, time : 1675114787650594112
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787650597568] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787650600896] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114787650604128] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114787650610720] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114787650614464] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114787683872704] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787683893120] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787683903136] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114787683911072] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 333024ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114787683925024] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 116, time : 1675114787683929536
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787683933472] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787683937120] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114787683940576] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114787683948000] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114787683952416] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114787717215552] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787717236384] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787717247424] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114787717264672] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 351040ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114787717274560] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 117, time : 1675114787717278176
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787717281792] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787717285248] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114787717288544] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114787717295648] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114787717299456] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114787750546976] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787750567424] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787750577216] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114787750584832] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 321408ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114787750596480] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 118, time : 1675114787750600320
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787750603936] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787750607360] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114787750610656] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114787750617696] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114787750621600] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114787783855264] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787783877088] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787783887904] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114787783896224] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 312224ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114787783909216] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 119, time : 1675114787783913312
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787783916800] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787783920096] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114787783923328] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114787783930720] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114787783934592] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114787817200800] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787817221024] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787817244032] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114787817253152] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 356800ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114787817265824] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 120, time : 1675114787817269728
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787817273152] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787817276576] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114787817279840] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114787817286688] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114787817290560] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114787850544512] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787850565120] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787850575264] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114787850586080] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 334592ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114787850602016] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 121, time : 1675114787850607200
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787850611552] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787850615680] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114787850619456] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114787850626752] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114787850631264] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114787883849952] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787883871072] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787883881120] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114787883887744] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 298144ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114787883897568] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 122, time : 1675114787883901280
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787883904768] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787883908000] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114787883911232] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114787883918112] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114787883922048] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114787917207648] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787917239040] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787917249632] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114787917257632] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 371040ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114787917269248] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 123, time : 1675114787917273184
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787917276736] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787917280064] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114787917283424] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114787917290432] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114787917294144] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114787950550304] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787950570496] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787950580480] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114787950587744] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 329120ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114787950597504] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 124, time : 1675114787950601120
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787950604640] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787950608096] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114787950611264] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114787950617952] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114787950621600] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114787983872832] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787983894240] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787983904032] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114787983910976] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 323232ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114787983921024] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 125, time : 1675114787983924768
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787983928544] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114787983931808] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114787983935104] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114787983941888] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114787983945728] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114788017189600] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114788017210560] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114788017220672] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114788017229088] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 320864ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114788017243776] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 126, time : 1675114788017248512
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114788017252480] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114788017256096] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114788017259456] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114788017266688] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114788017270592] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114788050579680] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114788050601280] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114788050611872] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114788050619904] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 390080ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114788050632736] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 127, time : 1675114788050636800
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114788050640608] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114788050644128] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114788050647360] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114788050654624] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114788050658432] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114788083889376] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114788083910208] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114788083920320] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114788083928128] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 307968ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114788083940864] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 128, time : 1675114788083944800
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114788083948576] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114788083951968] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114788083955136] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114788083962208] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114788083976576] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114788117192960] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114788117214016] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114788117224352] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114788117230880] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 300736ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114788117240448] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 129, time : 1675114788117244032
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114788117247616] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114788117250944] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114788117254176] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114788117261056] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114788117264864] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114788150515808] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114788150536896] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114788150547296] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114788150557888] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 329792ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114788150571936] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 130, time : 1675114788150576544
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114788150580800] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114788150584736] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114788150588416] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114788150595872] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114788150600256] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114788183849888] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114788183872416] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114788183882336] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114788183887936] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 326528ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114788183896224] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 131, time : 1675114788183899680
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114788183903328] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114788183906592] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114788183909888] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114788183927616] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114788183932288] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114788217212960] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114788217233408] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114788217243584] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114788217251328] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 365440ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114788217262688] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 132, time : 1675114788217266592
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114788217270208] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114788217273856] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114788217277248] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114788217284608] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114788217288992] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114788250555008] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114788250575520] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114788250584544] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114788250590688] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 337856ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114788250600000] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 133, time : 1675114788250603552
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114788250607040] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114788250610432] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114788250613664] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114788250620416] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114788250624224] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114788283851712] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114788283872384] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114788283882528] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114788283890720] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 302336ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114788283903168] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 134, time : 1675114788283907296
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114788283911008] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114788283914656] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114788283927200] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114788283935360] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114788283939584] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114788317200192] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114788317220672] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114788317230912] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114788317239168] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 348096ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114788317251200] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 135, time : 1675114788317255104
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114788317258784] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114788317262080] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114788317265280] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114788317272256] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114788317276096] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114788350513088] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114788350533344] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114788350543584] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114788350550944] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 310496ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114788350561056] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 136, time : 1675114788350564768
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114788350568320] LOG Enter: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114788350571712] LOG Exit: 0, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114788350574944] SIG Enter: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/sig.c][opPrintSig] [CORE 0] [Time 1675114788350581824] SIG Exit: f3
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114788350586016] WOF Enter: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/wof.c][opPrintWof] [CORE 0] [Time 1675114788383893856] WOF Exit: f2
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114788383915200] LOG Enter: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/log.c][opPrintLog] [CORE 0] [Time 1675114788383925632] LOG Exit: 1, 9
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114788383933344] WUP Enter: 33000000
+[STM WARNING]:[av/stm/runtime/src/client/commands/wup.c][opExecuteWup] [64]: WUP: Overran by 383776ns (1 frames)
+[STM INFO]:[av/stm/runtime/src/client/commands/wup.c][opPrintWup] [CORE 0] [Time 1675114788383946912] WUP Exit: 33000000
+[STM INFO]:[av/stm/runtime/src/client/thread.c][stmStart] Current thread Iteration = 137, time : 1675114788383952128
+[STM] Current thread stopCount = 1, time : 1675114788383960160
+[STM] Thread pool0 exiting, thread exit count 1, time : 1675114788383961120
+[STM INFO]:[av/stm/runtime/src/client/stm.c][stmEnterScheduler] Client framesync_TegraA_pilotHyperepoch_cameraEpoch is waiting on exit semaphore for syncing
+[STM INFO]:[av/stm/runtime/src/client/stm.c][stmEnterScheduler] Client framesync_TegraA_pilotHyperepoch_cameraEpoch exiting now

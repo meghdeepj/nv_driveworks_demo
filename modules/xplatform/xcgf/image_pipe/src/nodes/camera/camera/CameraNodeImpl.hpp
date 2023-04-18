@@ -50,12 +50,19 @@ class gwCameraNodeImpl : public SimpleSensorNodeT<gwCameraNode>
     dwContextHandle_t m_ctx{ DW_NULL_HANDLE };
 
     // node internal workload
-    size_t m_epochCount{ 0 };
+    // workload: handle
     dwSALHandle_t m_sal{DW_NULL_HANDLE};
     dwSensorHandle_t m_camera{DW_NULL_HANDLE};
-
+    // workload: config
+    dwSensorParams m_camera_param{};
+    dwCameraOutputType m_image_type{DW_CAMERA_OUTPUT_CUDA_RGBA_UINT8};
     // todo: access camera through rig files
     // dwRigHandle_t m_rigConfig{};
+    // workload: memory
+    dwCameraFrameHandle_t m_camera_frame{ DW_NULL_HANDLE };
+    dwImageHandle_t m_image_raw{ DW_NULL_HANDLE };
+    size_t m_epochCount{ 0 };
+
 };
 
 }  // namespace framework
