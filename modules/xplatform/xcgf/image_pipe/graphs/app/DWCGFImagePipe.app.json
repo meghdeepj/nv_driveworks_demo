@@ -31,7 +31,8 @@
                             "frames": 1,
                             "passes": [
                                 [
-                                    "dwcgfImagePipe.pilotPipe0"
+                                    "dwcgfImagePipe.pilotPipe0",
+                                    "dwcgfImagePipe.render0"
                                 ]
                             ]
                         }
@@ -81,7 +82,8 @@
             "runOn": "machine0",
             "executable": "LoaderLite",
             "subcomponents": [
-                "dwcgfImagePipe.pilotPipe0"
+                "dwcgfImagePipe.pilotPipe0",
+                "dwcgfImagePipe.render0"
             ],
             "argv": {
                 "--nodeInitThreadPoolSize": "7",

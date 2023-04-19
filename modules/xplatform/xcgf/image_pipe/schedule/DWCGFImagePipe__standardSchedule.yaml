@@ -26,6 +26,27 @@ standardSchedule:
               Resources:
               - CPU
               WCET: 17.00 us
+          - dwcgfImagePipe_render0_renderNode_pass_0:
+              Dependencies:
+              - pilotPipe_process.dwcgfImagePipe_pilotPipe0_cameraCapture_cameraNode_pass_2
+              - pilotPipe_process.pilotPipe_process_ssm_pass_0
+              Resources:
+              - CPU
+              WCET: 374.00 us
+          - dwcgfImagePipe_render0_renderNode_pass_1:
+              Dependencies:
+              - pilotPipe_process.dwcgfImagePipe_render0_renderNode_pass_0
+              - pilotPipe_process.pilotPipe_process_ssm_pass_0
+              Resources:
+              - CPU
+              WCET: 17.00 us
+          - dwcgfImagePipe_render0_renderNode_pass_2:
+              Dependencies:
+              - pilotPipe_process.dwcgfImagePipe_render0_renderNode_pass_1
+              - pilotPipe_process.pilotPipe_process_ssm_pass_0
+              Resources:
+              - CPU
+              WCET: 17.00 us
           - pilotPipe_process_ssm_pass_0:
               Resources:
               - CPU

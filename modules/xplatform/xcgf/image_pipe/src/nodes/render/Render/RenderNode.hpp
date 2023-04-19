@@ -1,33 +1,3 @@
-/////////////////////////////////////////////////////////////////////////////////////////
-//
-// Notice
-// ALL NVIDIA DESIGN SPECIFICATIONS AND CODE ("MATERIALS") ARE PROVIDED "AS IS" NVIDIA MAKES
-// NO REPRESENTATIONS, WARRANTIES, EXPRESSED, IMPLIED, STATUTORY, OR OTHERWISE WITH RESPECT TO
-// THE MATERIALS, AND EXPRESSLY DISCLAIMS ANY IMPLIED WARRANTIES OF NONINFRINGEMENT,
-// MERCHANTABILITY, OR FITNESS FOR A PARTICULAR PURPOSE.
-//
-// NVIDIA CORPORATION & AFFILIATES assumes no responsibility for the consequences of use of such
-// information or for any infringement of patents or other rights of third parties that may
-// result from its use. No license is granted by implication or otherwise under any patent
-// or patent rights of NVIDIA CORPORATION & AFFILIATES. No third party distribution is allowed unless
-// expressly authorized by NVIDIA. Details are subject to change without notice.
-// This code supersedes and replaces all information previously supplied.
-// NVIDIA CORPORATION & AFFILIATES products are not authorized for use as critical
-// components in life support devices or systems without express written approval of
-// NVIDIA CORPORATION & AFFILIATES.
-//
-// SPDX-FileCopyrightText: Copyright (c) 2021 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
-// SPDX-License-Identifier: LicenseRef-NvidiaProprietary
-//
-// NVIDIA CORPORATION, its affiliates and licensors retain all intellectual
-// property and proprietary rights in and to this material, related
-// documentation and any modifications thereto. Any use, reproduction,
-// disclosure or distribution of this material and related documentation
-// without an express license agreement from NVIDIA CORPORATION or
-// its affiliates is strictly prohibited.
-//
-/////////////////////////////////////////////////////////////////////////////////////////
-
 #ifndef RENDER_NODE_HPP_
 #define RENDER_NODE_HPP_
 
@@ -46,19 +16,18 @@ namespace dw
 namespace framework
 {
 
-struct RenderNodeParams
+struct gwRenderNodeParams
 {
 };
 
-class RenderNode : public ExceptionSafeProcessNode
+class gwRenderNode : public ExceptionSafeProcessNode
 {
 public:
     static constexpr auto describeInputPorts()
     {
         using namespace dw::framework;
         return describePortCollection(
-            DW_DESCRIBE_PORT(int32_t, "VALUE_0"_sv, PortBinding::REQUIRED),
-            DW_DESCRIBE_PORT(int32_t, "VALUE_1"_sv, PortBinding::REQUIRED));
+            DW_DESCRIBE_PORT(int, "VALUE_0"_sv, PortBinding::REQUIRED));
     };
     static constexpr auto describeOutputPorts()
     {
@@ -76,16 +45,16 @@ public:
 
     static constexpr auto describeParameters()
     {
-        return describeConstructorArguments<RenderNodeParams, dwContextHandle_t>(
+        return describeConstructorArguments<gwRenderNodeParams, dwContextHandle_t>(
             describeConstructorArgument(),
             describeConstructorArgument(
                 DW_DESCRIBE_UNNAMED_PARAMETER(
                     dwContextHandle_t)));
     }
 
-    static std::unique_ptr<RenderNode> create(ParameterProvider& provider);
+    static std::unique_ptr<gwRenderNode> create(ParameterProvider& provider);
 
-    RenderNode(const RenderNodeParams& params, const dwContextHandle_t ctx);
+    gwRenderNode(const gwRenderNodeParams& params, const dwContextHandle_t ctx);
 };
 
 } // namespace framework

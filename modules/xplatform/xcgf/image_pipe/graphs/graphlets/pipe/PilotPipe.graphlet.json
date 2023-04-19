@@ -7,6 +7,9 @@
         },
         "IMAGE_TIMESTAMP": {
             "type": "int32_t"
+        },
+        "VALUE_0":{
+            "type": "int"
         }
     },
     "parameters": {
@@ -24,5 +27,11 @@
         }
     },
     "connections": [
+        {
+            "src": "cameraCapture.VALUE_0",
+            "dests": {
+                "VALUE_0": {}
+            }
+        }
     ]
 }

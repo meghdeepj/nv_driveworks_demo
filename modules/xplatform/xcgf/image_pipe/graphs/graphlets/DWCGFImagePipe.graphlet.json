@@ -29,8 +29,19 @@
             "parameters": {
                 "cameraIndex": 0
             }
+        },
+        "render0":{
+            "componentType": "./render/Render.graphlet.json",
+            "parameters":{
+            }
         }
     },
     "connections": [
+        {
+            "src": "pilotPipe0.VALUE_0",
+            "dests": {
+                "render0.VALUE_0": {}
+            }
+        }
     ]
 }

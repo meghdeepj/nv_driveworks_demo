@@ -7,6 +7,7 @@
 #include <dw/sensors/Sensors.h>
 #include <dw/sensors/camera/Camera.h>
 // dwcgf framework
+#include <dwcgf/channel/Channel.hpp>
 #include <dwcgf/node/Node.hpp>
 #include <dwcgf/parameter/ParameterDescriptor.hpp>
 #include <dwcgf/parameter/SemanticParameterTypes.hpp>
@@ -35,6 +36,7 @@ struct gwCameraNodeParams
     // todo: sal_handle in params
     // todo: const* to fixedstring
     char8_t const* sensorName;
+    dw::core::FixedString<64> name;
     // cudaStream_t cudaStream;
     // dwConstRigHandle_t rig;
     // dwSALHandle_t sal;
@@ -51,7 +53,9 @@ class gwCameraNode : public ExceptionSafeSensorNode
     static constexpr auto describeOutputPorts()
     {
         using namespace dw::framework;
-        return describePortCollection(DW_DESCRIBE_PORT(dwImageHandle_t, "IMAGE_NATIVE_RAW"_sv));
+        return describePortCollection(
+            DW_DESCRIBE_PORT(dwImageHandle_t, "IMAGE_NATIVE_RAW"_sv),
+            DW_DESCRIBE_PORT(int, "VALUE_0"_sv));
     };
 
     static constexpr auto describePasses()
@@ -70,10 +74,12 @@ class gwCameraNode : public ExceptionSafeSensorNode
 
     static constexpr auto describeParameters()
     {
+        // file:///E:/orin_ws/nv_driveworks/driverorks-5.10/doc/nvcgf_html/cgf_tutorials_node.html
         return describeConstructorArguments<gwCameraNodeParams, dwContextHandle_t>(
             describeConstructorArgument(
                 DW_DESCRIBE_INDEX_PARAMETER_WITH_SEMANTIC(const char*, semantic_parameter_types::CameraName,
-                                                          "cameraIndex"_sv, &gwCameraNodeParams::sensorName)),
+                                                          "cameraIndex"_sv, &gwCameraNodeParams::sensorName),
+                DW_DESCRIBE_PARAMETER(dw::core::FixedString<64>, "name"_sv, &gwCameraNodeParams::name)),
             describeConstructorArgument(DW_DESCRIBE_UNNAMED_PARAMETER(dwContextHandle_t)));
     }
 

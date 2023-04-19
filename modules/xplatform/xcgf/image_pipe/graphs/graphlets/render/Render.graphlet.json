@@ -1,15 +1,18 @@
 {
-    "name": "RenderDemo",
+    "name": "Render",
     "inputPorts": {
         "IMAGE_ARRAY": {
             "type": "int32_t",
             "array": 1
+        },
+        "VALUE_0": {
+            "type": "int"
         }
     },
     "outputPorts": {},
     "parameters": {},
     "subcomponents": {
-        "renderingNode": {
+        "renderNode": {
             "componentType": "../../nodes/render/RenderNode.node.json",
             "parameters": {
                 "*": "$*"
@@ -18,9 +21,9 @@
     },
     "connections": [
         {
-            "src": "IMAGE_ARRAY[0]",
+            "src": "VALUE_0",
             "dests": {
-                "renderingNode.IMAGE_ARRAY[0]": {}
+                "renderNode.VALUE_0": {}
             }
         }
     ]

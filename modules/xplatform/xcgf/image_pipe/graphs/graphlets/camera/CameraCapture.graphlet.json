@@ -16,6 +16,9 @@
         },
         "IMAGE_TIMESTAMP": {
             "type": "int32_t"
+        },
+        "VALUE_0": {
+            "type": "int"
         }
     },
     "parameters": {
@@ -26,16 +29,28 @@
         "streamIndex": {
             "type": "size_t",
             "default": 0
+        },
+        "cameraNodeName": {
+            "type": "std::string",
+            "default": "helloworld_name"
         }
     },
     "subcomponents": {
         "cameraNode": {
             "componentType": "../../nodes/camera/CameraNode.node.json",
             "parameters": {
-                "*": "$*"
+                "cameraIndex": "$cameraIndex",
+                "streamIndex": "$streamIndex",
+                "name": "dwcgf_image_pipe"
             }
         }
     },
     "connections": [
+        {
+            "src": "cameraNode.VALUE_0",
+            "dests": {
+                "VALUE_0": {}
+            }
+        }
     ]
 }

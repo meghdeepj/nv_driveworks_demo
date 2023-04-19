@@ -8,14 +8,11 @@
         "IMAGE_NATIVE_RAW": {
             "type": "dwImageHandle_t"
         },
-        "IMAGE_NATIVE_PROCESSED": {
-            "type": "dwImageHandle_t"
-        },
-        "IMAGE_PROCESSED_RGBA": {
-            "type": "dwImageHandle_t"
-        },
         "IMAGE_TIMESTAMP": {
             "type": "dwTime_t"
+        },
+        "VALUE_0": {
+            "type": "int"
         }
     },
     "parameters": {
@@ -24,6 +21,9 @@
         },
         "streamIndex": {
             "type": "size_t"
+        },
+        "name": {
+            "type": "std::string"
         }
     },
     "passes": [

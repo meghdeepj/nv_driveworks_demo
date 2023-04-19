@@ -26,6 +26,7 @@ class gwCameraNodeImpl : public SimpleSensorNodeT<gwCameraNode>
     dwStatus reset() final;
 
     // SimpleSensorNode
+    dwStatus validate() final;
     dwStatus start() final;
     dwStatus stop() final;
     dwStatus isVirtual(bool*) final;

@@ -13,6 +13,7 @@ gwCameraNodeImpl::gwCameraNodeImpl(const gwCameraNodeParams& params, const dwCon
 {
     // resolve params
     DW_LOGD << "gwCameraNodeImpl: SensorName is: " << *(m_params.sensorName) << "." << Logger::State::endl;
+    DW_LOGD << "gwCameraNodeImpl: name is: " << m_params.name << "." << Logger::State::endl;
     // init workload
     // todo: need a app framework
     FRWK_CHECK_DW_ERROR(dwSAL_initialize(&m_sal, m_ctx));
@@ -33,6 +34,8 @@ gwCameraNodeImpl::gwCameraNodeImpl(const gwCameraNodeParams& params, const dwCon
     imageProps.memoryLayout = DW_IMAGE_MEMORY_TYPE_PITCH;
     imageProps.format = DW_IMAGE_FORMAT_YUV420_UINT8_SEMIPLANAR;
     FRWK_CHECK_DW_ERROR(dwImage_create(&m_image_raw, imageProps, m_ctx));
+
+    NODE_INIT_OUTPUT_PORT("VALUE_0"_sv);
     NODE_INIT_OUTPUT_PORT("IMAGE_NATIVE_RAW"_sv, imageProps);
     // NODE_INIT_OUTPUT_PORT("IMAGE_NATIVE_PROCESSED"_sv);
     // NODE_INIT_OUTPUT_PORT("IMAGE_PROCESSED_RGBA"_sv);
@@ -134,6 +137,18 @@ dwStatus gwCameraNodeImpl::getNextTimestamp(dwTime_t& nextTimestamp)
     return DW_SUCCESS;
 }
 
+dwStatus gwCameraNodeImpl::validate()
+{
+    dwStatus status = Base::validate();
+    // Check ports are bound
+    if (status == DW_SUCCESS && !NODE_GET_OUTPUT_PORT("VALUE_0"_sv).isBound())
+    {
+        return DW_NOT_READY;
+    }
+
+    return status;
+}
+
 dwStatus gwCameraNodeImpl::reset()
 {
     DW_LOGD << "gwCameraNodeImpl: reset: " << Logger::State::endl;
@@ -185,15 +200,26 @@ dwStatus gwCameraNodeImpl::raw_output()
 
     // write outputport
     auto& raw_outport = NODE_GET_OUTPUT_PORT("IMAGE_NATIVE_RAW"_sv);
+    auto& outPort0 = NODE_GET_OUTPUT_PORT("VALUE_0"_sv);
     if (raw_outport.isBufferAvailable())
     {
         *raw_outport.getBuffer() = m_image_raw;
         DW_LOGD << "[Epoch " << m_epochCount << "] Sent raw_output." << Logger::State::endl;
-        // outPort0.send();
+        raw_outport.send();
     }
     else
     {
         DW_LOGD << "raw_outport.buffer not available." << Logger::State::endl;
+    }
+    if(outPort0.isBufferAvailable())
+    {
+        *outPort0.getBuffer() = m_epochCount;
+        DW_LOGD << "[Epoch " << m_epochCount << "] Sent VALUE_0: " << m_epochCount << "." << Logger::State::endl;
+        outPort0.send();
+    }
+    else
+    {
+        DW_LOGD << "outPort0.buffer not available." << Logger::State::endl;
     }
     // return frame
     FRWK_CHECK_DW_ERROR(dwSensorCamera_returnFrame(&m_camera_frame));

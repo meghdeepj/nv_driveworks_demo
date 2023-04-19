@@ -2,11 +2,10 @@
     "comment": "render node",
     "generated": false,
     "library": "libdwcgf_image_pipe.so",
-    "name": "dw::framework::RenderNode",
+    "name": "dw::framework::gwRenderNode",
     "inputPorts": {
-        "IMAGE_ARRAY": {
-            "type": "int32_t",
-            "array":1,
+        "VALUE_0": {
+            "type": "int",
             "bindingRequired": true
         }
     },
