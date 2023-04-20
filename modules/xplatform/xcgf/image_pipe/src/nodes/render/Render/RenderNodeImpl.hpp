@@ -11,27 +11,38 @@ namespace framework
 
 class gwRenderNodeImpl : public SimpleProcessNodeT<gwRenderNode>
 {
-public:
+  public:
     static constexpr char LOG_TAG[] = "gwRenderNode";
 
     // Initialization and destruction
     gwRenderNodeImpl(const gwRenderNodeParams& params, const dwContextHandle_t ctx);
     ~gwRenderNodeImpl() override;
 
-private:
-    // Passes functions
-    dwStatus process();
-
     // SimpleProcessNode
     // dwStatus validate() final;
 
-    // Internal states of node
-    size_t m_epochCount{0};
+  private:
+    // Passes functions
+    dwStatus process();
+
+    // node internal from cgf
     gwRenderNodeParams m_params{};
-    dwContextHandle_t m_ctx{DW_NULL_HANDLE};
+
+    // node internal from loaderlite-stm
+    dwContextHandle_t m_ctx{ DW_NULL_HANDLE };
+
+    // node internal workload
+    // workload: handle
+
+    // workload: config
+
+    // workload: memory
+    size_t m_epochCount{ 0 };
+    gwGuardianInstruct m_guardian_instruct{};
+
 };
 
-} // namespace framework
-} // namespace dw
+}  // namespace framework
+}  // namespace dw
 
-#endif // RENDER_NODE_IMPL_HPP_
+#endif  // RENDER_NODE_IMPL_HPP_

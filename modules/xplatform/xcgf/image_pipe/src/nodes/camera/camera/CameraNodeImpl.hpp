@@ -63,6 +63,7 @@ class gwCameraNodeImpl : public SimpleSensorNodeT<gwCameraNode>
     dwCameraFrameHandle_t m_camera_frame{ DW_NULL_HANDLE };
     dwImageHandle_t m_image_raw{ DW_NULL_HANDLE };
     size_t m_epochCount{ 0 };
+    gwGuardianInstruct m_guardian_instruct{};
 
 };
 

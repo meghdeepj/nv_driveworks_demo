@@ -42,6 +42,12 @@
             "dests": {
                 "render0.VALUE_0": {}
             }
+        },
+        {
+            "src": "pilotPipe0.GUARDIAN_INSTRUCT",
+            "dests": {
+                "render0.GUARDIAN_INSTRUCT": {}
+            }
         }
     ]
 }

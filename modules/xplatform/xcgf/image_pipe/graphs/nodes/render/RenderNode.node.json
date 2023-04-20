@@ -7,6 +7,10 @@
         "VALUE_0": {
             "type": "int",
             "bindingRequired": true
+        },
+        "GUARDIAN_INSTRUCT": {
+            "type": "gwGuardianInstruct",
+            "bindingRequired": true
         }
     },
     "outputPorts": {},

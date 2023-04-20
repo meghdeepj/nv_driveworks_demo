@@ -13,6 +13,9 @@
         },
         "VALUE_0": {
             "type": "int"
+        },
+        "GUARDIAN_INSTRUCT": {
+            "type": "gwGuardianInstruct"
         }
     },
     "parameters": {

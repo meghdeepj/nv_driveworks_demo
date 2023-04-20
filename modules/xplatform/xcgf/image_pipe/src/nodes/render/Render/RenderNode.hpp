@@ -11,6 +11,10 @@
 #include <dwcgf/port/PortDescriptor.hpp>
 #include <dwcgf/parameter/ParameterDescriptor.hpp>
 
+// custom dwchannel type
+#include "channel/GuardianInstruct.hpp"
+#include "channel/CustomRawBuffer.hpp"
+
 namespace dw
 {
 namespace framework
@@ -26,8 +30,8 @@ public:
     static constexpr auto describeInputPorts()
     {
         using namespace dw::framework;
-        return describePortCollection(
-            DW_DESCRIBE_PORT(int, "VALUE_0"_sv, PortBinding::REQUIRED));
+        return describePortCollection(DW_DESCRIBE_PORT(int, "VALUE_0"_sv, PortBinding::REQUIRED),
+                                      DW_DESCRIBE_PORT(gwGuardianInstruct, "GUARDIAN_INSTRUCT"_sv, PortBinding::REQUIRED));
     };
     static constexpr auto describeOutputPorts()
     {

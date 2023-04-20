@@ -10,6 +10,9 @@
         },
         "VALUE_0":{
             "type": "int"
+        },
+        "GUARDIAN_INSTRUCT": {
+            "type": "gwGuardianInstruct"
         }
     },
     "parameters": {
@@ -31,6 +34,12 @@
             "src": "cameraCapture.VALUE_0",
             "dests": {
                 "VALUE_0": {}
+            }
+        },
+        {
+            "src": "cameraCapture.GUARDIAN_INSTRUCT",
+            "dests": {
+                "GUARDIAN_INSTRUCT": {}
             }
         }
     ]

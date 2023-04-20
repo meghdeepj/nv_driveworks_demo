@@ -37,14 +37,10 @@ gwCameraNodeImpl::gwCameraNodeImpl(const gwCameraNodeParams& params, const dwCon
 
     NODE_INIT_OUTPUT_PORT("VALUE_0"_sv);
     NODE_INIT_OUTPUT_PORT("IMAGE_NATIVE_RAW"_sv, imageProps);
-    // NODE_INIT_OUTPUT_PORT("IMAGE_NATIVE_PROCESSED"_sv);
-    // NODE_INIT_OUTPUT_PORT("IMAGE_PROCESSED_RGBA"_sv);
-    // NODE_INIT_OUTPUT_PORT("IMAGE_TIMESTAMP"_sv);
+    NODE_INIT_OUTPUT_PORT("GUARDIAN_INSTRUCT"_sv);
 
     // Init passes
     NODE_REGISTER_PASS("RAW_OUTPUT"_sv, [this]() { return raw_output(); });
-    // NODE_REGISTER_PASS("PROCESSED_OUTPUT"_sv, [this]() { return processed_output(); });
-    // NODE_REGISTER_PASS("PROCESSED_RGBA_OUTPUT"_sv, [this]() { return processed_rgba_output(); });
 
     DW_LOGD << "gwCameraNodeImpl: created" << Logger::State::endl;
 }
@@ -201,6 +197,7 @@ dwStatus gwCameraNodeImpl::raw_output()
     // write outputport
     auto& raw_outport = NODE_GET_OUTPUT_PORT("IMAGE_NATIVE_RAW"_sv);
     auto& outPort0 = NODE_GET_OUTPUT_PORT("VALUE_0"_sv);
+    auto& gi_oport = NODE_GET_OUTPUT_PORT("GUARDIAN_INSTRUCT"_sv);
     if (raw_outport.isBufferAvailable())
     {
         *raw_outport.getBuffer() = m_image_raw;
@@ -220,6 +217,20 @@ dwStatus gwCameraNodeImpl::raw_output()
     else
     {
         DW_LOGD << "outPort0.buffer not available." << Logger::State::endl;
+    }
+    if(gi_oport.isBufferAvailable())
+    {
+        m_guardian_instruct.instruct = gwInstruct::STANDBY;
+        FRWK_CHECK_DW_ERROR(dwContext_getCurrentTime(&m_guardian_instruct.timestamp_us, m_ctx));
+        *gi_oport.getBuffer() = m_guardian_instruct;
+        DW_LOGD << "[Epoch " << m_epochCount << "] Sent GUARDIAN_INSTRUCT: "
+                << " timestamp_us: " << m_guardian_instruct.timestamp_us
+                << " instruct: " << m_guardian_instruct.instruct << "." << Logger::State::endl;
+        gi_oport.send();
+    }
+    else
+    {
+        DW_LOGD << "gi_oport.buffer not available." << Logger::State::endl;
     }
     // return frame
     FRWK_CHECK_DW_ERROR(dwSensorCamera_returnFrame(&m_camera_frame));

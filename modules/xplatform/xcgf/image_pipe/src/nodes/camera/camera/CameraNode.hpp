@@ -17,6 +17,8 @@
 #include <dwcgf/port/PortDescriptor.hpp>
 // custom dwchannel type
 #include "channel/Image.hpp"
+#include "channel/GuardianInstruct.hpp"
+#include "channel/CustomRawBuffer.hpp"
 
 // predifined channel type did not work
 // #include <dwframework/dwnodes/common/channelpackets/Image.hpp>
@@ -53,9 +55,9 @@ class gwCameraNode : public ExceptionSafeSensorNode
     static constexpr auto describeOutputPorts()
     {
         using namespace dw::framework;
-        return describePortCollection(
-            DW_DESCRIBE_PORT(dwImageHandle_t, "IMAGE_NATIVE_RAW"_sv),
-            DW_DESCRIBE_PORT(int, "VALUE_0"_sv));
+        return describePortCollection(DW_DESCRIBE_PORT(dwImageHandle_t, "IMAGE_NATIVE_RAW"_sv),
+                                      DW_DESCRIBE_PORT(int, "VALUE_0"_sv),
+                                      DW_DESCRIBE_PORT(gwGuardianInstruct, "GUARDIAN_INSTRUCT"_sv));
     };
 
     static constexpr auto describePasses()

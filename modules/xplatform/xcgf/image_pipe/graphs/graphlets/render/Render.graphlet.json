@@ -7,6 +7,9 @@
         },
         "VALUE_0": {
             "type": "int"
+        },
+        "GUARDIAN_INSTRUCT": {
+            "type": "gwGuardianInstruct"
         }
     },
     "outputPorts": {},
@@ -24,6 +27,12 @@
             "src": "VALUE_0",
             "dests": {
                 "renderNode.VALUE_0": {}
+            }
+        },
+        {
+            "src": "GUARDIAN_INSTRUCT",
+            "dests": {
+                "renderNode.GUARDIAN_INSTRUCT": {}
             }
         }
     ]

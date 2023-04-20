@@ -19,6 +19,9 @@
         },
         "VALUE_0": {
             "type": "int"
+        },
+        "GUARDIAN_INSTRUCT": {
+            "type": "gwGuardianInstruct"
         }
     },
     "parameters": {
@@ -50,6 +53,12 @@
             "src": "cameraNode.VALUE_0",
             "dests": {
                 "VALUE_0": {}
+            }
+        },
+        {
+            "src": "cameraNode.GUARDIAN_INSTRUCT",
+            "dests": {
+                "GUARDIAN_INSTRUCT": {}
             }
         }
     ]
