@@ -441,7 +441,7 @@ if [ $GW_IN_DOCKER = "true" ]; then
   if [ -e "${CYBER_SETUP}" ]; then
     source "${CYBER_SETUP}"
   fi
-  create_data_dir
+  # create_data_dir
   set_lib_path $1
   if [ -z $GW_BASE_SOURCED ]; then
     determine_bin_prefix

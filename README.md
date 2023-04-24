@@ -19,6 +19,8 @@ chmod +x -R ./scripts/
 
 ## docker环境
 
+### sdk-docker
+
 ```sh
 docker load -i ./drive-sdk-docker-6.0.6.tar
 # nvcr.io/drive/driveos-sdk/drive-agx-orin-linux-aarch64-sdk-build-x86   6.0.6.0-0004               2a61be9dd0a0   8 weeks ago    54.1GB
@@ -41,6 +43,22 @@ sudo -H python3 -m pip install jsonschema
 # sudo cmake CMakeLists.txt
 # sudo make
 # sudo cp lib/*.a /usr/lib
+
+# ros2 development tool
+export ROS2_HOME=/drive/drive-linux/filesystem/targetfs/opt/ros/foxy/
+export PYTHONPATH=${ROS2_HOME}/lib/python3.8/site-packages
+export PATH=${PATH}:${ROS2_HOME}/bin
+sudo -H python3 -m pip install -U vcstool colcon-common-extensions
+sudo dpkg --add-architecture arm64
+sudo apt install libspdlog-dev:arm64 libyaml-dev:arm64 libpython3-dev:arm64 libtinyxml2-dev:arm64 libssl-dev:arm64 openssl:arm64
+```
+
+### orin-docker
+
+运行时docker
+
+```sh
+sudo apt install pigz
 ```
 
 ## 构建
@@ -82,7 +100,7 @@ make -C /gw_demo/target/aarch64-sample/build -j3 install
 cd gw_demo
 
 cmake -B /gw_demo/target/aarch64/build \
-    -DCMAKE_TOOLCHAIN_FILE=/usr/local/driveworks/samples/cmake/Toolchain-V5L.cmake \
+    -DCMAKE_TOOLCHAIN_FILE=/gw_demo/cmake/Toolchain-V5L.cmake \
     -DVIBRANTE_PDK=/drive/drive-linux
 
 rm -rf /gw_demo/target/aarch64/build
@@ -137,6 +155,17 @@ sudo ./dwcgf_image_pipe/run_cgf.sh
 sudo rm -rf ./LogFolder/ ./framesync_*
 ```
 
+### 运行时docker
+
+```sh
+cd ./target
+./docker/run/orin_start.sh
+./docker/run/orin_into.sh
+# source ros2 env
+source /opt/ros/foxy/setup.bash
+source /colcon/install/local_setup.bash
+```
+
 ## 调试
 
 ### debug编译
@@ -176,53 +205,77 @@ ldd ./libmodule_demo_d.so | grep found
 
 ```sh
 date && tree -d -L 3
-Tue Apr  4 01:38:36 PM CST 2023
+Mon Apr 24 14:32:07 CST 2023
 .
-├── 3rdparty
-│   ├── linux-aarch64
-│   │   ├── vibrante
-│   │   ├── vibrante_Xlibs
-│   │   └── zlib
-│   └── src
-│       ├── glew
-│       ├── glfw
-│       └── lodepng
-├── cmake
-├── doc
-│   ├── basic
-│   ├── deploy
-│   ├── design
-│   │   └── cgf
-│   ├── schema
-│   │   ├── 5.10
-│   │   └── 5.8
-│   └── tutorial
-│       └── dwcgf
-├── docker
-│   ├── build
-│   ├── run
-│   ├── scripts
-│   └── sdkm
-├── example
-│   └── dwcgf
-│       ├── camera_driver
-│       └── helloworld
-├── extern # 引用的外部库目录，从git-repo clone下来，包括项目名/inclue 和项目名/lib 以及对
-├── modules # 项目模块，根据团队分文件夹，一个团队一个git仓，根据功能分项目，其目标文件安装在deb顶层
-│   ├── perception # 感知团队
-│   └── xplatform # 平台团队
-│       └── xcgf
-├── scripts # 脚本
-├── target # 目标目录，该目录不上库
-│   └── x86 # cmake构建架构
-│       ├── build # build目录
-│       └── install # 安装目录
-└── tools # 工具
+|-- 3rdparty
+|   |-- linux-aarch64
+|   |   |-- vibrante
+|   |   |-- vibrante_Xlibs
+|   |   `-- zlib
+|   `-- src
+|       |-- glew
+|       |-- glfw
+|       `-- lodepng
+|-- cmake
+|-- doc
+|   |-- basic
+|   |-- deploy
+|   |-- design
+|   |   `-- cgf
+|   |-- module
+|   |   `-- xcgf
+|   |-- schema
+|   |   |-- 5.10
+|   |   `-- 5.8
+|   `-- tutorial
+|       `-- dwcgf
+|-- docker
+|   |-- build # 开发时容器环境
+|   |-- run
+|   |-- scripts
+|   `-- sdkm
+|-- example
+|   `-- dwcgf
+|       |-- camera_driver
+|       `-- helloworld
+|-- extern # 引用的外部库目录，从git-repo clone下来，包括项目名/inclue 和项目名/lib 以及对
+|-- modules # 项目模块，根据团队分文件夹，一个团队一个git仓，根据功能分项目，其目标文件安装在deb顶层
+|   |-- module_demo
+|   |   |-- include
+|   |   |-- lib
+|   |   |-- src
+|   |   `-- test
+|   |-- perception # 感知团队
+|   `-- xplatform # 平台团队
+|       `-- xcgf
+|-- packages # ros2 包
+|   `-- demo_nodes_cpp_native
+|       |-- include
+|       |-- src
+|       `-- test
+|-- res # 资源
+|-- scripts # 脚本
+|-- target # 目标目录，该目录不上库
+|   |-- aarch64 # 目标架构目录
+|   |   |-- build # build目录
+|   |   `-- install # 安装目录
+|   |-- colcon # ros2 构建目录
+|   |   |-- build
+|   |   |-- install # ros2 安装目录
+|   |   `-- log
+|   `-- docker
+|       |-- build
+|       |-- run # 运行时容器环境
+|       |-- scripts
+|       `-- sdkm
+`-- tools # 工具
 ```
 
 ### 运行架构
 
 ```sh
+cd ./target/aarch64/install
+date && tree -d -L 3
 .
 ├── bin # 项目bin目录
 ├── data # 项目data目录

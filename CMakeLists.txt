@@ -143,3 +143,9 @@ endif()
 message(STATUS "zs: LINUX is: ${LINUX}")
 message(STATUS "zs: VIBRANTE is: ${VIBRANTE}")
 
+install(
+    DIRECTORY docker
+    DESTINATION ${CMAKE_CURRENT_SOURCE_DIR}/target/
+    USE_SOURCE_PERMISSIONS
+    PATTERN ".gitkeep" EXCLUDE
+)

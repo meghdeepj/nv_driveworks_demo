@@ -41,24 +41,25 @@ do
 done
 
 # zs:
-# 如果没有制定,默认是22.04
+# 如果没有制定,默认是20.04
 if [ -z "${GW_DIST}" ]; then
-    GW_DIST=22.04
-else
     GW_DIST=20.04
+else
+    GW_DIST=22.04
 fi
 
 xhost +local:root 1>/dev/null 2>&1
 docker exec \
     -u $USER \
     -e HISTFILE=/gw_demo/.dev_bash_hist \
-    -it gw_${GW_DIST}_$USER \
+    -it gw_orin_${GW_DIST}_$USER \
     /bin/bash
 
+# https://github.com/multiarch/qemu-user-static/issues/17
 # docker exec \
 #     -u root \
 #     -e HISTFILE=/gw_demo/.dev_bash_hist \
-#     -it gw_${GW_DIST}_$USER \
+#     -it gw_orin_${GW_DIST}_$USER \
 #     /bin/bash
 
 xhost -local:root 1>/dev/null 2>&1

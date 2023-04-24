@@ -50,7 +50,7 @@ endif()
 
 # /opt/gw_demo/bin is the path in the target system
 if(CMAKE_LIBRARY_ARCHITECTURE MATCHES "^aarch64-(linux-gnu|unknown-nto-qnx)$")
-    set(CMAKE_INSTALL_RPATH /opt/gw_demo/bin /usr/local/driveworks/lib \$ORIGIN \$ORIGIN/../lib)
+    set(CMAKE_INSTALL_RPATH /opt/gw_demo/bin /usr/local/driveworks/lib /opt/ros/foxy/lib \$ORIGIN \$ORIGIN/../lib)
 else()
     set(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/${SDK_RUNTIME_DESTINATION}" \$ORIGIN \$ORIGIN/../lib)
 endif()

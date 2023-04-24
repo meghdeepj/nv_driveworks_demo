@@ -2,3 +2,4 @@ target/
 .dev_bash_hist
 example/dwcgf/helloworld/graphs/*.stm
 *.drawio.*
+ros-*.tar.gz

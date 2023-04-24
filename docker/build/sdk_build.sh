@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 ################################################################################
-# 基于cuda镜像制作gw_cuda镜像, 安装ros2-humble
+# 基于cuda镜像制作ga_cuda镜像, 安装ros2-humble
 # 支持2004 2204
 # aarch64需要到aarch64平台计算机运行
 # 支持本地或者pull拉取
@@ -10,12 +10,12 @@
 
 
 VERSION_OPT=""
-LOCAL_IMAGE="no"
+LOCAL_IMAGE="yes"
 VERSION=""
 ARCH=$(uname -m)
 # zs:
-VERSION_X86_64_2204="22.04"
-VERSION_X86_64_2004="20.04"
+VERSION_X86_64_2004="6.0.6.0-0004"
+VERSION_X86_64_2204="6.0.6.0-0004"
 
 # Check whether user has agreed license agreement
 function check_agreement() {
@@ -43,7 +43,7 @@ running_containers=$(docker ps --format "{{.Names}}")
 
 for i in ${running_containers[*]}
 do
-  if [[ "$i" =~ gw_* ]];then
+  if [[ "$i" =~ gw_sdk_* ]];then
     printf %-*s 70 "stopping container: $i ..."
     docker stop $i > /dev/null
     if [ $? -eq 0 ];then
@@ -58,9 +58,9 @@ done
 ##########################提前跑-start#########################################
 
 GW_ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/../.." && pwd -P )"
-GW_ROS_ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/../../../.." && pwd -P )"
+GW_ROS_ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/../../" && pwd -P )"
 
-source ${GW_ROOT_DIR}/scripts/docker/gw_base.sh
+source ${GW_ROOT_DIR}/docker/scripts/gw_base.sh
 check_agreement
 
 
@@ -102,18 +102,18 @@ else
 fi
 
 # zs:
-# 如果没有制定docker_repo，则默认是ros
+# 如果没有制定docker_repo，则默认是nvcr.io/drive/driveos-sdk/drive-agx-orin-linux-aarch64-sdk-build-x86
 if [ -z "${DOCKER_REPO}" ]; then
-    DOCKER_REPO=ga_team/gw_demo
+    DOCKER_REPO=nvcr.io/drive/driveos-sdk/drive-agx-orin-linux-aarch64-sdk-build-x86
 fi
 
-# 如果没有制定,默认是22.04
+# 如果没有制定,默认是20.04
 if [ -z "${GW_DIST}" ]; then
-    GW_DIST=22.04
-    VERSION=${VERSION_X86_64_2204}
-else
     GW_DIST=20.04
     VERSION=${VERSION_X86_64_2004}
+else
+    GW_DIST=22.04
+    VERSION=${VERSION_X86_64_2204}
 fi
 
 
@@ -128,28 +128,12 @@ function local_volumes() {
     # Apollo root and bazel cache dirs are required.
     volumes="-v $GW_ROS_ROOT_DIR:/gw_demo \
              -v $HOME/.cache:${DOCKER_HOME}/.cache"
-    case "$(uname -s)" in
-        Linux)
-
-            case "$(lsb_release -r | cut -f2)" in
-                14.04)
-                    volumes="${volumes} "
-                    ;;
-                *)
-                    volumes="${volumes} -v /dev:/dev "
-                    ;;
-            esac
-            volumes="${volumes} -v /media:/media \
-                                -v /tmp/.X11-unix:/tmp/.X11-unix:rw \
-                                -v /etc/localtime:/etc/localtime:ro \
-                                -v /usr/src:/usr/src \
-                                -v /lib/mgaules:/lib/mgaules"
-            ;;
-        Darwin)
-            # MacOS has strict limitations on mapping volumes.
-            chmod -R a+wr ~/.cache/bazel
-            ;;
-    esac
+    volumes="${volumes} -v /dev/bus/usb:/dev/bus/usb "
+    volumes="${volumes} -v /media:/media \
+            -v /tmp/.X11-unix:/tmp/.X11-unix:rw \
+            -v /etc/localtime:/etc/localtime:ro \
+            -v /usr/src:/usr/src \
+            -v /lib/mgaules:/lib/mgaules"
     echo "${volumes}"
 }
 
@@ -169,7 +153,7 @@ function main(){
     fi
 
     # zs:
-    GW_CONTAINER_NAME="gw_${GW_DIST}_${USER}"
+    GW_CONTAINER_NAME="gw_sdk_${GW_DIST}_${USER}"
     docker ps -a --format "{{.Names}}" | grep "$GW_CONTAINER_NAME" 1>/dev/null
     # 如果成功
     if [ $? == 0 ]; then
@@ -196,51 +180,42 @@ function main(){
 
     info "Starting docker container \"${GW_CONTAINER_NAME}\" ..."
 
-    # Try to use GPU in container.
-    DOCKER_RUN_CMD="docker run"
-    USE_GPU_HOST=0
-
-    if [[ "${ARCH}" == "aarch64" ]]; then
-        if lsmod | grep -q "^nvgpu"; then
-        USE_GPU_HOST=1
-        fi
-    elif [[ "${ARCH}" == "x86_64" ]]; then
-        if [[ ! -x "$(command -v nvidia-smi)" ]]; then
-        warning "No nvidia-smi found. CPU will be used"
-        elif [[ -z "$(nvidia-smi)" ]]; then
-        warning "No GPU device found. CPU will be used."
-        else
-        USE_GPU_HOST=1
-        fi
+    # Check nvidia-driver and GPU device.
+    USE_GPU=0
+    if [ -z "$(which nvidia-smi)" ]; then
+      warning "No nvidia-driver found! Use CPU."
+    elif [ -z "$(nvidia-smi)" ]; then
+      warning "No GPU device found! Use CPU."
     else
-        error "Unsupported CPU architecture: ${ARCH}"
-        exit 1
+      USE_GPU=1
     fi
 
-    local nv_docker_doc="https://github.com/NVIDIA/nvidia-docker/blob/master/README.md"
-    if [[ "${USE_GPU_HOST}" -eq 1 ]]; then
-        if [[ -x "$(which nvidia-container-toolkit)" ]]; then
-        local docker_version
-        docker_version="$(docker version --format '{{.Server.Version}}')"
-        if dpkg --compare-versions "${docker_version}" "ge" "19.03"; then
-            DOCKER_RUN_CMD="docker run --gpus all"
+    # Try to use GPU in container.
+    DOCKER_RUN="docker run"
+    NVIDIA_DOCKER_DOC="https://github.com/NVIDIA/nvidia-docker/blob/master/README.md"
+    if [ ${USE_GPU} -eq 1 ]; then
+      DOCKER_VERSION=$(docker version --format '{{.Server.Version}}')
+      if ! [ -z "$(which nvidia-docker)" ]; then
+        DOCKER_RUN="nvidia-docker run"
+        warning "nvidia-docker is in deprecation!"
+        warning "Please install latest docker and nvidia-container-toolkit: ${NVIDIA_DOCKER_DOC}"
+      elif ! [ -z "$(which nvidia-container-toolkit)" ]; then
+        if dpkg --compare-versions "${DOCKER_VERSION}" "ge" "19.03"; then
+          DOCKER_RUN="docker run --gpus all"
         else
-            warning "Please upgrade to docker-ce 19.03+ to access GPU from container."
-            USE_GPU_HOST=0
+          warning "You must upgrade to docker-ce 19.03+ to access GPU from container!"
+          USE_GPU=0
         fi
-        elif [[ -x "$(which nvidia-docker)" ]]; then
-        DOCKER_RUN_CMD="nvidia-docker run"
-        else
-        USE_GPU_HOST=0
-        warning "Cannot access GPU from within container. Please install latest Docker" \
-            "and NVIDIA Container Toolkit as described by: "
-        warning "  ${nv_docker_doc}"
-        fi
+      else
+        USE_GPU=0
+        warning "Cannot access GPU from container."
+        warning "Please install latest docker and nvidia-container-toolkit: ${NVIDIA_DOCKER_DOC}"
+      fi
     fi
 
     set -x
 
-    ${DOCKER_RUN_CMD} -it \
+    ${DOCKER_RUN} -it \
         -d \
         --privileged \
         --name $GW_CONTAINER_NAME \
@@ -250,20 +225,20 @@ function main(){
         -e DOCKER_GRP="$GRP" \
         -e DOCKER_GRP_ID=$GRP_ID \
         -e DOCKER_IMG=$IMG \
-        -e USE_GPU_HOST=$USE_GPU_HOST \
+        -e USE_GPU=$USE_GPU \
         -e NVIDIA_VISIBLE_DEVICES=all \
         -e NVIDIA_DRIVER_CAPABILITIES=compute,video,utility \
+        -e DISPLAY \
         $(local_volumes) \
         --net host \
         -w /gw_demo \
-        --add-host in_dev_docker:127.0.0.1 \
+        --add-host in_sdk_docker:127.0.0.1 \
         --add-host ${LOCAL_HOST}:127.0.0.1 \
-        --hostname in_dev_docker \
+        --hostname in_sdk_docker \
         --shm-size 2G \
-        --pid=host \
         -v /dev/null:/dev/raw1394 \
         $IMG \
-        /bin/bash
+        # /bin/bash drive-sdk-docker
     if [ $? -ne 0 ];then
         error "Failed to start docker container \"${GW_CONTAINER_NAME}\" based on image: $IMG"
         exit 1
@@ -271,10 +246,10 @@ function main(){
     set +x
 
     if [ "${USER}" != "root" ]; then
-        docker exec $GW_CONTAINER_NAME bash -c '/gw_demo/docker/scripts/docker_adduser.sh'
+        docker exec $GW_CONTAINER_NAME bash -c '/gw_demo/docker/scripts/sdk_adduser.sh'
     fi
 
-    ok "Finished setting up ga_team/ga_demo environment. Now you can enter with: \nbash docker/scripts/gw_into.sh "
+    ok "Finished setting up ga_team/gw origin environment. Now you can enter with: \nbash docker/build/sdk_into.sh "
     ok "Enjoy!"
 }
 

@@ -200,6 +200,7 @@ set(CMAKE_FIND_ROOT_PATH ${VIBRANTE_PDK} ${VIBRANTE_PDK}/filesystem/targetfs/usr
 set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
 
 # for libraries and headers in the target directories
+set(CMAKE_FIND_ROOT_PATH_MODE_PACKAGE BOTH)
 set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY BOTH)
 set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE BOTH)
 
@@ -212,3 +213,9 @@ set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE BOTH)
 # That we always check PDK first, and THEN CUDA.
 include_directories(BEFORE SYSTEM ${CUDA_DIR}/targets/aarch64-linux/include)
 include_directories(BEFORE SYSTEM ${VIBRANTE_PDK}/include)
+
+# ros2
+set(PYTHON_SOABI cpython-38m-aarch64-linux-gnu)
+set(CMAKE_TRY_COMPILE_TARGET_TYPE STATIC_LIBRARY)
+# set(ENV{PKG_CONFIG_PATH} ${VIBRANTE_PDK}/filesystem/targetfs/usr/lib/aarch64-linux-gnu/pkgconfig)
+set(ENV{PKG_CONFIG_PATH} /usr/lib/aarch64-linux-gnu/pkgconfig)

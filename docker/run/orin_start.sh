@@ -14,8 +14,8 @@ LOCAL_IMAGE="yes"
 VERSION=""
 ARCH=$(uname -m)
 # zs:
-VERSION_X86_64_2004="6.0.6.0-0004"
-VERSION_X86_64_2204="6.0.6.0-0004"
+VERSION_X86_64_2004="foxy"
+VERSION_X86_64_2204="humble"
 
 # Check whether user has agreed license agreement
 function check_agreement() {
@@ -43,7 +43,7 @@ running_containers=$(docker ps --format "{{.Names}}")
 
 for i in ${running_containers[*]}
 do
-  if [[ "$i" =~ gw_sdk_* ]];then
+  if [[ "$i" =~ gw_orin_* ]];then
     printf %-*s 70 "stopping container: $i ..."
     docker stop $i > /dev/null
     if [ $? -eq 0 ];then
@@ -102,18 +102,18 @@ else
 fi
 
 # zs:
-# 如果没有制定docker_repo，则默认是nvcr.io/drive/driveos-sdk/drive-agx-orin-linux-aarch64-sdk-build-x86
+# 如果没有制定docker_repo，则默认是arm64v8/ros
 if [ -z "${DOCKER_REPO}" ]; then
-    DOCKER_REPO=nvcr.io/drive/driveos-sdk/drive-agx-orin-linux-aarch64-sdk-build-x86
+    DOCKER_REPO=arm64v8/ros
 fi
 
-# 如果没有制定,默认是22.04
+# 如果没有制定,默认是20.04
 if [ -z "${GW_DIST}" ]; then
-    GW_DIST=22.04
-    VERSION=${VERSION_X86_64_2204}
-else
     GW_DIST=20.04
     VERSION=${VERSION_X86_64_2004}
+else
+    GW_DIST=22.04
+    VERSION=${VERSION_X86_64_2204}
 fi
 
 
@@ -126,7 +126,7 @@ IMG=${DOCKER_REPO}:$VERSION
 function local_volumes() {
     set +x
     # Apollo root and bazel cache dirs are required.
-    volumes="-v $GW_ROS_ROOT_DIR:/gw_demo \
+    volumes="-v $GW_ROS_ROOT_DIR:/target \
              -v $HOME/.cache:${DOCKER_HOME}/.cache"
     volumes="${volumes} -v /dev/bus/usb:/dev/bus/usb "
     volumes="${volumes} -v /media:/media \
@@ -153,7 +153,7 @@ function main(){
     fi
 
     # zs:
-    GW_CONTAINER_NAME="gw_sdk_${GW_DIST}_${USER}"
+    GW_CONTAINER_NAME="gw_orin_${GW_DIST}_${USER}"
     docker ps -a --format "{{.Names}}" | grep "$GW_CONTAINER_NAME" 1>/dev/null
     # 如果成功
     if [ $? == 0 ]; then
@@ -231,14 +231,14 @@ function main(){
         -e DISPLAY \
         $(local_volumes) \
         --net host \
-        -w /gw_demo \
-        --add-host in_dev_docker:127.0.0.1 \
+        -w /target \
+        --add-host in_orin_docker:127.0.0.1 \
         --add-host ${LOCAL_HOST}:127.0.0.1 \
-        --hostname in_dev_docker \
+        --hostname in_orin_docker \
         --shm-size 2G \
         -v /dev/null:/dev/raw1394 \
         $IMG \
-        # /bin/bash drive-sdk-docker
+        /bin/bash
     if [ $? -ne 0 ];then
         error "Failed to start docker container \"${GW_CONTAINER_NAME}\" based on image: $IMG"
         exit 1
@@ -246,10 +246,10 @@ function main(){
     set +x
 
     if [ "${USER}" != "root" ]; then
-        docker exec $GW_CONTAINER_NAME bash -c '/gw_demo/docker/scripts/docker_adduser.sh'
+        docker exec $GW_CONTAINER_NAME bash -c '/target/docker/scripts/orin_adduser.sh'
     fi
 
-    ok "Finished setting up ga_team/gw origin environment. Now you can enter with: \nbash docker/build/docker_into.sh "
+    ok "Finished setting up ga_team/gw origin environment. Now you can enter with: \nbash docker/build/orin_into.sh "
     ok "Enjoy!"
 }
 

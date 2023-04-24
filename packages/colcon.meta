@@ -1,0 +1,39 @@
+{
+    "names": {
+        "performance_test": {
+            "cmake-args": [
+                "-DCMAKE_BUILD_TYPE=Release",
+                "-DPERFORMANCE_TEST_RCLCPP_ENABLED=ON",
+                "-DPERFORMANCE_TEST_CYCLONEDDS_ENABLED=OFF",
+                "-DPERFORMANCE_TEST_ICEORYX_ENABLED=OFF",
+                "-DPERFORMANCE_TEST_FASTRTPS_ENABLED=ON",
+                # "-DPERFORMANCE_TEST_FASTDDS_ENABLED=ON",
+                # "-DPERFORMANCE_TEST_ECAL_PROTO_ENABLED=ON",
+                # "-DPERFORMANCE_TEST_ECAL_RAW_ENABLED=ON",
+            ]
+        },
+        "ros2_tracing": {
+            "cmake-args": [
+                "-DCMAKE_BUILD_TYPE=Release",
+                "-DTRACETOOLS_DISABLED=OFF",
+            ]
+        },
+        "rmw_ecal_proto_cpp": {
+            "cmake-args": [
+                "-DCMAKE_BUILD_TYPE=Release",
+            ]
+        },
+        "ros2_shm_msgs": {
+            "cmake-args": [
+                "-DCMAKE_BUILD_TYPE=Release",
+                "-DBUILD_TESTING=ON",
+            ]
+        },
+        "v4l2_camera": {
+            "cmake-args": [
+                "-DCMAKE_BUILD_TYPE=Release",
+                "-DBUILD_TESTING=ON",
+            ]
+        }
+    }
+}
