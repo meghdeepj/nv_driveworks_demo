@@ -1,0 +1,13 @@
+dir, /usr/lib/firmware/tegra23x
+
+lib, /usr/lib/libcuda.so.1
+lib, /usr/lib/libnvrm_gpu.so
+lib, /usr/lib/libnvrm_mem.so
+lib, /usr/lib/libnvrm_sync.so
+lib, /usr/lib/libnvrm_host1x.so
+lib, /usr/lib/libnvos.so
+lib, /usr/lib/libnvsocsys.so
+lib, /usr/lib/libnvtegrahv.so
+lib, /usr/lib/libnvsciipc.so
+lib, /usr/lib/libnvrm_chip.so
+lib, /usr/lib/libnvcucompat.so

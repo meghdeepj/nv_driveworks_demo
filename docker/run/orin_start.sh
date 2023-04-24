@@ -57,12 +57,19 @@ done
 
 ##########################提前跑-start#########################################
 
-GW_ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/../.." && pwd -P )"
+GW_ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/../../" && pwd -P )"
 GW_ROS_ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/../../" && pwd -P )"
+
+DW_ROOT_HOST=$(readlink -f /usr/local/driveworks)
+CUDA_ROOT_HOST=$(readlink -f /usr/local/cuda)
 
 source ${GW_ROOT_DIR}/docker/scripts/gw_base.sh
 check_agreement
 
+# update csv mapping
+sudo rm /etc/nvidia-container-runtime/host-files-for-container.d/*
+sudo cp ${GW_ROOT_DIR}/docker/run/*.csv /etc/nvidia-container-runtime/host-files-for-container.d/
+#  ldd /usr/local/driveworks-5.10/bin/sample_hello_world | grep found
 
 # 参数校验
 while [ $# -gt 0 ]
@@ -127,6 +134,10 @@ function local_volumes() {
     set +x
     # Apollo root and bazel cache dirs are required.
     volumes="-v $GW_ROS_ROOT_DIR:/target \
+            -v $DW_ROOT_HOST:$DW_ROOT_HOST \
+            -v $CUDA_ROOT_HOST:$CUDA_ROOT_HOST \
+            -v /dev:/dev \
+            -v $HOME/zhensheng/cuda-sample:${DOCKER_HOME}/zhensheng/cuda-sample \
              -v $HOME/.cache:${DOCKER_HOME}/.cache"
     volumes="${volumes} -v /dev/bus/usb:/dev/bus/usb "
     volumes="${volumes} -v /media:/media \
@@ -181,27 +192,16 @@ function main(){
     info "Starting docker container \"${GW_CONTAINER_NAME}\" ..."
 
     # Check nvidia-driver and GPU device.
-    USE_GPU=0
-    if [ -z "$(which nvidia-smi)" ]; then
-      warning "No nvidia-driver found! Use CPU."
-    elif [ -z "$(nvidia-smi)" ]; then
-      warning "No GPU device found! Use CPU."
-    else
-      USE_GPU=1
-    fi
+    USE_GPU=1
 
     # Try to use GPU in container.
     DOCKER_RUN="docker run"
     NVIDIA_DOCKER_DOC="https://github.com/NVIDIA/nvidia-docker/blob/master/README.md"
     if [ ${USE_GPU} -eq 1 ]; then
       DOCKER_VERSION=$(docker version --format '{{.Server.Version}}')
-      if ! [ -z "$(which nvidia-docker)" ]; then
-        DOCKER_RUN="nvidia-docker run"
-        warning "nvidia-docker is in deprecation!"
-        warning "Please install latest docker and nvidia-container-toolkit: ${NVIDIA_DOCKER_DOC}"
-      elif ! [ -z "$(which nvidia-container-toolkit)" ]; then
+      if ! [ -z "$(which nvidia-container-toolkit)" ]; then
         if dpkg --compare-versions "${DOCKER_VERSION}" "ge" "19.03"; then
-          DOCKER_RUN="docker run --gpus all"
+          DOCKER_RUN="docker run --runtime nvidia --gpus all"
         else
           warning "You must upgrade to docker-ce 19.03+ to access GPU from container!"
           USE_GPU=0
@@ -227,10 +227,13 @@ function main(){
         -e DOCKER_IMG=$IMG \
         -e USE_GPU=$USE_GPU \
         -e NVIDIA_VISIBLE_DEVICES=all \
-        -e NVIDIA_DRIVER_CAPABILITIES=compute,video,utility \
+        -e NVIDIA_DRIVER_CAPABILITIES=compute,graphics,video,utility,display \
         -e DISPLAY \
         $(local_volumes) \
         --net host \
+        --ipc host \
+        --cap-add SYS_ADMIN \
+        --cap-add SYS_PTRACE \
         -w /target \
         --add-host in_orin_docker:127.0.0.1 \
         --add-host ${LOCAL_HOST}:127.0.0.1 \
@@ -246,10 +249,10 @@ function main(){
     set +x
 
     if [ "${USER}" != "root" ]; then
-        docker exec $GW_CONTAINER_NAME bash -c '/target/docker/scripts/orin_adduser.sh'
+        docker exec $GW_CONTAINER_NAME bash -c '/target/docker/scripts/target_adduser.sh'
     fi
 
-    ok "Finished setting up ga_team/gw origin environment. Now you can enter with: \nbash docker/build/orin_into.sh "
+    ok "Finished setting up ga_team/gw origin environment. Now you can enter with: \nbash docker/run/orin_into.sh "
     ok "Enjoy!"
 }
 

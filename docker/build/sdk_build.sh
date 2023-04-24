@@ -201,7 +201,7 @@ function main(){
         warning "Please install latest docker and nvidia-container-toolkit: ${NVIDIA_DOCKER_DOC}"
       elif ! [ -z "$(which nvidia-container-toolkit)" ]; then
         if dpkg --compare-versions "${DOCKER_VERSION}" "ge" "19.03"; then
-          DOCKER_RUN="docker run --gpus all"
+          DOCKER_RUN="docker run --runtime nvidia --gpus all"
         else
           warning "You must upgrade to docker-ce 19.03+ to access GPU from container!"
           USE_GPU=0

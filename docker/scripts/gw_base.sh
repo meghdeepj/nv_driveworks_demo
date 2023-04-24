@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-GW_ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )"
-
 BOLD='\033[1m'
 RED='\033[0;31m'
 GREEN='\033[32m'
