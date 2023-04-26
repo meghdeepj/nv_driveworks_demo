@@ -14,6 +14,8 @@ set(DWCGF_RIG_TESTER ${CMAKE_CURRENT_SOURCE_DIR}/bin/test_rig.sh)
 file(GLOB_RECURSE DWCGF_NODES_FILES
     ${DWCGF_NODES_DIR}/*.hpp
     ${DWCGF_NODES_DIR}/*.cpp
+    ${DWCGF_NODES_DIR}/*.cu
+    ${DWCGF_NODES_DIR}/*.cuh
 )
 file(GLOB_RECURSE DWCGF_CHANNEL_FILES
     ${DWCGF_CHANNEL_DIR}/*.hpp
@@ -39,7 +41,7 @@ set(LIBRARIES
 #-------------------------------------------------------------------------------
 add_library(${PROJECT_NAME}_types STATIC ${DWCGF_CHANNEL_FILES})
 set_target_properties(${PROJECT_NAME}_types PROPERTIES LINKER_LANGUAGE CXX)
-target_link_libraries(${PROJECT_NAME}_types ${LIBRARIES})
+target_link_libraries(${PROJECT_NAME}_types PRIVATE ${LIBRARIES})
 target_include_directories(${PROJECT_NAME}_types
                            PUBLIC
                            ${CUDA_DIR}/include
@@ -48,8 +50,8 @@ target_include_directories(${PROJECT_NAME}_types
                            ${DW_ROOT}/include/dwshared/dwfoundation
                            ${DW_ROOT}/include/dwshared/dwtrace)
 
-add_library(${PROJECT_NAME} SHARED ${DWCGF_NODES_FILES})
-target_link_libraries(${PROJECT_NAME} ${LIBRARIES} ${PROJECT_NAME}_types)
+cuda_add_library(${PROJECT_NAME} SHARED ${DWCGF_NODES_FILES})
+target_link_libraries(${PROJECT_NAME} PRIVATE ${LIBRARIES} ${PROJECT_NAME}_types)
 target_include_directories(${PROJECT_NAME}
                            PUBLIC
                            src/

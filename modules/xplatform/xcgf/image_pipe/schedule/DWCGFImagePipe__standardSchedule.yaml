@@ -26,23 +26,32 @@ standardSchedule:
               Resources:
               - CPU
               WCET: 17.00 us
-          - dwcgfImagePipe_render0_renderNode_pass_0:
+          - dwcgfImagePipe_pilotPipe0_cameraPreproc_transformNode_pass_0:
               Dependencies:
               - pilotPipe_process.dwcgfImagePipe_pilotPipe0_cameraCapture_cameraNode_pass_2
               - pilotPipe_process.pilotPipe_process_ssm_pass_0
               Resources:
               - CPU
               WCET: 374.00 us
-          - dwcgfImagePipe_render0_renderNode_pass_1:
+          - dwcgfImagePipe_pilotPipe0_cameraPreproc_transformNode_pass_1:
               Dependencies:
-              - pilotPipe_process.dwcgfImagePipe_render0_renderNode_pass_0
+              - pilotPipe_process.dwcgfImagePipe_pilotPipe0_cameraPreproc_transformNode_pass_0
               - pilotPipe_process.pilotPipe_process_ssm_pass_0
               Resources:
               - CPU
+              - CUDA_MUTEX_LOCK
+              - CUDA_STREAM
+              Submits: pilotPipe_process.dwcgfImagePipe_pilotPipe0_cameraPreproc_transformNode_pass_1_submittee
               WCET: 17.00 us
-          - dwcgfImagePipe_render0_renderNode_pass_2:
+          - dwcgfImagePipe_pilotPipe0_cameraPreproc_transformNode_pass_1_submittee:
               Dependencies:
-              - pilotPipe_process.dwcgfImagePipe_render0_renderNode_pass_1
+              - pilotPipe_process.dwcgfImagePipe_pilotPipe0_cameraPreproc_transformNode_pass_1
+              Resources:
+              - GPU
+              WCET: 54.00 us
+          - dwcgfImagePipe_pilotPipe0_cameraPreproc_transformNode_pass_2:
+              Dependencies:
+              - pilotPipe_process.dwcgfImagePipe_pilotPipe0_cameraPreproc_transformNode_pass_1_submittee
               - pilotPipe_process.pilotPipe_process_ssm_pass_0
               Resources:
               - CPU
@@ -51,6 +60,24 @@ standardSchedule:
               Resources:
               - CPU
               WCET: 7.00 us
+      - pilotHyperepoch.renderEpoch:
+          Runnables:
+          - dwcgfImagePipe_render0_renderNode_pass_0:
+              Resources:
+              - CPU
+              WCET: 374.00 us
+          - dwcgfImagePipe_render0_renderNode_pass_1:
+              Dependencies:
+              - pilotPipe_process.dwcgfImagePipe_render0_renderNode_pass_0
+              Resources:
+              - CPU
+              WCET: 17.00 us
+          - dwcgfImagePipe_render0_renderNode_pass_2:
+              Dependencies:
+              - pilotPipe_process.dwcgfImagePipe_render0_renderNode_pass_1
+              Resources:
+              - CPU
+              WCET: 17.00 us
       Resources:
         CUDA_STREAM:
         - CUDA_STREAM0: iGPU
@@ -61,6 +88,9 @@ standardSchedule:
   - pilotHyperepoch:
       Epochs:
       - cameraEpoch:
+          Frames: 1
+          Period: 33.00 ms
+      - renderEpoch:
           Frames: 1
           Period: 33.00 ms
       Period: 33.00 ms

@@ -27,11 +27,23 @@
             "parameters": {
                 "*": "$*"
             }
+        },
+        "cameraPreproc": {
+            "componentType": "../preproc/PilotPreproc.graphlet.json",
+            "parameters": {
+                "*": "$*"
+            }
         }
     },
     "connections": [
         {
             "src": "cameraCapture.VALUE_0",
+            "dests": {
+                "cameraPreproc.VALUE_IN": {}
+            }
+        },
+        {
+            "src": "cameraPreproc.VALUE_OUT",
             "dests": {
                 "VALUE_0": {}
             }

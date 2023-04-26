@@ -31,7 +31,15 @@
                             "frames": 1,
                             "passes": [
                                 [
-                                    "dwcgfImagePipe.pilotPipe0",
+                                    "dwcgfImagePipe.pilotPipe0"
+                                ]
+                            ]
+                        },
+                        "renderEpoch": {
+                            "period": 33000000,
+                            "frames": 1,
+                            "passes": [
+                                [
                                     "dwcgfImagePipe.render0"
                                 ]
                             ]

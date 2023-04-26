@@ -216,6 +216,7 @@ include_directories(BEFORE SYSTEM ${VIBRANTE_PDK}/include)
 
 # ros2
 set(PYTHON_SOABI cpython-38m-aarch64-linux-gnu)
-set(CMAKE_TRY_COMPILE_TARGET_TYPE STATIC_LIBRARY)
+# break nvcc
+# set(CMAKE_TRY_COMPILE_TARGET_TYPE STATIC_LIBRARY)
 # set(ENV{PKG_CONFIG_PATH} ${VIBRANTE_PDK}/filesystem/targetfs/usr/lib/aarch64-linux-gnu/pkgconfig)
 set(ENV{PKG_CONFIG_PATH} /usr/lib/aarch64-linux-gnu/pkgconfig)

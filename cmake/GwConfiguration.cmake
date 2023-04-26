@@ -44,3 +44,14 @@ endif()
 # Configured headers
 #-------------------------------------------------------------------------------
 include_directories(${SDK_BINARY_DIR}/configured)
+
+#-------------------------------------------------------------------------------
+# CUDA configuration
+#-------------------------------------------------------------------------------
+# Remove warnings from Eigen headers
+set(CUDA_NVCC_FLAGS "${CUDA_NVCC_FLAGS};-Xcudafe \"--diag_suppress=useless_using_declaration --diag_suppress=set_but_not_used --diag_suppress=never_defined --diag_suppress=noreturn_function_does_return --diag_suppress=decl_modifiers_ignored --diag_suppress=boolean_controlling_expr_is_constant\"")
+
+# Add debug info
+# Note: This is disabled because it takes very long to do JIT compilation of kernels
+#       with debug info. Enable this if you intend to do CUDA debugging.
+# set(CUDA_NVCC_FLAGS_DEBUG "--debug;--device-debug;${CUDA_NVCC_FLAGS_DEBUG}")

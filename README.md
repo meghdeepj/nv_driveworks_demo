@@ -45,6 +45,7 @@ sudo -H python3 -m pip install jsonschema
 # sudo cp lib/*.a /usr/lib
 
 # ros2 development tool
+sudo tar --use-compress-program=pigz -xvpf res/ros-foxy.tar.gz -C /drive/drive-linux/filesystem/targetfs/
 export ROS2_HOME=/drive/drive-linux/filesystem/targetfs/opt/ros/foxy/
 export PYTHONPATH=${ROS2_HOME}/lib/python3.8/site-packages
 export PATH=${PATH}:${ROS2_HOME}/bin

@@ -29,21 +29,21 @@ project(gw_demo C CXX)
 #-------------------------------------------------------------------------------
 # Set CUDA_DIR
 #-------------------------------------------------------------------------------
-if (DEFINED CUDA_DIR)
-    if((DEFINED CUDA_TOOLKIT_ROOT_DIR) AND (NOT CUDA_TOOLKIT_ROOT_DIR STREQUAL CUDA_DIR))
-        message(FATAL_ERROR "Cannot set both CUDA_DIR and (legacy) CUDA_TOOLKIT_ROOT_DIR")
-    endif()
-elseif (DEFINED CUDA_TOOLKIT_ROOT_DIR)
-    message(WARNING "Please set CUDA_DIR instead of (legacy) CUDA_TOOLKIT_ROOT_DIR")
-    set(CUDA_DIR  ${CUDA_TOOLKIT_ROOT_DIR} CACHE PATH "CUDA Toolkit location.")
-else()
-    set(CUDA_DIR  "/usr/local/cuda/" CACHE PATH "CUDA Toolkit location.")
-endif()
-if(NOT CMAKE_CUDA_COMPILER)
-    set(CMAKE_CUDA_COMPILER "${CUDA_DIR}/bin/nvcc")
-endif()
-set(CMAKE_CUDA_HOST_COMPILER ${CMAKE_CXX_COMPILER})
-enable_language(CUDA)
+# if (DEFINED CUDA_DIR)
+#     if((DEFINED CUDA_TOOLKIT_ROOT_DIR) AND (NOT CUDA_TOOLKIT_ROOT_DIR STREQUAL CUDA_DIR))
+#         message(FATAL_ERROR "Cannot set both CUDA_DIR and (legacy) CUDA_TOOLKIT_ROOT_DIR")
+#     endif()
+# elseif (DEFINED CUDA_TOOLKIT_ROOT_DIR)
+#     message(WARNING "Please set CUDA_DIR instead of (legacy) CUDA_TOOLKIT_ROOT_DIR")
+#     set(CUDA_DIR  ${CUDA_TOOLKIT_ROOT_DIR} CACHE PATH "CUDA Toolkit location.")
+# else()
+#     set(CUDA_DIR  "/usr/local/cuda/" CACHE PATH "CUDA Toolkit location.")
+# endif()
+# if(NOT CMAKE_CUDA_COMPILER)
+#     set(CMAKE_CUDA_COMPILER "${CUDA_DIR}/bin/nvcc")
+# endif()
+# set(CMAKE_CUDA_HOST_COMPILER ${CMAKE_CXX_COMPILER})
+# enable_language(CUDA)
 
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CUDA_STANDARD 11)
@@ -69,6 +69,7 @@ include(Gw3rdparty)
 include(GwInstallConfiguration)
 include(GwPackageConfiguration)
 include(UploadVibrante)
+include(MakeCUDASourceLibs)
 if(GTest_FOUND)
     # Don't enable testing until after building dependencies
     enable_testing()
@@ -76,6 +77,32 @@ if(GTest_FOUND)
     include(CTest)
     include(GWTest)
 endif()
+
+#-------------------------------------------------------------------------------
+# CUDA dependency
+# Note: needs to be after defining all configurations
+#-------------------------------------------------------------------------------
+find_package(CUDA)
+if(VIBRANTE)
+    list(APPEND CUDA_NVCC_FLAGS -lineinfo --gpu-architecture=compute_53)
+    list(APPEND CUDA_NVCC_FLAGS --gpu-code=sm_60,sm_62,sm_72,compute_53)
+else()
+    list(APPEND CUDA_NVCC_FLAGS -lineinfo --gpu-architecture=compute_53)
+    if(NOT CUDA_HOST_GPU_CODE_FLAGS)
+        list(APPEND CUDA_NVCC_FLAGS --gpu-code=compute_53)
+    else()
+        # Compile for local host arch only
+        list(APPEND CUDA_NVCC_FLAGS ${CUDA_HOST_GPU_CODE_FLAGS})
+    endif()
+endif()
+set(CUDA_NON_PROPAGATED_HOST_FLAGS "-Wold-style-cast") # disable certain CUDA flags to be not propagated
+list(APPEND CUDA_NVCC_FLAGS -std=c++11)
+include_directories(SYSTEM ${CUDA_TOOLKIT_INCLUDE})
+if(NOT CMAKE_CUDA_COMPILER)
+    set(CMAKE_CUDA_COMPILER "${CUDA_TOOLKIT_ROOT_DIR}/bin/nvcc")
+endif()
+set(CMAKE_CUDA_HOST_COMPILER ${CMAKE_CXX_COMPILER})
+enable_language(CUDA)
 
 #-------------------------------------------------------------------------------
 # DriveWorks SDK
@@ -94,6 +121,7 @@ set(Driveworks_LIBRARIES
     driveworks
     driveworks-shared
     driveworks-visualization
+    ${CUDA_CUDA_LIBRARY}
 )
 
 if(VIBRANTE)

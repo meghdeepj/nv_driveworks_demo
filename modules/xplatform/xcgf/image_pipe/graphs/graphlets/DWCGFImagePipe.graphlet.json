@@ -40,7 +40,10 @@
         {
             "src": "pilotPipe0.VALUE_0",
             "dests": {
-                "render0.VALUE_0": {}
+                "render0.VALUE_0": {
+                    "mailbox": true,
+                    "reuse": true
+                }
             }
         },
         {

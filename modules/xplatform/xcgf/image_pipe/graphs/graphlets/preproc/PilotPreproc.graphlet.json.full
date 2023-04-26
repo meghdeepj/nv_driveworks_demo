@@ -1,13 +1,13 @@
 {
     "name": "PilotPreproc",
     "inputPorts": {
-        "VALUE_IN": {
-            "type": "int"
+        "IMAGE_IN": {
+            "type": "int32_t"
         }
     },
     "outputPorts": {
-        "VALUE_OUT": {
-            "type": "int"
+        "IMAGE_OUT": {
+            "type": "int32_t"
         },
         "IMAGE_TIMESTAMP": {
             "type": "int32_t"
@@ -21,20 +21,17 @@
             "parameters": {
                 "*": "$*"
             }
+        },
+        "undistortNode": {
+            "componentType": "../../nodes/preproc/UndistortNode.node.json"
+        },
+        "resizeNode": {
+            "componentType": "../../nodes/preproc/ResizeNode.node.json"
+        },
+        "alignNode": {
+            "componentType": "../../nodes/preproc/AlignNode.node.json"
         }
     },
     "connections": [
-        {
-            "src": "VALUE_IN",
-            "dests": {
-                "transformNode.VALUE_IN": {}
-            }
-        },
-        {
-            "src": "transformNode.VALUE_OUT",
-            "dests": {
-                "VALUE_OUT": {}
-            }
-        }
     ]
 }
