@@ -3,3 +3,4 @@ target/
 example/dwcgf/helloworld/graphs/*.stm
 *.drawio.*
 ros-*.tar.gz
+gw_demo

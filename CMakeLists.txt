@@ -171,9 +171,23 @@ endif()
 message(STATUS "zs: LINUX is: ${LINUX}")
 message(STATUS "zs: VIBRANTE is: ${VIBRANTE}")
 
+set(GW_ORIN_SH ${CMAKE_CURRENT_SOURCE_DIR}/scripts/orin.sh)
+# set(GW_TMUX_SH ${CMAKE_CURRENT_SOURCE_DIR}/scripts/tmux_into.sh)
+
 install(
     DIRECTORY docker
     DESTINATION ${CMAKE_CURRENT_SOURCE_DIR}/target/
     USE_SOURCE_PERMISSIONS
     PATTERN ".gitkeep" EXCLUDE
+)
+
+install(
+    DIRECTORY scripts/.vscode
+    DESTINATION ${CMAKE_CURRENT_SOURCE_DIR}/target/
+    USE_SOURCE_PERMISSIONS
+    PATTERN ".gitkeep" EXCLUDE
+)
+install(PROGRAMS
+    ${GW_ORIN_SH}
+    DESTINATION ${CMAKE_CURRENT_SOURCE_DIR}/target/
 )

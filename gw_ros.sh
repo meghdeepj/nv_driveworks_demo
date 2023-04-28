@@ -364,7 +364,7 @@ function config() {
   COLCON_ARG=" --metas ../packages/colcon.meta --build-base ../target/colcon/build --install-base ../target/colcon/install --test-result-base ../target/colcon/test "
   # --symlink-install --merge-install
   # INSTALL_ARG=" --symlink-install "
-  INSTALL_ARG="  "
+  INSTALL_ARG=" --merge-install "
   TEST_ARG=" --packages-select shm_msgs --ctest-args -DSKIP_MULTI_RMW_TESTS=ON "
   # -DRMW_IMPLEMENTATION=rmw_iceoryx_cpp --abort-on-error
   # test_communication test_rclcpp

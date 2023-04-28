@@ -1,0 +1,60 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        // args is not allowed in docker exec
+        {
+            "label": "target-postbuild",
+            "type": "shell",
+            "command": "docker exec -u $USER -e HISTFILE=/gw_demo/.dev_bash_hist -it gw_orin_20.04_$USER /bin/bash ./docker/scripts/target_postbuild.sh",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "args": [],
+            "problemMatcher": {
+                "fileLocation": [
+                    "relative",
+                    "${workspaceFolder}"
+                ]
+            },
+            "group": {
+                "kind": "none",
+                "isDefault": false
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated",
+                "clear": true,
+                "focus": true,
+                "group": "target_docker"
+            },
+        },
+        {
+            "label": "clean_log",
+            "type": "shell",
+            "command": "docker exec -u $USER -e HISTFILE=/target/.dev_bash_hist -it gw_orin_20.04_$USER /bin/bash ./orin.sh clean",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "args": [],
+            "problemMatcher": {
+                "fileLocation": [
+                    "relative",
+                    "${workspaceFolder}"
+                ]
+            },
+            "group": {
+                "kind": "none",
+                "isDefault": false
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated",
+                "clear": true,
+                "focus": true,
+                "group": "clean"
+            }
+        }
+    ]
+}

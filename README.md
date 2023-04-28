@@ -29,6 +29,8 @@ docker load -i ./drive-sdk-docker-6.0.6.tar
 # 进入container
 ./docker/build/docker_into.sh
 # 额外安装软件
+./docker/scripts/sdk_postbuild.sh
+# 额外安装的软件如下
 sudo apt update
 sudo apt install python3-numpy -y
 sudo apt install python3-pip -y
@@ -59,6 +61,15 @@ sudo apt install libspdlog-dev:arm64 libyaml-dev:arm64 libpython3-dev:arm64 libt
 运行时docker
 
 ```sh
+docker pull arm64v8/ros:foxy
+# 启动docker, 容器名称为gw_orin_20.04_${USER}
+./docker/build/orin_build.sh
+# 进入container
+./docker/build/orin_into.sh
+# 额外安装软件
+./docker/scripts/orin_postbuild.sh
+
+# 额外安装的软件如下
 sudo apt install pigz
 ```
 
@@ -116,6 +127,15 @@ make -C /gw_demo/target/aarch64/build -j3 install
 cd target/aarch64/install/gw_demo/lib/
 ldd ./libcgf_custom_nodes.so
 ldd ./libcgf_custom_nodes.so | grep found
+```
+
+### vscode编译配置
+
+已经配置好`tasks.json`，可通过task
+
+```sh
+# 为了实现查看错误跳转，创建一个软连接
+ln -s $PWD ./gw_demo
 ```
 
 ## 打包(暂不可用)
@@ -192,7 +212,17 @@ ldd ./libmodule_demo_d.so
 ldd ./libmodule_demo_d.so | grep found
 ```
 
-基于vscode工具链的调试
+### 开发时调试
+
+已经编写了`launch.json`
+
+```sh
+
+```
+
+### 运行时调试
+
+已经编写了`launch.json`
 
 ```sh
 
@@ -296,4 +326,4 @@ date && tree -d -L 3
 
 - docker环境下terminal没有彩色输出
 - docker环境下terminal apt安装不能tab
-- docker环境下不能启动界面?
+- [*]docker环境下不能启动界面? (已解决 -e DISPLAY)

@@ -1,0 +1,203 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        // args is not allowed in docker exec
+        {
+            "label": "sdk-postbuild",
+            "type": "shell",
+            "command": "docker exec -u $USER -e HISTFILE=/gw_demo/.dev_bash_hist -it gw_sdk_20.04_$USER /bin/bash ./docker/scripts/sdk_postbuild.sh",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "args": [],
+            "problemMatcher": {
+                "fileLocation": [
+                    "relative",
+                    "${workspaceFolder}"
+                ]
+            },
+            "group": {
+                "kind": "none",
+                "isDefault": false
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated",
+                "clear": true,
+                "focus": true,
+                "group": "sdk_docker"
+            },
+        },
+        {
+            "label": "cmake_aarch64",
+            "type": "shell",
+            "command": "docker exec -u $USER -e HISTFILE=/gw_demo/.dev_bash_hist -it gw_sdk_20.04_$USER /bin/bash ./gw.sh cmake_aarch64",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "args": [],
+            "problemMatcher": {
+                "base": "$cmake",
+                "fileLocation": [
+                    "relative",
+                    "${workspaceFolder}"
+                ]
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated",
+                "clear": true,
+                "focus": true,
+                "group": "cmake"
+            },
+        },
+        {
+            "label": "make_aarch64",
+            "type": "shell",
+            "command": "docker exec -u $USER -e HISTFILE=/gw_demo/.dev_bash_hist -it gw_sdk_20.04_$USER /bin/bash ./gw.sh make_aarch64",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "args": [],
+            "problemMatcher": {
+                "base": "$gcc",
+                "fileLocation": [
+                    "relative",
+                    "${workspaceFolder}"
+                ]
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "revealProblems": "onProblem",
+                "panel": "dedicated",
+                "clear": true,
+                "focus": true,
+                "group": "make"
+            },
+            "dependsOn":["cmake_aarch64"],
+            "dependsOrder": "sequence"
+        },
+        {
+            "label": "install_aarch64",
+            "type": "shell",
+            "command": "docker exec -u $USER -e HISTFILE=/gw_demo/.dev_bash_hist -it gw_sdk_20.04_$USER /bin/bash ./gw.sh install_aarch64",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "args": [],
+            "problemMatcher": {
+                "base": "$gcc",
+                "fileLocation": [
+                    "relative",
+                    "${workspaceFolder}"
+                ]
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "revealProblems": "onProblem",
+                "panel": "dedicated",
+                "clear": true,
+                "focus": true,
+                "group": "make"
+            },
+            "dependsOn": [
+                "make_aarch64"
+            ],
+            "dependsOrder": "sequence"
+        },
+        {
+            "label": "clean_gw",
+            "type": "shell",
+            "command": "docker exec -u $USER -e HISTFILE=/gw_demo/.dev_bash_hist -it gw_sdk_20.04_$USER /bin/bash ./gw.sh clean",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "args": [],
+            "problemMatcher": {
+                "fileLocation": [
+                    "relative",
+                    "${workspaceFolder}"
+                ]
+            },
+            "group": {
+                "kind": "none",
+                "isDefault": false
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated",
+                "clear": true,
+                "focus": true,
+                "group": "clean"
+            }
+        },
+        {
+            "label": "colcon_aarch64",
+            "type": "shell",
+            "command": "docker exec -u $USER -e HISTFILE=/gw_demo/.dev_bash_hist -it gw_sdk_20.04_$USER /bin/bash ./gw_ros.sh build_rel",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "args": [],
+            "problemMatcher": {
+                "base": "$gcc",
+                "fileLocation": [
+                    "relative",
+                    "${workspaceFolder}"
+                ]
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "presentation": {
+                "reveal": "always",
+                "revealProblems": "onProblem",
+                "panel": "dedicated",
+                "clear": true,
+                "focus": true,
+                "group": "colcon"
+            }
+        },
+        {
+            "label": "clean_colcon",
+            "type": "shell",
+            "command": "docker exec -u $USER -e HISTFILE=/gw_demo/.dev_bash_hist -it gw_sdk_20.04_$USER /bin/bash ./gw_ros.sh clean",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "args": [],
+            "problemMatcher": {
+                "fileLocation": [
+                    "relative",
+                    "${workspaceFolder}"
+                ]
+            },
+            "group": {
+                "kind": "none",
+                "isDefault": false
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated",
+                "clear": true,
+                "focus": true,
+                "group": "clean"
+            }
+        }
+    ]
+}

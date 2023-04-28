@@ -2,7 +2,6 @@
     "env": {
         "myDefaultIncludePath": [
             "${workspaceFolder}",
-            "${workspaceFolder}/include",
             "${workspaceRoot}",
             "/usr/include",
             "/usr/local/include"
@@ -24,7 +23,9 @@
                 "${myDriveosPath}/include",
                 "${myCudaPath}/include",
                 "${workspaceFolder}/modules/module_demo/include",
-                "${workspaceFolder}/modules/xplatform/xcgf/image_pipe/src"
+                "${workspaceFolder}/modules/xplatform/xcgf/image_pipe/src",
+                "/home/zs/orin_ws/nv_driveworks/driverorks-5.10/include/dwshared/dwfoundation",
+                "/home/zs/orin_ws/nv_driveworks/driverorks-5.10/include/3rdparty"
             ],
             "defines": [
                 "_DEBUG",
