@@ -1,0 +1,13 @@
+lib, /lib/aarch64-linux-gnu/libEGL_nvidia.so.0
+lib, /lib/aarch64-linux-gnu/libGLESv2_nvidia.so.2
+
+sym, /lib/aarch64-linux-gnu/libGL.so
+sym, /lib/aarch64-linux-gnu/libGL.so.1
+lib, /lib/aarch64-linux-gnu/libGL.so.1.7.0
+lib, /lib/aarch64-linux-gnu/libGLX.so.0
+lib, /lib/aarch64-linux-gnu/libGLdispatch.so.0
+lib, /lib/aarch64-linux-gnu/libGLU.so.1
+lib, /usr/lib/libnvidia-eglcore.so.535.00
+
+sym, /usr/lib/libnvidia-glsi.so
+lib, /usr/lib/libnvidia-glsi.so.530.00

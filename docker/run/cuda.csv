@@ -1,0 +1,23 @@
+sym, /usr/lib/libcuda.so
+lib, /usr/lib/libcuda.so.1
+lib, /usr/lib/libnvparser.so
+lib, /usr/lib/aarch64-linux-gnu/libnvinfer.so.8
+lib, /usr/lib/aarch64-linux-gnu/libnvonnxparser.so.8
+lib, /usr/lib/aarch64-linux-gnu/libnvinfer_plugin.so.8
+lib, /usr/lib/aarch64-linux-gnu/libcudnn.so.8
+lib, /usr/lib/aarch64-linux-gnu/libcudnn_adv_infer.so.8
+lib, /usr/lib/aarch64-linux-gnu/libcudnn_adv_train.so.8
+lib, /usr/lib/aarch64-linux-gnu/libcudnn_cnn_infer.so.8
+lib, /usr/lib/aarch64-linux-gnu/libcudnn_cnn_train.so.8
+lib, /usr/lib/aarch64-linux-gnu/libcudnn_ops_infer.so.8
+lib, /usr/lib/aarch64-linux-gnu/libcudnn_ops_train.so.8
+lib, /usr/lib/libnvcudla.so
+
+sym, /usr/local/cuda/targets/aarch64-linux/lib/libcudla.so
+lib, /usr/local/cuda/targets/aarch64-linux/lib/libcudla.so.1
+sym, /usr/local/cuda/targets/aarch64-linux/lib/libcudart.so
+lib, /usr/local/cuda/targets/aarch64-linux/lib/libcudart.so.11.0
+
+sym, /usr/local/cuda
+sym, /usr/local/cuda-11
+dir, /usr/local/cuda-11.4

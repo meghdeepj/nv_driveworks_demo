@@ -134,8 +134,6 @@ function local_volumes() {
     set +x
     # Apollo root and bazel cache dirs are required.
     volumes="-v $GW_ROS_ROOT_DIR:/target \
-            -v $DW_ROOT_HOST:$DW_ROOT_HOST \
-            -v $CUDA_ROOT_HOST:$CUDA_ROOT_HOST \
             -v /dev:/dev \
             -v $HOME/zhensheng/cuda-sample:${DOCKER_HOME}/zhensheng/cuda-sample \
              -v $HOME/.cache:${DOCKER_HOME}/.cache"
@@ -228,6 +226,7 @@ function main(){
         -e USE_GPU=$USE_GPU \
         -e NVIDIA_VISIBLE_DEVICES=all \
         -e NVIDIA_DRIVER_CAPABILITIES=compute,graphics,video,utility,display \
+        -e NVIDIA_REQUIRE_JETPACK="csv-mounts=all" \
         -e DISPLAY \
         $(local_volumes) \
         --net host \

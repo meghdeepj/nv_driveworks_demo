@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 cmd=$(which tmux) # tmux path
-session=target_tmux_into # session name
+session=orin_tmux_into # session name
 
 if [ -z $cmd ]; then
     echo "You need to install tmux."
@@ -46,14 +46,14 @@ if [ $? != 0 ]; then
     $cmd select-window -t $session:git
     # $cmd select-layout tiled
     for _pane in $(tmux list-panes -F '#P'); do
-        tmux send-keys -t ${_pane} "./docker/run/orin_into.sh" ENTER
+        tmux send-keys -t ${_pane} "./docker/build/orin_into.sh" ENTER
         tmux send-keys -t ${_pane} "source ./docker/scripts/my.bashrc" ENTER
     done
 
     $cmd select-window -t $session:dwcgf
     $cmd select-layout tiled
     for _pane in $(tmux list-panes -F '#P'); do
-        tmux send-keys -t ${_pane} "./docker/run/orin_into.sh" ENTER
+        tmux send-keys -t ${_pane} "./docker/build/orin_into.sh" ENTER
         tmux send-keys -t ${_pane} "source ./docker/scripts/my.bashrc" ENTER
         tmux send-keys -t ${_pane} "source ./target/colcon/install/local_setup.bash" ENTER
     done
@@ -61,7 +61,7 @@ if [ $? != 0 ]; then
     $cmd select-window -t $session:dwnvsci
     $cmd select-layout tiled
     for _pane in $(tmux list-panes -F '#P'); do
-        tmux send-keys -t ${_pane} "./docker/run/orin_into.sh" ENTER
+        tmux send-keys -t ${_pane} "./docker/build/orin_into.sh" ENTER
         tmux send-keys -t ${_pane} "source ./docker/scripts/my.bashrc" ENTER
         tmux send-keys -t ${_pane} "source ./target/colcon/install/local_setup.bash" ENTER
     done
@@ -69,7 +69,7 @@ if [ $? != 0 ]; then
     $cmd select-window -t $session:dwimage
     $cmd select-layout tiled
     for _pane in $(tmux list-panes -F '#P'); do
-        tmux send-keys -t ${_pane} "./docker/run/orin_into.sh" ENTER
+        tmux send-keys -t ${_pane} "./docker/build/orin_into.sh" ENTER
         tmux send-keys -t ${_pane} "source ./docker/scripts/my.bashrc" ENTER
         tmux send-keys -t ${_pane} "source ./target/colcon/install/local_setup.bash" ENTER
     done
@@ -77,7 +77,7 @@ if [ $? != 0 ]; then
     $cmd select-window -t $session:ros2
     $cmd select-layout tiled
     for _pane in $(tmux list-panes -F '#P'); do
-        tmux send-keys -t ${_pane} "./docker/run/orin_into.sh" ENTER
+        tmux send-keys -t ${_pane} "./docker/build/orin_into.sh" ENTER
         tmux send-keys -t ${_pane} "source ./docker/scripts/my.bashrc" ENTER
         tmux send-keys -t ${_pane} "source ./target/colcon/install/local_setup.bash" ENTER
     done
@@ -85,7 +85,7 @@ if [ $? != 0 ]; then
     $cmd select-window -t $session:nvsci
     $cmd select-layout tiled
     for _pane in $(tmux list-panes -F '#P'); do
-        tmux send-keys -t ${_pane} "./docker/run/orin_into.sh" ENTER
+        tmux send-keys -t ${_pane} "./docker/build/orin_into.sh" ENTER
         tmux send-keys -t ${_pane} "source ./docker/scripts/my.bashrc" ENTER
         tmux send-keys -t ${_pane} "source ./target/colcon/install/local_setup.bash" ENTER
     done

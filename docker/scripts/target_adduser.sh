@@ -6,7 +6,8 @@ deluser zs
 addgroup --gid "$DOCKER_GRP_ID" "$DOCKER_GRP"
 adduser --disabled-password --force-badname --gecos '' "$DOCKER_USER" \
     --uid "$DOCKER_USER_ID" --gid "$DOCKER_GRP_ID" 2>/dev/null
-usermod -aG sudo,video,i2c "$DOCKER_USER"
+usermod -aG sudo "$DOCKER_USER"
+usermod -aG video,i2c "$DOCKER_USER"
 echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
 # crack解决一个交叉编译错误
@@ -26,12 +27,6 @@ sudo sed -i 's/ports.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/' /etc/apt/sources.
 sudo cp /target/tools/ros.key /usr/share/keyrings/ros-archive-keyring.gpg
 # sudo echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://mirrors.tuna.tsinghua.edu.cn/ros2/ubuntu $(source /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
 sudo sed -i 's/packages.ros.org/mirrors.tuna.tsinghua.edu.cn/' /etc/apt/sources.list.d/ros2-latest.list
-
-# csv mapping
-sudo ln -s /usr/lib/libnvscibuf.so.1 /usr/lib/libnvscibuf.so
-sudo ln -s /usr/local/driveworks-5.10 /usr/local/driveworks
-sudo ln -s /usr/local/cuda-11.4 /usr/local/cuda-11
-sudo ln -s /usr/local/cuda-11 /usr/local/cuda
 
 # 检测是16.04还是18.04
 

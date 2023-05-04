@@ -1,7 +1,4 @@
 echo "sourcing zs.bashrc"
-# xlab env
-export XLAB_SYSROOT_DIR="/opt/xlab/sysroot"
-export SYSROOT_DIR=$XLAB_SYSROOT_DIR
 # using protobuf
 export PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=cpp
 # using cmake
