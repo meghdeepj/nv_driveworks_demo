@@ -1,0 +1,103 @@
+{
+    "name": "DWCGFImagePipe4App",
+    "logSpec": "file/rfc5424:{{logpath}}/{{appname}}.log",
+    "parameters": {},
+    "requiredSensors": "./DWCGFImagePipe4.required-sensors.json",
+    "sensorMappingLookups": [
+        "../sensor_mappings"
+    ],
+    "subcomponents": {
+        "dwcgfImagePipe4": {
+            "componentType": "../graphlets/DWCGFImagePipe4.graphlet.json",
+            "parameters": {}
+        }
+    },
+    "connections": [],
+    "states": {
+        "STANDARD": {
+            "stmScheduleKey": "standardSchedule",
+            "default": true
+        }
+    },
+    "stmSchedules": {
+        "standardSchedule": {
+            "wcet" : "./DWCGFImagePipe4_wcet.yaml",
+            "hyperepochs": {
+                "pilotHyperepoch": {
+                    "period": 33000000,
+                    "epochs": {
+                        "cameraEpoch": {
+                            "period": 33000000,
+                            "frames": 1,
+                            "passes": [
+                                [
+                                    "dwcgfImagePipe4.pilotPipe0"
+                                ]
+                            ]
+                        },
+                        "renderEpoch": {
+                            "period": 33000000,
+                            "frames": 1,
+                            "passes": [
+                                [
+                                    "dwcgfImagePipe4.render0"
+                                ]
+                            ]
+                        }
+                    },
+                    "resources": {
+                        "machine0.CPU0": [],
+                        "machine0.CPU1": [],
+                        "machine0.CPU2": [],
+                        "machine0.CPU3": [],
+                        "machine0.iGPU": [],
+                        "pilotPipe_process.CUDA_STREAM0:iGPU": [],
+                        "pilotPipe_process.CUDA_MUTEX_LOCK": []
+                    }
+                }
+            }
+        }
+    },
+    "processes": {
+        "ssm": {
+            "runOn": "machine0",
+            "executable": "vanillassm",
+            "logSpec": "file:{{logpath}}/{{appname}}.log"
+        },
+        "schedule_manager": {
+            "runOn": "machine0",
+            "executable": "ScheduleManager",
+            "argv": {
+                "--enableScheduleSwitching": "false",
+                "--scheduleManagerHostIP": "127.0.0.1",
+                "--scheduleManagerHostPort": "40100",
+                "--scheduleManagerNumClients": "1"
+            }
+        },
+        "stm_master": {
+            "runOn": "machine0",
+            "executable": "stm_master",
+            "logSpec": "file:{{logpath}}/{{appname}}.log",
+            "argv": {
+                "--allow-unregistered-runnables": true,
+                "--timeout-us": "60000000",
+                "--soc": "TegraA",
+                "-v": true,
+                "-m": true
+            }
+        },
+        "pilotPipe_process": {
+            "runOn": "machine0",
+            "executable": "LoaderLite",
+            "subcomponents": [
+                "dwcgfImagePipe4.pilotPipe0",
+                "dwcgfImagePipe4.render0"
+            ],
+            "argv": {
+                "--nodeInitThreadPoolSize": "7",
+                "--channelBindingThreadPoolSize": "7"
+            }
+        }
+    },
+    "extraInfo": "./DWCGFImagePipe4ExtraInfo.json"
+}

@@ -8,7 +8,6 @@ set(DWCGF_NODES_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src/nodes)
 set(DWCGF_CHANNEL_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src/channel)
 set(DWCGF_SCHE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/schedule)
 set(DWCGF_DATA_DIR ${CMAKE_CURRENT_SOURCE_DIR}/data)
-set(DWCGF_RUNNER ${CMAKE_CURRENT_SOURCE_DIR}/bin/run_cgf.sh)
 set(DWCGF_RIG_TESTER ${CMAKE_CURRENT_SOURCE_DIR}/bin/test_rig.sh)
 
 file(GLOB_RECURSE DWCGF_NODES_FILES
@@ -62,11 +61,6 @@ target_include_directories(${PROJECT_NAME}
                            ${DW_ROOT}/include/dwshared/dwtrace)
 
 # zs:
-set(DWCGF_FILE_PREFIX "DWCGFImagePipe")
-
-set(DWCGF_YAML ${CMAKE_CURRENT_SOURCE_DIR}/schedule/${DWCGF_FILE_PREFIX}__standardSchedule.yaml)
-set(DWCGF_STM ${CMAKE_CURRENT_SOURCE_DIR}/schedule/${DWCGF_FILE_PREFIX}__standardSchedule.stm)
-
 file(GLOB_RECURSE DWCGF_GRAPHS_FILES
     ${DWCGF_GRAPHS_DIR}/*.yaml
     ${DWCGF_GRAPHS_DIR}/*.json
@@ -88,30 +82,44 @@ message(STATUS "${_OUTPUT_CODE}")
 # if(NOT _EXIT_CODE EQUAL 0)
 #     message(FATAL_ERROR "validate_cgfdescriptors.py failed: please check the json files.")
 # endif()
-# app2yaml
-add_custom_command(
-    OUTPUT ${DWCGF_YAML}
-    COMMAND ${DRIVEWORKS_PATH}/tools/descriptionScheduleYamlGenerator/descriptionScheduleYamlGenerator.py --app ${DWCGF_GRAPHS_DIR}/app/${DWCGF_FILE_PREFIX}.app.json --output ${DWCGF_FILE_PREFIX}.app.yaml
-    WORKING_DIRECTORY ${DWCGF_SCHE_DIR}
-    MAIN_DEPENDENCY ${DWCGF_GRAPHS_DIR}/app/${DWCGF_FILE_PREFIX}.app.json
-    DEPENDS ${DWCGF_GRAPHS_FILES}
-    COMMENT "app2yaml...!"
-    VERBATIM
-)
-add_custom_target(${PROJECT_NAME}_yaml ALL DEPENDS ${DWCGF_YAML})
-# yaml2stm
-add_custom_command(
-    OUTPUT ${DWCGF_STM}
-    COMMAND ${DRIVEWORKS_PATH}/tools/stmcompiler -i ${DWCGF_YAML}
-    WORKING_DIRECTORY ${DWCGF_SCHE_DIR}
-    MAIN_DEPENDENCY ${DWCGF_YAML}
-    DEPENDS ${PROJECT_NAME}_yaml
-    COMMENT "yaml2stm...!"
-    VERBATIM
-)
-add_custom_target(${PROJECT_NAME}_stm ALL DEPENDS ${DWCGF_STM})
-# stmvizgraph
-# stmvizschedule
+
+set(DWCGF_APP_LIST 0;1;2;3;4;5;)
+foreach(DWCGF_APP_NO ${DWCGF_APP_LIST})
+    if(${DWCGF_APP_NO} STREQUAL 0)
+        set(DWCGF_APP_NO "")
+    endif()
+    set(DWCGF_FILE_PREFIX DWCGFImagePipe${DWCGF_APP_NO})
+    set(DWCGF_RUNNER ${CMAKE_CURRENT_SOURCE_DIR}/bin/run_cgf${DWCGF_APP_NO}.sh)
+    set(DWCGF_YAML ${CMAKE_CURRENT_SOURCE_DIR}/schedule/${DWCGF_FILE_PREFIX}__standardSchedule.yaml)
+    set(DWCGF_STM ${CMAKE_CURRENT_SOURCE_DIR}/schedule/${DWCGF_FILE_PREFIX}__standardSchedule.stm)
+    # app2yaml
+    add_custom_command(
+        OUTPUT ${DWCGF_YAML}
+        COMMAND ${DRIVEWORKS_PATH}/tools/descriptionScheduleYamlGenerator/descriptionScheduleYamlGenerator.py --app ${DWCGF_GRAPHS_DIR}/app${DWCGF_APP_NO}/${DWCGF_FILE_PREFIX}.app.json --output ${DWCGF_FILE_PREFIX}.app.yaml
+        WORKING_DIRECTORY ${DWCGF_SCHE_DIR}
+        MAIN_DEPENDENCY ${DWCGF_GRAPHS_DIR}/app${DWCGF_APP_NO}/${DWCGF_FILE_PREFIX}.app.json
+        DEPENDS ${DWCGF_GRAPHS_FILES}
+        COMMENT "app2yaml[${DWCGF_APP_NO}]...!"
+        VERBATIM
+    )
+    add_custom_target(${PROJECT_NAME}_yaml${DWCGF_APP_NO} ALL DEPENDS ${DWCGF_YAML})
+    # yaml2stm
+    add_custom_command(
+        OUTPUT ${DWCGF_STM}
+        COMMAND ${DRIVEWORKS_PATH}/tools/stmcompiler -i ${DWCGF_YAML}
+        WORKING_DIRECTORY ${DWCGF_SCHE_DIR}
+        MAIN_DEPENDENCY ${DWCGF_YAML}
+        DEPENDS ${PROJECT_NAME}_yaml${DWCGF_APP_NO}
+        COMMENT "yaml2stm[${DWCGF_APP_NO}]...!"
+        VERBATIM
+    )
+    add_custom_target(${PROJECT_NAME}_stm${DWCGF_APP_NO} ALL DEPENDS ${DWCGF_STM})
+    # stmvizgraph
+    # stmvizschedule
+    install(FILES ${DWCGF_YAML} DESTINATION "${GW_MODULE_BINARY_DESTINATION}")
+    install(FILES ${DWCGF_STM} DESTINATION "${GW_MODULE_BINARY_DESTINATION}")
+    install(PROGRAMS ${DWCGF_RUNNER} DESTINATION "${GW_MODULE_BINARY_DESTINATION}")
+endforeach()
 
 # install
 # https://blog.csdn.net/qq_38410730/article/details/102837401
@@ -119,12 +127,10 @@ set(GW_MODULE_GRAPHS_DESTINATION ${GW_MODULE_INSTALL_PREFIX}/graphs/${PROJECT_NA
 set(GW_MODULE_SCHE_DESTINATION ${GW_MODULE_INSTALL_PREFIX}/sche/${PROJECT_NAME})
 set(GW_MODULE_DATA_DESTINATION ${GW_MODULE_INSTALL_PREFIX}/data/${PROJECT_NAME})
 gw_add_module(${PROJECT_NAME})
-install(FILES ${DWCGF_YAML} DESTINATION "${GW_MODULE_BINARY_DESTINATION}")
-install(FILES ${DWCGF_STM} DESTINATION "${GW_MODULE_BINARY_DESTINATION}")
 install(DIRECTORY ${DWCGF_GRAPHS_DIR}/ DESTINATION ${GW_MODULE_GRAPHS_DESTINATION})
 # todo: 自动删去scheme的那一行，再拷贝过去
 install(DIRECTORY ${DWCGF_DATA_DIR}/ DESTINATION ${GW_MODULE_DATA_DESTINATION})
 install(PROGRAMS
-    ${DWCGF_RUNNER} ${DWCGF_RIG_TESTER}
+    ${DWCGF_RIG_TESTER}
     DESTINATION "${GW_MODULE_BINARY_DESTINATION}"
 )

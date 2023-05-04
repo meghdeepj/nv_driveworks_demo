@@ -52,7 +52,7 @@ __parseArgs() {
 # zs:
 PROJECT=dwcgf_image_pipe
 PRODUCT=DWCGFImagePipe
-PRODUCT_NO=
+PRODUCT_NO=5
 SCHEDULE=""
 CAR=trafficlightturning-hyperion8
 GDB_DEBUG=0
