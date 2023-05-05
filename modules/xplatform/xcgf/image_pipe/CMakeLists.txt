@@ -83,37 +83,41 @@ message(STATUS "${_OUTPUT_CODE}")
 #     message(FATAL_ERROR "validate_cgfdescriptors.py failed: please check the json files.")
 # endif()
 
-set(DWCGF_APP_LIST 0;1;2;3;4;5;)
-foreach(DWCGF_APP_NO ${DWCGF_APP_LIST})
-    if(${DWCGF_APP_NO} STREQUAL 0)
-        set(DWCGF_APP_NO "")
-    endif()
-    set(DWCGF_FILE_PREFIX DWCGFImagePipe${DWCGF_APP_NO})
-    set(DWCGF_RUNNER ${CMAKE_CURRENT_SOURCE_DIR}/bin/run_cgf${DWCGF_APP_NO}.sh)
+set(DWCGF_APP_LIST
+    RawCameraDeployPipe;
+    VirtualCameraDeployPipe;
+    YUVCameraDeployPipe;
+    RawCameraTestPipe;
+    VirtualCameraTestPipe;
+    YUVCameraTestPipe;
+)
+foreach(DWCGF_APP_TYPE ${DWCGF_APP_LIST})
+    set(DWCGF_FILE_PREFIX DWCGF${DWCGF_APP_TYPE})
+    set(DWCGF_RUNNER ${CMAKE_CURRENT_SOURCE_DIR}/bin/run${DWCGF_APP_TYPE}.sh)
     set(DWCGF_YAML ${CMAKE_CURRENT_SOURCE_DIR}/schedule/${DWCGF_FILE_PREFIX}__standardSchedule.yaml)
     set(DWCGF_STM ${CMAKE_CURRENT_SOURCE_DIR}/schedule/${DWCGF_FILE_PREFIX}__standardSchedule.stm)
     # app2yaml
     add_custom_command(
         OUTPUT ${DWCGF_YAML}
-        COMMAND ${DRIVEWORKS_PATH}/tools/descriptionScheduleYamlGenerator/descriptionScheduleYamlGenerator.py --app ${DWCGF_GRAPHS_DIR}/app${DWCGF_APP_NO}/${DWCGF_FILE_PREFIX}.app.json --output ${DWCGF_FILE_PREFIX}.app.yaml
+        COMMAND ${DRIVEWORKS_PATH}/tools/descriptionScheduleYamlGenerator/descriptionScheduleYamlGenerator.py --app ${DWCGF_GRAPHS_DIR}/app${DWCGF_APP_TYPE}/${DWCGF_FILE_PREFIX}.app.json --output ${DWCGF_FILE_PREFIX}.app.yaml
         WORKING_DIRECTORY ${DWCGF_SCHE_DIR}
-        MAIN_DEPENDENCY ${DWCGF_GRAPHS_DIR}/app${DWCGF_APP_NO}/${DWCGF_FILE_PREFIX}.app.json
+        MAIN_DEPENDENCY ${DWCGF_GRAPHS_DIR}/app${DWCGF_APP_TYPE}/${DWCGF_FILE_PREFIX}.app.json
         DEPENDS ${DWCGF_GRAPHS_FILES}
-        COMMENT "app2yaml[${DWCGF_APP_NO}]...!"
+        COMMENT "app2yaml[${DWCGF_APP_TYPE}]...!"
         VERBATIM
     )
-    add_custom_target(${PROJECT_NAME}_yaml${DWCGF_APP_NO} ALL DEPENDS ${DWCGF_YAML})
+    add_custom_target(${PROJECT_NAME}_yaml${DWCGF_APP_TYPE} ALL DEPENDS ${DWCGF_YAML})
     # yaml2stm
     add_custom_command(
         OUTPUT ${DWCGF_STM}
         COMMAND ${DRIVEWORKS_PATH}/tools/stmcompiler -i ${DWCGF_YAML}
         WORKING_DIRECTORY ${DWCGF_SCHE_DIR}
         MAIN_DEPENDENCY ${DWCGF_YAML}
-        DEPENDS ${PROJECT_NAME}_yaml${DWCGF_APP_NO}
-        COMMENT "yaml2stm[${DWCGF_APP_NO}]...!"
+        DEPENDS ${PROJECT_NAME}_yaml${DWCGF_APP_TYPE}
+        COMMENT "yaml2stm[${DWCGF_APP_TYPE}]...!"
         VERBATIM
     )
-    add_custom_target(${PROJECT_NAME}_stm${DWCGF_APP_NO} ALL DEPENDS ${DWCGF_STM})
+    add_custom_target(${PROJECT_NAME}_stm${DWCGF_APP_TYPE} ALL DEPENDS ${DWCGF_STM})
     # stmvizgraph
     # stmvizschedule
     install(FILES ${DWCGF_YAML} DESTINATION "${GW_MODULE_BINARY_DESTINATION}")

@@ -13,6 +13,6 @@
 OLD_NAME=CameraDriver
 NEW_NAME=ImagePipe
 
-find ./ -type f -exec rename 's/DWCGFCameraDriver/DWCGFImagePipe/' '{}' \;
+find ./appYUVCameraDeployPipe -type f -exec rename 's/DWCGFImagePipe2/DWCGFYUVCameraDeployPipe/' '{}' \;
 rm ../schedule/*.yaml
 rm ../schedule/*.stm

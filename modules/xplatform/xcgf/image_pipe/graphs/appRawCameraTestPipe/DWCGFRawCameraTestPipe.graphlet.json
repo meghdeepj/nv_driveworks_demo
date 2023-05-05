@@ -1,0 +1,56 @@
+{
+    "name": "DWCGFRawCameraTestPipe",
+    "inputPorts": {},
+    "outputPorts": {
+        "PILOT_IMAGE_ARRAY": {
+            "type": "int32_t",
+            "array": 1
+        },
+        "PILOT_IMAGE_TIMESTAMP": {
+            "type": "int32_t"
+        },
+        "APA_IMAGE_ARRAY": {
+            "type": "int32_t",
+            "array": 1
+        },
+        "APA_IMAGE_TIMESTAMP": {
+            "type": "int32_t"
+        }
+    },
+    "parameters": {
+        "cameraIntrinsics": {
+            "type": "std::string",
+            "default": "camera_intrinsics"
+        }
+    },
+    "subcomponents": {
+        "pilotPipe0": {
+            "componentType": "../graphlets/pipe/PilotPipe.graphlet.json",
+            "parameters": {
+                "cameraIndex": 0
+            }
+        },
+        "render0":{
+            "componentType": "../graphlets/render/Render.graphlet.json",
+            "parameters":{
+            }
+        }
+    },
+    "connections": [
+        {
+            "src": "pilotPipe0.VALUE_0",
+            "dests": {
+                "render0.VALUE_0": {
+                    "mailbox": true,
+                    "reuse": true
+                }
+            }
+        },
+        {
+            "src": "pilotPipe0.GUARDIAN_INSTRUCT",
+            "dests": {
+                "render0.GUARDIAN_INSTRUCT": {}
+            }
+        }
+    ]
+}
