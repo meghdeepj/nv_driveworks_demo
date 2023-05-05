@@ -11,3 +11,5 @@ lib, /usr/lib/libnvidia-eglcore.so.535.00
 
 sym, /usr/lib/libnvidia-glsi.so
 lib, /usr/lib/libnvidia-glsi.so.530.00
+sym, /usr/lib/libnvidia-eglcore.so
+lib, /usr/lib/libnvidia-eglcore.so.530.00
