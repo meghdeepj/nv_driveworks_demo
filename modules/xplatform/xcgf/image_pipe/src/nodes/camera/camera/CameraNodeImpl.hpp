@@ -42,7 +42,7 @@ class gwCameraNodeImpl : public SimpleSensorNodeT<gwCameraNode>
 
   private:
     // Passes functions
-    dwStatus raw_output();
+    dwStatus yuv_output();
 
     // node internal from cgf
     gwCameraNodeParams m_params{};
@@ -61,7 +61,7 @@ class gwCameraNodeImpl : public SimpleSensorNodeT<gwCameraNode>
     // dwRigHandle_t m_rigConfig{};
     // workload: memory
     dwCameraFrameHandle_t m_camera_frame{ DW_NULL_HANDLE };
-    dwImageHandle_t m_image_raw{ DW_NULL_HANDLE };
+    dwImageHandle_t m_image_yuv{ DW_NULL_HANDLE };
     size_t m_epochCount{ 0 };
     gwGuardianInstruct m_guardian_instruct{};
 

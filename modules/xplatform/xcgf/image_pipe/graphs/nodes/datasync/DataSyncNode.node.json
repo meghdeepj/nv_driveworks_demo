@@ -2,28 +2,34 @@
     "comment": "datasync node",
     "generated": false,
     "library": "libdwcgf_image_pipe.so",
-    "name": "dw::framework::DataSyncNode",
+    "name": "dw::framework::gwDataSyncNode",
     "inputPorts": {
-        "SENSOR_TIMESTAMP": {
-            "type": "int32_t",
-            "array": 1,
+        "IMAGE_ARRAY": {
+            "type": "dwImageHandle_t",
+            "array": 8,
             "bindingRequired": true
         },
-        "VALUE_1": {
-            "type": "int32_t",
+        "IMAGE_TIMESTAMP_ARRAY": {
+            "type": "dwTime_t",
+            "array": 8,
             "bindingRequired": true
         }
     },
     "outputPorts": {
         "SYNCED_IMAGE_ARRAY":{
-            "type":"int32_t",
-            "array":1
+            "type":"dwImageHandle_t",
+            "array":8
         },
         "SYNCED_TIMESTAMP":{
-            "type":"int32_t"
+            "type":"dwTime_t"
         }
     },
-    "parameters": {},
+    "parameters": {
+        "masterCameraIndex": {
+            "type": "size_t",
+            "default": 0
+        }
+    },
     "passes": [
         {
             "name": "SETUP",

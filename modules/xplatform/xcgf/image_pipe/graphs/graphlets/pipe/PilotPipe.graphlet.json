@@ -3,10 +3,10 @@
     "inputPorts": {},
     "outputPorts": {
         "IMAGE": {
-            "type": "int32_t"
+            "type": "dwImageHandle_t"
         },
         "IMAGE_TIMESTAMP": {
-            "type": "int32_t"
+            "type": "dwTime_t"
         },
         "VALUE_0":{
             "type": "int"
@@ -19,13 +19,37 @@
         "cameraIndex": {
             "type": "size_t",
             "default": 0
+        },
+        "cameraType": {
+            "type": "gwCameraType",
+            "default": "GW_CAMERA_INVALID"
+        },
+        "cameraParameter": {
+            "type": "dw::core::FixedString<256>",
+            "default": "invalid"
+        },
+        "cameraProtocol": {
+            "type": "dw::core::FixedString<256>",
+            "default": "camera.virtual"
+        },
+        "cameraIntrinsics": {
+            "type": "dw::core::FixedString<256>",
+            "default": "invalid"
+        },
+        "preprocMode": {
+            "type": "gwPreprocMode",
+            "default": "GW_PREPROC_INVALID"
         }
     },
     "subcomponents": {
         "cameraCapture": {
             "componentType": "../camera/CameraCapture.graphlet.json",
             "parameters": {
-                "*": "$*"
+                "cameraIndex": "$cameraIndex",
+                "cameraType": "$cameraType",
+                "cameraParameter": "$cameraParameter",
+                "cameraProtocol": "$cameraProtocol",
+                "cameraIntrinsics": "$cameraIntrinsics"
             }
         },
         "cameraPreproc": {
@@ -43,15 +67,15 @@
             }
         },
         {
-            "src": "cameraPreproc.VALUE_OUT",
-            "dests": {
-                "VALUE_0": {}
-            }
-        },
-        {
             "src": "cameraCapture.GUARDIAN_INSTRUCT",
             "dests": {
                 "GUARDIAN_INSTRUCT": {}
+            }
+        },
+        {
+            "src": "cameraPreproc.VALUE_OUT",
+            "dests": {
+                "VALUE_0": {}
             }
         }
     ]

@@ -2,24 +2,29 @@
     "name": "PilotDataSync",
     "inputPorts": {
         "IMAGE_ARRAY": {
-            "type": "int32_t",
-            "array": 1
+            "type": "dwImageHandle_t",
+            "array": 8
         },
         "IMAGE_TIMESTAMP_ARRAY": {
-            "type": "int32_t",
-            "array": 1
+            "type": "dwTime_t",
+            "array": 8
         }
     },
     "outputPorts": {
         "SYNCED_IMAGE_ARRAY": {
-            "type": "int32_t",
-            "array": 1
+            "type": "dwImageHandle_t",
+            "array": 8
         },
         "SYNCED_TIMESTAMP": {
-            "type": "int32_t"
+            "type": "dwTime_t"
         }
     },
-    "parameters": {},
+    "parameters": {
+        "masterCameraIndex": {
+            "type": "size_t",
+            "default": 0
+        }
+    },
     "subcomponents": {
         "dataSyncNode": {
             "componentType": "../../nodes/datasync/DataSyncNode.node.json",
@@ -30,9 +35,147 @@
     },
     "connections": [
         {
+            "src": "IMAGE_ARRAY[0]",
+            "dests": {
+                "dataSyncNode.IMAGE_ARRAY[0]": {}
+            }
+        },
+        {
+            "src": "IMAGE_ARRAY[1]",
+            "dests": {
+                "dataSyncNode.IMAGE_ARRAY[1]": {}
+            }
+        },
+        {
+            "src": "IMAGE_ARRAY[2]",
+            "dests": {
+                "dataSyncNode.IMAGE_ARRAY[2]": {}
+            }
+        },
+        {
+            "src": "IMAGE_ARRAY[3]",
+            "dests": {
+                "dataSyncNode.IMAGE_ARRAY[3]": {}
+            }
+        },
+        {
+            "src": "IMAGE_ARRAY[4]",
+            "dests": {
+                "dataSyncNode.IMAGE_ARRAY[4]": {}
+            }
+        },
+        {
+            "src": "IMAGE_ARRAY[5]",
+            "dests": {
+                "dataSyncNode.IMAGE_ARRAY[5]": {}
+            }
+        },
+        {
+            "src": "IMAGE_ARRAY[6]",
+            "dests": {
+                "dataSyncNode.IMAGE_ARRAY[6]": {}
+            }
+        },
+        {
+            "src": "IMAGE_ARRAY[7]",
+            "dests": {
+                "dataSyncNode.IMAGE_ARRAY[7]": {}
+            }
+        },
+        {
+            "src": "IMAGE_TIMESTAMP_ARRAY[0]",
+            "dests": {
+                "dataSyncNode.IMAGE_TIMESTAMP_ARRAY[0]": {}
+            }
+        },
+        {
+            "src": "IMAGE_TIMESTAMP_ARRAY[1]",
+            "dests": {
+                "dataSyncNode.IMAGE_TIMESTAMP_ARRAY[1]": {}
+            }
+        },
+        {
+            "src": "IMAGE_TIMESTAMP_ARRAY[2]",
+            "dests": {
+                "dataSyncNode.IMAGE_TIMESTAMP_ARRAY[2]": {}
+            }
+        },
+        {
+            "src": "IMAGE_TIMESTAMP_ARRAY[3]",
+            "dests": {
+                "dataSyncNode.IMAGE_TIMESTAMP_ARRAY[3]": {}
+            }
+        },
+        {
+            "src": "IMAGE_TIMESTAMP_ARRAY[4]",
+            "dests": {
+                "dataSyncNode.IMAGE_TIMESTAMP_ARRAY[4]": {}
+            }
+        },
+        {
+            "src": "IMAGE_TIMESTAMP_ARRAY[5]",
+            "dests": {
+                "dataSyncNode.IMAGE_TIMESTAMP_ARRAY[5]": {}
+            }
+        },
+        {
+            "src": "IMAGE_TIMESTAMP_ARRAY[6]",
+            "dests": {
+                "dataSyncNode.IMAGE_TIMESTAMP_ARRAY[6]": {}
+            }
+        },
+        {
+            "src": "IMAGE_TIMESTAMP_ARRAY[7]",
+            "dests": {
+                "dataSyncNode.IMAGE_TIMESTAMP_ARRAY[7]": {}
+            }
+        },
+        {
             "src": "dataSyncNode.SYNCED_IMAGE_ARRAY[0]",
             "dests": {
                 "SYNCED_IMAGE_ARRAY[0]": {}
+            }
+        },
+        {
+            "src": "dataSyncNode.SYNCED_IMAGE_ARRAY[1]",
+            "dests": {
+                "SYNCED_IMAGE_ARRAY[1]": {}
+            }
+        },
+        {
+            "src": "dataSyncNode.SYNCED_IMAGE_ARRAY[2]",
+            "dests": {
+                "SYNCED_IMAGE_ARRAY[2]": {}
+            }
+        },
+        {
+            "src": "dataSyncNode.SYNCED_IMAGE_ARRAY[3]",
+            "dests": {
+                "SYNCED_IMAGE_ARRAY[3]": {}
+            }
+        },
+        {
+            "src": "dataSyncNode.SYNCED_IMAGE_ARRAY[4]",
+            "dests": {
+                "SYNCED_IMAGE_ARRAY[4]": {}
+            }
+        },
+        {
+            "src": "dataSyncNode.SYNCED_IMAGE_ARRAY[5]",
+            "dests": {
+                "SYNCED_IMAGE_ARRAY[5]": {}
+            }
+        },
+        {
+            "src": "dataSyncNode.SYNCED_IMAGE_ARRAY[6]",
+            "dests": {
+                "SYNCED_IMAGE_ARRAY[6]": {}
+            }
+        },
+        {
+            "src": "dataSyncNode.SYNCED_IMAGE_ARRAY[7]",
+            "dests": {
+                "SYNCED_IMAGE_ARRAY[7]": {}
             }
         },
         {

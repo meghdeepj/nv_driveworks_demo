@@ -32,19 +32,24 @@
         },
         "pilotPreprocMode": {
             "type": "gwPreprocMode",
-            "default": "GW_PREPROC_DW"
+            "default": "DW"
         }
     },
     "subcomponents": {
-        "cameraFrontLeftPipe": {
+        "cameraFrontLeft": {
             "componentType": "../graphlets/pipe/PilotPipe.graphlet.json",
             "parameters": {
                 "cameraIndex": 4,
-                "cameraType": "GW_CAMERA_RAW",
                 "cameraParameter": "camera-name=V1SIM623S4RU5195NB3,interface=csi-ab,CPHY-mode=1,link=1,output-format=processed,async-record=1,file-buffer-size=16777216,skip-eeprom=1",
                 "cameraProtocol": "camera.gmsl",
                 "cameraIntrinsics": "$cameraIntrinsics",
                 "preprocMode": "$pilotPreprocMode"
+            }
+        },
+        "pilotDataSync": {
+            "componentType": "./datasync/PilotDataSync.graphlet.json",
+            "parameters": {
+                "masterCameraIndex": "$masterPilotCameraIndex"
             }
         },
         "render0": {
@@ -54,7 +59,7 @@
     },
     "connections": [
         {
-            "src": "cameraFrontLeftPipe.VALUE_0",
+            "src": "cameraFrontLeft.VALUE_0",
             "dests": {
                 "render0.VALUE_0": {
                     "mailbox": true,
@@ -63,9 +68,21 @@
             }
         },
         {
-            "src": "cameraFrontLeftPipe.GUARDIAN_INSTRUCT",
+            "src": "cameraFrontLeft.GUARDIAN_INSTRUCT",
             "dests": {
                 "render0.GUARDIAN_INSTRUCT": {}
+            }
+        },
+        {
+            "src": "cameraFrontLeft.IMAGE",
+            "dests": {
+                "pilotDataSync.IMAGE_ARRAY[4]": {}
+            }
+        },
+        {
+            "src": "cameraFrontLeft.IMAGE_TIMESTAMP",
+            "dests": {
+                "dataSyncNode.IMAGE_TIMESTAMP_ARRAY[4]": {}
             }
         }
     ]

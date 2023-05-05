@@ -5,16 +5,16 @@
     "tasks": [
         // args is not allowed in docker exec
         {
-            "label": "target-postbuild",
+            "label": "run-cgfapp-local",
             "type": "shell",
-            "command": "docker exec -u $USER -e HISTFILE=/gw_demo/.dev_bash_hist -it gw_orin_20.04_$USER /bin/bash ./docker/scripts/target_postbuild.sh",
+            "command": "sudo ./bin/dwcgf_image_pipe/run${input:cgfappType}.sh",
             "options": {
-                "cwd": "${workspaceFolder}"
+                "cwd": "${workspaceFolder}/aarch64/install"
             },
             "args": [],
             "problemMatcher": {
                 "fileLocation": [
-                    "relative",
+                    "autoDetect",
                     "${workspaceFolder}"
                 ]
             },
@@ -27,11 +27,151 @@
                 "panel": "dedicated",
                 "clear": true,
                 "focus": true,
-                "group": "target_docker"
+                "group": "run"
+            },
+            "dependsOn": [
+                "clean_log-local"
+            ],
+            "dependsOrder": "sequence"
+        },
+        {
+            // todo: log-this-file to see any log file.
+            "label": "log-process-local",
+            "type": "shell",
+            "command": "tail -n 50 -f ./LogFolder/dwcgf_image_pipe/${input:cgfappType}/pilotPipe_process_0.log | grep --color=auto -n -A 25 -B 25 -i -E -e  \"what|error|invalid|exception|node|debug\"",
+            "options": {
+                "cwd": "${workspaceFolder}/aarch64/install"
+            },
+            "args": [],
+            "problemMatcher": {
+                "fileLocation": [
+                    "autoDetect",
+                    "${workspaceFolder}"
+                ]
+            },
+            "group": {
+                "kind": "none",
+                "isDefault": false
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated",
+                "clear": true,
+                "focus": true,
+                "group": "log"
             },
         },
         {
-            "label": "clean_log",
+            // todo: log-this-file to see any log file.
+            "label": "log-what-local",
+            "type": "shell",
+            "command": "grep --color=auto -r --include=*.log -n -H -A 3 -B 5 -i -E -e  \"what|error|invalid|exception\" ./LogFolder/dwcgf_image_pipe/${input:cgfappType}",
+            "options": {
+                "cwd": "${workspaceFolder}/aarch64/install"
+            },
+            "args": [],
+            "problemMatcher": {
+                "fileLocation": [
+                    "autoDetect",
+                    "${workspaceFolder}"
+                ]
+            },
+            "group": {
+                "kind": "none",
+                "isDefault": false
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated",
+                "clear": true,
+                "focus": true,
+                "group": "log"
+            },
+        },
+        {
+            "label": "target-postbuild-local",
+            "type": "shell",
+            "command": "./docker/scripts/target_postbuild.sh",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "args": [],
+            "problemMatcher": {
+                "fileLocation": [
+                    "autoDetect",
+                    "${workspaceFolder}"
+                ]
+            },
+            "group": {
+                "kind": "none",
+                "isDefault": false
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated",
+                "clear": true,
+                "focus": true,
+                "group": "build"
+            },
+            "dependsOn": [
+                "clean_log-local"
+            ],
+            "dependsOrder": "sequence"
+        },
+        {
+            "label": "clean_log-local",
+            "type": "shell",
+            "command": "./orin.sh clean",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "args": [],
+            "problemMatcher": {
+                "fileLocation": [
+                    "autoDetect",
+                    "${workspaceFolder}"
+                ]
+            },
+            "group": {
+                "kind": "none",
+                "isDefault": false
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated",
+                "clear": true,
+                "focus": true,
+                "group": "clean"
+            }
+        },
+        {
+            "label": "target-postbuild-docker",
+            "type": "shell",
+            "command": "docker exec -u $USER -e HISTFILE=/gw_demo/.dev_bash_hist -it gw_orin_20.04_$USER /bin/bash ./docker/scripts/target_postbuild.sh",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "args": [],
+            "problemMatcher": {
+                "fileLocation": [
+                    "autoDetect",
+                    "${workspaceFolder}"
+                ]
+            },
+            "group": {
+                "kind": "none",
+                "isDefault": false
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated",
+                "clear": true,
+                "focus": true,
+                "group": "docker"
+            },
+        },
+        {
+            "label": "clean_log-docker",
             "type": "shell",
             "command": "docker exec -u $USER -e HISTFILE=/target/.dev_bash_hist -it gw_orin_20.04_$USER /bin/bash ./orin.sh clean",
             "options": {
@@ -40,7 +180,7 @@
             "args": [],
             "problemMatcher": {
                 "fileLocation": [
-                    "relative",
+                    "autoDetect",
                     "${workspaceFolder}"
                 ]
             },
@@ -56,5 +196,21 @@
                 "group": "clean"
             }
         }
+    ],
+    "inputs": [
+        {
+            "type": "pickString",
+            "id": "cgfappType",
+            "description": "What type of cgfapp do you want to run?",
+            "options": [
+                "RawCameraDeployPipe",
+                "VirtualCameraDeployPipe",
+                "YUVCameraDeployPipe",
+                "RawCameraTestPipe",
+                "VirtualCameraTestPipe",
+                "YUVCameraTestPipe",
+            ],
+            "default": "RawCameraDeployPipe"
+        },
     ]
 }

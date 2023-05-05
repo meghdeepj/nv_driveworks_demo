@@ -23,11 +23,12 @@ chmod +x -R ./scripts/
 
 ```sh
 docker load -i ./drive-sdk-docker-6.0.6.tar
+docker pull nvcr.io/drive/driveos-sdk/drive-agx-orin-linux-aarch64-sdk-build-x86
 # nvcr.io/drive/driveos-sdk/drive-agx-orin-linux-aarch64-sdk-build-x86   6.0.6.0-0004               2a61be9dd0a0   8 weeks ago    54.1GB
 # 启动docker, 容器名称为gw_sdk_20.04_${USER}
-./docker/build/docker_build.sh
+./docker/build/sdk_build.sh
 # 进入container
-./docker/build/docker_into.sh
+./docker/build/sdk_into.sh
 # 额外安装软件
 ./docker/scripts/sdk_postbuild.sh
 # 额外安装的软件如下
@@ -136,6 +137,7 @@ ldd ./libcgf_custom_nodes.so | grep found
 ```sh
 # 为了实现查看错误跳转，创建一个软连接
 ln -s $PWD ./gw_demo
+sudo ln -s $PWD /gw_demo
 ```
 
 ## 打包(暂不可用)
@@ -171,9 +173,12 @@ sudo ln -s ~/orin_ws/nv_driveworks/driverorks-5.10/ /usr/local/driveworks
 
 ```sh
 cd nv_driveworks_demo/target/aarch64/install/bin
-sudo ./dwcgf_image_pipe/run_cgf.sh
-
+# sudo ./dwcgf_image_pipe/run_cgf.sh
+sudo ./dwcgf_image_pipe/runRawCameraDeployPipe.sh
+# 删除日志
 sudo rm -rf ./LogFolder/ ./framesync_*
+# 查看日志
+tail -n 50 -f ./LogFolder/dwcgf_image_pipe/RawCameraDeployPipe/pilotPipe_process_0.log
 ```
 
 ### 运行时docker

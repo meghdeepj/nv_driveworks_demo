@@ -11,7 +11,7 @@
     },
     "parameters": {
         "cameraIntrinsics": {
-            "type": "std::string",
+            "type": "dw::core::FixedString<256>",
             "default": "camera_intrinsics"
         }
     },

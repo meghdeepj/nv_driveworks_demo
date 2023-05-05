@@ -19,12 +19,8 @@
 #include "channel/Image.hpp"
 #include "channel/GuardianInstruct.hpp"
 #include "channel/CustomRawBuffer.hpp"
-
-// predifined channel type did not work
-// #include <dwframework/dwnodes/common/channelpackets/Image.hpp>
-// #include <dwframework/dwnodes/common/channelpackets/SelfCalibrationTypes.hpp>
-// #include <dwframework/dwnodes/common/channelpackets/SensorCommonTypes.hpp>
-// #include <dwframework/dwnodes/common/channelpackets/Sensors.hpp>
+// custom parameter
+#include "parameter/CameraTypes.hpp"
 
 namespace dw
 {
@@ -37,8 +33,11 @@ struct gwCameraNodeParams
 {
     // todo: sal_handle in params
     // todo: const* to fixedstring
-    char8_t const* sensorName;
-    dw::core::FixedString<64> name;
+    size_t cameraIndex;
+    gwCameraType cameraType;
+    dw::core::FixedString<256> cameraParameter;
+    dw::core::FixedString<256> cameraProtocol;
+    dw::core::FixedString<256> cameraIntrinsics;
     // cudaStream_t cudaStream;
     // dwConstRigHandle_t rig;
     // dwSALHandle_t sal;
@@ -55,7 +54,8 @@ class gwCameraNode : public ExceptionSafeSensorNode
     static constexpr auto describeOutputPorts()
     {
         using namespace dw::framework;
-        return describePortCollection(DW_DESCRIBE_PORT(dwImageHandle_t, "IMAGE_NATIVE_RAW"_sv),
+        return describePortCollection(DW_DESCRIBE_PORT(dwImageHandle_t, "IMAGE_PROCESSED_YUV"_sv),
+                                      DW_DESCRIBE_PORT(dwTime_t, "IMAGE_TIMESTAMP"_sv),
                                       DW_DESCRIBE_PORT(int, "VALUE_0"_sv),
                                       DW_DESCRIBE_PORT(gwGuardianInstruct, "GUARDIAN_INSTRUCT"_sv));
     };
@@ -63,7 +63,7 @@ class gwCameraNode : public ExceptionSafeSensorNode
     static constexpr auto describePasses()
     {
         return describePassCollection(describePass("SETUP"_sv, DW_PROCESSOR_TYPE_CPU),
-                                      describePass("RAW_OUTPUT"_sv, DW_PROCESSOR_TYPE_CPU),
+                                      describePass("PROCESSED_OUTPUT"_sv, DW_PROCESSOR_TYPE_CPU),
                                       describePass("TEARDOWN"_sv, DW_PROCESSOR_TYPE_CPU));
     }
 
@@ -79,9 +79,14 @@ class gwCameraNode : public ExceptionSafeSensorNode
         // file:///E:/orin_ws/nv_driveworks/driverorks-5.10/doc/nvcgf_html/cgf_tutorials_node.html
         return describeConstructorArguments<gwCameraNodeParams, dwContextHandle_t>(
             describeConstructorArgument(
-                DW_DESCRIBE_INDEX_PARAMETER_WITH_SEMANTIC(const char*, semantic_parameter_types::CameraName,
-                                                          "cameraIndex"_sv, &gwCameraNodeParams::sensorName),
-                DW_DESCRIBE_PARAMETER(dw::core::FixedString<64>, "name"_sv, &gwCameraNodeParams::name)),
+                DW_DESCRIBE_PARAMETER(size_t, "cameraIndex"_sv, &gwCameraNodeParams::cameraIndex),
+                DW_DESCRIBE_PARAMETER(gwCameraType, "cameraType"_sv, &gwCameraNodeParams::cameraType),
+                DW_DESCRIBE_PARAMETER(dw::core::FixedString<256>, "cameraParameter"_sv,
+                                      &gwCameraNodeParams::cameraParameter),
+                DW_DESCRIBE_PARAMETER(dw::core::FixedString<256>, "cameraProtocol"_sv,
+                                      &gwCameraNodeParams::cameraProtocol),
+                DW_DESCRIBE_PARAMETER(dw::core::FixedString<256>, "cameraIntrinsics"_sv,
+                                      &gwCameraNodeParams::cameraIntrinsics)),
             describeConstructorArgument(DW_DESCRIBE_UNNAMED_PARAMETER(dwContextHandle_t)));
     }
 

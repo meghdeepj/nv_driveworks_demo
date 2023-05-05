@@ -31,15 +31,7 @@
                             "frames": 1,
                             "passes": [
                                 [
-                                    "dwcgfRawCameraDeployPipe.pilotPipe0"
-                                ]
-                            ]
-                        },
-                        "renderEpoch": {
-                            "period": 33000000,
-                            "frames": 1,
-                            "passes": [
-                                [
+                                    "dwcgfRawCameraDeployPipe.cameraFrontLeftPipe",
                                     "dwcgfRawCameraDeployPipe.render0"
                                 ]
                             ]
@@ -90,12 +82,12 @@
             "runOn": "machine0",
             "executable": "LoaderLite",
             "subcomponents": [
-                "dwcgfRawCameraDeployPipe.pilotPipe0",
+                "dwcgfRawCameraDeployPipe.cameraFrontLeftPipe",
                 "dwcgfRawCameraDeployPipe.render0"
             ],
             "argv": {
-                "--nodeInitThreadPoolSize": "7",
-                "--channelBindingThreadPoolSize": "7"
+                "--nodeInitThreadPoolSize": "8",
+                "--channelBindingThreadPoolSize": "8"
             }
         }
     },
