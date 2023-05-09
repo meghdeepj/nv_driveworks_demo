@@ -31,15 +31,7 @@
                             "frames": 1,
                             "passes": [
                                 [
-                                    "dwcgfVirtualCameraDeployPipe.pilotPipe0"
-                                ]
-                            ]
-                        },
-                        "renderEpoch": {
-                            "period": 33000000,
-                            "frames": 1,
-                            "passes": [
-                                [
+                                    "dwcgfVirtualCameraDeployPipe.cameraFrontLeftPipe",
                                     "dwcgfVirtualCameraDeployPipe.render0"
                                 ]
                             ]
@@ -90,12 +82,12 @@
             "runOn": "machine0",
             "executable": "LoaderLite",
             "subcomponents": [
-                "dwcgfVirtualCameraDeployPipe.pilotPipe0",
+                "dwcgfVirtualCameraDeployPipe.cameraFrontLeftPipe",
                 "dwcgfVirtualCameraDeployPipe.render0"
             ],
             "argv": {
-                "--nodeInitThreadPoolSize": "7",
-                "--channelBindingThreadPoolSize": "7"
+                "--nodeInitThreadPoolSize": "8",
+                "--channelBindingThreadPoolSize": "8"
             }
         }
     },

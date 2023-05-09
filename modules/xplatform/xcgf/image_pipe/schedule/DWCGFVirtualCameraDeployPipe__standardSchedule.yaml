@@ -6,52 +6,74 @@ standardSchedule:
       Epochs:
       - pilotHyperepoch.cameraEpoch:
           Runnables:
-          - dwcgfVirtualCameraDeployPipe_pilotPipe0_cameraCapture_cameraNode_pass_0:
+          - dwcgfVirtualCameraDeployPipe_cameraFrontLeftPipe_cameraCapture_cameraNode_pass_0:
               Dependencies:
               - pilotPipe_process.pilotPipe_process_ssm_pass_0
               Resources:
               - CPU
-              WCET: 374.00 us
-          - dwcgfVirtualCameraDeployPipe_pilotPipe0_cameraCapture_cameraNode_pass_1:
+              WCET: 1.00 us
+          - dwcgfVirtualCameraDeployPipe_cameraFrontLeftPipe_cameraCapture_cameraNode_pass_1:
               Dependencies:
-              - pilotPipe_process.dwcgfVirtualCameraDeployPipe_pilotPipe0_cameraCapture_cameraNode_pass_0
+              - pilotPipe_process.dwcgfVirtualCameraDeployPipe_cameraFrontLeftPipe_cameraCapture_cameraNode_pass_0
               - pilotPipe_process.pilotPipe_process_ssm_pass_0
               Resources:
               - CPU
-              WCET: 17.00 us
-          - dwcgfVirtualCameraDeployPipe_pilotPipe0_cameraCapture_cameraNode_pass_2:
+              WCET: 1.00 us
+          - dwcgfVirtualCameraDeployPipe_cameraFrontLeftPipe_cameraCapture_cameraNode_pass_2:
               Dependencies:
-              - pilotPipe_process.dwcgfVirtualCameraDeployPipe_pilotPipe0_cameraCapture_cameraNode_pass_1
+              - pilotPipe_process.dwcgfVirtualCameraDeployPipe_cameraFrontLeftPipe_cameraCapture_cameraNode_pass_1
               - pilotPipe_process.pilotPipe_process_ssm_pass_0
               Resources:
               - CPU
-              WCET: 17.00 us
-          - dwcgfVirtualCameraDeployPipe_pilotPipe0_cameraPreproc_transformNode_pass_0:
+              WCET: 1.00 us
+          - dwcgfVirtualCameraDeployPipe_cameraFrontLeftPipe_cameraPreproc_transformNode_pass_0:
               Dependencies:
-              - pilotPipe_process.dwcgfVirtualCameraDeployPipe_pilotPipe0_cameraCapture_cameraNode_pass_2
+              - pilotPipe_process.dwcgfVirtualCameraDeployPipe_cameraFrontLeftPipe_cameraCapture_cameraNode_pass_2
               - pilotPipe_process.pilotPipe_process_ssm_pass_0
               Resources:
               - CPU
-              WCET: 374.00 us
-          - dwcgfVirtualCameraDeployPipe_pilotPipe0_cameraPreproc_transformNode_pass_1:
+              WCET: 1.00 us
+          - dwcgfVirtualCameraDeployPipe_cameraFrontLeftPipe_cameraPreproc_transformNode_pass_1:
               Dependencies:
-              - pilotPipe_process.dwcgfVirtualCameraDeployPipe_pilotPipe0_cameraPreproc_transformNode_pass_0
+              - pilotPipe_process.dwcgfVirtualCameraDeployPipe_cameraFrontLeftPipe_cameraPreproc_transformNode_pass_0
               - pilotPipe_process.pilotPipe_process_ssm_pass_0
               Resources:
               - CPU
               - CUDA_MUTEX_LOCK
               - CUDA_STREAM
-              Submits: pilotPipe_process.dwcgfVirtualCameraDeployPipe_pilotPipe0_cameraPreproc_transformNode_pass_1_submittee
-              WCET: 17.00 us
-          - dwcgfVirtualCameraDeployPipe_pilotPipe0_cameraPreproc_transformNode_pass_1_submittee:
+              Submits: pilotPipe_process.dwcgfVirtualCameraDeployPipe_cameraFrontLeftPipe_cameraPreproc_transformNode_pass_1_submittee
+              WCET: 1.00 us
+          - dwcgfVirtualCameraDeployPipe_cameraFrontLeftPipe_cameraPreproc_transformNode_pass_1_submittee:
               Dependencies:
-              - pilotPipe_process.dwcgfVirtualCameraDeployPipe_pilotPipe0_cameraPreproc_transformNode_pass_1
+              - pilotPipe_process.dwcgfVirtualCameraDeployPipe_cameraFrontLeftPipe_cameraPreproc_transformNode_pass_1
               Resources:
               - GPU
-              WCET: 54.00 us
-          - dwcgfVirtualCameraDeployPipe_pilotPipe0_cameraPreproc_transformNode_pass_2:
+              WCET: 1.00 us
+          - dwcgfVirtualCameraDeployPipe_cameraFrontLeftPipe_cameraPreproc_transformNode_pass_2:
               Dependencies:
-              - pilotPipe_process.dwcgfVirtualCameraDeployPipe_pilotPipe0_cameraPreproc_transformNode_pass_1_submittee
+              - pilotPipe_process.dwcgfVirtualCameraDeployPipe_cameraFrontLeftPipe_cameraPreproc_transformNode_pass_1_submittee
+              - pilotPipe_process.pilotPipe_process_ssm_pass_0
+              Resources:
+              - CPU
+              WCET: 1.00 us
+          - dwcgfVirtualCameraDeployPipe_render0_renderNode_pass_0:
+              Dependencies:
+              - pilotPipe_process.dwcgfVirtualCameraDeployPipe_cameraFrontLeftPipe_cameraCapture_cameraNode_pass_2
+              - pilotPipe_process.dwcgfVirtualCameraDeployPipe_cameraFrontLeftPipe_cameraPreproc_transformNode_pass_2
+              - pilotPipe_process.pilotPipe_process_ssm_pass_0
+              Resources:
+              - CPU
+              WCET: 374.00 us
+          - dwcgfVirtualCameraDeployPipe_render0_renderNode_pass_1:
+              Dependencies:
+              - pilotPipe_process.dwcgfVirtualCameraDeployPipe_render0_renderNode_pass_0
+              - pilotPipe_process.pilotPipe_process_ssm_pass_0
+              Resources:
+              - CPU
+              WCET: 17.00 us
+          - dwcgfVirtualCameraDeployPipe_render0_renderNode_pass_2:
+              Dependencies:
+              - pilotPipe_process.dwcgfVirtualCameraDeployPipe_render0_renderNode_pass_1
               - pilotPipe_process.pilotPipe_process_ssm_pass_0
               Resources:
               - CPU
@@ -60,24 +82,6 @@ standardSchedule:
               Resources:
               - CPU
               WCET: 7.00 us
-      - pilotHyperepoch.renderEpoch:
-          Runnables:
-          - dwcgfVirtualCameraDeployPipe_render0_renderNode_pass_0:
-              Resources:
-              - CPU
-              WCET: 374.00 us
-          - dwcgfVirtualCameraDeployPipe_render0_renderNode_pass_1:
-              Dependencies:
-              - pilotPipe_process.dwcgfVirtualCameraDeployPipe_render0_renderNode_pass_0
-              Resources:
-              - CPU
-              WCET: 17.00 us
-          - dwcgfVirtualCameraDeployPipe_render0_renderNode_pass_2:
-              Dependencies:
-              - pilotPipe_process.dwcgfVirtualCameraDeployPipe_render0_renderNode_pass_1
-              Resources:
-              - CPU
-              WCET: 17.00 us
       Resources:
         CUDA_STREAM:
         - CUDA_STREAM0: iGPU
@@ -88,9 +92,6 @@ standardSchedule:
   - pilotHyperepoch:
       Epochs:
       - cameraEpoch:
-          Frames: 1
-          Period: 33.00 ms
-      - renderEpoch:
           Frames: 1
           Period: 33.00 ms
       Period: 33.00 ms

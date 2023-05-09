@@ -3,42 +3,58 @@
     "inputPorts": {},
     "outputPorts": {
         "PILOT_IMAGE_ARRAY": {
-            "type": "int32_t",
-            "array": 1
+            "type": "dwImageHandle_t",
+            "array": 8
         },
         "PILOT_IMAGE_TIMESTAMP": {
-            "type": "int32_t"
+            "type": "dwTime_t"
         },
         "APA_IMAGE_ARRAY": {
-            "type": "int32_t",
-            "array": 1
+            "type": "dwImageHandle_t",
+            "array": 4
         },
         "APA_IMAGE_TIMESTAMP": {
-            "type": "int32_t"
+            "type": "dwTime_t"
         }
     },
     "parameters": {
         "cameraIntrinsics": {
             "type": "dw::core::FixedString<256>",
             "default": "camera_intrinsics"
+        },
+        "masterPilotCameraIndex": {
+            "type": "size_t",
+            "default": 4
+        },
+        "masterApaCameraIndex": {
+            "type": "size_t",
+            "default": 0
+        },
+        "pilotPreprocMode": {
+            "type": "gwPreprocMode",
+            "default": "GW_PREPROC_DW"
         }
     },
     "subcomponents": {
-        "pilotPipe0": {
+        "cameraFrontLeftPipe": {
             "componentType": "../graphlets/pipe/PilotPipe.graphlet.json",
             "parameters": {
-                "cameraIndex": 0
+                "cameraIndex": 4,
+                "cameraType": "GW_CAMERA_RAW",
+                "cameraParameter": "video=./video/A-0000-raw.h264,fifo-size=5,frames-pool=4",
+                "cameraProtocol": "camera.virtual",
+                "cameraIntrinsics": "$cameraIntrinsics",
+                "preprocMode": "$pilotPreprocMode"
             }
         },
-        "render0":{
+        "render0": {
             "componentType": "../graphlets/render/Render.graphlet.json",
-            "parameters":{
-            }
+            "parameters": {}
         }
     },
     "connections": [
         {
-            "src": "pilotPipe0.VALUE_0",
+            "src": "cameraFrontLeftPipe.VALUE_0",
             "dests": {
                 "render0.VALUE_0": {
                     "mailbox": true,
@@ -47,7 +63,7 @@
             }
         },
         {
-            "src": "pilotPipe0.GUARDIAN_INSTRUCT",
+            "src": "cameraFrontLeftPipe.GUARDIAN_INSTRUCT",
             "dests": {
                 "render0.GUARDIAN_INSTRUCT": {}
             }
