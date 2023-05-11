@@ -23,7 +23,7 @@ sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
 sudo sed -i 's/archive.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/' /etc/apt/sources.list
 sudo sed -i 's/security.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/' /etc/apt/sources.list
 sudo sed -i 's/ports.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/' /etc/apt/sources.list
-sudo cp /gw_demo/tools/ros.key /usr/share/keyrings/ros-archive-keyring.gpg
+# sudo cp /gw_demo/tools/ros.key /usr/share/keyrings/ros-archive-keyring.gpg
 # sudo echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://mirrors.tuna.tsinghua.edu.cn/ros2/ubuntu $(source /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
 sudo sed -i 's/packages.ros.org/mirrors.tuna.tsinghua.edu.cn/' /etc/apt/sources.list.d/ros2-latest.list
 

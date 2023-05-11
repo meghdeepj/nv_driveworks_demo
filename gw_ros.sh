@@ -16,6 +16,9 @@ GW_ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd -P )"
 # GW_ROS_ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/../.." && pwd -P )"
 GW_ROS_ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/packages" && pwd -P )"
 GW_SYS_ROOT="/drive/drive-linux/filesystem/targetfs"
+if [ ! -d "$GW_SYS_ROOT" ];then
+  GW_SYS_ROOT=""
+fi
 
 function source_ga_base() {
   DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
@@ -23,6 +26,7 @@ function source_ga_base() {
 
   source ${DIR}/docker/scripts/gw_base.sh
   source ${GW_SYS_ROOT}/opt/ros/${GW_ROS_DIST}/setup.bash
+  source ${GW_SYS_ROOT}/opt/ros/${GW_ROS_DIST}-smacc2/target/colcon/install/local_setup.bash
 }
 
 function ga_check_system_config() {
@@ -130,6 +134,28 @@ function build_rel() {
   success 'build passed!'
 }
 
+function build_rel_native() {
+  info "Start building, please wait ..."
+
+  info "Building on $MACHINE_ARCH..."
+
+  info "Building with $JOB_ARG for $MACHINE_ARCH"
+
+  cd ${GW_ROS_ROOT_DIR}
+  export GPUAC_COMPILE_WITH_CUDA=1
+  # --force-cmake
+  info "colcon ${LOG_ARG} build ${COLCON_ARG} ${INSTALL_ARG} ${JOB_ARG}  ${PACKAGE_ARG}  ${CMAKE_OPT} -DCMAKE_BUILD_TYPE=Release"
+  colcon ${LOG_ARG} build ${COLCON_ARG} ${INSTALL_ARG} ${JOB_ARG}  ${PACKAGE_ARG} ${CMAKE_OPT} -DCMAKE_BUILD_TYPE=Release
+
+  # --packages-up-to
+  if [ ${PIPESTATUS[0]} -ne 0 ]; then
+    fail 'Build failed!'
+  fi
+  info "please source ./install/setup.bash"
+  cd -
+  success 'build passed!'
+}
+
 function build() {
   info "Start building, please wait ..."
 
@@ -150,85 +176,6 @@ function build() {
   info "please source ./install/setup.bash"
   cd -
   success 'build passed!'
-}
-
-function dpkg_install() {
-  info "Start install, please wait ..."
-
-  info "installing on $MACHINE_ARCH..."
-
-  cd ${GW_ROS_ROOT_DIR}/build
-  sudo dpkg -i --force-overwrite *.deb
-  cd -
-  success 'dpkg install  passed!'
-}
-
-function pkg_rel() {
-  info "Start packaging, please wait ..."
-
-  info "packaging on $MACHINE_ARCH..."
-
-  info "packaging with $JOB_ARG for $MACHINE_ARCH"
-
-  cd ${GW_ROS_ROOT_DIR}
-  # --force-cmake
-  set -e
-  export GPUAC_COMPILE_WITH_CUDA=1
-  info "packaging gpuac_base"
-  colcon ${JOB_ARG} --only-pkg-with-deps gpuac_base --make-args package \
-    --cmake-args -DCMAKE_BUILD_TYPE=Release \
-    -DCATKIN_BUILD_BINARY_PACKAGE=1 \
-    -DCMAKE_INSTALL_PREFIX=/opt/ros/${GW_ROS_DIST} \
-    -DCMAKE_EXPORT_COMPILE_COMMANDS=0
-  info "packaging gpuac_deps/open3d_conversions"
-  colcon ${JOB_ARG} --only-pkg-with-deps open3d_conversions --make-args package \
-    --cmake-args -DCMAKE_BUILD_TYPE=Release \
-    -DCATKIN_BUILD_BINARY_PACKAGE=1 \
-    -DCMAKE_INSTALL_PREFIX=/opt/ros/${GW_ROS_DIST} \
-    -DCMAKE_EXPORT_COMPILE_COMMANDS=0
-  info "packaging gpuac_localization/hdl_localization_gpu"
-  colcon ${JOB_ARG} --only-pkg-with-deps hdl_localization_gpu --make-args package \
-    --cmake-args -DCMAKE_BUILD_TYPE=Release \
-    -DCATKIN_BUILD_BINARY_PACKAGE=1 \
-    -DCMAKE_INSTALL_PREFIX=/opt/ros/${GW_ROS_DIST} \
-    -DCMAKE_EXPORT_COMPILE_COMMANDS=0
-  # info "packaging gpuac_example"
-  # colcon ${JOB_ARG} --only-pkg-with-deps gpuac_example --make-args package \
-  #   --cmake-args -DCMAKE_BUILD_TYPE=Release \
-  #   -DCATKIN_BUILD_BINARY_PACKAGE=1 \
-  #   -DCMAKE_INSTALL_PREFIX=/opt/ros/${GW_ROS_DIST} \
-  #   -DCMAKE_EXPORT_COMPILE_COMMANDS=0
-  info "packaging gpuac_localization/gpuac_ndt_gpu"
-  colcon ${JOB_ARG} --only-pkg-with-deps gpuac_ndt_gpu --make-args package \
-    --cmake-args -DCMAKE_BUILD_TYPE=Release \
-    -DCATKIN_BUILD_BINARY_PACKAGE=1 \
-    -DCMAKE_INSTALL_PREFIX=/opt/ros/${GW_ROS_DIST} \
-    -DCMAKE_EXPORT_COMPILE_COMMANDS=0
-  # info "packaging gpuac_utilities/autoware_health_checker"
-  # colcon ${JOB_ARG} --only-pkg-with-deps autoware_health_checker --make-args package \
-  #   --cmake-args -DCMAKE_BUILD_TYPE=Release \
-  #   -DCATKIN_BUILD_BINARY_PACKAGE=1 \
-  #   -DCMAKE_INSTALL_PREFIX=/opt/ros/${GW_ROS_DIST} \
-  #   -DCMAKE_EXPORT_COMPILE_COMMANDS=0
-  # info "packaging gpuac_utilities/autoware_system_msgs"
-  # colcon ${JOB_ARG} --only-pkg-with-deps autoware_system_msgs --make-args package \
-  #   --cmake-args -DCMAKE_BUILD_TYPE=Release \
-  #   -DCATKIN_BUILD_BINARY_PACKAGE=1 \
-  #   -DCMAKE_INSTALL_PREFIX=/opt/ros/${GW_ROS_DIST} \
-  #   -DCMAKE_EXPORT_COMPILE_COMMANDS=0
-  # info "packaging gpuac_utilities/gpuac_system_monitor"
-  # colcon --only-pkg-with-deps gpuac_system_monitor --make-args package \
-  #   --cmake-args -DCMAKE_BUILD_TYPE=Release \
-  #   -DCATKIN_BUILD_BINARY_PACKAGE=1 \
-  #   -DCMAKE_INSTALL_PREFIX=/opt/ros/${GW_ROS_DIST} \
-  #   -DCMAKE_EXPORT_COMPILE_COMMANDS=0
-
-  if [ ${PIPESTATUS[0]} -ne 0 ]; then
-    fail 'packaging failed!'
-  fi
-  info "please check deb file in ../../build/"
-  cd -
-  success 'pkg passed!'
 }
 
 # 编译测试检查
@@ -298,44 +245,6 @@ function clean() {
   success "clean passed!"
 }
 
-function gen_doc() {
-  rm -rf
-  doxygen apollo.doxygen
-}
-
-function check_hardware(){
-  # check dabai
-  info "Start check_hardware, please wait ..."
-  cd ${GW_ROS_ROOT_DIR}/devel/lib/ga_ros
-
-  ./astra_test
-
-  if [ $? -eq 0 ]; then
-    success 'check_hardware passed!'
-    return 0
-  else
-    fail 'check_hardware failed!'
-    return 1
-  fi
-  cd -
-}
-
-function check_algorithm(){
-  # check rvga_camera3d
-  info "Start check_algorithm, please wait ..."
-  cd ${GW_ROS_ROOT_DIR}/devel/lib/ga_ros
-
-  ./rvga_ultrasonic_test && ./rvga_camera3d_test && ./linear_math_test
-
-  if [ $? -eq 0 ]; then
-    success 'check_algorithm passed!'
-    return 0
-  else
-    fail 'check_algorithm failed!'
-    return 1
-  fi
-}
-
 function version() {
   echo "not support"
 }
@@ -372,7 +281,7 @@ function config() {
   CROSS_OPT=" -DCMAKE_TOOLCHAIN_FILE=/gw_demo/cmake/Toolchain-V5L.cmake -DVIBRANTE_PDK=/drive/drive-linux "
   # --cmake-force-configure
   # PACKAGE_ARG=" --packages-up-to performance_test "
-  PACKAGE_ARG=" "
+  PACKAGE_ARG=" --cmake-force-configure --packages-up-to sm_guardian "
 }
 
 function set_use_gpu() {
@@ -386,19 +295,14 @@ function print_usage() {
   NONE='\033[0m'
 
   echo -e "\n${RED}Usage${NONE}:
-  .${BOLD}/ga_ros.sh${NONE} [OPTION]"
+  .${BOLD}/gw_ros.sh${NONE} [OPTION]"
 
   echo -e "\n${RED}Options${NONE}:
+  ${BLUE}build_rel${NONE}: build_rel
+  ${BLUE}build_rel_native${NONE}: build_rel_native
   ${BLUE}build_dbg${NONE}: build_dbg
   ${BLUE}build_rel_dbg${NONE}: build rel with dbg info
-  ${BLUE}build_rel${NONE}: build_rel
-  ${BLUE}pkg_rel${NONE}: pkg_rel
-  ${BLUE}dpkg_install${NONE}: install deb files
-  ${BLUE}unit_test${NONE}: run all unit tests
-  ${BLUE}check_hardware${NONE}: run programs to check hardwares
-  ${BLUE}check_algorithm${NONE}: run programs to check algorithms
-  ${BLUE}clean${NONE}: rm -rf build/ log/ install/ devel/
-  ${BLUE}doc${NONE}: generate doxygen document
+  ${BLUE}clean${NONE}: rm -rf colcon/
   ${BLUE}usage${NONE}: print this menu
   "
 }
@@ -429,38 +333,14 @@ function main() {
     build_rel)
       build_rel $@
       ;;
+    build_rel_native)
+      build_rel_native $@
+      ;;
     build)
       build $@
       ;;
-    pkg_rel)
-      pkg_rel $@
-      ;;
-    unit_test)
-      run_unit_test $@
-      ;;
-    dpkg_install)
-      dpkg_install $@
-      ;;
-    check_hardware)
-      check_hardware $@
-      ;;
-    check_algorithm)
-      check_algorithm $@
-      ;;
-    catkin)
-      catkin $@
-      ;;
-    config)
-      config
-      ;;
-    doc)
-      gen_doc
-      ;;
     clean)
       clean
-      ;;
-    version)
-      version
       ;;
     usage)
       print_usage

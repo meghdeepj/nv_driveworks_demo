@@ -31,7 +31,7 @@
             },
         },
         {
-            "label": "cmake_aarch64",
+            "label": "sdk-cmake_aarch64",
             "type": "shell",
             "command": "docker exec -u $USER -e HISTFILE=/gw_demo/.dev_bash_hist -it gw_sdk_20.04_$USER /bin/bash ./gw.sh cmake_aarch64",
             "options": {
@@ -60,7 +60,7 @@
             },
         },
         {
-            "label": "make_aarch64",
+            "label": "sdk-make_aarch64",
             "type": "shell",
             "command": "docker exec -u $USER -e HISTFILE=/gw_demo/.dev_bash_hist -it gw_sdk_20.04_$USER /bin/bash ./gw.sh make_aarch64",
             "options": {
@@ -90,7 +90,7 @@
             "dependsOrder": "sequence"
         },
         {
-            "label": "install_aarch64",
+            "label": "sdk-install_aarch64",
             "type": "shell",
             "command": "docker exec -u $USER -e HISTFILE=/gw_demo/.dev_bash_hist -it gw_sdk_20.04_$USER /bin/bash ./gw.sh install_aarch64",
             "options": {
@@ -122,7 +122,7 @@
             "dependsOrder": "sequence"
         },
         {
-            "label": "clean_gw",
+            "label": "sdk-clean_gw",
             "type": "shell",
             "command": "docker exec -u $USER -e HISTFILE=/gw_demo/.dev_bash_hist -it gw_sdk_20.04_$USER /bin/bash ./gw.sh clean",
             "options": {
@@ -148,7 +148,7 @@
             }
         },
         {
-            "label": "colcon_aarch64",
+            "label": "sdk-colcon_aarch64",
             "type": "shell",
             "command": "docker exec -u $USER -e HISTFILE=/gw_demo/.dev_bash_hist -it gw_sdk_20.04_$USER /bin/bash ./gw_ros.sh build_rel",
             "options": {
@@ -176,7 +176,7 @@
             }
         },
         {
-            "label": "clean_colcon",
+            "label": "sdk-clean_colcon",
             "type": "shell",
             "command": "docker exec -u $USER -e HISTFILE=/gw_demo/.dev_bash_hist -it gw_sdk_20.04_$USER /bin/bash ./gw_ros.sh clean",
             "options": {
@@ -200,6 +200,86 @@
                 "focus": true,
                 "group": "clean"
             }
-        }
+        },
+        {
+            "label": "orin-postbuild",
+            "type": "shell",
+            "command": "docker exec -u $USER -e HISTFILE=/gw_demo/.dev_bash_hist -it gw_orin_20.04_$USER /bin/bash ./docker/scripts/orin_postbuild.sh",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "args": [],
+            "problemMatcher": {
+                "fileLocation": [
+                    "autoDetect",
+                    "${workspaceFolder}"
+                ]
+            },
+            "group": {
+                "kind": "none",
+                "isDefault": false
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated",
+                "clear": true,
+                "focus": true,
+                "group": "orin_docker"
+            },
+        },
+        {
+            "label": "orin-clean_colcon",
+            "type": "shell",
+            "command": "docker exec -u $USER -e HISTFILE=/gw_demo/.dev_bash_hist -it gw_orin_20.04_$USER /bin/bash ./gw_ros.sh clean",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "args": [],
+            "problemMatcher": {
+                "fileLocation": [
+                    "autoDetect",
+                    "${workspaceFolder}"
+                ]
+            },
+            "group": {
+                "kind": "none",
+                "isDefault": false
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated",
+                "clear": true,
+                "focus": true,
+                "group": "clean"
+            }
+        },
+        {
+            "label": "orin-colcon_aarch64",
+            "type": "shell",
+            "command": "docker exec -u $USER -e HISTFILE=/gw_demo/.dev_bash_hist -it gw_orin_20.04_$USER /bin/bash ./gw_ros.sh build_rel_native",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "args": [],
+            "problemMatcher": {
+                "base": "$gcc",
+                "fileLocation": [
+                    "autoDetect",
+                    "${workspaceFolder}"
+                ]
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "presentation": {
+                "reveal": "always",
+                "revealProblems": "onProblem",
+                "panel": "dedicated",
+                "clear": true,
+                "focus": true,
+                "group": "colcon"
+            }
+        },
     ]
 }
