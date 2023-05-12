@@ -55,7 +55,7 @@ if [ $? != 0 ]; then
     for _pane in $(tmux list-panes -F '#P'); do
         tmux send-keys -t ${_pane} "./docker/run/orin_into.sh" ENTER
         tmux send-keys -t ${_pane} "source ./docker/scripts/my.bashrc" ENTER
-        tmux send-keys -t ${_pane} "source ./target/colcon/install/local_setup.bash" ENTER
+        tmux send-keys -t ${_pane} "source ./colcon/install/local_setup.bash" ENTER
     done
 
     $cmd select-window -t $session:dwnvsci
@@ -63,7 +63,7 @@ if [ $? != 0 ]; then
     for _pane in $(tmux list-panes -F '#P'); do
         tmux send-keys -t ${_pane} "./docker/run/orin_into.sh" ENTER
         tmux send-keys -t ${_pane} "source ./docker/scripts/my.bashrc" ENTER
-        tmux send-keys -t ${_pane} "source ./target/colcon/install/local_setup.bash" ENTER
+        tmux send-keys -t ${_pane} "source ./colcon/install/local_setup.bash" ENTER
     done
 
     $cmd select-window -t $session:dwimage
@@ -71,7 +71,7 @@ if [ $? != 0 ]; then
     for _pane in $(tmux list-panes -F '#P'); do
         tmux send-keys -t ${_pane} "./docker/run/orin_into.sh" ENTER
         tmux send-keys -t ${_pane} "source ./docker/scripts/my.bashrc" ENTER
-        tmux send-keys -t ${_pane} "source ./target/colcon/install/local_setup.bash" ENTER
+        tmux send-keys -t ${_pane} "source ./colcon/install/local_setup.bash" ENTER
     done
 
     $cmd select-window -t $session:ros2
@@ -79,7 +79,7 @@ if [ $? != 0 ]; then
     for _pane in $(tmux list-panes -F '#P'); do
         tmux send-keys -t ${_pane} "./docker/run/orin_into.sh" ENTER
         tmux send-keys -t ${_pane} "source ./docker/scripts/my.bashrc" ENTER
-        tmux send-keys -t ${_pane} "source ./target/colcon/install/local_setup.bash" ENTER
+        tmux send-keys -t ${_pane} "source ./colcon/install/local_setup.bash" ENTER
     done
 
     $cmd select-window -t $session:nvsci
@@ -87,7 +87,7 @@ if [ $? != 0 ]; then
     for _pane in $(tmux list-panes -F '#P'); do
         tmux send-keys -t ${_pane} "./docker/run/orin_into.sh" ENTER
         tmux send-keys -t ${_pane} "source ./docker/scripts/my.bashrc" ENTER
-        tmux send-keys -t ${_pane} "source ./target/colcon/install/local_setup.bash" ENTER
+        tmux send-keys -t ${_pane} "source ./colcon/install/local_setup.bash" ENTER
     done
 
     $cmd select-window -t $session:git

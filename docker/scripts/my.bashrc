@@ -20,6 +20,9 @@ export ROS_DOMAIN_ID=110
 export PATH=/usr/local/cuda/bin:$PATH
 export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
 
+# source the prebuilt ros2 binary
+source /opt/ros/foxy-smacc2/target/colcon/install/local_setup.bash
+
 echo "the main setting is in following:"
 env | grep XLAB_
 env | grep ROS_

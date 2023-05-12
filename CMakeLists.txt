@@ -181,6 +181,12 @@ install(
     PATTERN ".gitkeep" EXCLUDE
 )
 install(
+    DIRECTORY res
+    DESTINATION ${CMAKE_CURRENT_SOURCE_DIR}/target/
+    USE_SOURCE_PERMISSIONS
+    PATTERN ".gitkeep" EXCLUDE
+)
+install(
     DIRECTORY scripts/.vscode
     DESTINATION ${CMAKE_CURRENT_SOURCE_DIR}/target/
     USE_SOURCE_PERMISSIONS
