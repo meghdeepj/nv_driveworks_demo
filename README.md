@@ -31,35 +31,11 @@ docker pull nvcr.io/drive/driveos-sdk/drive-agx-orin-linux-aarch64-sdk-build-x86
 ./docker/build/sdk_into.sh
 # 额外安装软件
 ./docker/scripts/sdk_postbuild.sh
-# 额外安装的软件如下
-sudo apt update
-sudo apt install python3-numpy -y
-sudo apt install python3-pip -y
-pip3 config set global.trusted-host https://pypi.tuna.tsinghua.edu.cn
-pip3 config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
-sudo pip3 config set global.trusted-host https://pypi.tuna.tsinghua.edu.cn
-sudo pip3 config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
-sudo -H python3 -m pip install jsonschema
-# gtest 暂不实施
-# sudo apt install libgtest-dev
-# cd /usr/src/gtest
-# sudo cmake CMakeLists.txt
-# sudo make
-# sudo cp lib/*.a /usr/lib
-
-# ros2 development tool
-sudo tar --use-compress-program=pigz -xvpf res/ros-foxy.tar.gz -C /drive/drive-linux/filesystem/targetfs/
-export ROS2_HOME=/drive/drive-linux/filesystem/targetfs/opt/ros/foxy/
-export PYTHONPATH=${ROS2_HOME}/lib/python3.8/site-packages
-export PATH=${PATH}:${ROS2_HOME}/bin
-sudo -H python3 -m pip install -U vcstool colcon-common-extensions
-sudo dpkg --add-architecture arm64
-sudo apt install libspdlog-dev:arm64 libyaml-dev:arm64 libpython3-dev:arm64 libtinyxml2-dev:arm64 libssl-dev:arm64 openssl:arm64
 ```
 
 ### orin-docker
 
-运行时docker
+运行时docker在x86平台构建
 
 ```sh
 docker pull arm64v8/ros:foxy
@@ -69,9 +45,20 @@ docker pull arm64v8/ros:foxy
 ./docker/build/orin_into.sh
 # 额外安装软件
 ./docker/scripts/orin_postbuild.sh
+```
 
-# 额外安装的软件如下
-sudo apt install pigz
+### target-docker
+
+运行时docker在orin平台运行 <https://developer.nvidia.com/blog/running-docker-containers-directly-on-nvidia-drive-agx-orin/>
+
+```sh
+docker pull arm64v8/ros:foxy
+# 启动docker, 容器名称为gw_orin_20.04_${USER}
+./docker/run/orin_build.sh
+# 进入container
+./docker/run/orin_into.sh
+# 额外安装软件
+./docker/scripts/target_postbuild.sh
 ```
 
 ## 构建
@@ -111,6 +98,15 @@ make -C /gw_demo/target/aarch64-sample/build -j3 install
 
 ```sh
 cd gw_demo
+./gw.sh cmake_aarch64
+./gw.sh make_aarch64
+./gw.sh install_aarch64
+# clean
+./gw.sh clean
+```
+
+```sh
+cd gw_demo
 
 cmake -B /gw_demo/target/aarch64/build \
     -DCMAKE_TOOLCHAIN_FILE=/gw_demo/cmake/Toolchain-V5L.cmake \
@@ -130,36 +126,53 @@ ldd ./libcgf_custom_nodes.so
 ldd ./libcgf_custom_nodes.so | grep found
 ```
 
-### vscode编译配置
+### 交叉编译ROS2包
 
-已经配置好`tasks.json`，可通过task
+- 构建目录设置到`target`目录，`target` 目录拷贝到目标机器
 
 ```sh
-# 为了实现查看错误跳转，创建一个软连接
-ln -s $PWD ./gw_demo
-sudo ln -s $PWD /gw_demo
+cd gw_demo
+./gw_ros.sh build_rel
+# clean
+./gw_ros.sh clean
 ```
 
-## 打包(暂不可用)
+### 打包(不可用)
+
+- 构建目录设置到`target`目录，`target` 目录拷贝到目标机器
 
 ```sh
+# 不可用
 make -C /gw_demo/target/aarch64/build -j3 package
 ```
 
-## 开发
+## vscode编译配置
 
-todo: 优化开发体验：install vscode server in the docker container
+### tasks
 
-```sh
-# to use dwcgf-tools out of docker
-sudo ln -s ~/orin_ws/nv_driveworks/driverorks-5.10/ /usr/local/driveworks
-```
+已经配置好`tasks.json`，可通过task实现快捷操作
 
-### vscode跳转
+使用方式为：`Ctrl+Shift+P` + `Tasks: Run Task` + `选择具体的task`
+
+
+### cpp开发支持
 
 安装cpp插件，编辑`./.vscode/c_cpp_properties.json` 设置driveworks和driveos的目录，即可跳转。
 
 安装cmake-tools插件，即可获得完整cmake开发体验。
+
+### 错误查看和跳转
+
+为了实现查看错误跳转，创建一些软连接
+
+```sh
+ln -s $PWD ./gw_demo
+sudo ln -s $PWD /gw_demo
+# to use dwcgf-tools out of docker
+sudo ln -s ~/orin_ws/nv_driveworks/driverorks-5.10/ /usr/local/driveworks
+```
+
+todo: 优化开发体验：install vscode server in the docker container
 
 ## 运行
 
@@ -167,13 +180,21 @@ sudo ln -s ~/orin_ws/nv_driveworks/driverorks-5.10/ /usr/local/driveworks
 
 以`dwcgf_helloworld`为例
 
+```sh
+cd /target/aarch64/install/example/dwcgf_helloworld
+sudo ./bin/run_cgf.sh
+# 删除日志
+sudo rm -rf ./LogFolder/ ./framesync_*
+# 查看日志
+tail -n 50 -f ./LogFolder/helloworld_process0_0.log
+```
+
 ### 项目module
 
 以`dwcgf_image_pipe`为例
 
 ```sh
-cd nv_driveworks_demo/target/aarch64/install/bin
-# sudo ./dwcgf_image_pipe/run_cgf.sh
+cd /target/aarch64/install/bin
 sudo ./dwcgf_image_pipe/runRawCameraDeployPipe.sh
 # 删除日志
 sudo rm -rf ./LogFolder/ ./framesync_*
@@ -181,15 +202,25 @@ sudo rm -rf ./LogFolder/ ./framesync_*
 tail -n 50 -f ./LogFolder/dwcgf_image_pipe/RawCameraDeployPipe/pilotPipe_process_0.log
 ```
 
-### 运行时docker
+### ros2
 
 ```sh
-cd ./target
-./docker/run/orin_start.sh
-./docker/run/orin_into.sh
-# source ros2 env
-source /opt/ros/foxy/setup.bash
-source /colcon/install/local_setup.bash
+# source prebuilt ros2 env
+source ./docker/scripts/my.bashrc
+# source the current project ros2 env
+source ./colcon/install/local_setup.bash
+```
+
+### tmux
+
+tmux是一款好用的工具，此处tmux脚本仅供运行时target-orin-docker使用。
+
+```sh
+# in host
+cd /target
+./tmux_into.sh
+# close the tmux
+tmux kill-session -t target_tmux_into
 ```
 
 ## 调试
@@ -310,19 +341,28 @@ Mon Apr 24 14:32:07 CST 2023
 ### 运行架构
 
 ```sh
-cd ./target/aarch64/install
+cd /target
 date && tree -d -L 3
+Mon May 15 01:57:24 PM CST 2023
 .
-├── bin # 项目bin目录
-├── data # 项目data目录
-├── example # 示例目录
-│   └── dwcgf_helloworld # 示例项目的安装目标文件
-│       ├── bin
-│       ├── data
-│       ├── graphs
+├── aarch64 # 目标架构目录
+│   └── install
+│       ├── bin # 项目bin目录
+│       ├── data data # 项目data目录
+│       ├── example # 示例目录
+│       ├── graphs # cgf图模型目录
 │       └── lib
-├── graphs # 项目graphs目录
-└── lib # 项目lib目录
+├── colcon
+│   ├── install # ros2 安装目录
+│   │   ├── include
+│   │   ├── lib
+│   │   └── share
+├── docker
+│   ├── build
+│   ├── run # 运行时docker
+│   ├── scripts
+│   └── sdkm
+└── res # 资源目录
 ```
 
 ## 已知问题
