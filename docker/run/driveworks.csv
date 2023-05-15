@@ -1,2 +1,5 @@
 sym, /usr/local/driveworks
 dir, /usr/local/driveworks-5.10
+
+sym, /usr/lib/aarch64-linux-gnu/libnvparsers.so.8
+lib, /usr/lib/aarch64-linux-gnu/libnvinfer.so.8.5.10

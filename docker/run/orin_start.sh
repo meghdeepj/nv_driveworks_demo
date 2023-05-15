@@ -128,6 +128,15 @@ fi
 IMG=${DOCKER_REPO}:$VERSION
 
 ##########################提前跑-end#########################################
+# set ulimits for cgf
+function tune_mqueue() {
+    set +x
+    # Apollo root and bazel cache dirs are required.
+    ulimits="--ulimit nofile=32768:32768 \
+            --ulimit msgqueue=2097152:2097152 \
+            -v /etc/nvsciipc.cfg:/etc/nvsciipc.cfg"
+    echo "${ulimits}"
+}
 
 # 挂在本地代码和日志缓存等数据
 function local_volumes() {
@@ -229,6 +238,7 @@ function main(){
         -e NVIDIA_REQUIRE_JETPACK="csv-mounts=all" \
         -e DISPLAY \
         $(local_volumes) \
+        $(tune_mqueue) \
         --net host \
         --ipc host \
         --cap-add SYS_ADMIN \

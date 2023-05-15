@@ -14,7 +14,7 @@ function(gw_add_module MODULE)
         ARCHIVE DESTINATION ${GW_MODULE_ARCHIVE_DESTINATION}
     )
     set_target_properties(${MODULE} PROPERTIES
-        INSTALL_RPATH ${GW_MODULE_LIBRARY_DESTINATION}:\$ORIGIN:\$ORIGIN/../../lib/${PROJECT_NAME}/
+        INSTALL_RPATH ${GW_MODULE_LIBRARY_DESTINATION}:/usr/local/driveworks/lib:/opt/ros/foxy/lib:\$ORIGIN:\$ORIGIN/../../lib/${PROJECT_NAME}/
         BUILD_WITH_INSTALL_RPATH ON
     )
 endfunction()
@@ -36,7 +36,7 @@ function(gw_install_module_library MODULE_LIB)
         DESTINATION ${GW_MODULE_BINARY_DESTINATION}
     )
     set_target_properties(${MODULE_LIB} PROPERTIES
-        INSTALL_RPATH ${GW_MODULE_LIBRARY_DESTINATION}:\$ORIGIN:\$ORIGIN/../../lib/${PROJECT_NAME}/
+        INSTALL_RPATH ${GW_MODULE_LIBRARY_DESTINATION}:/usr/local/driveworks/lib:/opt/ros/foxy/lib:\$ORIGIN:\$ORIGIN/../../lib/${PROJECT_NAME}/
         BUILD_WITH_INSTALL_RPATH ON
     )
 endfunction()

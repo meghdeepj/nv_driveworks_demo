@@ -14,7 +14,7 @@ function(gw_add_sample SAMPLE)
         ARCHIVE DESTINATION ${GW_SAMPLE_ARCHIVE_DESTINATION}
     )
     set_target_properties(${SAMPLE} PROPERTIES
-        INSTALL_RPATH ${GW_SAMPLE_LIBRARY_DESTINATION}:\$ORIGIN:\$ORIGIN/../lib
+        INSTALL_RPATH ${GW_SAMPLE_LIBRARY_DESTINATION}:/usr/local/driveworks/lib:/opt/ros/foxy/lib:\$ORIGIN:\$ORIGIN/../lib
         BUILD_WITH_INSTALL_RPATH ON
     )
 endfunction()
@@ -36,7 +36,7 @@ function(gw_install_sample_library SAMPLE_LIB)
         DESTINATION ${GW_SAMPLE_BINARY_DESTINATION}
     )
     set_target_properties(${SAMPLE_LIB} PROPERTIES
-        INSTALL_RPATH ${GW_SAMPLE_BINARY_DESTINATION}:\$ORIGIN:\$ORIGIN/../lib
+        INSTALL_RPATH ${GW_SAMPLE_BINARY_DESTINATION}:/usr/local/driveworks/lib:/opt/ros/foxy/lib:\$ORIGIN:\$ORIGIN/../lib
         BUILD_WITH_INSTALL_RPATH ON
     )
 endfunction()

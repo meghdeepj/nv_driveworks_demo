@@ -35,6 +35,36 @@
             "dependsOrder": "sequence"
         },
         {
+            "label": "run-cgfapp-docker",
+            "type": "shell",
+            "command": "docker exec -u $USER -e HISTFILE=/gw_demo/.dev_bash_hist -it gw_orin_20.04_$USER /bin/bash sudo ./bin/dwcgf_image_pipe/run${input:cgfappType}.sh",
+            "options": {
+                "cwd": "${workspaceFolder}/aarch64/install"
+            },
+            "args": [],
+            "problemMatcher": {
+                "fileLocation": [
+                    "autoDetect",
+                    "${workspaceFolder}"
+                ]
+            },
+            "group": {
+                "kind": "none",
+                "isDefault": false
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated",
+                "clear": true,
+                "focus": true,
+                "group": "run"
+            },
+            "dependsOn": [
+                "clean_log-docker"
+            ],
+            "dependsOrder": "sequence"
+        },
+        {
             // todo: log-this-file to see any log file.
             "label": "log-process-local",
             "type": "shell",

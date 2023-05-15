@@ -28,6 +28,11 @@ sudo cp /target/tools/ros.key /usr/share/keyrings/ros-archive-keyring.gpg
 # sudo echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://mirrors.tuna.tsinghua.edu.cn/ros2/ubuntu $(source /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
 sudo sed -i 's/packages.ros.org/mirrors.tuna.tsinghua.edu.cn/' /etc/apt/sources.list.d/ros2-latest.list
 
+# https://forums.developer.nvidia.com/t/bug-nvidia-container-runtime-csv-mode-cannot-create-sym-link-of-dir/252336
+sudo ln -s /usr/local/driveworks-5.10 /usr/local/driveworks
+sudo ln -s /usr/local/cuda-11.4 /usr/local/cuda-11
+sudo ln -s /usr/local/cuda-11 /usr/local/cuda
+
 # 检测是16.04还是18.04
 
 # case "$(lsb_release -r | cut -f2)" in

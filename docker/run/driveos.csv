@@ -38,6 +38,7 @@ lib, /usr/lib/libnvddk_vic.so
 lib, /usr/lib/libnvdla_runtime.so
 lib, /usr/lib/libnvrm_surface.so
 lib, /usr/lib/libNvFsiCom.so
+lib, /usr/lib/libNvEpl.so
 lib, /usr/lib/libnvpvaintf.so
 lib, /usr/lib/libnvsocsys.so
 
