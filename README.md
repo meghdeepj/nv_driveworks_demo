@@ -194,6 +194,10 @@ tail -n 50 -f ./LogFolder/helloworld_process0_0.log
 以`dwcgf_image_pipe`为例
 
 ```sh
+# 处理data/video/软链接
+cd /target
+mkdir ./aarch64/install/data/dwcgf_image_pipe
+ln -s ~/myz/data/video ./aarch64/install/data/dwcgf_image_pipe/video
 cd /target/aarch64/install/bin
 sudo ./dwcgf_image_pipe/runRawCameraDeployPipe.sh
 # 删除日志
