@@ -47,6 +47,17 @@
                 "preprocMode": "$pilotPreprocMode"
             }
         },
+        "cameraFrontRightPipe": {
+            "componentType": "../graphlets/pipe/PilotPipe.graphlet.json",
+            "parameters": {
+                "cameraIndex": 5,
+                "cameraType": "GW_CAMERA_RAW",
+                "cameraParameter": "video=./video/A-0000-raw.h264,fifo-size=5,frames-pool=4",
+                "cameraProtocol": "camera.virtual",
+                "cameraIntrinsics": "$cameraIntrinsics",
+                "preprocMode": "$pilotPreprocMode"
+            }
+        },
         "render0": {
             "componentType": "../graphlets/render/Render.graphlet.json",
             "parameters": {}

@@ -32,6 +32,7 @@
                             "passes": [
                                 [
                                     "dwcgfVirtualCameraDeployPipe.cameraFrontLeftPipe",
+                                    "dwcgfVirtualCameraDeployPipe.cameraFrontRightPipe",
                                     "dwcgfVirtualCameraDeployPipe.render0"
                                 ]
                             ]
@@ -43,8 +44,10 @@
                         "machine0.CPU2": [],
                         "machine0.CPU3": [],
                         "machine0.iGPU": [],
-                        "pilotPipe_process.CUDA_STREAM0:iGPU": [],
-                        "pilotPipe_process.CUDA_MUTEX_LOCK": []
+                        "cameraFrontLeftPipe_process.CUDA_STREAM0:iGPU": [],
+                        "cameraFrontLeftPipe_process.CUDA_MUTEX_LOCK": [],
+                        "cameraFrontRightPipe_process.CUDA_STREAM0:iGPU": [],
+                        "cameraFrontRightPipe_process.CUDA_MUTEX_LOCK": []
                     }
                 }
             }
@@ -78,12 +81,23 @@
                 "-m": true
             }
         },
-        "pilotPipe_process": {
+        "cameraFrontLeftPipe_process": {
             "runOn": "machine0",
             "executable": "LoaderLite",
             "subcomponents": [
                 "dwcgfVirtualCameraDeployPipe.cameraFrontLeftPipe",
                 "dwcgfVirtualCameraDeployPipe.render0"
+            ],
+            "argv": {
+                "--nodeInitThreadPoolSize": "8",
+                "--channelBindingThreadPoolSize": "8"
+            }
+        },
+        "cameraFrontRightPipe_process": {
+            "runOn": "machine0",
+            "executable": "LoaderLite",
+            "subcomponents": [
+                "dwcgfVirtualCameraDeployPipe.cameraFrontRightPipe"
             ],
             "argv": {
                 "--nodeInitThreadPoolSize": "8",
