@@ -4,5 +4,96 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+        {
+            "name": "gdb-run-cpp-local",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/aarch64-sample/build/install/usr/local/driveworks/samples/bin/${input:sampleAppType}",
+            "args": [
+                "--offscreen=1",
+                "--rig=/usr/local/driveworks/data/samples/sensors/camera/camera/rig.json"
+            ],
+            "stopAtEntry": true,
+            "cwd": "${workspaceFolder}/aarch64",
+            "environment": [],
+            "externalConsole": false,
+            "logging": {
+                "moduleLoad": true,
+                "trace": true
+            },
+            "sourceFileMap": {
+                // "remote": "local"
+                "${workspaceFolder}": "${workspaceFolder}",
+                "/usr/local/driveworks/samples/src": "/opt/gw_demo/res/driveworks/samples/src",
+            },
+            "MIMode": "gdb",
+            "miDebuggerPath": "/usr/bin/gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "gdb-run-cpp-docker",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "/target/aarch64-sample/build/install/usr/local/driveworks/samples/bin/${input:sampleAppType}",
+            "args": [
+                "--offscreen=1",
+                "--rig=/usr/local/driveworks/data/samples/sensors/camera/camera/rig.json"
+            ],
+            "stopAtEntry": true,
+            "cwd": "/target/aarch64",
+            "environment": [],
+            "externalConsole": false,
+            "logging": {
+                "moduleLoad": true,
+                "trace": true
+            },
+            "pipeTransport": {
+                "pipeProgram": "docker",
+                "pipeArgs": [
+                    "exec",
+                    "-u", "${env:USER}",
+                    "-e", "HISTFILE=/target/.dev_bash_hist",
+                    "-w", "/target/aarch64/install",
+                    "-i",
+                    "gw_orin_20.04_${env:USER}",
+                    "/bin/bash",
+                    "-c",
+                ],
+                "debuggerPath": "/usr/bin/gdb",
+                // "pipeCwd": "~/zhensheng/orin_ws/nv_driveworks_demo/target",
+            },
+            "sourceFileMap": {
+                // "remote": "local"
+                "/target": "${workspaceFolder}",
+                "/usr/local/driveworks/samples/src": "/opt/gw_demo/res/driveworks/samples/src",
+            },
+            "MIMode": "gdb",
+            "miDebuggerPath": "/usr/bin/gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+    ],
+    "inputs": [
+        {
+            "type": "pickString",
+            "id": "sampleAppType",
+            "description": "What type of sample do you want to run?",
+            "options": [
+                "sample_hello_world",
+                "sample_camera",
+            ],
+            "default": "sample_hello_world"
+        }
     ]
 }

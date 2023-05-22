@@ -2,6 +2,10 @@ target/
 .dev_bash_hist
 example/dwcgf/helloworld/graphs/*.stm
 *.drawio.*
-ros-*.tar.gz
 gw_demo
 _gsdata_/
+
+# download them from dav
+res/dw-samples-src.tar.gz
+res/ros-foxy-smacc2.tar.gz
+res/ros-foxy.tar.gz

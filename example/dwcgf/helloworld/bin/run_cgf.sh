@@ -240,6 +240,9 @@ __setEnv() {
     fi
     __tuneNetworkStack
 
+    # source ros2 env
+    source /opt/ros/foxy/setup.bash
+
     export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${DW_TOP_PATH}/lib
     echo "LD_LIBRARY_PATH: ${LD_LIBRARY_PATH}"
 }

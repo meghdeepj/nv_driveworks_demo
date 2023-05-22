@@ -47,14 +47,12 @@ if [ $? != 0 ]; then
     # $cmd select-layout tiled
     for _pane in $(tmux list-panes -F '#P'); do
         tmux send-keys -t ${_pane} "./docker/run/orin_into.sh" ENTER
-        tmux send-keys -t ${_pane} "source ./docker/scripts/my.bashrc" ENTER
     done
 
     $cmd select-window -t $session:dwcgf
     $cmd select-layout tiled
     for _pane in $(tmux list-panes -F '#P'); do
         tmux send-keys -t ${_pane} "./docker/run/orin_into.sh" ENTER
-        tmux send-keys -t ${_pane} "source ./docker/scripts/my.bashrc" ENTER
         tmux send-keys -t ${_pane} "source ./colcon/install/local_setup.bash" ENTER
     done
 
@@ -62,7 +60,6 @@ if [ $? != 0 ]; then
     $cmd select-layout tiled
     for _pane in $(tmux list-panes -F '#P'); do
         tmux send-keys -t ${_pane} "./docker/run/orin_into.sh" ENTER
-        tmux send-keys -t ${_pane} "source ./docker/scripts/my.bashrc" ENTER
         tmux send-keys -t ${_pane} "source ./colcon/install/local_setup.bash" ENTER
     done
 
@@ -70,7 +67,6 @@ if [ $? != 0 ]; then
     $cmd select-layout tiled
     for _pane in $(tmux list-panes -F '#P'); do
         tmux send-keys -t ${_pane} "./docker/run/orin_into.sh" ENTER
-        tmux send-keys -t ${_pane} "source ./docker/scripts/my.bashrc" ENTER
         tmux send-keys -t ${_pane} "source ./colcon/install/local_setup.bash" ENTER
     done
 
@@ -78,7 +74,6 @@ if [ $? != 0 ]; then
     $cmd select-layout tiled
     for _pane in $(tmux list-panes -F '#P'); do
         tmux send-keys -t ${_pane} "./docker/run/orin_into.sh" ENTER
-        tmux send-keys -t ${_pane} "source ./docker/scripts/my.bashrc" ENTER
         tmux send-keys -t ${_pane} "source ./colcon/install/local_setup.bash" ENTER
     done
 
@@ -86,7 +81,6 @@ if [ $? != 0 ]; then
     $cmd select-layout tiled
     for _pane in $(tmux list-panes -F '#P'); do
         tmux send-keys -t ${_pane} "./docker/run/orin_into.sh" ENTER
-        tmux send-keys -t ${_pane} "source ./docker/scripts/my.bashrc" ENTER
         tmux send-keys -t ${_pane} "source ./colcon/install/local_setup.bash" ENTER
     done
 

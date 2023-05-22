@@ -87,6 +87,7 @@ ldd ./libcgf_custom_nodes.so | grep found
 ```sh
 cmake -B /gw_demo/target/aarch64-sample/build \
     -DCMAKE_TOOLCHAIN_FILE=/usr/local/driveworks/samples/cmake/Toolchain-V5L.cmake \
+    -DCMAKE_BUILD_TYPE=Debug \
     -DVIBRANTE_PDK=/drive/drive-linux -S /usr/local/driveworks/samples
 make -C /gw_demo/target/aarch64-sample/build -j3
 make -C /gw_demo/target/aarch64-sample/build -j3 install
@@ -150,10 +151,9 @@ make -C /gw_demo/target/aarch64/build -j3 package
 
 ### tasks
 
-已经配置好`tasks.json`，可通过task实现快捷操作
+已经配置好`./.vscode/tasks.json`，和`./scripts/.vscode/tasks.json`可通过task实现快捷操作
 
 使用方式为：`Ctrl+Shift+P` + `Tasks: Run Task` + `选择具体的task`
-
 
 ### cpp开发支持
 
@@ -166,10 +166,12 @@ make -C /gw_demo/target/aarch64/build -j3 package
 为了实现查看错误跳转，创建一些软连接
 
 ```sh
+# in host
 ln -s $PWD ./gw_demo
 sudo ln -s $PWD /gw_demo
 # to use dwcgf-tools out of docker
-sudo ln -s ~/orin_ws/nv_driveworks/driverorks-5.10/ /usr/local/driveworks
+sudo ln -s ~/orin_ws/nv_driveworks/driverorks-5.10/ /usr/local/driveworks-5.10
+sudo ln -s /usr/local/driveworks-5.10 /usr/local/driveworks
 ```
 
 todo: 优化开发体验：install vscode server in the docker container
@@ -210,7 +212,7 @@ tail -n 50 -f ./LogFolder/dwcgf_image_pipe/RawCameraDeployPipe/pilotPipe_process
 
 ```sh
 # source prebuilt ros2 env
-source ./docker/scripts/my.bashrc
+source ./docker/scripts/target.bashrc
 # source the current project ros2 env
 source ./colcon/install/local_setup.bash
 ```
@@ -252,21 +254,17 @@ ldd ./libmodule_demo_d.so
 ldd ./libmodule_demo_d.so | grep found
 ```
 
-### 开发时调试
+### 开发时调试(x86)
 
-已经编写了`launch.json`
+todo:
 
-```sh
+### 远程调试(aarch64)
 
-```
+见 `./.vscode/launch.json`
 
-### 运行时调试
+### 运行时调试(aarch64)
 
-已经编写了`launch.json`
-
-```sh
-
-```
+见`./scripts/.vscode/launch.json`
 
 ## 架构
 
@@ -373,6 +371,6 @@ Mon May 15 01:57:24 PM CST 2023
 
 ### docker环境问题
 
-- docker环境下terminal没有彩色输出
-- docker环境下terminal apt安装不能tab
-- [*]docker环境下不能启动界面? (已解决 -e DISPLAY)
+- [x] docker环境下terminal没有彩色输出(已解决 -e TERM=xterm-256color)
+- [x] docker环境下terminal apt安装不能tab (<https://askubuntu.com/questions/735189/enabling-auto-completion-for-apt-get-install-in-docker-ubuntu-14-04>)
+- [x] docker环境下不能启动界面? (已解决 -e DISPLAY)

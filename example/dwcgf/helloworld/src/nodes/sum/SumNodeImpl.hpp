@@ -34,6 +34,10 @@
 #include "SumNode.hpp"
 #include <dwcgf/node/SimpleNodeT.hpp>
 
+// ros headers
+#include "rclcpp/rclcpp.hpp"
+#include "std_msgs/msg/string.hpp"
+
 namespace dw
 {
 namespace framework
@@ -56,6 +60,11 @@ private:
     size_t m_epochCount{0};
     SumNodeParams m_params{};
     dwContextHandle_t m_ctx{DW_NULL_HANDLE};
+
+    // ros2 node res
+    rclcpp::Node::SharedPtr m_node;
+    rclcpp::Publisher<std_msgs::msg::String>::SharedPtr m_pub;
+    std::unique_ptr<std_msgs::msg::String> m_msg;
 };
 
 } // namespace framework

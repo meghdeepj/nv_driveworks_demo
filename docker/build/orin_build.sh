@@ -229,6 +229,7 @@ function main(){
         -e NVIDIA_VISIBLE_DEVICES=all \
         -e NVIDIA_DRIVER_CAPABILITIES=compute,video,utility \
         -e DISPLAY \
+        -e TERM=xterm-256color \
         $(local_volumes) \
         --net host \
         -w /gw_demo \

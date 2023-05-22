@@ -118,12 +118,9 @@ fi
 
 # using repo
 # using ccache
-export CCACHE_DIR=/gw_demo/ccache
+export CCACHE_DIR=./ccache
 # export CC="/usr/lib/ccache/gcc"
 # export CXX="/usr/lib/ccache/g++"
 # selecting project
-export PROJ_TOP_DIR=/gw_demo
+export PROJ_TOP_DIR=$PWD
 echo "selecting project in:" $PROJ_TOP_DIR
-# sourcing proj
-# source $PROJ_TOP_DIR/docker/scripts/zs.bashrc
-# cd $PROJ_TOP_DIR

@@ -13,20 +13,19 @@ echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 # crack解决一个交叉编译错误
 # sudo sed -i 's/ || defined(LINUX)//' /usr/local/driveworks/include/dw/core/system/NvMedia.h
 
-# 配置pip
-pip3 config set global.trusted-host https://pypi.tuna.tsinghua.edu.cn
-pip3 config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
-sudo pip3 config set global.trusted-host https://pypi.tuna.tsinghua.edu.cn
-sudo pip3 config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+pip3 config set global.trusted-host mirrors.xlab.gacrnd.com
+pip3 config set global.index-url http://mirrors.xlab.gacrnd.com/repository/pypi/simple
+sudo pip3 config set global.trusted-host mirrors.xlab.gacrnd.com
+sudo pip3 config set global.index-url http://mirrors.xlab.gacrnd.com/repository/pypi/simple
 
 # 更换国内源
 sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
-sudo sed -i 's/archive.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/' /etc/apt/sources.list
-sudo sed -i 's/security.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/' /etc/apt/sources.list
-sudo sed -i 's/ports.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/' /etc/apt/sources.list
-sudo cp /target/tools/ros.key /usr/share/keyrings/ros-archive-keyring.gpg
+sudo sed -i 's/archive.ubuntu.com\/ubuntu/mirrors.xlab.gacrnd.com\/repository\/ubuntu-focal/' /etc/apt/sources.list
+sudo sed -i 's/security.ubuntu.com\/ubuntu/mirrors.xlab.gacrnd.com\/repository\/ubuntu-focal/' /etc/apt/sources.list
+sudo sed -i 's/ports.ubuntu.com\/ubuntu/mirrors.xlab.gacrnd.com\/repository\/ubuntu/' /etc/apt/sources.list
+# sudo cp /gw_demo/tools/ros.key /usr/share/keyrings/ros-archive-keyring.gpg
 # sudo echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://mirrors.tuna.tsinghua.edu.cn/ros2/ubuntu $(source /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
-sudo sed -i 's/packages.ros.org/mirrors.tuna.tsinghua.edu.cn/' /etc/apt/sources.list.d/ros2-latest.list
+sudo sed -i 's/packages.ros.org\/ros2\/ubuntu/mirrors.xlab.gacrnd.com\/repository\/ubuntu-ros2/' /etc/apt/sources.list.d/ros2-latest.list
 
 # https://forums.developer.nvidia.com/t/bug-nvidia-container-runtime-csv-mode-cannot-create-sym-link-of-dir/252336
 sudo ln -s /usr/local/driveworks-5.10 /usr/local/driveworks
@@ -50,6 +49,10 @@ sudo ln -s /usr/local/cuda-11 /usr/local/cuda
 
 # 设置bashrc
 cat /target/docker/scripts/.bashrc > "/home/${DOCKER_USER}/.bashrc"
+# sourcing proj
+echo '
+source $PROJ_TOP_DIR/docker/scripts/target.bashrc
+' >> "/home/${DOCKER_USER}/.bashrc"
 
 # echo '
 # genhtml_branch_coverage = 1

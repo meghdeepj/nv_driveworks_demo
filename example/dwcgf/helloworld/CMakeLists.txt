@@ -63,9 +63,17 @@ set(LIBRARIES
 )
 
 #-------------------------------------------------------------------------------
+# ros2 packages
+#-------------------------------------------------------------------------------
+find_package(ament_cmake REQUIRED)
+find_package(rclcpp REQUIRED)
+find_package(std_msgs REQUIRED)
+
+#-------------------------------------------------------------------------------
 # Custom nodes shared library
 #-------------------------------------------------------------------------------
 add_library(${PROJECT_NAME} SHARED ${DWCGF_NODES_FILES})
+ament_target_dependencies(${PROJECT_NAME} "rclcpp" "std_msgs" )
 target_link_libraries(${PROJECT_NAME} ${LIBRARIES})
 target_include_directories(${PROJECT_NAME}
                            PUBLIC
@@ -139,3 +147,5 @@ install(PROGRAMS
     ${DWCGF_RUNNER} ${DWCGF_RIG_TESTER}
     DESTINATION "${GW_SAMPLE_BINARY_DESTINATION}"
 )
+
+ament_package()

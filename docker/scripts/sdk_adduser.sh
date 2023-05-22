@@ -45,6 +45,10 @@ sudo cp /gw_demo/tools/ros.key /usr/share/keyrings/ros-archive-keyring.gpg
 
 # 设置bashrc
 cat /gw_demo/docker/scripts/.bashrc > "/home/${DOCKER_USER}/.bashrc"
+# sourcing proj
+echo '
+source $PROJ_TOP_DIR/docker/scripts/sdk.bashrc
+' >> "/home/${DOCKER_USER}/.bashrc"
 
 # echo '
 # genhtml_branch_coverage = 1

@@ -7,7 +7,7 @@
         {
             "label": "run-cgfapp-local",
             "type": "shell",
-            "command": "sudo ./bin/dwcgf_image_pipe/run${input:cgfappType}.sh",
+            "command": "./bin/dwcgf_image_pipe/run${input:cgfappType}.sh",
             "options": {
                 "cwd": "${workspaceFolder}/aarch64/install"
             },
@@ -37,7 +37,7 @@
         {
             "label": "run-cgfapp-docker",
             "type": "shell",
-            "command": "docker exec -u $USER -e HISTFILE=/gw_demo/.dev_bash_hist -it gw_orin_20.04_$USER /bin/bash sudo ./bin/dwcgf_image_pipe/run${input:cgfappType}.sh",
+            "command": "docker exec -u $USER -e HISTFILE=/target/.dev_bash_hist -w /target/aarch64/install -it gw_orin_20.04_$USER /bin/bash ./bin/dwcgf_image_pipe/run${input:cgfappType}.sh",
             "options": {
                 "cwd": "${workspaceFolder}/aarch64/install"
             },
@@ -95,7 +95,7 @@
             // todo: log-this-file to see any log file.
             "label": "log-what-local",
             "type": "shell",
-            "command": "grep --color=auto -r --include=*.log -n -H -A 3 -B 5 -i -E -e  \"what|error|invalid|exception\" ./LogFolder/dwcgf_image_pipe/${input:cgfappType}",
+            "command": "grep --color=auto -r --include=*.log -n -H -A 3 -B 5 -i -E -e  \"what|error|invalid|exception|DW_|index\" ./LogFolder/dwcgf_image_pipe/${input:cgfappType}",
             "options": {
                 "cwd": "${workspaceFolder}/aarch64/install"
             },
@@ -177,7 +177,7 @@
         {
             "label": "target-postbuild-docker",
             "type": "shell",
-            "command": "docker exec -u $USER -e HISTFILE=/gw_demo/.dev_bash_hist -it gw_orin_20.04_$USER /bin/bash ./docker/scripts/target_postbuild.sh",
+            "command": "docker exec -u $USER -e HISTFILE=/target/.dev_bash_hist -it gw_orin_20.04_$USER /bin/bash ./docker/scripts/target_postbuild.sh",
             "options": {
                 "cwd": "${workspaceFolder}"
             },

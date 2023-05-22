@@ -28,7 +28,7 @@ function source_ga_base() {
   cd "${DIR}"
 
   source ${DIR}/docker/scripts/gw_base.sh
-  # source ${GW_SYS_ROOT}/opt/ros/${GW_ROS_DIST}/setup.bash
+  source ${GW_SYS_ROOT}/opt/ros/${GW_ROS_DIST}/setup.bash
 }
 
 function ga_check_system_config() {

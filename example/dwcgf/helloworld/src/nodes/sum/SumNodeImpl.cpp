@@ -51,12 +51,22 @@ SumNodeImpl::SumNodeImpl(const SumNodeParams& params, const dwContextHandle_t ct
         return process();
     });
 
+    // init ros
+    rclcpp::init(0, nullptr);
+    m_node = rclcpp::Node::make_shared("SumNode");
+    m_pub = m_node->create_publisher<std_msgs::msg::String>("chatter", 10);
+    m_msg = std::make_unique<std_msgs::msg::String>();
+    m_msg->data = "Hello World From SumNode!";
+
+    DW_LOGD << "SumNodeImpl: ros inited." << Logger::State::endl;
+
     DW_LOGD << "SumNodeImpl: created" << Logger::State::endl;
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////
 SumNodeImpl::~SumNodeImpl()
 {
+    rclcpp::shutdown();
     DW_LOGD << "SumNodeImpl: destructed" << Logger::State::endl;
 }
 
@@ -74,6 +84,13 @@ dwStatus SumNodeImpl::process()
                 << ", received " << inputValue1 << " from input VALUE_1."
                 << " Add together: " << (inputValue0 + inputValue1) << "!" << Logger::State::endl;
     }
+
+    // ros2 pub
+    m_pub->publish(*m_msg);
+    // rclcpp::spin_some(m_node);
+    DW_LOGD << "[Epoch " << m_epochCount << "]"
+            << " ros publish!!! "
+            << Logger::State::endl;
 
     ++m_epochCount;
     return DW_SUCCESS;

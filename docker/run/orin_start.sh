@@ -237,6 +237,7 @@ function main(){
         -e NVIDIA_DRIVER_CAPABILITIES=compute,graphics,video,utility,display \
         -e NVIDIA_REQUIRE_JETPACK="csv-mounts=all" \
         -e DISPLAY \
+        -e TERM=xterm-256color \
         $(local_volumes) \
         $(tune_mqueue) \
         --net host \

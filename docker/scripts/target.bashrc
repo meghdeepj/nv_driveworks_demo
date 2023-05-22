@@ -1,4 +1,4 @@
-echo "sourcing zs.bashrc"
+echo "sourcing target.bashrc"
 # using protobuf
 export PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=cpp
 # using cmake
