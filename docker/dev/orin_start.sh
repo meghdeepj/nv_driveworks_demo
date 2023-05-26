@@ -233,9 +233,9 @@ function main(){
         $(local_volumes) \
         --net host \
         -w /gw_demo \
-        --add-host in_orin_docker:127.0.0.1 \
+        --add-host in-orin-docker:127.0.0.1 \
         --add-host ${LOCAL_HOST}:127.0.0.1 \
-        --hostname in_orin_docker \
+        --hostname in-orin-docker \
         --shm-size 2G \
         -v /dev/null:/dev/raw1394 \
         $IMG \

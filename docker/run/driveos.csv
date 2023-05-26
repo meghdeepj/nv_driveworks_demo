@@ -46,3 +46,6 @@ sym, /usr/lib/libnvscibuf.so
 lib, /usr/lib/libnvscibuf.so.1
 lib, /usr/lib/libnvscicommon.so.1
 lib, /usr/lib/libnvsciipc.so
+
+dir, /usr/lib/nvsipl_drv
+lib, /usr/lib/libnvsipl_devblk_campwr_max20087_fusa.so

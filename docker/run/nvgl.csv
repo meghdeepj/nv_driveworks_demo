@@ -13,3 +13,19 @@ sym, /usr/lib/libnvidia-glsi.so
 lib, /usr/lib/libnvidia-glsi.so.530.00
 sym, /usr/lib/libnvidia-eglcore.so
 lib, /usr/lib/libnvidia-eglcore.so.530.00
+
+sym, /usr/lib/libnvidia-glcore-cg.so
+lib, /usr/lib/libnvidia-glcore-cg.so.530.00
+
+sym, /lib/aarch64-linux-gnu/libEGL.so
+lib, /lib/aarch64-linux-gnu/libEGL.so.1
+
+sym, /usr/lib/libwayland-egl.so
+sym, /usr/lib/libwayland-egl.so.1
+lib, /usr/lib/libwayland-egl.so.1.0.0
+
+sym, /usr/lib/libVulkan_EGL.so
+lib, /usr/lib/libVulkan_EGL.so.1
+
+sym, /lib/aarch64-linux-gnu/libEGL_mesa.so.0
+lib, /lib/aarch64-linux-gnu/libEGL_mesa.so.0.0.0

@@ -26,9 +26,9 @@ docker load -i ./drive-sdk-docker-6.0.6.tar
 docker pull nvcr.io/drive/driveos-sdk/drive-agx-orin-linux-aarch64-sdk-build-x86
 # nvcr.io/drive/driveos-sdk/drive-agx-orin-linux-aarch64-sdk-build-x86   6.0.6.0-0004               2a61be9dd0a0   8 weeks ago    54.1GB
 # 启动docker, 容器名称为gw_sdk_20.04_${USER}
-./docker/build/sdk_build.sh
+./docker/dev/sdk_start.sh
 # 进入container
-./docker/build/sdk_into.sh
+./docker/dev/sdk_into.sh
 # 额外安装软件
 ./docker/scripts/sdk_postbuild.sh
 ```
@@ -38,11 +38,12 @@ docker pull nvcr.io/drive/driveos-sdk/drive-agx-orin-linux-aarch64-sdk-build-x86
 运行时docker在x86平台构建
 
 ```sh
-docker pull arm64v8/ros:foxy
+docker load -i ./arm64v8-ros-foxy-dev.tar
+docker pull arm64v8/ros:foxy-dev
 # 启动docker, 容器名称为gw_orin_20.04_${USER}
-./docker/build/orin_build.sh
+./docker/dev/orin_start.sh
 # 进入container
-./docker/build/orin_into.sh
+./docker/dev/orin_into.sh
 # 额外安装软件
 ./docker/scripts/orin_postbuild.sh
 ```
@@ -52,9 +53,10 @@ docker pull arm64v8/ros:foxy
 运行时docker在orin平台运行 <https://developer.nvidia.com/blog/running-docker-containers-directly-on-nvidia-drive-agx-orin/>
 
 ```sh
-docker pull arm64v8/ros:foxy
+docker load -i ./arm64v8-ros-foxy-dev.tar
+docker pull arm64v8/ros:foxy-dev
 # 启动docker, 容器名称为gw_orin_20.04_${USER}
-./docker/run/orin_build.sh
+./docker/run/orin_start.sh
 # 进入container
 ./docker/run/orin_into.sh
 # 额外安装软件

@@ -225,7 +225,88 @@
                 "focus": true,
                 "group": "clean"
             }
-        }
+        },
+        {
+            "label": "debug-lddebug-docker",
+            "type": "shell",
+            "command": "docker exec -u $USER -e HISTFILE=/target/.dev_bash_hist -e DISPLAY=:1 -e LD_DEBUG=libs -w /target/aarch64/install -it gw_orin_20.04_$USER /usr/local/driveworks/bin/${input:sampleAppType} --offscreen=1 --rig=/usr/local/driveworks/data/samples/sensors/camera/camera/rig.json",
+            "options": {
+                "cwd": "${workspaceFolder}/aarch64/install"
+            },
+            "args": [],
+            "problemMatcher": {
+                "fileLocation": [
+                    "autoDetect",
+                    "${workspaceFolder}"
+                ]
+            },
+            "group": {
+                "kind": "none",
+                "isDefault": false
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated",
+                "clear": true,
+                "focus": true,
+                "group": "debug"
+            }
+        },
+        {
+            "label": "debug-ldconfig-local",
+            "type": "shell",
+            "command": "ldconfig -p | grep -i -e ${input:libName}",
+            "options": {
+                "cwd": "${workspaceFolder}/aarch64/install",
+                "env": {
+                    "TERM": "xterm-256color",
+                }
+            },
+            "args": [],
+            "problemMatcher": {
+                "fileLocation": [
+                    "autoDetect",
+                    "${workspaceFolder}"
+                ]
+            },
+            "group": {
+                "kind": "none",
+                "isDefault": false
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated",
+                "clear": true,
+                "focus": true,
+                "group": "debug"
+            }
+        },
+        {
+            "label": "debug-ldconfig-docker",
+            "type": "shell",
+            "command": "docker exec -u $USER -e HISTFILE=/target/.dev_bash_hist -w /target/aarch64/install -it gw_orin_20.04_$USER /bin/bash ldconfig -p | grep  -i -e ${input:libName}",
+            "options": {
+                "cwd": "${workspaceFolder}/aarch64/install"
+            },
+            "args": [],
+            "problemMatcher": {
+                "fileLocation": [
+                    "autoDetect",
+                    "${workspaceFolder}"
+                ]
+            },
+            "group": {
+                "kind": "none",
+                "isDefault": false
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated",
+                "clear": true,
+                "focus": true,
+                "group": "debug"
+            }
+        },
     ],
     "inputs": [
         {
@@ -242,5 +323,22 @@
             ],
             "default": "RawCameraDeployPipe"
         },
+        {
+            "type": "pickString",
+            "id": "sampleAppType",
+            "description": "What type of sample do you want to run?",
+            "options": [
+                "sample_hello_world",
+                "sample_camera",
+                "sample_renderer",
+            ],
+            "default": "sample_hello_world"
+        },
+        {
+            "type": "promptString",
+            "id": "libName",
+            "description": "What type of lib do you want to search?",
+            "default": "libnvsipl_devblk_campwr_max20087_fusa",
+        }
     ]
 }

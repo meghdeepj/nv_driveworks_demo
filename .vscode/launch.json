@@ -15,7 +15,12 @@
                 "--rig=/usr/local/driveworks/data/samples/sensors/camera/camera/rig.json"
             ],
             "stopAtEntry": true,
-            "environment": [],
+            "environment": [
+                {
+                    "name": "DISPLAY",
+                    "value": ":1",
+                }
+            ],
             "externalConsole": false,
             "logging": {
                 "moduleLoad": true,
@@ -57,6 +62,7 @@
             "options": [
                 "sample_hello_world",
                 "sample_camera",
+                "sample_renderer",
             ],
             "default": "sample_hello_world"
         },

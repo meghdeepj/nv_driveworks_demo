@@ -14,7 +14,7 @@ LOCAL_IMAGE="yes"
 VERSION=""
 ARCH=$(uname -m)
 # zs:
-VERSION_X86_64_2004="foxy"
+VERSION_X86_64_2004="foxy-dev"
 VERSION_X86_64_2204="humble"
 
 # Check whether user has agreed license agreement
@@ -245,13 +245,13 @@ function main(){
         --cap-add SYS_ADMIN \
         --cap-add SYS_PTRACE \
         -w /target \
-        --add-host in_orin_docker:127.0.0.1 \
+        --add-host in-orin-docker:127.0.0.1 \
         --add-host ${LOCAL_HOST}:127.0.0.1 \
-        --hostname in_orin_docker \
+        --hostname in-orin-docker \
         --shm-size 2G \
         -v /dev/null:/dev/raw1394 \
         $IMG \
-        /bin/bash
+        /lib/systemd/systemd
     if [ $? -ne 0 ];then
         error "Failed to start docker container \"${GW_CONTAINER_NAME}\" based on image: $IMG"
         exit 1

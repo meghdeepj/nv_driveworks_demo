@@ -233,9 +233,9 @@ function main(){
         $(local_volumes) \
         --net host \
         -w /gw_demo \
-        --add-host in_sdk_docker:127.0.0.1 \
+        --add-host in-sdk-docker:127.0.0.1 \
         --add-host ${LOCAL_HOST}:127.0.0.1 \
-        --hostname in_sdk_docker \
+        --hostname in-sdk-docker \
         --shm-size 2G \
         -v /dev/null:/dev/raw1394 \
         $IMG \
