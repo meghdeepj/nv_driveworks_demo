@@ -2,6 +2,9 @@
 
 set -e
 
+GW_ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/../.." && pwd -P )"
+GW_RES_DIR=$GW_ROOT_DIR/res
+
 # 额外安装软件
 sudo apt update
 sudo apt install python3-numpy -y
@@ -17,6 +20,9 @@ sudo -H python3 -m pip install jsonschema
 # sudo cmake CMakeLists.txt
 # sudo make
 # sudo cp lib/*.a /usr/lib
+
+# download res
+# wget -N -tries=20 -c -i $GW_RES_DIR/files.txt -P $GW_RES_DIR
 
 # ros2 development tool
 sudo tar --use-compress-program=pigz -xvpf res/ros-foxy.tar.gz -C /drive/drive-linux/filesystem/targetfs/

@@ -55,11 +55,14 @@ if (NOT TARGET dwframework)
     find_package(dwframework REQUIRED CONFIG HINTS ${DRIVEWORKS_PATH}/cmake)
 endif()
 
+find_package(NvSCI MODULE REQUIRED COMPONENTS NvSciSync)
+
 set(LIBRARIES
     # samples_framework
     ${Driveworks_LIBRARIES}
     driveworks-shared
     dwframework
+    NvSCI::NvSciSync
 )
 
 #-------------------------------------------------------------------------------
@@ -68,6 +71,27 @@ set(LIBRARIES
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
+
+
+#-------------------------------------------------------------------------------
+# tools
+#-------------------------------------------------------------------------------
+add_executable(dwchannel2ros
+    ./tools/dwchannel2ros.cpp
+    ./tools/ProgramArguments.cpp
+    ./tools/Log.cpp
+)
+ament_target_dependencies(dwchannel2ros "rclcpp" "std_msgs" )
+target_link_libraries(dwchannel2ros ${LIBRARIES})
+target_include_directories(dwchannel2ros
+                           PUBLIC
+                           ./tools/
+                           ${CUDA_DIR}/include
+                           ${DW_ROOT}/include
+                           ${DW_ROOT}/include/3rdparty
+                           ${DW_ROOT}/include/dwshared/dwfoundation
+                           ${DW_ROOT}/include/dwshared/dwtrace)
+gw_add_sample(dwchannel2ros)
 
 #-------------------------------------------------------------------------------
 # Custom nodes shared library

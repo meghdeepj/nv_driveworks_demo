@@ -1,11 +1,15 @@
-# SPDX-FileCopyrightText: Copyright (c) 2021 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
-# SPDX-License-Identifier: LicenseRef-NvidiaProprietary
+# helllworld
 
-@page dwx_cgf_nodes_sample Hello World and SumNode nodes Sample
-@tableofcontents
+## tools
 
-@section dwx_cgf_nodes_description Description
+```sh
+cd /target/aarch64/install/example/dwcgf_helloworld
 
-The Compute Graph Framework (CGF) node sample application shows how to write custom CGF nodes.
-The sample includes two CGF nodes, HelloWorldNode and SumNode.  They are compiled into libcustom_nodes.so.
-This library can be reference to run HelloWorldNode and SumNode as nodes in CGF.
+# 严格按照先后顺序启动
+# t1: consumer
+./bin/dwchannel2ros --cons=1 --prod=0 --downstreams=0 --dataType=int
+# t2: producer
+/usr/local/driveworks/bin/sample_cgf_dwchannel --cons=0 --prod=1 --downstreams=1 --dataType=int
+# t3 todo: ros2 node
+
+```
