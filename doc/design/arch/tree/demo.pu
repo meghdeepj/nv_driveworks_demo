@@ -1,0 +1,147 @@
+@startsalt arch-repo
+title devkit-demo开发总体架构,分仓及CI制品打包
+skinparam monochrome false
+header %date("yyyy.MM.dd") \n lizhensheng
+legend top
+示例:
+dw-repo=公共仓+dw特定仓
+dw制品包=公共制品+dw特定制品
+endlegend
+{
+==
+{
+== 公共仓 |
+{T!
++ **path/file.ext**            | **intro**          | **group/subgroup.group/project.git**
++ .vscode/           | vscode相关配置  | -
+++ c_cpp_properties.json | cpp跳转      | -
+++ extensions.json       | 插件推荐     | -
+++ launch.json           | 调试配置     | -
+++ setting.json          | 配置         | -
+++ tasks.json            | 快捷操作     | -
++ 3rdparty/          | 交叉编译三方库    | engineering/common/3rdparty.git
+++ linux-aarch64/    | driveos要求       | -
+++ src/              | 源代码            | -
++++ glfw/            | 第三方库源码      | -
+++++ CMakeLists.txt | - | -
++ cmake/             | cmake配置         | engineering/common/cmake.git
+++ Toolchain-V5L.cmake | 交叉编译配置入口 | -
++ doc/               | 文档              | -
++ docker/            | docker脚本        | engineering/common/docker.git
+++ build/            | 构建相关          | -
++++ sdk.dockerfile  | - | -
+++ dev/              | 开发用docker环境   | -
+++ run/              | 运行时docker环境   | -
+++ scripts/          | 维护脚本和环境配置  | -
++++ .bashrc         | 容器的公共bashrc       | -
++++ gw_base.sh      | 维护脚本的base     | -
++++ sdk.bashrc      | 开发时容器的bashrc  | -
++++ target.bashrc   | 运行时容器的bashrc   | -
++++ sdk_adduser.sh | 开发时容器维护: 增加用户 | -
++++ orin_adduser.sh | 运行时容器在x86维护: 增加用户 | -
++++ target_adduser.sh | 运行时容器在target维护: 增加用户 | -
++++ sdk_postbuild.sh | 开发时容器后安装: 在现有容器基础上 | -
++++ orin_postbuild.sh |  运行时容器在x86后安装: 在现有容器基础上 | -
++++ target_postbuild.sh | 运行时容器在target后安装: 在现有容器基础上 | -
+++ sdkm/              | sdk manager的容器化运行 | -
++res/                 | 压缩包, 软连接等资源    | engineering/common/res.git
+++ files.txt           | wget file_list        | -
++ scripts/            | 脚本                    | engineering/common/scripts.git
+++ .vscode/           | 安装包中的vscode配置     | -
+++ orin.sh            | 安装包的维护脚本        | -
+++ tmux_into.sh       | 安装包的tmux维护脚本    | -
++ tools/              | 工具                    | engineering/common/tools.git
+++ dwcgf_tools/       | cgf工具                 | -
++ .clang-format       | 格式文件, 从scripts.git拷出 | -
++ .clang-tidy         | 格式文件, 从scripts.git拷出 | -
++ .gitignore          | 从scripts.git拷出          | -
++ CMakeLists.txt      | 从scripts.git拷出          | -
++ README.md           | 从scripts.git拷出          | -
+}
+..
+== dw特定仓 |
+{T!
++ **path/file.ext**            | **intro**          | **group/subgroup.group/project.git**
++ example/           | dw示例             | engineering/example.group
+++ dwcgf/            | cgf-dw示例         | engineering/example/dwcgf.git
++++ camera_driver/   | cgf相机驱动项目示例 | -
++++ helloworld/      | cgf-helloworld项目示例 | -
++++ CMakeLists.txt   | - | -
++ extern/            | 算法交付库的目录   | engineering/extern.group
+++ module_demo_rel/  | module_demo算法库的二进制交付 | engineering/extern/module_demo_rel.git
++++ include/         | - | -
++++ lib/             | - | -
+++++ cmake/          | 支持find_package | -
++++ CMakeLists.txt   | - | -
++ modules/           | cgf-dw工程        | engineering/modules.group
+++ module_demo/      | 算法出库demo      | engineering/modules/module_demo.git
+++ xplatform/        | 工程组dw工程仓    | engineering/modules/xplatform.git
++++ xcgf/            | cgfapp项目      | -
+++++ image_pipe/     | image_pipe项目  | -
++++++ bin/           | - | -
++++++ data/          | - | -
++++++ graphs/        | - | -
++++++ schedule/      | - | -
++++++ src/           | - | -
++++ xcgf               | cgf-app项目     | -
+++++ image_pipe        | image-pipe项目  | -
++++ ga_camera/        | 基于senyun的sensor库 | 待讨论, 是否要从xcgf分离出来?
++ gw.sh              | 编译脚本, 从scripts.git拷出 | -
+}
+..
+== ros2特定仓 |
+{T!
++ **path/file.ext**            | **intro**          | **group/subgroup.group/project.git**
++ packages/           | ros2工程        | engineering/packages.group
+++ commons/           | commons文件夹   | engineering/packages/commons.group
++++ msginterface/     | 消息定义        | engineering/packages/commons/msginterface.git
++++ proto/            | 消息定义        | engineering/packages/commons/proto.git
++++ configs/          | 配置           | engineering/packages/commons/configs.git
++++ xos/               | 基础库          | engineering/packages/commons/xos.git
+++ xplatform/         | xplatform-ros2 | engineering/packages/xplatform.git
+++ colcon.meta        | colcon编译配置, 从scripts.git拷出  | -
++ gw_ros.sh              | 编译脚本, 从scripts.git拷出 | -
+}
+..
+== 公共制品 |
+{T!
++ **path/file.ext**            | **intro**          | **是否打包**
++ target/           | 根目录        | Y
+++ docker/          | docker相关    | Y
+++ res/             | 资源相关       | Y
+++ orin.sh            | 安装包的维护脚本        | Y
+++ tmux_into.sh       | 安装包的tmux维护脚本    | Y
+}
+..
+== dw特定制品 |
+{T!
++ **path/file.ext**            | **intro**          | **是否打包**
++ target/           | 根目录        | Y
+++ .vscode/         | vscode配置包  | Y
+++ aarch64/         | aarch64构建目录 | Y
++++ build/          | cmake中间文件 | **N**
++++ install/        | install目录   | Y
+++++ bin/           | 二进制, cgf脚本 | Y
+++++ data/          | 工作目录       | Y
+++++ example/        | 示例目录       | Y
++++++ dwcgf_helloworld/ | helloworld示例 | Y
+++++ graphs         | 图模型           | Y
+++++ lib            | 库                | Y
+++++ share          | dw引用ros2的文件夹 | Y
+}
+..
+== ros2特定制品 |
+{T!
++ **path/file.ext**            | **intro**          | **是否打包**
++ target/           | 根目录        | Y
+++ colcon/          | ros2构建目录  | Y
++++ build/          | colcon中间文件 | **N**
++++ log /           | colcon-log文件 | **N**
++++ install/        | colcon-install文件 | Y
+}
+
+==
+}
+}
+
+@endsalt
