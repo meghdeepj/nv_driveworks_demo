@@ -1,0 +1,39 @@
+{
+    "comment": "transform node",
+    "generated": false,
+    "library": "libxplatform_node.so",
+    "name": "dw::framework::gwTransformNode",
+    "inputPorts": {
+        "VALUE_IN": {
+            "type": "int",
+            "bindingRequired": true
+        }
+    },
+    "outputPorts": {
+        "VALUE_OUT": {
+            "type": "int",
+            "bindingRequired": true
+        }
+    },
+    "parameters": {},
+    "passes": [
+        {
+            "name": "SETUP",
+            "processorTypes": [
+                "CPU"
+            ]
+        },
+        {
+            "name": "PROCESS",
+            "processorTypes": [
+                "GPU"
+            ]
+        },
+        {
+            "name": "TEARDOWN",
+            "processorTypes": [
+                "CPU"
+            ]
+        }
+    ]
+}

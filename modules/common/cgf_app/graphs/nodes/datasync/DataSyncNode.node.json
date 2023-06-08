@@ -1,0 +1,53 @@
+{
+    "comment": "datasync node",
+    "generated": false,
+    "library": "libxplatform_node.so",
+    "name": "dw::framework::gwDataSyncNode",
+    "inputPorts": {
+        "IMAGE_ARRAY": {
+            "type": "dwImageHandle_t",
+            "array": 8,
+            "bindingRequired": true
+        },
+        "IMAGE_TIMESTAMP_ARRAY": {
+            "type": "dwTime_t",
+            "array": 8,
+            "bindingRequired": true
+        }
+    },
+    "outputPorts": {
+        "SYNCED_IMAGE_ARRAY":{
+            "type":"dwImageHandle_t",
+            "array":8
+        },
+        "SYNCED_TIMESTAMP":{
+            "type":"dwTime_t"
+        }
+    },
+    "parameters": {
+        "masterCameraIndex": {
+            "type": "size_t",
+            "default": 0
+        }
+    },
+    "passes": [
+        {
+            "name": "SETUP",
+            "processorTypes": [
+                "CPU"
+            ]
+        },
+        {
+            "name": "PROCESS",
+            "processorTypes": [
+                "CPU"
+            ]
+        },
+        {
+            "name": "TEARDOWN",
+            "processorTypes": [
+                "CPU"
+            ]
+        }
+    ]
+}

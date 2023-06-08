@@ -7,7 +7,7 @@
         {
             "label": "run-cgfapp-local",
             "type": "shell",
-            "command": "./bin/dwcgf_image_pipe/run${input:cgfappType}.sh",
+            "command": "sudo ./bin/common_cgf_app/run${input:cgfappType}.sh",
             "options": {
                 "cwd": "${workspaceFolder}/aarch64/install"
             },
@@ -37,7 +37,7 @@
         {
             "label": "run-cgfapp-docker",
             "type": "shell",
-            "command": "docker exec -u $USER -e HISTFILE=/target/.dev_bash_hist -w /target/aarch64/install -it gw_orin_20.04_$USER /bin/bash ./bin/dwcgf_image_pipe/run${input:cgfappType}.sh",
+            "command": "docker exec -u root -e HISTFILE=/target/.dev_bash_hist -w /target/aarch64/install -it gw_orin_20.04_$USER /bin/bash ./bin/common_cgf_app/run${input:cgfappType}.sh",
             "options": {
                 "cwd": "${workspaceFolder}/aarch64/install"
             },
@@ -68,7 +68,7 @@
             // todo: log-this-file to see any log file.
             "label": "log-process-local",
             "type": "shell",
-            "command": "tail -n 50 -f ./LogFolder/dwcgf_image_pipe/${input:cgfappType}/pilotPipe_process_0.log | grep --color=auto -n -A 25 -B 25 -i -E -e  \"what|error|invalid|exception|node|debug\"",
+            "command": "tail -n 50 -f ./LogFolder/common_cgf_app/${input:cgfappType}/pilotPipe_process_0.log | grep --color=auto -n -A 25 -B 25 -i -E -e  \"what|error|invalid|exception|node|debug\"",
             "options": {
                 "cwd": "${workspaceFolder}/aarch64/install"
             },
@@ -95,7 +95,7 @@
             // todo: log-this-file to see any log file.
             "label": "log-what-local",
             "type": "shell",
-            "command": "grep --color=auto -r --include=*.log -n -H -A 3 -B 5 -i -E -e  \"what|error|invalid|exception|DW_|index\" ./LogFolder/dwcgf_image_pipe/${input:cgfappType}",
+            "command": "grep --color=auto -r --include=*.log -n -H -A 3 -B 5 -i -E -e  \"what|error|invalid|exception|DW_|index\" ./LogFolder/common_cgf_app/${input:cgfappType}",
             "options": {
                 "cwd": "${workspaceFolder}/aarch64/install"
             },
@@ -314,6 +314,7 @@
             "id": "cgfappType",
             "description": "What type of cgfapp do you want to run?",
             "options": [
+                "Helloworld",
                 "RawCameraDeployPipe",
                 "VirtualCameraDeployPipe",
                 "YUVCameraDeployPipe",
@@ -321,7 +322,7 @@
                 "VirtualCameraTestPipe",
                 "YUVCameraTestPipe",
             ],
-            "default": "RawCameraDeployPipe"
+            "default": "Helloworld"
         },
         {
             "type": "pickString",

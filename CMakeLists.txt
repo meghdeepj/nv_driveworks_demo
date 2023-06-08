@@ -148,17 +148,32 @@ if (VIBRANTE OR DW_EXPERIMENTAL_FORCE_EGL)
 endif()
 
 #-------------------------------------------------------------------------------
-# gw_demos
+# component based platform api
 #-------------------------------------------------------------------------------
-set(SAMPLES dwcgf;)
-foreach(SAMPLE ${SAMPLES})
-    add_subdirectory(example/${SAMPLE})
-endforeach()
+set(COMPONENTS
+    camera;
+)
+foreach(COMPONENT ${COMPONENTS})
+    add_subdirectory(frameworks/${COMPONENT})
+endforeach(COMPONENT ${COMPONENTS})
 
-set(MODULES module_demo;xplatform;)
+#-------------------------------------------------------------------------------
+# module based cgf-node
+# 出库：先编译channel，再编译算法，再编译node
+#-------------------------------------------------------------------------------
+set(MODULES
+    common/cgf_channel;
+    team_demo/module_demo;
+    team_demo/team_node;
+    xplatform/xplatform_node;
+)
 foreach(MODULE ${MODULES})
     add_subdirectory(modules/${MODULE})
 endforeach()
+
+# 集成
+add_subdirectory(modules/common/cgf_app)
+
 # Create a symlink '_data' to '<DW-install>/data' in the build folder's root, so that `DataPath`
 # can lookup the required path independent of the build folder's location relative to the
 # repository's root

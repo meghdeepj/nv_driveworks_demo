@@ -20,6 +20,8 @@ GW_AARCH64_INSTALL_DIR=${GW_TARGET_ROOT_DIR}/aarch64/install
 GW_X86_ROOT_DIR=${GW_TARGET_ROOT_DIR}/x86/
 GW_X86_BUILD_DIR=${GW_TARGET_ROOT_DIR}/x86/build
 GW_X86_INSTALL_DIR=${GW_TARGET_ROOT_DIR}/x86/install
+GW_SAMPLE_BUILD_DIR=${GW_TARGET_ROOT_DIR}/aarch64-sample/build
+GW_SAMPLE_SRC_DIR=/usr/local/driveworks/samples
 
 GW_SYS_ROOT="/drive/drive-linux/filesystem/targetfs"
 
@@ -87,6 +89,38 @@ function cmake_aarch64() {
   success 'cmake_aarch64 passed!'
 }
 
+function cmake_x86() {
+  info "Start cmake, please wait ..."
+  info "cmake on $MACHINE_ARCH..."
+
+  cd ${GW_ROOT_DIR}
+  info "cmake -B ${GW_X86_BUILD_DIR} ${CMAKE_BUILD_OPT} ${CMAKE_CROSS_OPT}"
+  cmake -B ${GW_X86_BUILD_DIR} ${CMAKE_BUILD_OPT} ${CMAKE_CROSS_OPT}
+
+  if [ ${PIPESTATUS[0]} -ne 0 ]; then
+    fail 'cmake failed!'
+  fi
+  info "please make_x86"
+  cd -
+  success 'cmake_x86 passed!'
+}
+
+function cmake_sample() {
+  info "Start cmake, please wait ..."
+  info "cmake on $MACHINE_ARCH..."
+
+  cd ${GW_ROOT_DIR}
+  info "cmake -B ${GW_SAMPLE_BUILD_DIR} ${CMAKE_BUILD_OPT} ${CMAKE_CROSS_OPT} -DCMAKE_BUILD_TYPE=Debug -S /usr/local/driveworks/samples"
+  cmake -B ${GW_SAMPLE_BUILD_DIR} ${CMAKE_BUILD_OPT} ${CMAKE_CROSS_OPT} -DCMAKE_BUILD_TYPE=Debug -S /usr/local/driveworks/samples
+
+  if [ ${PIPESTATUS[0]} -ne 0 ]; then
+    fail 'cmake failed!'
+  fi
+  info "please make_x86"
+  cd -
+  success 'cmake_x86 passed!'
+}
+
 # https://colcon.readthedocs.io/en/released/user/installation.html
 function make_aarch64() {
   info "Start make, please wait ..."
@@ -104,6 +138,38 @@ function make_aarch64() {
   success 'make_aarch64 passed!'
 }
 
+function make_x86() {
+  info "Start make, please wait ..."
+  info "make and install on $MACHINE_ARCH..."
+
+  cd ${GW_ROOT_DIR}
+  info "make -C ${GW_X86_BUILD_DIR} ${MAKE_JOB_ARG} ${MAKE_INSTALL_ARG}"
+  make -C ${GW_X86_BUILD_DIR} ${MAKE_JOB_ARG} ${MAKE_INSTALL_ARG}
+
+  if [ ${PIPESTATUS[0]} -ne 0 ]; then
+    fail 'make failed!'
+  fi
+  info "make and install completed."
+  cd -
+  success 'make_x86 passed!'
+}
+
+function make_sample() {
+  info "Start make, please wait ..."
+  info "make and install on $MACHINE_ARCH..."
+
+  cd ${GW_ROOT_DIR}
+  info "make -C ${GW_SAMPLE_BUILD_DIR} ${MAKE_JOB_ARG} ${MAKE_INSTALL_ARG}"
+  make -C ${GW_SAMPLE_BUILD_DIR} ${MAKE_JOB_ARG} ${MAKE_INSTALL_ARG}
+
+  if [ ${PIPESTATUS[0]} -ne 0 ]; then
+    fail 'make failed!'
+  fi
+  info "make and install completed."
+  cd -
+  success 'make_sample passed!'
+}
+
 function install_aarch64() {
   nfo "Start make, please wait ..."
   info "make install on $MACHINE_ARCH..."
@@ -118,6 +184,38 @@ function install_aarch64() {
   info "please copy the target to orin-kit"
   cd -
   success 'install_aarch64 passed!'
+}
+
+function install_x86() {
+  nfo "Start make, please wait ..."
+  info "make install on $MACHINE_ARCH..."
+
+  cd ${GW_ROOT_DIR}
+  info "make -C ${GW_X86_BUILD_DIR} ${MAKE_JOB_ARG} ${MAKE_INSTALL_ARG}"
+  make -C ${GW_X86_BUILD_DIR} ${MAKE_JOB_ARG} ${MAKE_INSTALL_ARG}
+
+  if [ ${PIPESTATUS[0]} -ne 0 ]; then
+    fail 'install failed!'
+  fi
+  info "please copy the target to orin-kit"
+  cd -
+  success 'install_x86 passed!'
+}
+
+function install_sample() {
+  nfo "Start make, please wait ..."
+  info "make install on $MACHINE_ARCH..."
+
+  cd ${GW_ROOT_DIR}
+  info "make -C ${GW_SAMPLE_BUILD_DIR} ${MAKE_JOB_ARG} ${MAKE_INSTALL_ARG}"
+  make -C ${GW_SAMPLE_BUILD_DIR} ${MAKE_JOB_ARG} ${MAKE_INSTALL_ARG}
+
+  if [ ${PIPESTATUS[0]} -ne 0 ]; then
+    fail 'install failed!'
+  fi
+  info "please copy the target to orin-kit"
+  cd -
+  success 'install_sample passed!'
 }
 
 # 编译测试检查
@@ -243,6 +341,12 @@ function print_usage() {
   ${BLUE}cmake_aarch64${NONE}: cmake_aarch64
   ${BLUE}make_aarch64${NONE}: make and install on aarch64
   ${BLUE}install_aarch64${NONE}: install_aarch64
+  ${BLUE}cmake_x86${NONE}: cmake_x86
+  ${BLUE}make_x86${NONE}: make and install on x86
+  ${BLUE}install_x86${NONE}: install_x86
+  ${BLUE}cmake_sample${NONE}: cmake_sample
+  ${BLUE}make_sample${NONE}: make and install on sample
+  ${BLUE}install_sample${NONE}: install_sample
   ${BLUE}clean${NONE}: clean
   ${BLUE}usage${NONE}: print this menu
   "
@@ -279,6 +383,24 @@ function main() {
       ;;
     install_aarch64)
       install_aarch64 $@
+      ;;
+    cmake_x86)
+      cmake_x86 $@
+      ;;
+    make_x86)
+      make_x86 $@
+      ;;
+    install_x86)
+      install_x86 $@
+      ;;
+    cmake_sample)
+      cmake_sample $@
+      ;;
+    make_sample)
+      make_sample $@
+      ;;
+    install_sample)
+      install_sample $@
       ;;
     clean)
       clean

@@ -1,0 +1,63 @@
+{
+    "comment": "camera capture node",
+    "generated": false,
+    "library": "libxplatform_node.so",
+    "name": "dw::framework::gwCameraNode",
+    "inputPorts": {},
+    "outputPorts": {
+        "IMAGE_PROCESSED_YUV": {
+            "type": "dwImageHandle_t"
+        },
+        "IMAGE_TIMESTAMP": {
+            "type": "dwTime_t"
+        },
+        "VALUE_0": {
+            "type": "int"
+        },
+        "GUARDIAN_INSTRUCT": {
+            "type": "gwGuardianInstruct"
+        }
+    },
+    "parameters": {
+        "cameraIndex": {
+            "type": "size_t",
+            "default": 0
+        },
+        "cameraType": {
+            "type": "gwCameraType",
+            "default": "GW_CAMERA_INVALID"
+        },
+        "cameraParameter": {
+            "type": "dw::core::FixedString<256>",
+            "default": "invalid"
+        },
+        "cameraProtocol": {
+            "type": "dw::core::FixedString<256>",
+            "default": "camera.virtual"
+        },
+        "cameraIntrinsics": {
+            "type": "dw::core::FixedString<256>",
+            "default": "invalid"
+        }
+    },
+    "passes": [
+        {
+            "name": "SETUP",
+            "processorTypes": [
+                "CPU"
+            ]
+        },
+        {
+            "name": "PROCESSED_OUTPUT",
+            "processorTypes": [
+                "CPU"
+            ]
+        },
+        {
+            "name": "TEARDOWN",
+            "processorTypes": [
+                "CPU"
+            ]
+        }
+    ]
+}

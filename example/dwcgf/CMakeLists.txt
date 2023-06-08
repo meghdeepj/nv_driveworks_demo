@@ -1,2 +1,0 @@
-add_subdirectory(helloworld)
-add_subdirectory(camera_driver)

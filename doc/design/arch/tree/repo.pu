@@ -1,0 +1,116 @@
+@startsalt arch-repo
+title 基于repo的开发总体架构,分仓及CI制品
+skinparam monochrome false
+header %date("yyyy.MM.dd") \n lizhensheng
+legend top
+1. 工作目录包含: 项目仓(项目公共仓+项目私有仓)+制品仓
+2. 专业组提交本专业的制品, 所有组共享一个制品仓
+endlegend
+{
+==
+{
+== 项目仓 |
+{T!
++ **path/file.ext**            | **intro**          | **group/subgroup.group/project.git**
++ .vscode/           | vscode相关配置  | -
+++ c_cpp_properties.json | cpp跳转      | -
+++ extensions.json       | 插件推荐     | -
+++ launch.json           | 调试配置     | -
+++ setting.json          | 配置         | -
+++ tasks.json            | 快捷操作     | -
++ 3rdparty/          | 交叉编译三方库    | commons/3rdparty.git
+++ linux-aarch64/    | driveos要求       | -
+++ src/              | 源代码            | -
++++ glfw/            | 第三方库源码      | -
+++++ CMakeLists.txt | - | -
++ cmake/             | cmake配置         | commons/cmake.git
+++ Toolchain-V5L.cmake | 交叉编译配置入口 | -
++ doc/               | 文档              | -
++ docker/            | docker脚本        | commons/docker.git
+++ build/            | 构建相关          | -
++++ sdk.dockerfile  | - | -
+++ dev/              | 开发用docker环境   | -
+++ run/              | 运行时docker环境   | -
+++ scripts/          | 维护脚本和环境配置  | -
++++ .bashrc         | 容器的公共bashrc       | -
++++ gw_base.sh      | 维护脚本的base     | -
++++ sdk.bashrc      | 开发时容器的bashrc  | -
++++ target.bashrc   | 运行时容器的bashrc   | -
++++ sdk_adduser.sh | 开发时容器维护: 增加用户 | -
++++ orin_adduser.sh | 运行时容器在x86维护: 增加用户 | -
++++ target_adduser.sh | 运行时容器在target维护: 增加用户 | -
++++ sdk_postbuild.sh | 开发时容器后安装: 在现有容器基础上 | -
++++ orin_postbuild.sh |  运行时容器在x86后安装: 在现有容器基础上 | -
++++ target_postbuild.sh | 运行时容器在target后安装: 在现有容器基础上 | -
+++ sdkm/              | sdk manager的容器化运行 | -
++res/                 | 压缩包, 软连接等资源    | commons/res.git
+++ driver/            | camera driver等        | -
++++ install.sh        | 安装脚本                | -
+++ misc/              | - | -
++++ files.txt         | wget file_list        | -
++ scripts/            | 脚本                    | commons/scripts.git
+++ .vscode/           | 安装包中的vscode配置     | -
+++ orin.sh            | 安装包的维护脚本        | -
+++ tmux_into.sh       | 安装包的tmux维护脚本    | -
++ tools/              | 工具                    | commons/tools.git
+++ dwcgf_tools/       | cgf工具                 | -
++ .clang-format       | 格式文件, 从scripts.git拷出 | -
++ .clang-tidy         | 格式文件, 从scripts.git拷出 | -
++ CMakeLists.txt      | 从scripts.git拷出          | -
++ gw.sh              | 编译脚本, 从scripts.git拷出 | -
++ README.md           | 从scripts.git拷出          | -
+' 项目公共
++ modules/           | dw工程        | -
+++ common/           | dw工程的公共部分   | -
++++ cgf_app           | cgf-app-config   | commons/cgf_app.git
+++++ bin/             | - | -
+++++ data/            | - | -
+++++ graphs/          | - | -
+++++ schedule/        | - | -
++++ cgf_channel       | cgf自定义消息 | commons/cgf_channel.git
+++++ src/             | - | -
++++++ channel/        | - | -
+' 项目私有
+++ xplatform/        | 工程组dw工程仓    | -
++++ xplatform_node/       | 工程组cgf节点      | engineering/xplatform_node.git
+' demo项目
+++ team_demo/        | 示例仓           | -
++++ module_demo/     | 示例算法库        | commons/module_demo.git
++++ team_node/        | 示例cgf_nodes    | commons/team_node.git
+' platform
++ frameworks/           | ga platform api   | engineering/frameworks.git
+++ camera/           | sensor库         | engineering/camera.git
+' artifacts
++ target/            | ci制品仓          | commons/target.git
+}
+..
+== 制品仓 |
+{T!
++ **path/file.ext**            | **intro**          | **是否打包**
++ target/           | 根目录        | Y
+++ .vscode/         | vscode配置包  | Y
+++ docker/          | docker相关    | Y
+++ res/             | 资源相关       | Y
++++ driver/         | 驱动文件       | -
+++ orin.sh            | 安装包的维护脚本        | Y
+++ tmux_into.sh       | 安装包的tmux维护脚本    | Y
+' 项目
+++ aarch64/         | aarch64构建目录 | Y
++++ build/          | cmake中间文件 | **N**
++++ install/        | install目录   | Y
+++++ bin/           | 二进制, cgf脚本 | Y
++++++ module_demo/  | 以项目名为安装目录 | -
++++++ common_cgf_app/  | cgf-app的执行脚本目录 | -
+++++ data/          | 工作目录       | Y
+++++ graphs/        | 图模型           | Y
+++++ lib/           | 库                | Y
++++++ module_demo   | 以项目名为安装目录 | -
++++++ team_node   | 以项目名为安装目录 | -
++++++ xplatform_node   | 以项目名为安装目录 | -
+}
+
+==
+}
+}
+
+@endsalt

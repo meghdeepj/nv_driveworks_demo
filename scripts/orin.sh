@@ -155,6 +155,8 @@ function clean() {
   find . -type f -name "framesync_*" -exec sudo rm -rf {} \;
   info "find . -type f -name "core*" -exec sudo rm -rf {} \;"
   find . -type f -name "core*" -exec sudo rm -rf {} \;
+  info "find . -type f -name "DeadlockResolver*" -exec sudo rm -rf {} \;"
+  find . -type f -name "DeadlockResolver*" -exec sudo rm -rf {} \;
 
   cd -
   success "clean passed!"

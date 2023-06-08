@@ -1,0 +1,53 @@
+@startuml cgf-dev-cycle
+hide empty description
+skinparam monochrome false
+title 基于repo的多团队协作流程
+header %date("yyyy.MM.dd") \n lizhensheng
+
+|系统组|
+start
+:系统分析;
+:功能分析;
+
+split
+
+|算法组|
+:算法设计;
+:节点设计;
+note left
+    输入输出
+    PASS
+    参数
+    channel
+end note
+:so入库;
+
+split again
+
+|工程组|
+:图模型设计;
+note left
+    graphlet
+    node
+    schedule
+    wcet
+end note
+
+end split
+
+|算法组|
+:App设计;
+note left
+    app.json
+    app-config
+    parameter
+end note
+:功能测试;
+
+|测试组|
+:仿真测试;
+:实车测试;
+
+stop
+
+@enduml
