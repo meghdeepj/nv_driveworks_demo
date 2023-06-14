@@ -27,6 +27,10 @@ sudo cp /gw_demo/tools/ros.key /usr/share/keyrings/ros-archive-keyring.gpg
 # sudo echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://mirrors.tuna.tsinghua.edu.cn/ros2/ubuntu $(source /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
 # sudo sed -i 's/packages.ros.org/mirrors.tuna.tsinghua.edu.cn/' /etc/apt/sources.list.d/ros2.list
 
+# ros2 cross-build in python: break host python config.
+sudo cp /usr/include/aarch64-linux-gnu/python3.8/pyconfig.h /usr/include/python3.8/
+# header-only boost support
+sudo ln -s /usr/include/boost /drive/drive-linux/include/boost
 
 # 检测是16.04还是18.04
 

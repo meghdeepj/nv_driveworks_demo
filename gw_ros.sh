@@ -281,7 +281,7 @@ function config() {
   CROSS_OPT=" -DCMAKE_TOOLCHAIN_FILE=/gw_demo/cmake/Toolchain-V5L.cmake -DVIBRANTE_PDK=/drive/drive-linux "
   # --cmake-force-configure
   # PACKAGE_ARG=" --packages-up-to performance_test "
-  PACKAGE_ARG=" --cmake-force-configure --packages-up-to sm_guardian "
+  PACKAGE_ARG=" "
 }
 
 function set_use_gpu() {

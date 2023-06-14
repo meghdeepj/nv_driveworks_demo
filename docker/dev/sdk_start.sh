@@ -14,8 +14,8 @@ LOCAL_IMAGE="yes"
 VERSION=""
 ARCH=$(uname -m)
 # zs:
-VERSION_X86_64_2004="6.0.6.0-0004"
-VERSION_X86_64_2204="6.0.6.0-0004"
+VERSION_X86_64_2004="6.0.6.0-0004-dev"
+VERSION_X86_64_2204="6.0.6.0-0004-dev"
 
 # Check whether user has agreed license agreement
 function check_agreement() {

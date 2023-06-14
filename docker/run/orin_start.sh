@@ -10,12 +10,12 @@
 
 
 VERSION_OPT=""
-LOCAL_IMAGE="yes"
+LOCAL_IMAGE=""
 VERSION=""
 ARCH=$(uname -m)
 # zs:
 VERSION_X86_64_2004="foxy-dev"
-VERSION_X86_64_2204="humble"
+VERSION_X86_64_2204="humble-dev"
 
 # Check whether user has agreed license agreement
 function check_agreement() {
@@ -109,9 +109,10 @@ else
 fi
 
 # zs:
+DOCKER_REPO_REMOTE=mirrors.xlab.gacrnd.com:8082
 # 如果没有制定docker_repo，则默认是arm64v8/ros
 if [ -z "${DOCKER_REPO}" ]; then
-    DOCKER_REPO=arm64v8/ros
+    DOCKER_REPO=$DOCKER_REPO_REMOTE/arm64v8/ros
 fi
 
 # 如果没有制定,默认是20.04

@@ -3,4 +3,4 @@ target/
 *.drawio.*
 gw_demo
 _gsdata_/
-res/*.tar.gz
+res/misc/*.tar.gz

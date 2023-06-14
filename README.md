@@ -31,7 +31,7 @@ docker pull nvcr.io/drive/driveos-sdk/drive-agx-orin-linux-aarch64-sdk-build-x86
 ./docker/dev/sdk_start.sh
 # 进入container
 ./docker/dev/sdk_into.sh
-# 额外安装软件
+# optional: 额外安装软件
 ./docker/scripts/sdk_postbuild.sh
 ```
 
@@ -46,7 +46,7 @@ docker pull arm64v8/ros:foxy-dev
 ./docker/dev/orin_start.sh
 # 进入container
 ./docker/dev/orin_into.sh
-# 额外安装软件
+# optional: 额外安装软件
 ./docker/scripts/orin_postbuild.sh
 ```
 
@@ -56,12 +56,12 @@ docker pull arm64v8/ros:foxy-dev
 
 ```sh
 docker load -i ./arm64v8-ros-foxy-dev.tar
-docker pull arm64v8/ros:foxy-dev
+docker pull mirrors.xlab.gacrnd.com:8082/arm64v8/ros:foxy-dev
 # 启动docker, 容器名称为gw_orin_20.04_${USER}
 ./docker/run/orin_start.sh
 # 进入container
 ./docker/run/orin_into.sh
-# 额外安装软件
+# optional: 额外安装软件
 ./docker/scripts/target_postbuild.sh
 ```
 

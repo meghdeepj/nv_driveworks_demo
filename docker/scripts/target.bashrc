@@ -1,10 +1,10 @@
 echo "sourcing target.bashrc"
+# using ros2
+source /opt/ros/foxy/setup.bash
 # using protobuf
 export PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=cpp
 # using cmake
 export CMAKE_BUILD_PARALLEL_LEVEL=12
-# selecting ros2
-source /opt/ros/foxy/setup.bash
 # source /opt/ros/galactic/setup.bash
 # ros2 common setting
 export RCUTILS_COLORIZED_OUTPUT=1
@@ -20,12 +20,14 @@ export ROS_DOMAIN_ID=110
 export PATH=/usr/local/cuda/bin:$PATH
 export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
 
-# source the prebuilt ros2 binary
-source /opt/ros/foxy-smacc2/target/colcon/install/local_setup.bash
+# selecting ros2
 
-echo "the main setting is in following:"
-env | grep XLAB_
-env | grep ROS_
-env | grep RMW
-env | grep RCU
-env | grep FASTRTPS
+# source the prebuilt ros2 binary
+# source /opt/ros/foxy-smacc2/target/colcon/install/local_setup.bash
+
+# echo "the main setting is in following:"
+# env | grep XLAB_
+# env | grep ROS_
+# env | grep RMW
+# env | grep RCU
+# env | grep FASTRTPS

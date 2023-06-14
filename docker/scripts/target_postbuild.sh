@@ -5,6 +5,9 @@
 # sudo apt install ntp -y
 # sudo service ntp restart
 
+GW_ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/../.." && pwd -P )"
+GW_RES_DIR=$GW_ROOT_DIR/res/misc
+
 set -e
 
 if [ -f /.dockerenv ]; then
@@ -26,12 +29,12 @@ sudo apt install -y nano pigz bc strace ltrace gdb
 
 # dw-samples-src to debug
 sudo mkdir -p /opt/gw_demo/res/driveworks/
-sudo tar --use-compress-program=pigz -xvpf res/dw-samples-src.tar.gz -C /opt/gw_demo/res/driveworks/
+sudo tar --use-compress-program=pigz -xvpf res/misc/dw-samples-src.tar.gz -C /opt/gw_demo/res/driveworks/
 
 # ros2 runtime-dependencies
 sudo apt install -y libboost-thread-dev
 sudo apt install -y ros-foxy-demo-nodes-cpp
 
 # ros2 prebuilt-binary
-sudo mkdir -p /opt/ros/foxy-smacc2/
-sudo tar --use-compress-program=pigz -xvpf res/ros-foxy-smacc2.tar.gz -C /opt/ros/foxy-smacc2/
+# sudo mkdir -p /opt/ros/foxy-smacc2/
+# sudo tar --use-compress-program=pigz -xvpf res/misc/ros-foxy-smacc2.tar.gz -C /opt/ros/foxy-smacc2/
