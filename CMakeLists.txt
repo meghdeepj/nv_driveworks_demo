@@ -124,6 +124,11 @@ set(Driveworks_LIBRARIES
     ${CUDA_CUDA_LIBRARY}
 )
 
+find_package(SSM REQUIRED)
+if(SSM_FOUND)
+    list(APPEND Driveworks_LIBRARIES SSM::FRAMEWORK)
+endif()
+
 if(VIBRANTE)
     list(APPEND Driveworks_LIBRARIES ${vibrante_LIBRARIES} ${vibrante_Xlibs_LIBRARIES})
     find_package(cuDLA MODULE)
@@ -166,6 +171,7 @@ set(MODULES
     team_demo/module_demo;
     team_demo/team_node;
     xplatform/xplatform_node;
+    xplatform/xplatform_ssm;
 )
 foreach(MODULE ${MODULES})
     add_subdirectory(modules/${MODULE})
@@ -185,6 +191,7 @@ endif()
 
 message(STATUS "zs: LINUX is: ${LINUX}")
 message(STATUS "zs: VIBRANTE is: ${VIBRANTE}")
+message(STATUS "zs: Driveworks_LIBRARIES is: ${Driveworks_LIBRARIES}")
 
 set(GW_ORIN_SH ${CMAKE_CURRENT_SOURCE_DIR}/scripts/orin.sh)
 set(GW_TMUX_SH ${CMAKE_CURRENT_SOURCE_DIR}/scripts/tmux_into.sh)
