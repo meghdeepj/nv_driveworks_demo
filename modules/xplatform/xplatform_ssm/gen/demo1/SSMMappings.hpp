@@ -37,80 +37,35 @@
 */
 
 
-#include <sm1/SSMMappings.hpp>
+#pragma once
+
+#include <stdint.h>
+#include <map>
+#include <iostream>
+#include <ssm/SMBaseClass.hpp>
+#include <demo1/SSMNames.hpp>
 
 namespace SystemStateManager
 {
-namespace SM1
+namespace DEMO1
 {
 
+// Helper methods for SSM that returns state enums for strings
+SSMStates SSM_strToEnum(std::string state);
 
-std::ostream& operator<<(std::ostream& out, const SSMStates state_enum)
-{
-    return out << SSM_enumToStr(state_enum);
-}
+SSMStates get_SSMState(SMBaseClass *obj);
 
-const char* SSM_enumToStr(SSMStates e)
-{
-    switch(e)
-    {
-        case SSMStates::Degrade: return SSM_SSM_Degrade_str;
-        case SSMStates::NormalOperation: return SSM_SSM_NormalOperation_str;
-        case SSMStates::Standby: return SSM_SSM_Standby_str;
-        case SSMStates::UrgentOperation: return SSM_SSM_UrgentOperation_str;
-    }
-    return "NULL_STATE";
-}
+// Helper method for SSM that returns strings for state enums
+const char* SSM_enumToStr(SSMStates e);
 
+//Overload << operator to help pretty print state enums
+std::ostream& operator<<(std::ostream& out, const SSMStates state_enum);
 
-SSMStates SSM_strToEnum(std::string state)
-{
-    static FixedMap<std::string, SSMStates> stringToState
-    {
-        {SSM_SSM_Degrade_str, SSMStates::Degrade},
-        {SSM_SSM_NormalOperation_str, SSMStates::NormalOperation},
-        {SSM_SSM_Standby_str, SSMStates::Standby},
-        {SSM_SSM_UrgentOperation_str, SSMStates::UrgentOperation},
-    };
+//Helper method to return string for a state machine enum
+const char* SmEnumToStr(StateMachines e);
 
-    auto it = stringToState.find(state);
-    if(it != stringToState.end())
-    {
-        return it->second;
-    }
-    return SSMStates::NULL_STATE;
-}
-
-SSMStates get_SSMState(SMBaseClass *obj)
-{
-    return SSM_strToEnum(obj->getCurrentState(SSM_SSM_str));
-}
-
-
-const char* SmEnumToStr(StateMachines e)
-{
-    switch(e)
-    {
-        case StateMachines::SSM: return SSM_SSM_str;
-    }
-    return "";
-}
-
-StateMachines getSmEnum(std::string sm)
-{
-    static FixedMap<std::string, StateMachines> sm_string_to_enum_map = 
-    {
-        {SSM_SSM_str, StateMachines::SSM},
-    };
-
-    auto it = sm_string_to_enum_map.find(sm);
-    if(it != sm_string_to_enum_map.end())
-    {
-        return it->second;
-    }
-    return StateMachines::INVALID_STATEMACHINE;
-}
-
+ // Helper method: Returns an enum for state machine string passed as an argument
+StateMachines getSmEnum(std::string sm);
 
 }
 }

@@ -36,12 +36,12 @@
 * Please do not manually modify the files
 */
 
-#include <sm1/SSMClone.hpp>
+#include <demo1/SSMClone.hpp>
 
 namespace SystemStateManager
 {
 
-namespace SM1
+namespace DEMO1
 {
 
 extern bool setupHierarchy(StateMachineVector& smv, StateMachinePtr& hPtr);
@@ -220,12 +220,12 @@ void SSMClone::printClientHistogram()
 
 void SSMClone::initLockSteppedCommands()
 {
-    for (int index = 0; index < (int)SystemStateManager::SM1::LockSteppedCommands::MAX_CMD; index++)
+    for (int index = 0; index < (int)SystemStateManager::DEMO1::LockSteppedCommands::MAX_CMD; index++)
     {
         addLockSteppedCommand(index);
     }
 }
-bool SSMClone::registerLockedCommand(SystemStateManager::SM1::LockSteppedCommands command, SSMFunctionHandler ptr)
+bool SSMClone::registerLockedCommand(SystemStateManager::DEMO1::LockSteppedCommands command, SSMFunctionHandler ptr)
 {
     return registerLockSteppedFunction((int)command, ptr);
 }

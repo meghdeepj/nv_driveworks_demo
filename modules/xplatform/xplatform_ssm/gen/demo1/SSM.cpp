@@ -36,28 +36,28 @@
 * Please do not manually modify the files
 */
 
-#include <sm1/SSM.hpp>
+#include <demo1/SSM.hpp>
 
 namespace SystemStateManager
 {
 
-namespace SM1
+namespace DEMO1
 {
 
 void SSM::initialize()
 {
-    SSM_LOG("Initializing SM1");
+    SSM_LOG("Initializing DEMO1");
     isStateMachineActive = true;
     initStateMachine();
     ENTER();
 }
 
-bool SSM::executeLockedCommand(SystemStateManager::SM1::LockSteppedCommands command)
+bool SSM::executeLockedCommand(SystemStateManager::DEMO1::LockSteppedCommands command)
 {
     return executeLockSteppedCommand((int)command);
 }
 
-bool SSM::registerLockedCommand(SystemStateManager::SM1::LockSteppedCommands command, SSMFunctionHandler ptr)
+bool SSM::registerLockedCommand(SystemStateManager::DEMO1::LockSteppedCommands command, SSMFunctionHandler ptr)
 {
     return registerLockSteppedFunction((int)command, ptr);
 }
@@ -159,7 +159,7 @@ void SSM::printClientHistogram()
 
 void SSM::initLockSteppedCommands()
 {
-    for (int index = 0; index < (int)SystemStateManager::SM1::LockSteppedCommands::MAX_CMD; index++)
+    for (int index = 0; index < (int)SystemStateManager::DEMO1::LockSteppedCommands::MAX_CMD; index++)
     {
         addLockSteppedCommand(index);
     }

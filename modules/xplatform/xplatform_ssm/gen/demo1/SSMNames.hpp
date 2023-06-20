@@ -36,63 +36,66 @@
 * Please do not manually modify the files
 */
 
-#include <ssm/StateMachine.hpp>
+
+#pragma once
+
+#include <stdint.h>
+#include <map>
+#define FixedMap std::map
+
+#define MAX_DATA_TYPE_SIZE              50
 
 namespace SystemStateManager
 {
 
-namespace SM1
+
+/// Labels for SSM
+#define SSM_SSM_str "SSM"
+#define SSM_SSM_Standby_str "Standby"
+#define SSM_SSM_NormalOperation_str "NormalOperation"
+#define SSM_SSM_Degrade_str "Degrade"
+#define SSM_SSM_UrgentOperation_str "UrgentOperation"
+#define SSM_SSM_STATES_COUNT 4
+
+//Number of State Machines
+#define SSM_DEMO1_SM_COUNT 1
+
+namespace DEMO1
 {
 
-static std::atomic<bool> showHeadSpecs {true};
+enum class StateMachines;
+typedef FixedMap<std::string, StateMachines> StateMachineStrEnumMap;
 
-static std::mutex showHeadSpecsLock;
+enum class LockSteppedCommands : int {
+    MAX_CMD = 0,
+};
 
-bool setupHierarchy(StateMachineVector &stateMachineVector, StateMachinePtr &headPtr)
+enum class StateMachines : int
 {
-    int smStartPort = 0;
-    int cloneStartPort = 0;
-    SWCVector swcVector;
+    INVALID_STATEMACHINE,
+    SSM,
+};
 
-    std::string startPort = getKeyFromMasterQAFile("startport");
-    if (startPort != "")
-    {
-        overrideBasePort = std::stoi(startPort);
-        setPorts();
-    }
-    std::string remoteSSMIP = getKeyFromMasterQAFile("remoteSSMIP");
-    if (remoteSSMIP != "")
-    {
-        ssmMasterIPAddr = remoteSSMIP;
-    }
+enum class SSMStates : int
+{
+    NULL_STATE,
+    Degrade,
+    NormalOperation,
+    Standby,
+    UrgentOperation,
+};
 
-    smStartPort = startSocketPort;
-    cloneStartPort = smStartPort + MAX_SMs_ALLOWED;
-    StateMachinePtr SSM_sm = StateMachinePtr(new StateMachine("SSM", ssmMasterIPAddr.c_str(), smStartPort++, true));
-    SSM_sm->addStates({"Degrade", "NormalOperation", "Standby", "UrgentOperation"});
-    SSM_sm->finalizeStates();
+constexpr int MAX_USER_DATA_PKT_SIZE = 2048;
 
-    if (!SSM_sm->addTransition("Degrade", "UrgentOperation")) return false;
-    if (!SSM_sm->addTransition("NormalOperation", "Degrade")) return false;
-    if (!SSM_sm->addTransition("Standby", "NormalOperation")) return false;
-    if (!SSM_sm->addTransition("UrgentOperation", "Standby")) return false;
-    if (!SSM_sm->setStartState("Standby")) return false;
+typedef struct _userDataPkt {
+    char dataType[MAX_DATA_TYPE_SIZE];
+    uint64_t timestamp;
+    StateMachines targetStateMachine;
+    StateMachines sourceStateMachine;
+    int size;
+    char data[MAX_USER_DATA_PKT_SIZE]; //2048 is the Maximum Data Size
+} UserDataPkt;
 
-    stateMachineVector.push_back(SSM_sm);
-    SSM_sm->addClones(swcVector, stateMachineVector, cloneStartPort);
+}
 
-    headPtr = SSM_sm;
-
-    ////////// CRITICAL SECTION //////////////
-    SSMLock lg(showHeadSpecsLock);
-    if (showHeadSpecs) {
-        showHeadSpecs = false;
-        SSM_LOG("Setup Hierarchy for SM1");
-        headPtr->logStateMachineSpecs();
-    }
-    /////////////////////////////////////////
-    finalMaxPort = smStartPort > finalMaxPort ? smStartPort : finalMaxPort;
-    finalMaxPort = cloneStartPort > finalMaxPort ? cloneStartPort : finalMaxPort;
-    return true;
-}}
 }

@@ -28,7 +28,7 @@
 //
 /////////////////////////////////////////////////////////////////////////////////////////
 
-#include <SSMClass.hpp>
+#include <demo1/SSMClass.hpp>
 
 using std::cout;
 using std::endl;
@@ -36,7 +36,7 @@ using std::endl;
 namespace SystemStateManager
 {
 
-namespace SM1
+namespace DEMO1
 {
 static int a = 0;
 

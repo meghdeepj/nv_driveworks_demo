@@ -37,62 +37,80 @@
 */
 
 
-#pragma once
-
-#include <sm1/SSMNames.hpp>
-#include <ssm/SMBaseClass.hpp>
-#include <ssm/SSMHistogram.hpp>
+#include <demo1/SSMMappings.hpp>
 
 namespace SystemStateManager
 {
-
-namespace SM1
+namespace DEMO1
 {
 
-class SSMClone : public SMBaseClass
+
+std::ostream& operator<<(std::ostream& out, const SSMStates state_enum)
 {
-public:
-    ~SSMClone(){};
-    SSMClone(std::string myname)
+    return out << SSM_enumToStr(state_enum);
+}
+
+const char* SSM_enumToStr(SSMStates e)
+{
+    switch(e)
     {
-        name = myname;
-        runnableHist.setName(name);
-        initLockSteppedCommands();
+        case SSMStates::Degrade: return SSM_SSM_Degrade_str;
+        case SSMStates::NormalOperation: return SSM_SSM_NormalOperation_str;
+        case SSMStates::Standby: return SSM_SSM_Standby_str;
+        case SSMStates::UrgentOperation: return SSM_SSM_UrgentOperation_str;
     }
-    virtual void initStateMachine(){};
-    void executeStateMachine() override;
-    bool registerFunctionHandler(std::string name, SSMFunctionHandler ptr);
-    void runInitPhase(int micros);
-    void printClientHistogram() override;
-    void setRunnableId(const char* runnableId)
-    {
-        m_runnableId = runnableId;
-    }
-    const std::string& getRunnableId()
-    {
-        return m_runnableId;
-    }
-    // API to register LockedStepCommands
-    bool registerLockedCommand(SystemStateManager::SM1::LockSteppedCommands command, SSMFunctionHandler ptr);
+    return "NULL_STATE";
+}
 
 
-private:
-    SSMHistogram runnableHist{};
-    int totalFuncs{0};
-    std::string m_runnableId;
-    SSMFunctionHandlerVector funcVector;
-    SSMFunctionHandler enterHandlerPtr{};
-    SSMFunctionHandler exitHandlerPtr{};
-    SSMFunctionHandler pre_initHandlerPtr{};
-    SSMFunctionHandler initHandlerPtr{};
-    SSMFunctionHandler postHandlerPtr{};
-    SSMFunctionHandler preReadyHandlerPtr{};
-    SSMFunctionHandler readyHandlerPtr{};
-    SSMFunctionHandler preSwitchHandlerPtr{};
-    SSMFunctionHandler postSwitchHandlerPtr{};
-    bool setupTreeHierarchy(StateMachineVector& smv, StateMachinePtr& hPtr) override;
-    void initLockSteppedCommands();
-    void generateLockedSteppedFunctions();
-};
+SSMStates SSM_strToEnum(std::string state)
+{
+    static FixedMap<std::string, SSMStates> stringToState
+    {
+        {SSM_SSM_Degrade_str, SSMStates::Degrade},
+        {SSM_SSM_NormalOperation_str, SSMStates::NormalOperation},
+        {SSM_SSM_Standby_str, SSMStates::Standby},
+        {SSM_SSM_UrgentOperation_str, SSMStates::UrgentOperation},
+    };
+
+    auto it = stringToState.find(state);
+    if(it != stringToState.end())
+    {
+        return it->second;
+    }
+    return SSMStates::NULL_STATE;
+}
+
+SSMStates get_SSMState(SMBaseClass *obj)
+{
+    return SSM_strToEnum(obj->getCurrentState(SSM_SSM_str));
+}
+
+
+const char* SmEnumToStr(StateMachines e)
+{
+    switch(e)
+    {
+        case StateMachines::SSM: return SSM_SSM_str;
+    }
+    return "";
+}
+
+StateMachines getSmEnum(std::string sm)
+{
+    static FixedMap<std::string, StateMachines> sm_string_to_enum_map = 
+    {
+        {SSM_SSM_str, StateMachines::SSM},
+    };
+
+    auto it = sm_string_to_enum_map.find(sm);
+    if(it != sm_string_to_enum_map.end())
+    {
+        return it->second;
+    }
+    return StateMachines::INVALID_STATEMACHINE;
+}
+
+
 }
 }

@@ -31,14 +31,14 @@
 #include <ssm/commServer.hpp>
 #include <ssm/commClient.hpp>
 #include <ssm/StateMachine.hpp>
-#include <SSMClass.hpp>
+#include <demo1/SSMClass.hpp>
 
 using std::cout;
 using std::endl;
 
 typedef std::atomic<int> AtomicInt;
 AtomicInt count{0};
-SystemStateManager::SM1::SSMClass* ssm{};
+SystemStateManager::DEMO1::SSMClass* ssm{};
 
 void printLogMessage(std::string logStr)
 {
@@ -86,7 +86,7 @@ int main()
 {
     pthread_t psm;
     SystemStateManager::setupLogFunction(printLog);
-    ssm = new SystemStateManager::SM1::SSMClass();
+    ssm = new SystemStateManager::DEMO1::SSMClass();
     ssm->initHierarchy();
     ssm->registerQAFunctionHandler(qaFunctionHandler);
     ssm->initialize();

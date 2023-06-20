@@ -39,33 +39,60 @@
 
 #pragma once
 
-#include <stdint.h>
-#include <map>
-#include <iostream>
+#include <demo1/SSMNames.hpp>
 #include <ssm/SMBaseClass.hpp>
-#include <sm1/SSMNames.hpp>
+#include <ssm/SSMHistogram.hpp>
 
 namespace SystemStateManager
 {
-namespace SM1
+
+namespace DEMO1
 {
 
-// Helper methods for SSM that returns state enums for strings
-SSMStates SSM_strToEnum(std::string state);
+class SSMClone : public SMBaseClass
+{
+public:
+    ~SSMClone(){};
+    SSMClone(std::string myname)
+    {
+        name = myname;
+        runnableHist.setName(name);
+        initLockSteppedCommands();
+    }
+    virtual void initStateMachine(){};
+    void executeStateMachine() override;
+    bool registerFunctionHandler(std::string name, SSMFunctionHandler ptr);
+    void runInitPhase(int micros);
+    void printClientHistogram() override;
+    void setRunnableId(const char* runnableId)
+    {
+        m_runnableId = runnableId;
+    }
+    const std::string& getRunnableId()
+    {
+        return m_runnableId;
+    }
+    // API to register LockedStepCommands
+    bool registerLockedCommand(SystemStateManager::DEMO1::LockSteppedCommands command, SSMFunctionHandler ptr);
 
-SSMStates get_SSMState(SMBaseClass *obj);
 
-// Helper method for SSM that returns strings for state enums
-const char* SSM_enumToStr(SSMStates e);
-
-//Overload << operator to help pretty print state enums
-std::ostream& operator<<(std::ostream& out, const SSMStates state_enum);
-
-//Helper method to return string for a state machine enum
-const char* SmEnumToStr(StateMachines e);
-
- // Helper method: Returns an enum for state machine string passed as an argument
-StateMachines getSmEnum(std::string sm);
-
+private:
+    SSMHistogram runnableHist{};
+    int totalFuncs{0};
+    std::string m_runnableId;
+    SSMFunctionHandlerVector funcVector;
+    SSMFunctionHandler enterHandlerPtr{};
+    SSMFunctionHandler exitHandlerPtr{};
+    SSMFunctionHandler pre_initHandlerPtr{};
+    SSMFunctionHandler initHandlerPtr{};
+    SSMFunctionHandler postHandlerPtr{};
+    SSMFunctionHandler preReadyHandlerPtr{};
+    SSMFunctionHandler readyHandlerPtr{};
+    SSMFunctionHandler preSwitchHandlerPtr{};
+    SSMFunctionHandler postSwitchHandlerPtr{};
+    bool setupTreeHierarchy(StateMachineVector& smv, StateMachinePtr& hPtr) override;
+    void initLockSteppedCommands();
+    void generateLockedSteppedFunctions();
+};
 }
 }
