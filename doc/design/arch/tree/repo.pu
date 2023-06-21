@@ -18,12 +18,16 @@ endlegend
 ++ launch.json           | 调试配置     | -
 ++ setting.json          | 配置         | -
 ++ tasks.json            | 快捷操作     | -
-+ 3rdparty/          | 交叉编译三方库    | commons/3rdparty.git
-++ linux-aarch64/    | driveos要求       | -
-++ src/              | 源代码            | -
-+++ glfw/            | 第三方库源码      | -
-++++ CMakeLists.txt | - | -
++ 3rdparty/          | 交叉编译三方库    | -
+++ vibrante          | driveos第三方库   | engineering/vibrante.git
++++ linux-aarch64/    | driveos要求       | -
++++ src/              | 源代码            | -
+++++ glfw/            | 第三方库源码      | -
++++++ CMakeLists.txt | - | -
+++ protobuf/         | 项目第三方依赖     | -
 + cmake/             | cmake配置         | commons/cmake.git
+++ FindCUDA/         | - | -
+++ Gw3rdparty.cmake  | 第三方库cmake配置  | -
 ++ Toolchain-V5L.cmake | 交叉编译配置入口 | -
 + doc/               | 文档              | -
 + docker/            | docker脚本        | commons/docker.git
@@ -73,6 +77,7 @@ endlegend
 ' 项目私有
 ++ xplatform/        | 工程组dw工程仓    | -
 +++ xplatform_node/       | 工程组cgf节点      | engineering/xplatform_node.git
++++ xplatform_ssm/        | cgf ssm 状态机     | engineering/xplatform_ssm.git
 ' demo项目
 ++ team_demo/        | 示例仓           | -
 +++ module_demo/     | 示例算法库        | commons/module_demo.git
@@ -86,27 +91,29 @@ endlegend
 ..
 == 制品仓 |
 {T!
-+ **path/file.ext**            | **intro**          | **是否打包**
-+ target/           | 根目录        | Y
-++ .vscode/         | vscode配置包  | Y
-++ docker/          | docker相关    | Y
-++ res/             | 资源相关       | Y
-+++ driver/         | 驱动文件       | -
-++ orin.sh            | 安装包的维护脚本        | Y
-++ tmux_into.sh       | 安装包的tmux维护脚本    | Y
++ **path/file.ext**            | **intro**          | **是否打包** | **是否入库**
++ target/           | 根目录        | Y | Y
+++ .vscode/         | vscode配置包  | Y | Y
+++ docker/          | docker相关    | Y | Y
+++ res/             | 资源相关       | Y | Y
++++ driver/         | 驱动文件       | - | -
+++ orin.sh            | 安装包的维护脚本        | Y | Y
+++ tmux_into.sh       | 安装包的tmux维护脚本    | Y | Y
 ' 项目
-++ aarch64/         | aarch64构建目录 | Y
-+++ build/          | cmake中间文件 | **N**
-+++ install/        | install目录   | Y
-++++ bin/           | 二进制, cgf脚本 | Y
-+++++ module_demo/  | 以项目名为安装目录 | -
-+++++ common_cgf_app/  | cgf-app的执行脚本目录 | -
-++++ data/          | 工作目录       | Y
-++++ graphs/        | 图模型           | Y
-++++ lib/           | 库                | Y
-+++++ module_demo   | 以项目名为安装目录 | -
-+++++ team_node   | 以项目名为安装目录 | -
-+++++ xplatform_node   | 以项目名为安装目录 | -
+++ aarch64/         | aarch64构建目录 | Y       | Y
++++ build/          | cmake中间文件 | **N**     | N
++++ install/        | install目录   | Y         | Y
+++++ bin/           | 二进制, cgf脚本 | Y  | Y
++++++ module_demo/  | 以项目名为安装目录 | -  | -
++++++ common_cgf_app/  | cgf-app的执行脚本目录 | - | -
+++++ data/          | 工作目录       | Y | Y
+++++ graphs/        | 图模型           | Y | Y
+++++ lib/           | 库                | Y | Y
++++++ module_demo   | 以项目名为安装目录 | - | -
++++++ team_node   | 以项目名为安装目录 | - | -
++++++ xplatform_node   | 以项目名为安装目录 | - | -
+++ xlab/               | 第三方依赖安装目录 | Y | **N**
++++ sysroot/           | 第三方依赖sysroot  | - | -
 }
 
 ==

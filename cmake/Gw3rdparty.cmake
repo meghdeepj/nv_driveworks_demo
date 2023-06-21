@@ -33,24 +33,24 @@
 #-------------------------------------------------------------------------------
 # Dependencies
 #-------------------------------------------------------------------------------
-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/src/lodepng)
-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/src/glfw)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/vibrante/src/lodepng)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/vibrante/src/glfw)
 
 if(VIBRANTE)
-    set(vibrante_DIR "${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/${SDK_ARCH_DIR}/vibrante" CACHE PATH '' FORCE)
+    set(vibrante_DIR "${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/vibrante/${SDK_ARCH_DIR}/vibrante" CACHE PATH '' FORCE)
     find_package(vibrante REQUIRED CONFIG)
     if(NOT VIBRANTE_V5Q)
-        set(vibrante_Xlibs_DIR "${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/${SDK_ARCH_DIR}/vibrante_Xlibs" CACHE PATH '' FORCE)
+        set(vibrante_Xlibs_DIR "${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/vibrante/${SDK_ARCH_DIR}/vibrante_Xlibs" CACHE PATH '' FORCE)
         find_package(vibrante_Xlibs CONFIG REQUIRED)
 
-        set(zlib_DIR "${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/${SDK_ARCH_DIR}/zlib" CACHE PATH '' FORCE)
+        set(zlib_DIR "${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/vibrante/${SDK_ARCH_DIR}/zlib" CACHE PATH '' FORCE)
         find_package(zlib REQUIRED)
     endif()
     set(DW_USE_NVMEDIA_DRIVE ON)
     set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY BOTH)
     set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE BOTH)
 else()
-    add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/src/glew)
+    add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/vibrante/src/glew)
     # this is for parts of the code needed only on LINUX because of special care needed for nvmedia x86
     set(DW_USE_NVMEDIA_X86 ON)
 endif()
