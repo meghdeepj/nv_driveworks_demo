@@ -64,6 +64,9 @@ chown ${DOCKER_USER}:${DOCKER_GRP} /home/${DOCKER_USER}
 ls -ad /home/${DOCKER_USER}/.??* | xargs chown -R ${DOCKER_USER}:${DOCKER_GRP}
 
 # 配置一些设备最基本的属性
+if [ -e /dev/nvpps0 ]; then
+  chmod a+rw /dev/nvpps0
+fi
 
 # setup GPS device
 if [ -e /dev/novatel0 ]; then
