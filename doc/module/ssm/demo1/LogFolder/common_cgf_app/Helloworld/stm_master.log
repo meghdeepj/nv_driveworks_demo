@@ -1,0 +1,38 @@
+appExecutable: stm_master
+argv[0] : /usr/local/driveworks/bin/stm_master
+argv[1] : --schedule=/target/aarch64/install/bin/common_cgf_app/DWCGFHelloworld__standardSchedule.stm
+argv[2] : --allow-unregistered-runnables
+argv[3] : --soc=TegraA
+argv[4] : --timeout-us=60000000
+argv[5] : -m
+argv[6] : -v
+argv[7] : --schedule-manager-name=CGF-ScheduleManager
+argv[8] : --num-input-schedule=1
+[STM WARNING]:[av/stm/runtime/src/core/stdout.c][logSetVerbose] [25]: Verbose mode has been enabled for STM. ***Note that this mode affects STM latency guarantees, and is meant for use only in debugging. Do not use '-v' for performance testing.
+[STM INFO]:[av/stm/runtime/src/master/master.c][stmMasterInitScheduleList] Input Schedule: /target/aarch64/install/bin/common_cgf_app/DWCGFHelloworld__standardSchedule.stm
+[STM INFO]:[av/stm/runtime/src/master/master.c][stmMasterInitScheduleList] Following 1 schedules provided.
+[STM INFO]:[av/stm/runtime/src/master/master.c][stmMasterInitScheduleList] 	 Schedule0 : /target/aarch64/install/bin/common_cgf_app/DWCGFHelloworld__standardSchedule.stm.
+[STM INFO]:[av/stm/runtime/src/master/master.c][stmMasterInitClientPerSchedule] Schedule ID : 0
+[STM INFO]:[av/stm/runtime/src/master/master.c][stmMasterInitClientPerSchedule] 	Client name: helloworld_process0
+[STM INFO]:[av/stm/runtime/src/master/master.c][stmMasterInitClientPerSchedule] 	Client soc: TegraA
+[STM INFO]:[av/stm/runtime/src/master/master.c][stmMasterInitClientPerSchedule] 	Client name: framesync_TegraA_helloworldHyperepoch_helloworldEpoch
+[STM INFO]:[av/stm/runtime/src/master/master.c][stmMasterInitClientPerSchedule] 	Client soc: TegraA
+!ERR![L:84]:nvsciipc_ipc_check_end: pid is not 0, but process doesn't exist, (pid:576)
+!ERR![L:84]:nvsciipc_ipc_check_end: pid is not 0, but process doesn't exist, (pid:576)
+[STM INFO]:[av/stm/runtime/src/master/master.c][stmMasterInitShmMasterPerClient] Total Numbers of thread for schedule 0 : 2
+[STM][WARN] Unlinked prexisting mqueue: /stm_mq_m2c-73746d-helloworld_process0
+[STM][WARN] Unlinked prexisting mqueue: /stm_mq_c2m-73746d-helloworld_process0
+[STM][WARN] Unlinked prexisting mqueue: /stm_mq_m2c-73746d-framesync_TegraA_helloworldHyperepoch_helloworldEpoch
+[STM][WARN] Unlinked prexisting mqueue: /stm_mq_c2m-73746d-framesync_TegraA_helloworldHyperepoch_helloworldEpoch
+[STM][WARN] Unlinked prexisting mqueue: /stm_mq_state_machine2all-73746d-state_machine
+[STM][WARN] Unlinked prexisting mqueue: /stm_mq_all2state_machine-73746d-state_machine
+[STM INFO]:[av/stm/runtime/src/master/main.c][main] Client Name helloworld_process0
+[STM INFO]:[av/stm/runtime/src/master/main.c][main] Client Name framesync_TegraA_helloworldHyperepoch_helloworldEpoch
+[STM INFO]:[av/stm/runtime/src/master/master.c][stmMasterLaunchClient] Launching client: framesync_TegraA_helloworldHyperepoch_helloworldEpoch
+[STM INFO]:[av/stm/runtime/src/master/master.c][stmMasterLaunchClient] Launched client framesync_TegraA_helloworldHyperepoch_helloworldEpoch with pid: 751
+[STM] Opening NvSciIpc endpoints...
+[STM] Start schedule manager now.
+[STM] Waiting for schedule manager : CGF-ScheduleManager ...
+[STM][ERROR] Failed to receive mqueue message; errno: 4 (Interrupted system call)
+[STM ERROR]:[av/stm/runtime/src/master/main.c][main] [689]: Could not receive message from CGF-ScheduleManager. This may be caused by CGF-ScheduleManager having crashed before its call to 'stmScheduleManagerInit()' - please check its health.
+av/stm/runtime/src/master/main.c:690 assertion failure, errno=4 (Interrupted system call)

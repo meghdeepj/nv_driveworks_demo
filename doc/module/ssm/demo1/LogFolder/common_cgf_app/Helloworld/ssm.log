@@ -1,0 +1,50 @@
+appExecutable: ssm
+argv[0] : /usr/local/driveworks/bin/xplatform_ssm_demo1
+argv[1] : --sehFailureMask=
+argv[2] : --enable-SEH-SSM=0
+argv[3] : --enable-ssm-degradation=0
+[21-06-2023 07:29:10] Setup Hierarchy for DEMO1
+[21-06-2023 07:29:10] Creating Server: SSM 6072
+[21-06-2023 07:29:10] Initializing DEMO1
+[21-06-2023 07:29:10] InitBroadcast: SSM => PRE_INIT [1687332550526]
+[21-06-2023 07:29:10] InitBroadcast: SSM => PRE_INIT [1687332550526]    []
+[21-06-2023 07:29:10] Error: Connect failed SSM 127.0.0.1 6072
+[21-06-2023 07:29:10] InitBroadcast: SSM => INIT [1687332550527]
+[21-06-2023 07:29:10] InitBroadcast: SSM => INIT [1687332550527]    []
+[21-06-2023 07:29:10] InitBroadcast: SSM => POST_INIT [1687332550527]
+[21-06-2023 07:29:10] InitBroadcast: SSM => POST_INIT [1687332550527]    []
+[21-06-2023 07:29:10] InitBroadcast: SSM => PRE_READY [1687332550527]
+[21-06-2023 07:29:10] InitBroadcast: SSM => PRE_READY [1687332550527]    []
+[21-06-2023 07:29:10] InitBroadcast: SSM => READY [1687332550527]
+[21-06-2023 07:29:10] InitBroadcast: SSM => READY [1687332550527]    []
+[21-06-2023 07:29:10] InitBroadcast: SSM => ENTER_STATE_MACHINE [1687332550527]
+[21-06-2023 07:29:10] InitBroadcast: SSM => ENTER_STATE_MACHINE [1687332550527]    []
+Finding port: schedule_manager
+[21-06-2023 07:29:10] StateChange: SSM => Standby [1687332550528]
+SSM in Standby...0
+[21-06-2023 07:29:10] Current State of SSM: PRE_INIT
+[21-06-2023 07:29:10] InitPhaseComplete: SSM => PRE_INIT [1687332550529]
+SSM in Standby...1
+SSM in Standby...2
+SSM in Standby...3
+SSM in Standby...4
+SSM in NormalOperation...5
+[21-06-2023 07:29:14] StateChange: SSM => NormalOperation [1687332554932]
+SSM in NormalOperation...6
+SSM in NormalOperation...7
+sh: 1: nc: not found
+SSM in NormalOperation...8
+SSM in NormalOperation...9
+[21-06-2023 07:29:20] StateChange: SSM => Degrade [1687332560443]
+SSM in Degraded... 11
+SSM in Degraded... 12
+Processing command: 
+process
+internal
+cmd
+0x11111
+SSM in Degraded... 13
+SSM in Degraded... 14
+SSM in Degraded... 15
+SSM in Degraded... 16
+[21-06-2023 07:29:27] StateChange: SSM => UrgentOperation [1687332567049]
