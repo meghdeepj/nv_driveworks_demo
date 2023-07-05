@@ -12,6 +12,8 @@ RUN set -x; \
     && sed -i 's/ports.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/' /etc/apt/sources.list \
     && apt update \
     && apt install -y python3-numpy python3-pip \
+    && pip3 config set global.trusted-host https://pypi.tuna.tsinghua.edu.cn \
+    && pip3 config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple \
     && python3 -m pip install jsonschema vcstool colcon-common-extensions lark \
     && dpkg --add-architecture arm64 \
     && apt install -y libspdlog-dev:arm64 libyaml-dev:arm64 libpython3-dev:arm64 libtinyxml2-dev:arm64 libssl-dev:arm64 openssl:arm64 libboost-dev:arm64 libboost-thread-dev:arm64 \
