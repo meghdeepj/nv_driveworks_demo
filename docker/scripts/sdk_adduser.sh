@@ -2,11 +2,13 @@
 
 # 添加用户和组权限，配置超级用户
 
-deluser zs
+# delete first
+deluser $(id -nu $DOCKER_USER_ID)
 addgroup --gid "$DOCKER_GRP_ID" "$DOCKER_GRP"
 adduser --disabled-password --force-badname --gecos '' "$DOCKER_USER" \
     --uid "$DOCKER_USER_ID" --gid "$DOCKER_GRP_ID" 2>/dev/null
 usermod -aG sudo "$DOCKER_USER"
+usermod -aG dialout "$DOCKER_USER"
 echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
 # crack解决一个交叉编译错误
@@ -65,24 +67,18 @@ ls -ad /home/${DOCKER_USER}/.??* | xargs chown -R ${DOCKER_USER}:${DOCKER_GRP}
 
 # 配置一些设备最基本的属性
 
-# setup GPS device
-if [ -e /dev/novatel0 ]; then
-  chmod a+rw /dev/novatel0
-fi
-if [ -e /dev/novatel1 ]; then
-  chmod a+rw /dev/novatel1
-fi
-if [ -e /dev/novatel2 ]; then
-  chmod a+rw /dev/novatel2
-fi
 if [ -e /dev/ttyACM0 ]; then
   chmod a+rw /dev/ttyACM0
 fi
 
-# setup camera device
-if [ -e /dev/camera/obstacle ]; then
-  chmod a+rw /dev/camera/obstacle
+if [ -e /dev/ttyACM1 ]; then
+  chmod a+rw /dev/ttyACM1
 fi
-if [ -e /dev/camera/trafficlights ]; then
-  chmod a+rw /dev/camera/trafficlights
+
+if [ -e /dev/ttyACM2 ]; then
+  chmod a+rw /dev/ttyACM2
+fi
+
+if [ -e /dev/ttyACM3 ]; then
+  chmod a+rw /dev/ttyACM3
 fi
