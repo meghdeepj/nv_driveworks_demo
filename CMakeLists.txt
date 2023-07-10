@@ -159,8 +159,12 @@ set(COMPONENTS
     camera;
 )
 foreach(COMPONENT ${COMPONENTS})
-    add_subdirectory(frameworks/${COMPONENT})
-endforeach(COMPONENT ${COMPONENTS})
+    if(EXISTS frameworks/${COMPONENT})
+        add_subdirectory(frameworks/${COMPONENT})
+    else()
+        message(WARNING "zs: Component ${COMPONENT} not exist, skipping!")
+    endif()
+endforeach()
 
 #-------------------------------------------------------------------------------
 # module based cgf-node
@@ -168,13 +172,21 @@ endforeach(COMPONENT ${COMPONENTS})
 #-------------------------------------------------------------------------------
 set(MODULES
     common/cgf_channel;
+    # demo_team
     team_demo/module_demo;
     team_demo/team_node;
+    # engineering_team
     xplatform/xplatform_node;
     xplatform/xplatform_ssm;
+    # perception_team
+    perception/perception_node;
 )
 foreach(MODULE ${MODULES})
-    add_subdirectory(modules/${MODULE})
+    if(EXISTS modules/${MODULE})
+        add_subdirectory(modules/${MODULE})
+    else()
+        message(WARNING "zs: Module ${MODULE} not exist, skipping!")
+    endif()
 endforeach()
 
 # 集成
