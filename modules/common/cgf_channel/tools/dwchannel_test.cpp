@@ -18,12 +18,7 @@
 #include <dwcgf/port/Port.hpp>
 
 // 要测试的数据结构
-#include "channel/sample_msgs/IntWithTimestamp.hpp"
-#include "channel/sample_msgs/CustomRawBuffer.hpp"
-#include "channel/sensor_msgs/Image.hpp"
-#include "channel/std_msgs/Float.hpp"
-#include "channel/std_msgs/Int.hpp"
-#include "channel/std_msgs/String.hpp"
+#include "channels.hpp"
 
 #include <dwframework/dwnodes/common/factories/DWChannelFactory.hpp>
 #include "Log.hpp"
@@ -823,9 +818,11 @@ int main(int argc, const char** argv)
     {
         runApp(DWChannelSample<CustomRawBuffer>(args));
     }
+    else if(dataType == "FreeSpaceBoundary")
+        runApp(DWChannelSample<FreeSpaceBoundary>(args));
     else
     {
-        throw std::runtime_error("dataType arg is not one of (dwImage|int|custom)");
+        throw std::runtime_error("dataType arg is not one of (dwImage|int|custom|FreeSpaceBoundary)");
     }
 
     return 0;

@@ -55,12 +55,21 @@ private:
     // Passes functions
     dwStatus process();
 
-    // Internal states of node
+    // node internal from cgf
+    HelloWorldNodeParams m_params{};
+
+    // node internal from loaderlite-stm
+    dwContextHandle_t m_ctx{DW_NULL_HANDLE};
+
+    // workload: config
+
+    // workload: memory
     int m_port0Value{0};
     int m_port1Value{10000};
     size_t m_epochCount{0};
-    HelloWorldNodeParams m_params{};
-    dwContextHandle_t m_ctx{DW_NULL_HANDLE};
+    static constexpr size_t m_freespace_boundary_size{256};
+    FreeSpaceBoundary m_freespace_boundary_channel{};
+    std::array<Point64, m_freespace_boundary_size> m_freespace_boundary_data{0};
 };
 
 } // namespace framework

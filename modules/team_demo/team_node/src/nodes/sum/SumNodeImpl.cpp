@@ -47,6 +47,7 @@ SumNodeImpl::SumNodeImpl(const SumNodeParams& params, const dwContextHandle_t ct
     // Create input/output ports
     NODE_INIT_INPUT_PORT("VALUE_0"_sv);
     NODE_INIT_INPUT_PORT("VALUE_1"_sv);
+    NODE_INIT_INPUT_PORT("FREESPACE_BOUNDARY"_sv);
 
     // Init passes
     NODE_REGISTER_PASS("PROCESS"_sv, [this]() {
@@ -77,6 +78,8 @@ dwStatus SumNodeImpl::process()
 {
     auto& inPort0 = NODE_GET_INPUT_PORT("VALUE_0"_sv);
     auto& inPort1 = NODE_GET_INPUT_PORT("VALUE_1"_sv);
+    auto& boundaryPort = NODE_GET_INPUT_PORT("FREESPACE_BOUNDARY"_sv);
+
     if (inPort0.isBufferAvailable() && inPort1.isBufferAvailable())
     {
         auto inputValue0 = *inPort0.getBuffer();
@@ -85,6 +88,30 @@ dwStatus SumNodeImpl::process()
                 << " Received " << inputValue0 << " from input VALUE_0"
                 << ", received " << inputValue1 << " from input VALUE_1."
                 << " Add together: " << (inputValue0 + inputValue1) << "!" << Logger::State::endl;
+    }
+    else
+    {
+        DW_LOGD << "[Epoch " << m_epochCount << "] inPort.buffer not available!" << Logger::State::endl;
+    }
+
+    if(boundaryPort.isBufferAvailable())
+    {
+        m_freespace_boundary_channel = *boundaryPort.getBuffer();
+        auto freespace_boundary_data = m_freespace_boundary_channel.data;
+        // read only
+        DW_LOGD << "[Epoch " << m_epochCount
+                << "] boundaryPort.size: " << m_freespace_boundary_channel.size
+                << "] boundaryPort.timestamp: " << m_freespace_boundary_channel.timestamp
+                << Logger::State::endl;
+        DW_LOGD << "[Epoch " << m_epochCount << "] boundaryPort.data[0]: "
+                << "x: " << freespace_boundary_data[0].x
+                << "y: " << freespace_boundary_data[0].y
+                << "z: " << freespace_boundary_data[0].z
+                << Logger::State::endl;
+    }
+    else
+    {
+        DW_LOGD << "[Epoch " << m_epochCount << "] boundaryPort.buffer not available!" << Logger::State::endl;
     }
 
     // ros2 pub

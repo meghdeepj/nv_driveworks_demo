@@ -46,6 +46,11 @@ HelloWorldNodeImpl::HelloWorldNodeImpl(const HelloWorldNodeParams& params, const
     NODE_INIT_OUTPUT_PORT("VALUE_0"_sv);
     NODE_INIT_OUTPUT_PORT("VALUE_1"_sv);
 
+    size_t size = m_freespace_boundary_size;
+    NODE_INIT_OUTPUT_PORT("FREESPACE_BOUNDARY"_sv, size);
+    m_freespace_boundary_channel.size = size;
+    m_freespace_boundary_channel.data = m_freespace_boundary_data.data();
+
     // Init passes
     NODE_REGISTER_PASS("PROCESS"_sv, [this]() {
         return process();
@@ -72,17 +77,43 @@ dwStatus HelloWorldNodeImpl::process()
 {
     auto& outPort0 = NODE_GET_OUTPUT_PORT("VALUE_0"_sv);
     auto& outPort1 = NODE_GET_OUTPUT_PORT("VALUE_1"_sv);
-    if (outPort0.isBufferAvailable() && outPort1.isBufferAvailable())
+    auto& boundaryPort = NODE_GET_OUTPUT_PORT("FREESPACE_BOUNDARY"_sv);
+
+    if (outPort0.isBufferAvailable())
     {
         *outPort0.getBuffer() = m_port0Value++;
         DW_LOGD << "[Epoch " << m_epochCount << "] Sent value0 = " << *outPort0.getBuffer() << Logger::State::endl;
         outPort0.send();
-
+    }
+    else
+    {
+        DW_LOGD << "[Epoch " << m_epochCount << "] outPort0.buffer not available!" << Logger::State::endl;
+    }
+    if (outPort1.isBufferAvailable())
+    {
         *outPort1.getBuffer() = m_port1Value--;
         DW_LOGD << "[Epoch " << m_epochCount << "] Sent value1 = " << *outPort1.getBuffer() << Logger::State::endl;
         outPort1.send();
     }
-    DW_LOGD << "[Epoch " << m_epochCount++ << "] Greetings from HelloWorldNodeImpl: Hello " << m_params.name.c_str() << "!" << Logger::State::endl;
+    else
+    {
+        DW_LOGD << "[Epoch " << m_epochCount << "] outPort1.buffer not available!" << Logger::State::endl;
+    }
+    if (boundaryPort.isBufferAvailable())
+    {
+        m_freespace_boundary_data.at(0) = {1, 2, 3};
+        m_freespace_boundary_channel.timestamp = m_epochCount;
+        *boundaryPort.getBuffer() = m_freespace_boundary_channel;
+        DW_LOGD << "[Epoch " << m_epochCount << "] Sent freespace_boundary [1, 2, 3]." << Logger::State::endl;
+        boundaryPort.send();
+    }
+    else
+    {
+        DW_LOGD << "[Epoch " << m_epochCount << "] boundaryPort.buffer not available!" << Logger::State::endl;
+    }
+
+    DW_LOGD << "[Epoch " << m_epochCount++ << "] Greetings from HelloWorldNodeImpl: Hello " << m_params.name.c_str()
+            << "!" << Logger::State::endl;
     return DW_SUCCESS;
 }
 

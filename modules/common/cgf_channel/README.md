@@ -14,7 +14,9 @@
 # t2: consumer
 ./dwchannel_test --type=NVSCI --cons-stream-names=nvscisync_a_1 --cons-reaches=process --dataType=custom
 
-#
+# inter-process-shm ONLY
+./dwchannel_test --type=SHMEM_LOCAL --cons=1 --prod=1 --downstreams=1 --dataType=FreeSpaceBoundary
+
 ```
 
 ## sample_dwchannel

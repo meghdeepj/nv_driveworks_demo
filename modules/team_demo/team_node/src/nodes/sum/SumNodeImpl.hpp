@@ -56,12 +56,19 @@ private:
     // Passes functions
     dwStatus process();
 
-    // Internal states of node
-    size_t m_epochCount{0};
+    // node internal from cgf
     SumNodeParams m_params{};
+
+    // node internal from loaderlite-stm
     dwContextHandle_t m_ctx{DW_NULL_HANDLE};
 
-    // ros2 node res
+    // workload: config
+
+    // workload: memory
+    size_t m_epochCount{0};
+    FreeSpaceBoundary m_freespace_boundary_channel{};
+
+    // workload: ros2
     rclcpp::Node::SharedPtr m_node;
     rclcpp::Publisher<std_msgs::msg::String>::SharedPtr m_pub;
     std::unique_ptr<std_msgs::msg::String> m_msg;

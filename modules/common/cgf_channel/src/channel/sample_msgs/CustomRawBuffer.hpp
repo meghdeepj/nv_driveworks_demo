@@ -3,6 +3,7 @@
 
 #include <dw/core/base/Types.h>
 #include <dwcgf/channel/ChannelPacketTypes.hpp>
+#include <channel/common/TypesExt.hpp>
 
 // Enumerate types of memory for raw buffer
 enum MemoryType
@@ -44,7 +45,8 @@ struct CustomRawBuffer
  * recommended to group all the declarations into an enum. However, as this sample is only defining a sinlge
  * type the enum is not needed.
  */
-constexpr dw::framework::ChannelPacketTypeID CustomRawBufferTypeID = dw::framework::DWFRAMEWORK_MAX_INTERNAL_TYPES;
+constexpr dw::framework::ChannelPacketTypeID CustomRawBufferTypeID =
+    dw::framework::dwSerializationTypeExt::DW_CUSTOM_RAW_BUFFER;
 
 /**
  * Declare CustomRawBuffer as a non-POD type, with SpecimenType CustomRawBuffer meaning that it will be expected that

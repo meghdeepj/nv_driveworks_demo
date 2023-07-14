@@ -38,15 +38,22 @@ find_package(std_msgs REQUIRED)
 #-------------------------------------------------------------------------------
 # internal lib
 #-------------------------------------------------------------------------------
-get_target_property(GW_HEADER_DIR module_demo HEADER_DIR)
+get_target_property(GW_MODULE_HEADER_DIR module_demo HEADER_DIR)
+get_target_property(GW_CHANNEL_HEADER_DIR common_cgf_channel HEADER_DIR)
+get_target_property(GW_CHANNEL_SRC_DIR common_cgf_channel SRC_DIR)
 include_directories(
-    ${GW_HEADER_DIR}
+    ${GW_MODULE_HEADER_DIR}
+    ${GW_CHANNEL_HEADER_DIR}
 )
 
 #-------------------------------------------------------------------------------
 # Custom nodes shared library
 #-------------------------------------------------------------------------------
-add_library(${PROJECT_NAME} SHARED ${DWCGF_NODES_FILES})
+# zs: bug: must be compiled with channel src files
+file(GLOB_RECURSE DWCGF_CHANNEL_FILES
+    ${GW_CHANNEL_SRC_DIR}/*.cpp
+)
+add_library(${PROJECT_NAME} SHARED ${DWCGF_NODES_FILES} ${DWCGF_CHANNEL_FILES})
 ament_target_dependencies(${PROJECT_NAME} "rclcpp" "std_msgs" )
 target_link_libraries(${PROJECT_NAME} ${LIBRARIES} module_demo)
 target_include_directories(${PROJECT_NAME}

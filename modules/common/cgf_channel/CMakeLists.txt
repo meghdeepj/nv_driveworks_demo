@@ -10,7 +10,6 @@ set(DW_NVSTREAM_EVENT_SAMPLE ${CMAKE_CURRENT_SOURCE_DIR}/bin/nvscistream_event_s
 set(DW_NVSTREAM_PERF_SAMPLE ${CMAKE_CURRENT_SOURCE_DIR}/bin/test_nvscistream_perf)
 
 file(GLOB_RECURSE DWCGF_CHANNEL_FILES
-    ${DWCGF_CHANNEL_DIR}/*.hpp
     ${DWCGF_CHANNEL_DIR}/*.cpp
 )
 
@@ -39,6 +38,7 @@ set_target_properties(${PROJECT_NAME} PROPERTIES LINKER_LANGUAGE CXX)
 target_link_libraries(${PROJECT_NAME} PRIVATE ${LIBRARIES})
 target_include_directories(${PROJECT_NAME}
                            PUBLIC
+                           ${GW_HEADER_DIR}
                            ${CUDA_DIR}/include
                            ${DW_ROOT}/include
                            ${DW_ROOT}/include/3rdparty
@@ -47,6 +47,7 @@ target_include_directories(${PROJECT_NAME}
 
 set_target_properties(${PROJECT_NAME} PROPERTIES
     HEADER_DIR ${GW_HEADER_DIR}
+    SRC_DIR ${DWCGF_CHANNEL_DIR}
 )
 
 #-------------------------------------------------------------------------------

@@ -41,6 +41,9 @@
 #include <dwcgf/port/PortDescriptor.hpp>
 #include <dwcgf/parameter/ParameterDescriptor.hpp>
 
+// channel
+#include <channel/perception_interfaces/FreeSpaceBoundary.hpp>
+
 namespace dw
 {
 namespace framework
@@ -62,9 +65,9 @@ public:
     static constexpr auto describeOutputPorts()
     {
         using namespace dw::framework;
-        return describePortCollection(
-            DW_DESCRIBE_PORT(int, "VALUE_0"_sv, PortBinding::REQUIRED),
-            DW_DESCRIBE_PORT(int, "VALUE_1"_sv, PortBinding::REQUIRED));
+        return describePortCollection(DW_DESCRIBE_PORT(int, "VALUE_0"_sv, PortBinding::REQUIRED),
+                                      DW_DESCRIBE_PORT(int, "VALUE_1"_sv, PortBinding::REQUIRED),
+                                      DW_DESCRIBE_PORT(FreeSpaceBoundary, "FREESPACE_BOUNDARY"_sv, PortBinding::REQUIRED));
     };
 
     static constexpr auto describePasses()

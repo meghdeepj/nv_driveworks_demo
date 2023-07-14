@@ -22,8 +22,8 @@
                 "${myDriveworksPath}/include",
                 "${myDriveosPath}/include",
                 "${myCudaPath}/include",
-                "${workspaceFolder}/modules/module_demo/include",
-                "${workspaceFolder}/modules/xplatform/xcgf/image_pipe/src",
+                "${workspaceFolder}/modules/common/cgf_channel/src",
+                "${workspaceFolder}/modules/team_demo/module_demo/include",
                 "/home/zs/orin_ws/nv_driveworks/driverorks-5.10/include/dwshared/dwfoundation",
                 "/home/zs/orin_ws/nv_driveworks/driverorks-5.10/include/3rdparty"
             ],

@@ -11,6 +11,10 @@
         "VALUE_1": {
             "type": "int32_t",
             "bindingRequired": true
+        },
+        "FREESPACE_BOUNDARY": {
+            "type": "FreeSpaceBoundary",
+            "bindingRequired": true
         }
     },
     "outputPorts": {},

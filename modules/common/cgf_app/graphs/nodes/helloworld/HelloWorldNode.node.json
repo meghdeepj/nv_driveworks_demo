@@ -6,11 +6,15 @@
     "inputPorts": {},
     "outputPorts": {
         "VALUE_0": {
-            "type": "int",
+            "type": "int32_t",
             "bindingRequired": true
         },
         "VALUE_1": {
-            "type": "int",
+            "type": "int32_t",
+            "bindingRequired": true
+        },
+        "FREESPACE_BOUNDARY": {
+            "type": "FreeSpaceBoundary",
             "bindingRequired": true
         }
     },

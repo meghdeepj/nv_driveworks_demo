@@ -1,0 +1,8 @@
+#include "channel/sample_msgs/IntWithTimestamp.hpp"
+#include "channel/sample_msgs/CustomRawBuffer.hpp"
+#include "channel/sensor_msgs/Image.hpp"
+#include "channel/std_msgs/Float.hpp"
+#include "channel/std_msgs/Int.hpp"
+#include "channel/std_msgs/String.hpp"
+#include "channel/geometry_msgs/Point.hpp"
+#include "channel/perception_interfaces/FreeSpaceBoundary.hpp"
